@@ -15,10 +15,23 @@
     {{content-for 'head-footer'}}
   </head>
   <body>
-    {{content-for 'body'}}
+    <script>
+      // Please refere to RequireJS configuration options
+      // http://requirejs.org/docs/api.html#config
+      // If using Dojo, this configuration will be treated like dojoConfig.
+      // Please refer to Dojo documentation for details
+      // http://dojotoolkit.org/documentation/tutorials/1.10/dojo_config/
+      var reqConfig = {
+        locale: 'en-us',
+        isDebug: true
+      };
+      var dojoConfig = reqConfig;
+      dojoConfig.async = true;
+    </script>
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/ember-jqm.js"></script>
+    {{content-for 'amd'}}
+
+    {{content-for 'body'}}
 
     {{content-for 'body-footer'}}
   </body>

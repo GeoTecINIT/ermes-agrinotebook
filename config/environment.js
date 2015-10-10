@@ -40,17 +40,17 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/ember-jqm/';
   }
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-      'script-src': "'self'",
-      'font-src': "'self'",
-      'connect-src': "'self'",
-      'img-src': "'self'",
-      'style-src': "'self'",
-      'media-src': "'self'"
+    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://js.arcgis.com/ https://js.arcgis.com/",
+    'font-src': "'self'",
+    'connect-src': "'self' http://services.arcgis.com/ http://services.arcgisonline.com/",
+    'img-src': "'self' http://js.arcgis.com/ http://server.arcgisonline.com/",
+    'style-src': "'self' 'unsafe-inline'",
+    'media-src': "'self'"
   };
 
   return ENV;

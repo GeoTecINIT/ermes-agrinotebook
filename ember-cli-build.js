@@ -4,6 +4,12 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    //useDojo: true,
+    //amdBase: 'vendor/arcgis',
+    amdPackages: [
+      'esri', 'dojo', 'dijit', 'dojox', 'dgrid', 'put-selector', 'xstyle'
+    ],
+    srcTag: 'https://js.arcgis.com/3.14'
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -19,10 +25,23 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  app.import("bower_components/jquery/dist/jquery.min.js");
-  app.import("bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js");
-  app.import("bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.min.css");
-  //app.import("bower_components/jquery-mobile-ember/jquery-mobile-ember.js");
+  // Required for jQuery Mobile to work properly
+  app.import('bower_components/jquery/dist/jquery.min.js');
+  app.import('bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js');
+  app.import('bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.min.css');
+
+  // ArcGIS API for JavaScript
+  app.import('vendor/arcgis/esri/css/esri.css');
+
+  // IndexedDBShim
+  app.import('bower_components/IndexedDBShim/dist/indexeddbshim.js');
+
+  // OfflineJS
+  app.import('bower_components/offline/offline.min.js');
+
+  // ArcGIS Offline library
+  app.import('bower_components/offline-editor-js/dist/offline-edit-min.js');
+  app.import('bower_components/offline-editor-js/dist/offline-tiles-advanced-min.js');
 
   return app.toTree();
 };

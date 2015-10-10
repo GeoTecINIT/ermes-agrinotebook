@@ -13,7 +13,10 @@
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.18.0",
     "jquery-mobile-ember": "*",
-    "jquery-mobile-bower": "~1.4.5"
+    "jquery-mobile-bower": "~1.4.5",
+    "offline-editor-js": "Esri/offline-editor-js#~2.14.0",
+    "IndexedDBShim": "axemclion/IndexedDBShim#~2.2.1",
+    "offline": "HubSpot/offline#~0.7.14"
   },
   "resolutions": {
     "jquery": "~2.1.4"
