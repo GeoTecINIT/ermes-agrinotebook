@@ -18,6 +18,3 @@ testem.log
 
 # idea config files
 /.idea
-
-# vendor resources excluded
-/vendor/arcgis
