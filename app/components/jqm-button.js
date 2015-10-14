@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import JqmComponent from './jqm-component';
 
-export default Ember.Component.extend({
+export default JqmComponent.extend({
   tagName: 'button',
   classNameBindings: ['ui-btn'],
   click() {
