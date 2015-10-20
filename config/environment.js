@@ -43,6 +43,10 @@ module.exports = function(environment) {
     ENV.baseURL = '/ember-jqm/';
   }
 
+  if (environment === 'cordova') {
+    ENV.locationType = 'hash';
+  }
+
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://js.arcgis.com/ https://js.arcgis.com/",
