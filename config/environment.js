@@ -40,19 +40,20 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/ember-jqm/';
-  }
-
-  if (environment === 'cordova') {
+    ENV.baseURL = '/';
     ENV.locationType = 'hash';
   }
+
+  //if (environment === 'cordova') {
+  //  ENV.locationType = 'hash';
+  //}
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://js.arcgis.com/ https://js.arcgis.com/",
     'font-src': "'self'",
-    'connect-src': "'self' http://services.arcgis.com/ http://services.arcgisonline.com/",
-    'img-src': "'self' http://js.arcgis.com/ http://server.arcgisonline.com/",
+    'connect-src': "'self' http://services.arcgis.com/ http://services.arcgisonline.com/ http://www.arcgis.com/ http://static.arcgis.com/",
+    'img-src': "'self' http://js.arcgis.com/ http://services.arcgisonline.com/ http://server.arcgisonline.com/",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"
   };

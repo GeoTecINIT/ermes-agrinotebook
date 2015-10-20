@@ -1,3 +1,0 @@
-arcgis-js-api.git
-origin/master
-358726fc0a37b944198806a56ca3939fcdab359f

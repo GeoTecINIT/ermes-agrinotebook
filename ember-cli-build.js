@@ -3,13 +3,14 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    fingerprint: {
+       exclude: ['arcgis', 'cordova']
+    },
     // Add options here
-    //useDojo: true,
-    //amdBase: 'vendor/arcgis',
     amdPackages: [
-      'esri', 'dojo', 'dijit', 'dojox', 'dgrid', 'put-selector', 'xstyle'
+      'esri', 'dojo', 'dijit', 'dojox'
     ],
-    srcTag: 'https://js.arcgis.com/3.14'
+    srcTag: 'arcgis/dojo/dojo.js'
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -41,7 +42,6 @@ module.exports = function(defaults) {
 
   // IndexedDBShim
   app.import('bower_components/IndexedDBShim/dist/indexeddbshim.js');
-
   // OfflineJS
   app.import('bower_components/offline/offline.min.js');
 

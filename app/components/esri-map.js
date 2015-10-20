@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   classNames: ['viewDiv'],
 
   didInsertElement() {
+    arcgisUtils.arcgisUrl = arcgisUtils.arcgisUrl.replace("file:", "http:");
     this.set('mapid', '010f412d4d0a4e8f9ff09ead37963ac7');
     arcgisUtils
       .createMap(this.get('mapid'), this.elementId);
