@@ -5,7 +5,11 @@ export default JqmComponent.extend({
   classNameBindings: ['ui-page-active'],
   role: 'page',
   didInsertElement() {
-    $.mobile.initializePage();
-    $('.ui-loader').hide();
+    // This makes first load faster and good rendered
+    $( document ).trigger('jqm.init-page');
+    $( document ).unbind('jqm.init-page').bind('jqm.init-page', () => {
+      $.mobile.initializePage();
+      $('.ui-loader').hide();
+    });
   }
 });

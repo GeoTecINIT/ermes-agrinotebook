@@ -7,9 +7,11 @@
       <div align="center">
           <p>This is the home content</p>
         {{jqm-button action=btnAction text=btnText}}
+        {{jqm-button action="openPopup" text="Show sample popup"}}
+        {{jqm-datepicker}}
       </div>
-      {{#jqm-popup id="sample-popup" title="Sample popup" theme="a" closeButton=true dismisible="false"}}
-          <p>Sample content</p>
+      {{#jqm-popup id=popupId title="Sample popup" theme="a" closeButton=true dismissible="false"}}
+          <p>Sample content. Click on X button to dismiss</p>
       {{/jqm-popup}}
   {{/jqm-content}}
   {{outlet}}
