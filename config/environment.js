@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-jqm',
+    modulePrefix: 'ermes-smart-app',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

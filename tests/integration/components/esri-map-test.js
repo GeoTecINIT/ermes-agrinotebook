@@ -6,7 +6,7 @@ moduleForComponent('esri-map', 'Integration | Component | esri map', {
 });
 
 test('it renders', function(assert) {
-  assert.expect(2);
+  assert.expect(1);
 
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
@@ -15,12 +15,5 @@ test('it renders', function(assert) {
 
   assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#esri-map}}
-      template block text
-    {{/esri-map}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  // No block usage
 });

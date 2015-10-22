@@ -1,11 +1,7 @@
-# Ember-cli-jquerymobile
-[![Build Status](https://travis-ci.org/albertogonper/ember-cli-jquerymobile.svg?branch=master)](https://travis-ci.org/albertogonper/ember-cli-jquerymobile) & [![devDependency Status](https://david-dm.org/albertogonper/ember-cli-jquerymobile/dev-status.svg)](https://david-dm.org/albertogonper/ember-cli-jquerymobile#info=devDependencies)
+# Ermes-smart-app
 
-**Please be patient as I'm still working on a better documentation**
-
-This appears as a solution to work with JQuery Mobile on Ember CLI with the latest version of Ember.js (2.0)
-
-The idea is to create component wrappers for all the widgets included in JQuery Mobile.
+This README outlines the details of collaborating on this Ember application.
+A short introduction of this app could easily go here.
 
 ## Prerequisites
 

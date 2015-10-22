@@ -13,13 +13,6 @@ App = Ember.Application.extend({
   Resolver: Resolver
 });
 
-// jQuery-mobile tricks
-$.mobile.ajaxEnabled = false;
-$.mobile.pushStateEnabled = false;
-$.mobile.linkBindingEnabled = false;
-$.mobile.hashListeningEnabled = false;
-$.mobile.ignoreContentEnabled = true;
-
 loadInitializers(App, config.modulePrefix);
 
 export default App;
