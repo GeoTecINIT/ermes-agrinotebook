@@ -15,7 +15,8 @@
     "offline-editor-js": "Esri/offline-editor-js#~2.14.0",
     "IndexedDBShim": "axemclion/IndexedDBShim#~2.2.1",
     "offline": "HubSpot/offline#~0.7.14",
-    "jquery-mobile-bower": "~1.4.5"
+    "jquery-mobile-bower": "~1.4.5",
+    "jquery-mobile-datepicker-wrapper": "arschmitz/jquery-mobile-datepicker-wrapper#~0.1.9"
   },
   "resolutions": {
     "jquery": "~2.1.4"

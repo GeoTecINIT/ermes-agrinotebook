@@ -26,6 +26,9 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  // Ermes custom jQuery Mobile CSS
+  app.import('vendor/jqm-custom/ermes-theme.css');
+
   // ArcGIS API for JavaScript
   app.import('vendor/arcgis/esri/css/esri.css');
 

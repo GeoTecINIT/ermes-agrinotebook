@@ -1,0 +1,31 @@
+<!-- Login page -->
+{{#jqm-page}}
+  {{#jqm-header position="fixed"}}
+      <h1>ERMES Smart App</h1>
+  {{/jqm-header}}
+  {{#jqm-content}}
+      <div align="center">
+        <div class="floating-logo">
+          <img src="assets/img/logo.png">
+        </div>
+        <div class="vertical-center-align">
+            {{jqm-button action=(action "openPopup" "log-in-popup") text="Log In" icon="arrow-r"}}
+            {{jqm-button action=(action "openPopup" "sign-up-popup") text="Sign Up" icon="edit" theme="b"}}
+        </div>
+      </div>
+      {{#jqm-popup id="log-in-popup" title="Log In" theme="a" closeButton=true dismissible="false"}}
+        {{jqm-textinput placeholder="Enter username"}}
+        {{jqm-textinput placeholder="Your password"}}
+        {{jqm-button action="logIn" text="Log In" icon="check" theme="b"}}
+      {{/jqm-popup}}
+      {{#jqm-popup id="sign-up-popup" title="Sign Up" theme="a" closeButton=true dismissible="false"}}
+        {{jqm-textinput placeholder="Enter desired username"}}
+        {{jqm-textinput placeholder="Your password"}}
+        {{jqm-textinput placeholder="Repeat your password"}}
+        {{jqm-textinput placeholder="Your email"}}
+        {{jqm-textinput placeholder="Repeat your email"}}
+        {{jqm-select options=regions}}
+        {{jqm-button action="signUp" text="Sign Up" icon="check" theme="b"}}
+      {{/jqm-popup}}
+  {{/jqm-content}}
+{{/jqm-page}}
