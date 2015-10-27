@@ -15,7 +15,7 @@ div.ui-block-b h4 {
   overflow: hidden;
 }
 
-.ermes-main-logo {
+.ermes-main-logo, #loading-splash {
   position: absolute;
   left: 0;
   right: 0;
@@ -23,6 +23,10 @@ div.ui-block-b h4 {
   margin-right: auto;
 
   top: 15%;
+}
+
+#loading-splash {
+  top: 45%;
 }
 
 .ermes-login-buttons {

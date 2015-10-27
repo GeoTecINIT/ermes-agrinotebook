@@ -5,8 +5,9 @@
   {{/jqm-header}}
   {{#jqm-content}}
       <div align="center">
-        {{jqm-button action="goHome" text="To home page"}}
-        {{jqm-button action="goMap" text="To map page"}}
+        {{jqm-button action=(action "changePage" "home") text="To home page"}}
+        {{jqm-button action=(action "changePage" "map") text="To map page"}}
+        {{jqm-button action=(action "changePage" "login") text="To login page"}}
       </div>
   {{/jqm-content}}
 {{/jqm-page}}
