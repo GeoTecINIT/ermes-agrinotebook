@@ -13,9 +13,22 @@ export default Ember.Controller.extend({
     {text: 'Italy', value: "italy"},
     {text: 'Spain', value:"spain"}
   ],
+  auth: Ember.inject.service('auth'),
   actions: {
     openPopup(popup) {
       $('#' + popup).popup('open');
+    },
+    logIn() {
+      var auth = this.get('auth');
+      auth.logIn('a4g5a1wae8');
+
+      var previous = this.get('previousTransition');
+      if (previous) {
+        this.set('previousTransition', null);
+        previous.retry();
+      } else {
+        this.transitionToRoute('index');
+      }
     }
   }
 });
