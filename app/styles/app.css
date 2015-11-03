@@ -7,6 +7,10 @@ body {
   border: none;
 }
 
+.ui-panel {
+  border: 0;
+}
+
 div.ui-block-b h1 {
   font-size: medium;
   margin: .6em 0 0 0;

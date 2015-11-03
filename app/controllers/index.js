@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   pageTitle: "General view",
   actions: {
     showPanel(name) {
-      Ember.debug(name);
+      this.transitionToRoute(name);
     },
     openPopup(popup) {
       $('#' + popup).popup('open');

@@ -11,6 +11,21 @@ Router.map(function() {
   });
   this.route('map');
   this.route('login');
+
+  this.route('index', { path: '/' }, function() {
+    this.route('observation', {});
+    this.route('crop-info', {});
+    this.route('soil-type', {});
+    this.route('soil-condition', {});
+    this.route('crop-phenology', {});
+    this.route('pathogens', {});
+    this.route('diseases', {});
+    this.route('weeds', {});
+    this.route('fertilizers', {});
+    this.route('agrochemicals', {});
+    this.route('irrigation', {});
+    this.route('yield', {});
+  });
 });
 
 export default Router;

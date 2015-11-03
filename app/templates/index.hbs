@@ -5,7 +5,7 @@
           <div class="ui-grid-b">
               <div class="ui-block-a">
                   {{jqm-anchor id="add-info-btn" action=(action "openPopup" "ermes-menu-fields") title="Add field(s) info" inline="true" allCorners="true" icon="plus" iconPos="notext" theme="b"}}
-                  {{jqm-anchor action=(action "showPanel" "observation") title="Add new observation" inline="true" allCorners="true" icon="eye" iconPos="notext" theme="b"}}
+                  {{jqm-anchor action=(action "showPanel" "index.observation") title="Add new observation" inline="true" allCorners="true" icon="eye" iconPos="notext" theme="b"}}
               </div>
               <div class="ui-block-b" align="center">
                   <h1><img src="assets/ermes-images/logo.png" class="ermes-header-logo"> {{pageTitle}}</h1>
@@ -20,7 +20,8 @@
     <div class="map-container">
       {{esri-map}}
     </div>
-    {{ermes-menu-fields positionTo="#add-info-btn" id="ermes-menu-fields"}}
+    {{ermes-menu-fields showPanel="showPanel" positionTo="#add-info-btn" id="ermes-menu-fields"}}
     {{ermes-menu-options positionTo="#options-btn" id="ermes-menu-options"}}
   {{/jqm-content}}
+  {{outlet}}
 {{/jqm-page}}
