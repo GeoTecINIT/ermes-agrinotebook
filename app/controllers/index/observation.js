@@ -1,6 +1,5 @@
 import Ember from 'ember';
-import PanelManager from 'ermes-smart-app/mixins/panel-manager';
 
-export default Ember.Controller.extend(PanelManager, {
+export default Ember.Controller.extend({
   panelId: 'observation'
 });

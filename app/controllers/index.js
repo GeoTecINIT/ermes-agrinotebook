@@ -5,7 +5,15 @@ export default Ember.Controller.extend({
   pageTitle: "General view",
   actions: {
     showPanel(name) {
-      this.transitionToRoute(name);
+
+      // If the action points to the same panel in which actually I am route to index instead
+      var actionData = name.split('.');
+      if(actionData[1] === this.get('openedPanel')){
+        this.set('openedPanel', 'none');
+        this.transitionToRoute('index');
+      } else {
+        this.transitionToRoute(name);
+      }
     },
     openPopup(popup) {
       $('#' + popup).popup('open');

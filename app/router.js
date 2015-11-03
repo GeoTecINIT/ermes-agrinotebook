@@ -25,6 +25,8 @@ Router.map(function() {
     this.route('agrochemicals', {});
     this.route('irrigation', {});
     this.route('yield', {});
+    this.route('profile', {});
+    this.route('about', {});
   });
 });
 

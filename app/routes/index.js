@@ -8,7 +8,7 @@ export default Ember.Route.extend(AuthChecker, {
 
       // We check if there was a panel already opened before moving to another page
       var panel = this.controller.get('openedPanel');
-      if (panel) {
+      if (panel && panel !== 'none') {
         var panelElement = $('#'+panel);
         panelElement.panel('close');
         panelElement.remove();

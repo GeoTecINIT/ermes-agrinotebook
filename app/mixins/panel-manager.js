@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
-  indexController: Ember.inject.controller('index'),
-  panelManager: function() {
+  afterModel() {
 
-    // Tell the index controller that a panel has been opened
-    this.get('indexController').set('openedPanel', this.get('panelId'));
-
-  }.on('init')
+    // Tell index controller that a panel has been opened
+    var indexController = this.controllerFor('index');
+    var routeName = this.routeName.split('.');
+    indexController.set('openedPanel', routeName[1]);
+  }
 });
