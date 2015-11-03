@@ -1,0 +1,6 @@
+{{#jqm-ulistview inset="true"}}
+    {{#jqm-listdivider}}My fields{{/jqm-listdivider}}
+    {{#each products as |product|}}
+      <li>{{#link-to "index"}}{{product.text}}{{/link-to}}</li>
+    {{/each}}
+{{/jqm-ulistview}}

@@ -7,12 +7,36 @@ body {
   border: none;
 }
 
-div.ui-block-b h4 {
-  margin: 0.8em;
+div.ui-block-b h1 {
+  font-size: medium;
+  margin: .6em 0 0 0;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+div.ui-block-b img {
+  height: 15px;
+}
+
+.ermes-bar {
+  padding-left: .4em;
+  padding-right: .4em;
+}
+
+.esri-map {
+  padding: 0;
+}
+
+.map {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 46px);
+  padding: 0;
+  margin: 0;
+  top: 46px;
+  bottom: 0;
 }
 
 .ermes-main-logo, #loading-splash {
@@ -23,6 +47,10 @@ div.ui-block-b h4 {
   margin-right: auto;
 
   top: 15%;
+}
+
+.ui-listview {
+  min-width: 210px;
 }
 
 #loading-splash {

@@ -1,15 +1,18 @@
+import $ from 'jquery';
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  pageTitle: "General view",
   actions: {
-    //goHome() {
-    //  this.transitionToRoute('home');
-    //},
-    //goMap() {
-    //  this.transitionToRoute('map');
-    //},
-    changePage(page) {
-      this.transitionToRoute(page);
+    showPanel(name) {
+      Ember.debug(name);
+    },
+    openPopup(popup) {
+      $('#' + popup).popup('open');
     }
+  },
+  init() {
+    this._super();
+    document.title = this.get('pageTitle');
   }
 });
