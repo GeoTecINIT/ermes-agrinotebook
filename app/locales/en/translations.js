@@ -1,13 +1,15 @@
 export default {
-  // "some.translation.key": "Text for some.translation.key",
   //
-  // "a": {
-  //   "nested": {
-  //     "key": "Text for a.nested.key"
-  //   }
-  // },
+  // WARNING! Translate only text between " " characters
+  // It is important to avoid translating text between ' ' and {{ }}
   //
-  // "key.with.interpolation": "Text with {{anInterpolation}}"
+  // Please, try to use strings with a similar length to the original.
+  // Use short synonyms as possible, always keeping the same meaning.
+  // This is primordial to keep UI homogeneity.
+  //
+  // Thanks for your collaboration
+  //
+
   'login': {
     'text': {
       'login': "Log in",
@@ -40,8 +42,8 @@ export default {
       'fertilizers': "Fertilizers",
       'agrochemicals': "Agrochemicals",
       'irrigation': "Irrigation",
-      'yield': 'Yield',
-      'observation': 'Observation'
+      'yield': "Yield",
+      'observation': "Observation"
     },
     'ui-special': {
       'agrochemicals': "Agro chemicals"
