@@ -2,7 +2,10 @@ import $ from 'jquery';
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  pageTitle: "General view",
+  i18n: Ember.inject.service(),
+  pageTitle: Ember.computed('i18n.locale', function() {
+    return this.get('i18n').t('fields.header.title');
+  }),
   actions: {
     showPanel(name) {
 

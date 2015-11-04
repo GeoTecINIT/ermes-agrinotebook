@@ -8,12 +8,7 @@ export default Ember.Controller.extend({
     {text: 'Italiano', value: 'it'},
     {text: 'Έλληνες', value: 'gk'}
   ],
-  regions: [
-    {text: 'Greece', value: "greece"},
-    {text: 'Italy', value: "italy"},
-    {text: 'Spain', value:"spain"}
-  ],
-  auth: Ember.inject.service('auth'),
+  auth: Ember.inject.service(),
   actions: {
     openPopup(popup) {
       $('#' + popup).popup('open');
