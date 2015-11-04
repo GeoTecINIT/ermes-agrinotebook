@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  panelId: 'soil-condition'
+  panelId: 'soil-condition',
+  actions: {
+    submit() {
+
+    }
+  }
 });

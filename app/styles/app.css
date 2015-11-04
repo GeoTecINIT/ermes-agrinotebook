@@ -11,6 +11,10 @@ body {
   border: 0;
 }
 
+.ui-panel div.ui-content {
+  text-align: center;
+}
+
 div.ui-header h1{
   white-space: normal !important;
 }

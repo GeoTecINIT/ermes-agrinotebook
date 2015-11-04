@@ -1,3 +1,25 @@
 {{#ermes-panel id=panelId title=(t 'fields.text.diseases')}}
-    <p>This is the content of the diseases panel</p>
+  <form>
+    <label>
+        <span>{{t "panel.diseases.date"}}</span>
+      {{jqm-datepicker}}
+    </label>
+    <label>
+        <span>{{t "panel.diseases.name"}}</span>
+      {{jqm-select theme="d"}}
+    </label>
+    <label>
+        <span>{{t "panel.diseases.comment"}}</span>
+      {{jqm-textarea}}
+    </label>
+    <label>
+        <span>{{t "panel.diseases.picture"}}</span>
+      {{jqm-textinput type="file" accept="image/*;capture=camera"}}
+    </label>
+    <label>
+        <span>{{t "panel.diseases.damage"}}</span>
+      {{jqm-slider min=1 max=10 value=5}}
+    </label>
+    {{jqm-button text=(t "fields.text.add-new") action=(action "submit" on="submit") theme="b"}}
+  </form>
 {{/ermes-panel}}

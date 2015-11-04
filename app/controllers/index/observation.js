@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  panelId: 'observation'
+  panelId: 'observation',
+  actions: {
+    submit() {
+
+    }
+  }
 });

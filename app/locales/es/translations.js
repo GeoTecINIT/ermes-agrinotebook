@@ -43,7 +43,9 @@ export default {
       'agrochemicals': "Pesticidas",
       'irrigation': "Riego",
       'yield': "Producción",
-      'observation': "Observación"
+      'observation': "Observación",
+      'add-new': "Añadir información"
+
     },
     'ui-special': {
       'agrochemicals': "Pesticidas"
@@ -59,6 +61,11 @@ export default {
       'profile': "Mi perfil",
       'fields': "Mis campos",
       'about': "Acerca de"
+    }
+  },
+  'panel': {
+    'about': {
+      'content': "Desarrollado por GEOTEC"
     }
   },
   'region': {
