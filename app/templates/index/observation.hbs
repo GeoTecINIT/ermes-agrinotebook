@@ -1,3 +1,13 @@
 {{#ermes-panel panelId=panelId title=(t 'fields.text.observation')}}
-    <p>This is the content of the observation panel</p>
+  <form>
+    <label>
+        <span>{{t "panel.observation.comment"}}</span>
+      {{jqm-textarea}}
+    </label>
+    <label>
+        <span>{{t "panel.observation.picture"}}</span>
+      {{jqm-textinput type="file" accept="image/*;capture=camera"}}
+    </label>
+    {{jqm-button text=(t "panel.observation.send-btn") action=(action "submit" on="submit") theme="b" icon="camera" iconPos="left"}}
+  </form>
 {{/ermes-panel}}

@@ -95,24 +95,87 @@ export default {
       'date': "Date of usage",
       'product': "Product",
       'quantity': "Quantity",
-      'nitrogen': "Nitrogen content",
-      'phosphorus': "Phosphorus content",
-      'potassium': "Potassium content",
       'quantity-unit': "Kg/hectare",
+      'nitrogen': "Nitrogen content",
       'nitrogen-unit': "Kg/hectare",
+      'phosphorus': "Phosphorus content",
       'phosphorus-unit': "Kg/hectare",
-      'potassium-unit': "Kg/hectare",
+      'potassium': "Potassium content",
+      'potassium-unit': "Kg/hectare"
     },
     'irrigation': {
       'start-date': "Start date",
       'end-date': "End date",
       'measure': "Measure",
       'quantity': "Quantity",
-      'hours': "Hours",
       'quantity-unit-mm': "Millimeters",
       'quantity-unit-m3': "Cubic meters",
+      'hours': "Hours",
       'hours-unit': "Hours",
       'depth': "Water depth"
+    },
+    'observation': {
+      'comment': "Add a comment",
+      'picture': "Add a picture",
+      'send-btn': "Send observation"
+    },
+    'pathogens': {
+      'date': "Date of observation",
+      'name': "Name",
+      'comment': "Add a comment",
+      'picture': "Add a picture",
+      'damage': "Damage (1 min - 10 max)"
+    },
+    'soil-condition': {
+      'status': "Parcel status",
+      'date': "Date of observation"
+    },
+    'soil-type': {
+      'texture': "Select the soil texture",
+      'organic-matter': "Organic matter",
+      'organic-matter-unit':"Percent organic matter",
+      'ph': "Ph (min 0 - max 14)",
+      'date': "Date"
+    },
+    'weeds': {
+      'date': "Date of observation",
+      'name': "Name",
+      'comment': "Add a comment",
+      'picture': "Add a picture",
+      'damage': "Percent covered (1 min - 100 max)"
+    },
+    'yield':{
+      'date': "Harvest date",
+      'yield': "Yield (dry weight)",
+      'yield-unit': "Ton/ha",
+      'comments': "Comments"
+    },
+    'parcel-info': {
+      'none-selected': "Please select one parcel",
+      'crop-info-text': "Parcel crop information",
+      'info-table-content': "Content",
+      'product-text': "Last product upload",
+      'product-table-product': "Product",
+      'product-table-date': "Date"
+    },
+    'profile': {
+      'picture-section': "Profile picture",
+      'username-section': "Username",
+      'email-section': "Email",
+      'email-tooltip': "Change email",
+      'password-section': "Password",
+      'old-password-tooltip': "Old password",
+      'new-password-tooltip': "New password",
+      'repeat-new-password-tooltip': "Repeat new password",
+      'update': "Update profile",
+      'logout': "Logout"
+    },
+    'notification': {
+      'downloading-data': "Downloading data...",
+      'offline': "Connection lost",
+      'online': "Connection established",
+      'product-upload': "Uploading parcel info",
+      'product-upload-later': "Offline. Product will be uploaded later"
     }
   },
   'region': {

@@ -1,7 +1,7 @@
 {{#jqm-popup id=pId title=(t 'login.text.login') theme="a" closeButton=true dismissible="false"}}
   <form>
     {{jqm-textinput placeholder=(t 'login.login-p.username-f')}}
-    {{jqm-textinput placeholder=(t 'login.login-p.password-f')}}
+    {{jqm-textinput type="password" placeholder=(t 'login.login-p.password-f')}}
     {{jqm-button action=(action "submit" on="submit") text=(t 'login.login-p.login-btn') icon="check" theme="b"}}
   </form>
 {{/jqm-popup}}

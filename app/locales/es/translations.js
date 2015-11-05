@@ -45,7 +45,6 @@ export default {
       'yield': "Producción",
       'observation': "Observación",
       'add-new': "Añadir información"
-
     },
     'ui-special': {
       'agrochemicals': "Pesticidas"
@@ -66,6 +65,117 @@ export default {
   'panel': {
     'about': {
       'content': "Desarrollado por GEOTEC"
+    },
+    'agrochemicals': {
+      'date': "Fecha de uso",
+      'product': "Producto",
+      'quantity': "Cantidad",
+      'quantity-unit': "Kg/hectárea"
+    },
+    'crop-info': {
+      'crop-type': "Tipo de cultivo",
+      'rice-variety': "Variedad de arroz",
+      'pudding': 'Mezcla',
+      'sowing-practice': "Método de siembra",
+      'date': 'Fecha de siembra'
+    },
+    'crop-phenology': {
+      'date': "Fecha de observación",
+      'development-stage': "Etapa de desarrollo",
+      'bbch': "BBCH"
+    },
+    'diseases': {
+      'date': "Fecha de observación",
+      'name': "Nombre",
+      'comment': "Añadir un comentario",
+      'picture': "Añadir una foto",
+      'damage': "Daño (1 min - 10 max)"
+    },
+    'fertilizers': {
+      'date': "Fecha de uso",
+      'product': "Producto",
+      'quantity': "Cantidad",
+      'quantity-unit': "Kg/hectárea",
+      'nitrogen': "Contenido en nitrógeno",
+      'nitrogen-unit': "Kg/hectárea",
+      'phosphorus': "Contenido en fósforo",
+      'phosphorus-unit': "Kg/hectárea",
+      'potassium': "Contenido en potasio",
+      'potassium-unit': "Kg/hectárea"
+    },
+    'irrigation': {
+      'start-date': "Fecha de inicio",
+      'end-date': "Fecha de fin",
+      'measure': "Medida",
+      'quantity': "Cantidad",
+      'quantity-unit-mm': "Milímetros",
+      'quantity-unit-m3': "Metros cúbicos",
+      'hours': "Horas",
+      'hours-unit': "Horas",
+      'depth': "Profundidad del agua"
+    },
+    'observation': {
+      'comment': "Añadir un comentario",
+      'picture': "Añadir una foto",
+      'send-btn': "Enviar observación"
+    },
+    'pathogens': {
+      'date': "Fecha de observación",
+      'name': "Nombre",
+      'comment': "Añadir un comentario",
+      'picture': "Añadir una foto",
+      'damage': "Daño (1 min - 10 max)"
+    },
+    'soil-condition': {
+      'status': "Estado de la parcela",
+      'date': "Fecha de observación"
+    },
+    'soil-type': {
+      'texture': "Textura del suelo",
+      'organic-matter': "Materia orgánica",
+      'organic-matter-unit':"% de materia orgánica",
+      'ph': "Ph (min 0 - max 14)",
+      'date': "Fecha"
+    },
+    'weeds': {
+      'date': "Fecha de observación",
+      'name': "Nombre",
+      'comment': "Añadir comentario",
+      'picture': "Añadir foto",
+      'damage': "% cubierto (1 min - 100 max)"
+    },
+    'yield':{
+      'date': "Fecha de cosecha",
+      'yield': "Cosecha (peso en seco)",
+      'yield-unit': "Ton/ha",
+      'comments': "Comentarios"
+    },
+    'parcel-info': {
+      'none-selected': "Por favor selecciona una parcela",
+      'crop-info-text': "Información de cultivo",
+      'info-table-content': "Contenido",
+      'product-text': "Última subida de producto",
+      'product-table-product': "Producto",
+      'product-table-date': "Fecha"
+    },
+    'profile': {
+      'picture-section': "Imagen de perfil",
+      'username-section': "Usuario",
+      'email-section': "Email",
+      'email-tooltip': "Cambiar email",
+      'password-section': "Contraseña",
+      'old-password-tooltip': "Contraseña antigua",
+      'new-password-tooltip': "Contraseña nueva",
+      'repeat-new-password-tooltip': "Repite la contraseña",
+      'update': "Actualizar perfil",
+      'logout': "Desconectar"
+    },
+    'notification': {
+      'downloading-data': "Descargando datos...",
+      'offline': "Conexión perdida",
+      'online': "Connection establecida",
+      'product-upload': "Subiendo info de parcela",
+      'product-upload-later': "Fuera de línea. El producto se subirá más tarde"
     }
   },
   'region': {

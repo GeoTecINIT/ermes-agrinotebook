@@ -1,3 +1,29 @@
 {{#ermes-panel id=panelId title=(t 'fields.options-m.profile')}}
-    <p>This is the content of the profile panel</p>
+  <form>
+      {{#jqm-component role="collapsibleset" theme="c"}}
+        {{#jqm-component role="collapsible"}}
+          <h4>{{t "panel.profile.picture-section"}}</h4>
+          <div class="ermes-circular-image">
+              <img src="assets/ermes-images/user_icon.png">
+          </div>
+        {{/jqm-component}}
+        {{#jqm-component role="collapsible"}}
+          <h4>{{t "panel.profile.username-section"}}</h4>
+          <p>{{username}}</p>
+        {{/jqm-component}}
+        {{#jqm-component role="collapsible"}}
+          <h4>{{t "panel.profile.email-section"}}</h4>
+          <p>{{email}}</p>
+          {{jqm-textinput type="email" placeholder=(t "panel.profile.email-tooltip")}}
+        {{/jqm-component}}
+        {{#jqm-component role="collapsible"}}
+          <h4>{{t "panel.profile.password-section"}}</h4>
+          {{jqm-textinput type="password" placeholder=(t "panel.profile.old-password-tooltip")}}
+          {{jqm-textinput type="password" placeholder=(t "panel.profile.new-password-tooltip")}}
+          {{jqm-textinput type="password" placeholder=(t "panel.profile.repeat-new-password-tooltip")}}
+        {{/jqm-component}}
+      {{/jqm-component}}
+      {{jqm-button action=(action "submit" on="submit") text=(t "panel.profile.update") theme="b"}}
+  </form>
+  {{jqm-button text=(t "panel.profile.logout") theme="d" icon="power" iconPos="left"}}
 {{/ermes-panel}}

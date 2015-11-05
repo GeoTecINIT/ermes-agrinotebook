@@ -1,10 +1,10 @@
 {{#jqm-popup id=pId title=(t 'login.text.signup') theme="a" closeButton=true dismissible="false"}}
   <form>
     {{jqm-textinput placeholder=(t 'login.signup-p.username-f')}}
-    {{jqm-textinput placeholder=(t 'login.signup-p.password-f')}}
-    {{jqm-textinput placeholder=(t 'login.signup-p.repeat-password-f')}}
-    {{jqm-textinput placeholder=(t 'login.signup-p.email-f')}}
-    {{jqm-textinput placeholder=(t 'login.signup-p.repeat-email-f')}}
+    {{jqm-textinput type="password" placeholder=(t 'login.signup-p.password-f')}}
+    {{jqm-textinput type="password" placeholder=(t 'login.signup-p.repeat-password-f')}}
+    {{jqm-textinput type="email" placeholder=(t 'login.signup-p.email-f')}}
+    {{jqm-textinput type="email" placeholder=(t 'login.signup-p.repeat-email-f')}}
     {{jqm-select theme="d" options=regions}}
     {{jqm-button action=(action "submit" on="submit") text=(t 'login.signup-p.signup-btn') icon="check" theme="b"}}
   </form>
