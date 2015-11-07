@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import arcgisUtils from 'esri/arcgis/utils';
+import OfflineTilesEnabler from 'arcgis/oesri/offline-tiles-basic-min.js';
 
 export default Ember.Component.extend({
 
@@ -8,8 +9,18 @@ export default Ember.Component.extend({
   didInsertElement() {
     arcgisUtils.arcgisUrl = arcgisUtils.arcgisUrl.replace("file:", "http:");
     this.set('mapid', '010f412d4d0a4e8f9ff09ead37963ac7');
-    arcgisUtils
-      .createMap(this.get('mapid'), this.elementId);
+    arcgisUtils.createMap(this.get('mapid'), this.elementId).then(function (response) {
+      let map = response.map;
+      let basemapLayer = map.getLayer( map.layerIds[0] );
+      let offlineTilesEnabler = new OfflineTilesEnabler();
+      offlineTilesEnabler.extend(basemapLayer, function (success) {
+        if (success) {
+          Ember.debug('Offline library is working fine');
+        } else {
+          Ember.debug('Something gone wrong with indexedDB :(');
+        }
+      });
+    });
   },
 
   willRemoveElement() {
