@@ -33,5 +33,4 @@ export default Ember.Service.extend({
   isAuth() {
     return this.get('userLoggedIn');
   }
-
 });
