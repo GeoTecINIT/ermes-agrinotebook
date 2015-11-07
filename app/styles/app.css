@@ -96,3 +96,25 @@ div.ui-block-b img {
   -o-border-radius: 50px;
   border-radius: 50px;
 }
+
+div.ui-panel table {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+div.ui-panel table, th, td {
+  border: 1px solid silver !important;
+  border-collapse: collapse;
+}
+
+div.ui-panel th {
+  background-color: #af8a60;
+  color: white;
+  text-align: center;
+}
+
+div.ui-panel td {
+  padding: 0 10px 0 10px;
+  text-align: left;
+}

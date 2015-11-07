@@ -1,0 +1,30 @@
+{{#ermes-panel id=panelId title=(t "fields.text.parcel-info")}}
+  <p>{{t 'panel.parcel-info.crop-info-text'}}</p>
+  <table>
+    <tr>
+      <th>{{t 'fields.text.crop-info'}}</th>
+      <th>{{t 'panel.parcel-info.info-table-content'}}</th>
+    </tr>
+    <tr>
+      <td><b>{{t 'panel.crop-info.crop-type'}}</b></td>
+      <td>{{cropType}}</td>
+    </tr>
+    <tr>
+      <td><b>{{t 'panel.crop-info.rice-variety'}}</b></td>
+      <td>{{riceVariety}}</td>
+    </tr>
+  </table>
+  <p>{{t 'panel.parcel-info.product-text'}}</p>
+  <table>
+    <tr>
+      <th>{{t 'panel.parcel-info.product-table-product'}}</th>
+      <th>{{t 'panel.parcel-info.product-table-date'}}</th>
+    </tr>
+    {{#each products as |product|}}
+      <tr>
+        <td><b>{{product.text}}</b></td>
+        <td>{{lastProductDate}}</td>
+      </tr>
+    {{/each}}
+  </table>
+{{/ermes-panel}}

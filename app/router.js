@@ -23,6 +23,7 @@ Router.map(function() {
     this.route('yield', {});
     this.route('profile', {});
     this.route('about', {});
+    this.route('parcel-info', {});
   });
 });
 

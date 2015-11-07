@@ -8,7 +8,7 @@ module.exports = function(defaults) {
     },
     // Add options here
     amdPackages: [
-      'esri', 'dojo', 'dijit', 'dojox', 'oesri'
+      'esri', 'dojo', 'dijit', 'dojox'
     ],
     srcTag: 'arcgis/dojo/dojo.js'
   });
@@ -33,7 +33,7 @@ module.exports = function(defaults) {
   app.import('vendor/arcgis/esri/css/esri.css');
 
   // IndexedDBShim
-  app.import('bower_components/IndexedDBShim/dist/indexeddbshim.js');
+  app.import('vendor/IndexedDBShim/indexeddbshim.js');
   // OfflineJS
   app.import('bower_components/offline/offline.min.js');
 

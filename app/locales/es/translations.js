@@ -44,6 +44,7 @@ export default {
       'irrigation': "Riego",
       'yield': "Producción",
       'observation': "Observación",
+      'parcel-info': "Parcel Info",
       'add-new': "Añadir información"
     },
     'ui-special': {
@@ -154,7 +155,7 @@ export default {
       'none-selected': "Por favor selecciona una parcela",
       'crop-info-text': "Información de cultivo",
       'info-table-content': "Contenido",
-      'product-text': "Última subida de producto",
+      'product-text': "Última fecha de subida de producto",
       'product-table-product': "Producto",
       'product-table-date': "Fecha"
     },
