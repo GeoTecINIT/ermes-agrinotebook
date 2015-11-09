@@ -12,177 +12,177 @@ export default {
 
   'login': {
     'text': {
-      'login': "Log in",
-      'signup': "Sign up"
+      'login': "Iniciar sesión",
+      'signup': "Registro"
     },
     'login-p': {
-      'username-f': "Enter username",
-      'password-f': "Enter password",
-      'login-btn': "Log in"
+      'username-f': "Usuario",
+      'password-f': "Contraseña",
+      'login-btn': "Entrar"
     },
     'signup-p': {
-      'username-f': "Enter desired username",
-      'password-f': "Your password",
-      'repeat-password-f': "Repeat your password",
-      'email-f': "Your email",
-      'repeat-email-f': "Repeat your email",
-      'signup-btn': "Sign up"
+      'username-f': "Nombre de usuario",
+      'password-f': "Tu contraseña",
+      'repeat-password-f': "Repite tu contraseña",
+      'email-f': "Tu email",
+      'repeat-email-f': "Repite tu email",
+      'signup-btn': "Registrarse"
     }
   },
   'fields': {
     'text': {
-      'my-fields': "My fields",
-      'crop-info': "Crop Info",
-      'soil-type': "Soil Type",
-      'soil-condition': "Soil Condition",
-      'crop-phenology': "Crop Phenology",
-      'pathogens': "Pathogens",
-      'diseases': "Diseases",
-      'weeds': "Weeds",
-      'fertilizers': "Fertilizers",
-      'agrochemicals': "Agrochemicals",
-      'irrigation': "Irrigation",
-      'yield': "Yield",
-      'observation': "Observation",
+      'my-fields': "Mis campos",
+      'crop-info': "Información de cosecha",
+      'soil-type': "Tipo de suelo",
+      'soil-condition': "Estado del suelo",
+      'crop-phenology': "Fenología del cultivo",
+      'pathogens': "Patógenos",
+      'diseases': "Enfermedades",
+      'weeds': "Malas hierbas",
+      'fertilizers': "Fertilizantes",
+      'agrochemicals': "Pesticidas",
+      'irrigation': "Riego",
+      'yield': "Producción",
+      'observation': "Observación",
       'parcel-info': "Parcel Info",
-      'add-new': "Add info"
+      'add-new': "Añadir información"
     },
     'ui-special': {
-      'agrochemicals': "Agro chemicals"
+      'agrochemicals': "Pesticidas"
     },
     'header': {
-      'title': "General View",
-      'add-info-tooltip': "Add field(s) info",
-      'observation-tooltip': "Add new observation",
-      'options-tooltip': "User menu"
+      'title': "Visión General",
+      'add-info-tooltip': "Añadir nueva información a el/los campo/s",
+      'observation-tooltip': "Añadir una nueva observación",
+      'options-tooltip': "Menú de usuario"
     },
     'options-m': {
-      'title': "Hello, {{username}}",
-      'profile': "My profile",
-      'fields': "My fields",
-      'about': "About"
+      'title': "Hola, {{username}}",
+      'profile': "Mi perfil",
+      'fields': "Mis campos",
+      'about': "Acerca de"
     }
   },
   'panel': {
     'about': {
-      'content': "Developed by GEOTEC group"
+      'content': "Desarrollado por GEOTEC"
     },
     'agrochemicals': {
-      'date': "Date of usage",
-      'product': "Product",
-      'quantity': "Quantity",
-      'quantity-unit': "Kg/hectare"
+      'date': "Fecha de uso",
+      'product': "Producto",
+      'quantity': "Cantidad",
+      'quantity-unit': "Kg/hectárea"
     },
     'crop-info': {
-      'crop-type': "Crop type",
-      'rice-variety': "Rice variety",
-      'pudding': 'Pudding',
-      'sowing-practice': "Sowing practice",
-      'date': 'Sowing date'
+      'crop-type': "Tipo de cultivo",
+      'rice-variety': "Variedad de arroz",
+      'pudding': 'Mezcla',
+      'sowing-practice': "Método de siembra",
+      'date': 'Fecha de siembra'
     },
     'crop-phenology': {
-      'date': "Date of observation",
-      'development-stage': "Development stage",
+      'date': "Fecha de observación",
+      'development-stage': "Etapa de desarrollo",
       'bbch': "BBCH"
     },
     'diseases': {
-      'date': "Date of observation",
-      'name': "Name",
-      'comment': "Add a comment",
-      'picture': "Add a picture",
-      'damage': "Damage (1 min - 10 max)"
+      'date': "Fecha de observación",
+      'name': "Nombre",
+      'comment': "Añadir un comentario",
+      'picture': "Añadir una foto",
+      'damage': "Daño (1 min - 10 max)"
     },
     'fertilizers': {
-      'date': "Date of usage",
-      'product': "Product",
-      'quantity': "Quantity",
-      'quantity-unit': "Kg/hectare",
-      'nitrogen': "Nitrogen content",
-      'nitrogen-unit': "Kg/hectare",
-      'phosphorus': "Phosphorus content",
-      'phosphorus-unit': "Kg/hectare",
-      'potassium': "Potassium content",
-      'potassium-unit': "Kg/hectare"
+      'date': "Fecha de uso",
+      'product': "Producto",
+      'quantity': "Cantidad",
+      'quantity-unit': "Kg/hectárea",
+      'nitrogen': "Contenido en nitrógeno",
+      'nitrogen-unit': "Kg/hectárea",
+      'phosphorus': "Contenido en fósforo",
+      'phosphorus-unit': "Kg/hectárea",
+      'potassium': "Contenido en potasio",
+      'potassium-unit': "Kg/hectárea"
     },
     'irrigation': {
-      'start-date': "Start date",
-      'end-date': "End date",
-      'measure': "Measure",
-      'quantity': "Quantity",
-      'quantity-unit-mm': "Millimeters",
-      'quantity-unit-m3': "Cubic meters",
-      'hours': "Hours",
-      'hours-unit': "Hours",
-      'depth': "Water depth"
+      'start-date': "Fecha de inicio",
+      'end-date': "Fecha de fin",
+      'measure': "Medida",
+      'quantity': "Cantidad",
+      'quantity-unit-mm': "Milímetros",
+      'quantity-unit-m3': "Metros cúbicos",
+      'hours': "Horas",
+      'hours-unit': "Horas",
+      'depth': "Profundidad del agua"
     },
     'observation': {
-      'comment': "Add a comment",
-      'picture': "Add a picture",
-      'send-btn': "Send observation"
+      'comment': "Añadir un comentario",
+      'picture': "Añadir una foto",
+      'send-btn': "Enviar observación"
     },
     'pathogens': {
-      'date': "Date of observation",
-      'name': "Name",
-      'comment': "Add a comment",
-      'picture': "Add a picture",
-      'damage': "Damage (1 min - 10 max)"
+      'date': "Fecha de observación",
+      'name': "Nombre",
+      'comment': "Añadir un comentario",
+      'picture': "Añadir una foto",
+      'damage': "Daño (1 min - 10 max)"
     },
     'soil-condition': {
-      'status': "Parcel status",
-      'date': "Date of observation"
+      'status': "Estado de la parcela",
+      'date': "Fecha de observación"
     },
     'soil-type': {
-      'texture': "Select the soil texture",
-      'organic-matter': "Organic matter",
-      'organic-matter-unit':"Percent organic matter",
+      'texture': "Textura del suelo",
+      'organic-matter': "Materia orgánica",
+      'organic-matter-unit':"% de materia orgánica",
       'ph': "Ph (min 0 - max 14)",
-      'date': "Date"
+      'date': "Fecha"
     },
     'weeds': {
-      'date': "Date of observation",
-      'name': "Name",
-      'comment': "Add a comment",
-      'picture': "Add a picture",
-      'damage': "Percent covered (1 min - 100 max)"
+      'date': "Fecha de observación",
+      'name': "Nombre",
+      'comment': "Añadir comentario",
+      'picture': "Añadir foto",
+      'damage': "% cubierto (1 min - 100 max)"
     },
     'yield':{
-      'date': "Harvest date",
-      'yield': "Yield (dry weight)",
+      'date': "Fecha de cosecha",
+      'yield': "Cosecha (peso en seco)",
       'yield-unit': "Ton/ha",
-      'comments': "Comments"
+      'comments': "Comentarios"
     },
     'parcel-info': {
-      'none-selected': "Please select one parcel",
-      'crop-info-text': "Parcel crop information",
-      'info-table-content': "Content",
-      'product-text': "Last product upload dates",
-      'product-table-product': "Product",
-      'product-table-date': "Date"
+      'none-selected': "Por favor selecciona una parcela",
+      'crop-info-text': "Información de cultivo",
+      'info-table-content': "Contenido",
+      'product-text': "Última fecha de subida de producto",
+      'product-table-product': "Producto",
+      'product-table-date': "Fecha"
     },
     'profile': {
-      'picture-section': "Profile picture",
-      'username-section': "Username",
+      'picture-section': "Imagen de perfil",
+      'username-section': "Usuario",
       'email-section': "Email",
-      'email-tooltip': "Change email",
-      'password-section': "Password",
-      'old-password-tooltip': "Old password",
-      'new-password-tooltip': "New password",
-      'repeat-new-password-tooltip': "Repeat new password",
-      'update': "Update profile",
-      'logout': "Logout"
+      'email-tooltip': "Cambiar email",
+      'password-section': "Contraseña",
+      'old-password-tooltip': "Contraseña antigua",
+      'new-password-tooltip': "Contraseña nueva",
+      'repeat-new-password-tooltip': "Repite la contraseña",
+      'update': "Actualizar perfil",
+      'logout': "Desconectar"
     },
     'notification': {
-      'downloading-data': "Downloading data...",
-      'offline': "Connection lost",
-      'online': "Connection established",
-      'product-upload': "Uploading parcel info",
-      'product-upload-later': "Offline. Product will be uploaded later"
+      'downloading-data': "Descargando datos...",
+      'offline': "Conexión perdida",
+      'online': "Connection establecida",
+      'product-upload': "Subiendo info de parcela",
+      'product-upload-later': "Fuera de línea. El producto se subirá más tarde"
     }
   },
   'region': {
-    'greece': "Greece",
-    'italy': "Italy",
-    'spain': "Spain"
+    'greece': "Grecia",
+    'italy': "Italia",
+    'spain': "España"
   },
   'data': {
     'crop-info': {
@@ -239,7 +239,7 @@ export default {
       'soil-textures': {
         'clay': "Clay",
         'silt-clay': "Silt clay",
-        'silt-clay-loam': "Silt clay loam",
+        'slit-clay-loam': "Slit clay loam",
         'medium-textured': "Medium textured"
       }
     },

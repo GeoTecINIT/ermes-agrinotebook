@@ -13,12 +13,12 @@ export default {
   'login': {
     'text': {
       'login': "Iniciar sesión",
-      'signup': "Registro"
+      'signup': "Registrarse"
     },
     'login-p': {
       'username-f': "Usuario",
       'password-f': "Contraseña",
-      'login-btn': "Entrar"
+      'login-btn': "Acceder"
     },
     'signup-p': {
       'username-f': "Nombre de usuario",
@@ -31,7 +31,7 @@ export default {
   },
   'fields': {
     'text': {
-      'my-fields': "Mis campos",
+      'my-fields': "Mis Parcelas",
       'crop-info': "Información de cosecha",
       'soil-type': "Tipo de suelo",
       'soil-condition': "Estado del suelo",
@@ -44,8 +44,8 @@ export default {
       'irrigation': "Riego",
       'yield': "Producción",
       'observation': "Observación",
-      'parcel-info': "Parcel Info",
-      'add-new': "Añadir información"
+      'parcel-info': "Parcela",
+      'add-new': "Añadir"
     },
     'ui-special': {
       'agrochemicals': "Pesticidas"
@@ -174,9 +174,9 @@ export default {
     'notification': {
       'downloading-data': "Descargando datos...",
       'offline': "Conexión perdida",
-      'online': "Connection establecida",
-      'product-upload': "Subiendo info de parcela",
-      'product-upload-later': "Fuera de línea. El producto se subirá más tarde"
+      'online': "Conexión establecida",
+      'product-upload': "Subiendo info. de parcela",
+      'product-upload-later': "Fuera de línea. La información se subirá más tarde"
     }
   },
   'region': {
@@ -188,17 +188,17 @@ export default {
     'crop-info': {
       'crop-types': {
         'alpha_alpha': "Alpha_alpha",
-        'clover': "Clover",
-        'corn': "Corn",
-        'meadow': "Meadow",
-        'poplar': "Poplar",
-        'rice': "Rice",
+        'clover': "Trébol",
+        'corn': "Maíz",
+        'meadow': "Prado",
+        'poplar': "Álamo",
+        'rice': "Arroz",
         'set-aside': "Set-aside",
-        'soybean': "Soybean"
+        'soybean': "Soja"
       },
       'puddings': {
         'null': "----",
-        'yes': "Yes",
+        'yes': "Sí",
         'no': "No"
       },
       'rice-varieties': {
@@ -231,119 +231,119 @@ export default {
       },
       'sowing-practices': {
         'null': "----",
-        'direct-seeding': "Direct seeding",
-        'scattered-seeding': "Scattered seeding"
+        'direct-seeding': "Siembra directa",
+        'scattered-seeding': "Siembra dispersa"
       }
     },
     'soil-type': {
       'soil-textures': {
-        'clay': "Clay",
-        'silt-clay': "Silt clay",
-        'slit-clay-loam': "Slit clay loam",
-        'medium-textured': "Medium textured"
+        'clay': "Arcilloso",
+        'silt-clay': "Arcillo limoso",
+        'silt-clay-loam': "Arcillo limosos franco",
+        'medium-textured': "Texturas medias"
       }
     },
     'soil-condition': {
       'parcel-status': {
-        'bare-soil': "Bare soil",
-        'plowed': "Plowed",
-        'sowed': "Sowed",
-        'flooded': "Flooded"
+        'bare-soil': "Suelo desnudo",
+        'plowed': "Arado",
+        'sowed': "Sembrado",
+        'flooded': "Inundado"
       }
     },
     'crop-phenology': {
       'development-stages': {
-        'emergence': "Emergence",
-        '2nd-leaf': "2nd leaf",
-        '3rd-leaf': "3rd leaf",
-        '4th-leaf': "4th leaf",
-        'beginning-of-tillering': "Beginning of tillering",
-        'panicle-initiation': "Panicle initiation",
-        'heading': "Heading",
-        'flowering': "Flowering",
-        'maturity': "Maturity"
+        'emergence': "Aparición",
+        '2nd-leaf': "Segunda hoja",
+        '3rd-leaf': "Tercera hoja",
+        '4th-leaf': "Cuarta hoja",
+        'beginning-of-tillering': "Inicio macollaje",
+        'panicle-initiation': "Inicio panoja",
+        'heading': "Desarrollo de la panoja",
+        'flowering': "Florecimiento",
+        'maturity': "Maduración"
       },
       'phenology-growth': {
-        'null': "Growth stage",
-        '0:-germination': "0: germination",
-        '1:-leaf-development': "1: leaf development",
-        '2:-tillering': "2: tillering",
-        '3:-stem-elongation': "3: stem elongation",
-        '4:-booting': "4: booting",
-        '5:-inflorescence-emergence,-heading': "5: inflorescence emergence, heading",
-        '6:-flowering,-anthesis': "6: flowering, anthesis",
-        '7:-development-of-fruit': "7: development of fruit",
-        '8:-ripening': "8: ripening",
-        '9:-senescence': "9: senescence"
+        'null': "Etapa de crecimiento",
+        '0:-germination': "0: germinación",
+        '1:-leaf-development': "1: desarrollo de las hojas (tallo principal)",
+        '2:-tillering': "2: formación de brotes laterales: ahijamiento",
+        '3:-stem-elongation': "3: encañado",
+        '4:-booting': "4: hinchamiento de la panoja (Embuchamiento)",
+        '5:-inflorescence-emergence,-heading': "5: salida de la panoja",
+        '6:-flowering,-anthesis': "6:  floración (tallo principal)",
+        '7:-development-of-fruit': "7: formación del fruto",
+        '8:-ripening': "8: maduración de frutos y semillas",
+        '9:-senescence': "9: senescencia"
       },
       'phenology-codes': {
-        'null': "Code",
-        '0:-dry-seed-(caryopsis)': "0: dry seed (caryopsis)",
-        '1:-beginning-of-seed-imbibition': "1: beginning of seed imbibition",
-        '3:-seed-imbibition-complete-(pigeon-breast)': "3: seed imbibition complete (pigeon breast)",
-        '5:-radicle-emerged-from-caryopsis': "5: radicle emerged from caryopsis",
-        '6:-radicle-elongated,-root-hairs-and/or-side-roots-visible': "6: radicle elongated, root hairs and/or side roots visible",
-        '7:-coleoptile-emerged-from-caryopsis-(in-water-rice-this-stage-occurs-before-stage-05)': "7: coleoptile emerged from caryopsis (in water-rice this stage occurs before stage 05)",
-        '9:-imperfect-leaf-emerges-(still-rolled)-at-the-tip-of-the-coleoptile': "9: imperfect leaf emerges (still rolled) at the tip of the coleoptile",
-        '10:-imperfect-leaf-unrolled,-tip-of-first-true-leaf-visible': "10: imperfect leaf unrolled, tip of first true leaf visible",
-        '11:-first-leaf-unfolded': "11: first leaf unfolded",
-        '12:-2-leaves-unfolded': "12: 2 leaves unfolded",
-        '13:-3-leaves-unfolded': "13: 3 leaves unfolded",
-        '14:-4-leaves-unfolded': "14: 4 leaves unfolded",
-        '15:-5-leaves-unfolded': "15: 5 leaves unfolded",
-        '16:-6-leaves-unfolded': "16: 6 leaves unfolded",
-        '17:-7-leaves-unfolded': "17: 7 leaves unfolded",
-        '18:-8-leaves-unfolded-': "18: 8 leaves unfolded ",
-        '19:-9-or-more-leaves-unfolded': "19: 9 or more leaves unfolded",
-        '21:-beginning-of-tillering:-first-tiller-detectable': "21: beginning of tillering: first tiller detectable",
-        '22:-2-tillers-detectable': "22: 2 tillers detectable",
-        '23:-3-tillers-detectable': "23: 3 tillers detectable",
-        '24:-4-tillers-detectable': "24: 4 tillers detectable",
-        '25:-5-tillers-detectable': "25: 5 tillers detectable",
-        '26:-6-tillers-detectable': "26: 6 tillers detectable",
-        '27:-7-tillers-detectable': "27: 7 tillers detectable",
-        '28:-8-tillers-detectable': "28: 8 tillers detectable",
-        '29:-maximum-number-of-tillers-detectable': "29: maximum number of tillers detectable",
-        '30:-panicle-initiation-or-green-ring-stage:-chlorophyll-accumulates-in-the-stem-tissue,-forming-a-green-ring': "30: panicle initiation or green ring stage: chlorophyll accumulates in the stem tissue, forming a green ring",
-        '34:-internode-elongation-or-jointing-stage:-internodes-begin-to-elongate,-panicle-more-than-2-mm-long': "34: internode elongation or jointing stage: internodes begin to elongate, panicle more than 2 mm long",
-        '32:-panicle-formation:-panicle-1–2-mm-in-length-(variety-dependent)': "32: panicle formation: panicle 1–2 mm in length (variety-dependent)",
-        '37:-flag-leaf-just-visible,-still-rolled,-panicle-moving-upwards': "37: flag leaf just visible, still rolled, panicle moving upwards",
-        '39:-flag-leaf-stage:-flag-leaf-unfolded,-collar-regions-(auricle-and-ligule)-of-flag-leaf-and-penultimate-leaf-aligned-(pre-boot-stage)': "39: flag leaf stage: flag leaf unfolded, collar regions (auricle and ligule) of flag leaf and penultimate leaf aligned (pre-boot stage)",
-        '41:-early-boot-stage:-upper-part-of-stem-slightly-thickened,-sheath-of-flag-leaf-about-5-cm-out-of-penultimate': "41: early boot stage: upper part of stem slightly thickened, sheath of flag leaf about 5 cm out of penultimate",
-        '43:-mid-boot-stage:-sheath-of-flag-leaf-5–10-cm-out-of-the-penultimate-leaf-sheath': "43: mid boot stage: sheath of flag leaf 5–10 cm out of the penultimate leaf sheath",
-        '45:-late-boot-stage:-flag-leaf-sheath-swollen,-sheath-of-flag-leaf-more-than-10-cm-out-of-penultimate-leaf-sheath': "45: late boot stage: flag leaf sheath swollen, sheath of flag leaf more than 10 cm out of penultimate leaf sheath",
-        '47:-flag-leaf-sheath-opening': "47: flag leaf sheath opening",
-        '49:-flag-leaf-sheath-open': "49: flag leaf sheath open",
-        '51:-beginning-of-panicle-emergence:-tip-of-inflorescence-emerged-from-sheath': "51: beginning of panicle emergence: tip of inflorescence emerged from sheath",
-        '55:-middle-of-panicle-emergence:-neck-node-still-in-sheath': "55: middle of panicle emergence: neck node still in sheath",
-        '52:-20%-of-panicle-emerged': "52: 20% of panicle emerged",
-        '53:-30%-of-panicle-emerged': "53: 30% of panicle emerged",
-        '54:-40%-of-panicle-emerged': "54: 40% of panicle emerged",
-        '56:-60%-of-panicle-emerged': "56: 60% of panicle emerged",
-        '57:-70%-of-panicle-emerged': "57: 70% of panicle emerged",
-        '58:-80%-of-panicle-emerged': "58: 80% of panicle emerged",
-        '59:-end-of-panicle-emergence:-neck-node-level-with-the-flag-leaf-auricle,-anthers-not-yet-visible': "59: end of panicle emergence: neck node level with the flag leaf auricle, anthers not yet visible",
-        '61:-beginning-of-flowering:-anthers-visible-at-top-of-panicle': "61: beginning of flowering: anthers visible at top of panicle",
-        '65:-full-flowering:-anthers-visible-on-most-spikelets': "65: full flowering: anthers visible on most spikelets",
-        '69:-end-of-flowering:-all-spikelets-have-completed-flowering-but-some-dehydrated-anthers-may-remain': "69: end of flowering: all spikelets have completed flowering but some dehydrated anthers may remain",
-        '71:-watery-ripe:-first-grains-have-reached-half-their-final-size': "71: watery ripe: first grains have reached half their final size",
-        '75:-medium-milk:-grain-content-milky': "75: medium milk: grain content milky",
-        '73:-early-milk': "73: early milk",
-        '77:-late-milk': "77: late milk",
-        '83:-early-dough': "83: early dough",
-        '85:-soft-dough:-grain-content-soft-but-dry,-fingernail-impression-not-held,-grains-and-glumes-still-green': "85: soft dough: grain content soft but dry, fingernail impression not held, grains and glumes still green",
-        '87:-hard-dough:-grain-content-solid,-fingernail-impression-held': "87: hard dough: grain content solid, fingernail impression held",
-        '89:-fully-ripe:-grain-hard,-difficult-to-divide-with-thumbnail': "89: fully ripe: grain hard, difficult to divide with thumbnail",
-        '92:-over-ripe:-grain-very-hard,-cannot-be-dented-by-thumbnail': "92: over-ripe: grain very hard, cannot be dented by thumbnail",
-        '97:-plant-dead-and-collapsing-': "97: plant dead and collapsing ",
-        '99:-harvested-product': "99: harvested product"
+        'null': "Código",
+        '0:-dry-seed-(caryopsis)': "0: semilla seca(cariópdise)",
+        '1:-beginning-of-seed-imbibition': "1: comienza la imbibición de la semilla",
+        '3:-seed-imbibition-complete-(pigeon-breast)': "3: imbibición completa de la semilla pecho paloma",
+        '5:-radicle-emerged-from-caryopsis': "5: Radícula (raíz embrional) emergida de la semilla",
+        '6:-radicle-elongated,-root-hairs-and/or-side-roots-visible': "6: Radícula alargada, formando pelos radiculares y raíces secundarias",
+        '7:-coleoptile-emerged-from-caryopsis-(in-water-rice-this-stage-occurs-before-stage-05)': "7: Coleóptilo, emergido de la semilla (en arroz en agua esta etapa precede a la etapa 5)",
+        '9:-imperfect-leaf-emerges-(still-rolled)-at-the-tip-of-the-coleoptile': "9: Emergencia: el coleóptilo traspasa la superficie del suelo",
+        '10:-imperfect-leaf-unrolled,-tip-of-first-true-leaf-visible': "10: 1a hoja, atraviesa el coleoptilo",
+        '11:-first-leaf-unfolded': "11: primera hoja desplegada",
+        '12:-2-leaves-unfolded': "12: 2 hojas desplegadas",
+        '13:-3-leaves-unfolded': "13: 3 hojas desplegadas",
+        '14:-4-leaves-unfolded': "14: 4 hojas desplegadas",
+        '15:-5-leaves-unfolded': "15: 5 hojas desplegadas",
+        '16:-6-leaves-unfolded': "16: 6 hojas desplegadas",
+        '17:-7-leaves-unfolded': "17: 7 hojas desplegadas",
+        '18:-8-leaves-unfolded-': "18: 8 hojas desplegadas",
+        '19:-9-or-more-leaves-unfolded': "19: 9 o más hojas desplegadas",
+        '21:-beginning-of-tillering:-first-tiller-detectable': "21: Comienzo del macollamiento: 1 hijuelo visible",
+        '22:-2-tillers-detectable': "22: 2 hijuelos o macollas visibles",
+        '23:-3-tillers-detectable': "23: 3 hijuelos o macollas visibles",
+        '24:-4-tillers-detectable': "24: 4 hijuelos o macollas visibles",
+        '25:-5-tillers-detectable': "25: 5 hijuelos o macollas visibles",
+        '26:-6-tillers-detectable': "26: 6 hijuelos o macollas visibles",
+        '27:-7-tillers-detectable': "27: 7 hijuelos o macollas visibles",
+        '28:-8-tillers-detectable': "28: 8 hijuelos o macollas visibles",
+        '29:-maximum-number-of-tillers-detectable': "29: Fin del macollamiento; el máximo de hijuelos o macollas",
+        '30:-panicle-initiation-or-green-ring-stage:-chlorophyll-accumulates-in-the-stem-tissue,-forming-a-green-ring': "30: Iniciación de la panoja o estadio anillo verde: acumulación del clorofilo en el tejido de la caña, formando un anillo verde",
+        '34:-internode-elongation-or-jointing-stage:-internodes-begin-to-elongate,-panicle-more-than-2-mm-long': "34: alargamiento de los entrenudos: los entrenudos comienzan a alargarse; panoja, de más de 2 mm de longitud (según variedad)",
+        '32:-panicle-formation:-panicle-1–2-mm-in-length-(variety-dependent)': "32: Formación de la panoja: longitud de 1 a 2 mm",
+        '37:-flag-leaf-just-visible,-still-rolled,-panicle-moving-upwards': "37: Aparece la hoja bandera, aún enrollada; panoja moviéndose hacia arriba",
+        '39:-flag-leaf-stage:-flag-leaf-unfolded,-collar-regions-(auricle-and-ligule)-of-flag-leaf-and-penultimate-leaf-aligned-(pre-boot-stage)': "39: Estadio hoja bandera: hoja bandera, completamente desenrollada, las zonas del collar (lígula y aurícula) de la hoja bandera y de la penúltima hoja alineadas (estadio pre-hinchado)",
+        '41:-early-boot-stage:-upper-part-of-stem-slightly-thickened,-sheath-of-flag-leaf-about-5-cm-out-of-penultimate': "41: Estadio hinchado temprano: la parte superior de la caña, ligeramente engrosada; la vaina de la hoja bandera, sobre 5 cm fuera de la penúltima vaina foliar",
+        '43:-mid-boot-stage:-sheath-of-flag-leaf-5–10-cm-out-of-the-penultimate-leaf-sheath': "43: Estadio hinchado medio: la vaina de la hoja bandera, 5 a 10 cm fuera de la penúltima vaina foliar",
+        '45:-late-boot-stage:-flag-leaf-sheath-swollen,-sheath-of-flag-leaf-more-than-10-cm-out-of-penultimate-leaf-sheath': "45: Estadio hinchado tardío: la vaina de la hoja bandera, hinchada; vaina de la hoja bandera, 10 cm fuera de la peníltima hoja",
+        '47:-flag-leaf-sheath-opening': "47: Se empieza a abrir la vaina de la hoja bandera",
+        '49:-flag-leaf-sheath-open': "49: Vaina de la hoja bandera, abierta",
+        '51:-beginning-of-panicle-emergence:-tip-of-inflorescence-emerged-from-sheath': "51: Comienzo de la emergencia de la panoja: el extremo de la inflorescencia emerge de la vaina",
+        '55:-middle-of-panicle-emergence:-neck-node-still-in-sheath': "55: Mitad de la emergencia de las panojas: el nudo del cuello está todavía en la vaina",
+        '52:-20%-of-panicle-emerged': "52: 20 % de las panojas, emergidas",
+        '53:-30%-of-panicle-emerged': "53: 30% de las panojas, emergidas",
+        '54:-40%-of-panicle-emerged': "54: 40% de las panojas, emergidas",
+        '56:-60%-of-panicle-emerged': "56: 60% de las panojas, emergidas",
+        '57:-70%-of-panicle-emerged': "57: 70% de las panojas, emergidas",
+        '58:-80%-of-panicle-emerged': "58: 80% de las panojas, emergidas",
+        '59:-end-of-panicle-emergence:-neck-node-level-with-the-flag-leaf-auricle,-anthers-not-yet-visible': "59: Fin de la salida de las panojas: el nudo del cuello coincide con la aurícula de la hoja bandera; las anteras no son visibles aún",
+        '61:-beginning-of-flowering:-anthers-visible-at-top-of-panicle': "61: Comienzo del florecimiento: anteras, visibles en lo alto de la panoja",
+        '65:-full-flowering:-anthers-visible-on-most-spikelets': "65: Plena floración: anteras, visibles en la mayoría de las espiguillas",
+        '69:-end-of-flowering:-all-spikelets-have-completed-flowering-but-some-dehydrated-anthers-may-remain': "69: Fin del florecimiento: todas las espiguillas han terminado el florecimiento, pero todavía pueden permanecer algunas anteras deshidratadas",
+        '71:-watery-ripe:-first-grains-have-reached-half-their-final-size': "71: Madurez acuosa: los primeros granos han alcanzado la mitad de su tamaño final",
+        '75:-medium-milk:-grain-content-milky': "75: Lechoso medio: contenido del grano es lechoso",
+        '73:-early-milk': "73: lechoso temprano",
+        '77:-late-milk': "77: lechoso tardío",
+        '83:-early-dough': "83: pastoso temprano",
+        '85:-soft-dough:-grain-content-soft-but-dry,-fingernail-impression-not-held,-grains-and-glumes-still-green': "85: Pastoso blando: contenido del grano, blando, pero seco; no se mantiene la huella de la uña del dedo; granos y glumas, todavía verdes",
+        '87:-hard-dough:-grain-content-solid,-fingernail-impression-held': "87: Pastoso duro: contenido del grano sólido; se mantiene la huella de la uña del pulgar",
+        '89:-fully-ripe:-grain-hard,-difficult-to-divide-with-thumbnail': "89: Madurez completa: grano duro, difícil de dividir con la uña del pulgar",
+        '92:-over-ripe:-grain-very-hard,-cannot-be-dented-by-thumbnail': "92: Sobre maduración: granos muy duros; no pueden ser mellados con la uña del pulgar",
+        '97:-plant-dead-and-collapsing-': "97: Planta muerta, tallos se quiebran",
+        '99:-harvested-product': "99: Partes cosechadas (estadio para señalar tratamientos de post-cosecha)"
       }
     },
     'pathogens': {
       'names': {
-        'aphids': "Aphids",
+        'aphids': "Pulgones",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematods': "Nematods",
+        'nematods': "Nematodos",
         'pomacea': "Pomacea"
       }
     },
@@ -352,7 +352,7 @@ export default {
         'bipolaris': "Bipolaris",
         'cercospora': "Cercospora",
         'fusarium': "Fusarium",
-        'pyricularia-(blast)': "Pyricularia (blast)"
+        'pyricularia-(blast)': "Pyricularia (estallido)"
       }
     },
     'weeds': {
@@ -374,7 +374,7 @@ export default {
         'flexammon': "Flexammon",
         'nitrophoska': "Nitrophoska",
         'novammon-(n+k)': "Novammon (n+k)",
-        'organic': "Organic",
+        'organic': "Organico",
         'urea': "Urea",
         'utec-46-': "Utec 46 "
       }
@@ -383,16 +383,16 @@ export default {
       'products': {
         'bentazon': "Bentazon",
         'celest-syngenta-(fludioxonil)': "Celest syngenta (fludioxonil)",
-        'mixed-product': "Mixed product",
+        'mixed-product': "Producto Mezclado",
         'oxodiazon': "Oxodiazon",
         'propanil': "Propanil",
-        'pyretroids': "Pyretroids",
-        'touchdown-syngenta-(glyphosate)': "Touchdown syngenta (glyphosate)"
+        'pyretroids': "Piretroides",
+        'touchdown-syngenta-(glyphosate)': "Touchdown syngenta (glifostato)"
       }
     },
     'irrigation': {
       'measures': {
-        'mm': "mm/day",
+        'mm': "mm/día",
         'm3': "m3/h"
       }
     }
