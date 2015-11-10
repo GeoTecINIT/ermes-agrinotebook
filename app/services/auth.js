@@ -6,7 +6,7 @@ export default Ember.Service.extend({
 
   init() {
     if( true ) {
-      this.set('userLoggedIn', false);
+      this.set('userLoggedIn', true);
     } else {
       this.set('userLoggedIn', false);
     }
