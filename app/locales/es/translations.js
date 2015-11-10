@@ -193,7 +193,7 @@ export default {
         'meadow': "Prado",
         'poplar': "Álamo",
         'rice': "Arroz",
-        'set-aside': "Set-aside",
+        'set-aside': "Barbecho",
         'soybean': "Soja"
       },
       'puddings': {
