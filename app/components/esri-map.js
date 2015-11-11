@@ -8,7 +8,7 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     arcgisUtils.arcgisUrl = arcgisUtils.arcgisUrl.replace("file:", "http:");
-    this.set('mapid', '010f412d4d0a4e8f9ff09ead37963ac7');
+    this.set('mapid', 'c4abfd3d3b03423e9990c844fcfefe34');
     arcgisUtils.createMap(this.get('mapid'), this.elementId).then(function (response) {
       let map = response.map;
       let basemapLayer = map.getLayer( map.layerIds[0] );
