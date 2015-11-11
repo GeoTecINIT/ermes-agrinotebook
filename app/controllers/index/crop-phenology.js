@@ -13,9 +13,9 @@ export default Ember.Controller.extend({
   phenologyCodes: Ember.computed('i18n.locale', function() {
     return dd.getPhenologyCodes(this);
   }),
-  actualPhenologyGrowth: 'null:',
+  actualPhenologyGrowth: 'null',
   actualPhenologyCodes: Ember.computed('i18n.locale', 'actualPhenologyGrowth', function() {
-    let growth = this.get('actualPhenologyGrowth').split(':')[0];
+    let growth = this.get('actualPhenologyGrowth');
     return this.get('phenologyCodes')['cod_'+growth];
   }),
   actions: {
