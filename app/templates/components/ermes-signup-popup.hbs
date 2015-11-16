@@ -9,10 +9,10 @@
     {{jqm-button text=(t 'login.signup-p.signup-btn') icon="check" theme="b" disabled=cantSubmit}}
   </form>
   {{#if showError}}
-    <p style="color: {{msgColor}};"><b>{{message}}</b></p>
+    <p class="animated fadeInDown" style="color: {{msgColor}};"><b>{{message}}</b></p>
   {{/if}}
   {{#if success}}
-    <p style="color: #669933;"><b>Welcome, {{model.username}}.<br>
+    <p class="animated fadeInDown" style="color: #669933;"><b>Welcome, {{model.username}}.<br>
         Now you can <a href="" {{action 'showLoginPopup'}}>{{t 'login.text.login'}}</a></b></p>
   {{/if}}
 {{/jqm-popup}}
