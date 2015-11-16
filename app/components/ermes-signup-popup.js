@@ -38,7 +38,6 @@ export default Ember.Component.extend({
         .done((data) => {
           if (data) {
             this.hideMessage();
-            console.debug('Success!', data);
             this.set('success', true);
           } else {
             this.showMessage('Sorry, that user already exist');
