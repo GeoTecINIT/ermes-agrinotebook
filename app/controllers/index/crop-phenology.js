@@ -21,6 +21,9 @@ export default Ember.Controller.extend({
   actions: {
     submit() {
 
+    },
+    changeGrowth(growth) {
+      this.set('actualPhenologyGrowth', growth);
     }
   }
 });

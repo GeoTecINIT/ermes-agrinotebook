@@ -18,6 +18,9 @@ export default Ember.Controller.extend({
       } else {
         this.transitionToRoute('index');
       }
+    },
+    signUp() {
+
     }
   }
 });

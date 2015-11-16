@@ -54,7 +54,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' :49152 http://ermes.dlsi.uji.es:6080/arcgis/rest/services/ http://js.arcgis.com/ https://js.arcgis.com/",
     'font-src': "'self'",
-    'connect-src': "'self' http://ermes.dlsi.uji.es:6080/arcgis/rest/ http://services.arcgis.com/ http://services.arcgisonline.com/ http://www.arcgis.com/ http://static.arcgis.com/",
+    'connect-src': "'self' http://ermes.dlsi.uji.es:6080/arcgis/rest/ http://ermes.dlsi.uji.es:6585/ http://server.arcgisonline.com/arcgis/rest/services/ http://services.arcgisonline.com/ http://www.arcgis.com/ http://static.arcgis.com/",
     'img-src': "'self' http://ermes.dlsi.uji.es:6080/arcgis/rest/services/ data: http://js.arcgis.com/ http://services.arcgisonline.com/ http://server.arcgisonline.com/",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"

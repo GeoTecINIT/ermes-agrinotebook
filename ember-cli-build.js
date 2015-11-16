@@ -10,7 +10,8 @@ module.exports = function(defaults) {
     amdPackages: [
       'esri', 'dojo', 'dijit', 'dojox'
     ],
-    srcTag: 'arcgis/dojo/dojo.js'
+    srcTag: 'arcgis/dojo/dojo.js',
+    outputDependencyList: true
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -36,9 +37,13 @@ module.exports = function(defaults) {
   app.import('vendor/IndexedDBShim/indexeddbshim.js');
   // OfflineJS
   app.import('bower_components/offline/offline.min.js');
+  app.import('vendor/offline-shim/shim.js', {
+    type: 'vendor',
+    exports: {'offline': ['default']}
+  });
 
   // ArcGIS Offline library, globals
-  app.import('bower_components/offline-editor-js/dist/offline-tiles-basic-min.js');
+  app.import('bower_components/offline-editor-js/dist/offline-tiles-advanced-min.js');
   app.import('bower_components/offline-editor-js/dist/offline-edit-min.js');
 
   // Animate.css

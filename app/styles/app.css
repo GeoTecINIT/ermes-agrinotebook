@@ -41,14 +41,19 @@ div.ui-block-b img {
   padding: 0;
 }
 
-.map {
-  position: absolute;
+.map-container {
+  position: fixed;
   width: 100%;
   height: calc(100% - 46px);
-  padding: 0;
-  margin: 0;
   top: 46px;
   bottom: 0;
+}
+
+#mapDiv {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .ermes-main-logo, #loading-splash {

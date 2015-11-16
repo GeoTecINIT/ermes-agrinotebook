@@ -1,45 +1,31 @@
 import Ember from 'ember';
-import arcgisUtils from 'esri/arcgis/utils';
-import OfflineTilesEnabler from 'arcgis/oesri/offline-tiles-basic-min.js';
+import $ from 'jquery';
+import Map from 'esri/map';
+import { addOfflineTileLayer } from 'ermes-smart-app/utils/offline-map';
 
 export default Ember.Component.extend({
-
-  classNames: ['viewDiv'],
+  elementId: 'mapDiv',
 
   didInsertElement() {
-    arcgisUtils.arcgisUrl = arcgisUtils.arcgisUrl.replace("file:", "http:");
-    this.set('mapid', 'c4abfd3d3b03423e9990c844fcfefe34');
-    arcgisUtils.createMap(this.get('mapid'), this.elementId).then(function (response) {
-      let map = response.map;
-      let basemapLayer = map.getLayer( map.layerIds[0] );
-      let offlineTilesEnabler = new OfflineTilesEnabler();
-      offlineTilesEnabler.extend(basemapLayer, function (success) {
-        if (success) {
-          Ember.debug('Offline library is working fine');
-        } else {
-          Ember.debug('Something gone wrong with indexedDB :(');
-        }
+    var that = this;
+    $(document).ready(function () {
+      var map = new Map(that.elementId, {
+        "center": [-0.3, 39.3],
+        "zoom": 15,
+        "logo": false
       });
+
+      //addOfflineTileLayer(map,
+      //  'http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer', 'basemap');
+      //addOfflineTileLayer(map,
+      //  'http://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer',
+      //  'labels');
+      //addOfflineTileLayer(map,
+      //  'http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/es_parcels/MapServer', 'spainParcels',
+      //  'http://ermes.dlsi.uji.es:6585/proxy');
+      addOfflineTileLayer(map,
+        'http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer', 'spainParcels',
+        'http://ermes.dlsi.uji.es:6585/proxy');
     });
-  },
-
-  willRemoveElement() {
-    var map = this.get('map');
-    if (map) {
-      map.destroy();
-    }
-  },
-
-  onSwitchMap: function() {
-    var mapid = this.get('mapid');
-    var map = this.get('map');
-    if (map) {
-      map.destroy();
-      arcgisUtils.createMap(mapid, this.elementId)
-        .then((response) => {
-          this.set('map', response.map);
-        });
-    }
-  }.observes('mapid')
-
+  }
 });

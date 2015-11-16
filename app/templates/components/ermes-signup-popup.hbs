@@ -1,11 +1,18 @@
 {{#jqm-popup id=pId title=(t 'login.text.signup') theme="a" closeButton=true dismissible="false"}}
-  <form>
-    {{jqm-textinput placeholder=(t 'login.signup-p.username-f')}}
-    {{jqm-textinput type="password" placeholder=(t 'login.signup-p.password-f')}}
-    {{jqm-textinput type="password" placeholder=(t 'login.signup-p.repeat-password-f')}}
-    {{jqm-textinput type="email" placeholder=(t 'login.signup-p.email-f')}}
-    {{jqm-textinput type="email" placeholder=(t 'login.signup-p.repeat-email-f')}}
-    {{jqm-select theme="d" options=regions}}
-    {{jqm-button action=(action "submit" on="submit") text=(t 'login.signup-p.signup-btn') icon="check" theme="b"}}
+  <form {{action "submit" on="submit"}}>
+    {{jqm-textinput value=model.username placeholder=(t 'login.signup-p.username-f') required=true}}
+    {{jqm-textinput value=model.password type="password" placeholder=(t 'login.signup-p.password-f') required=true}}
+    {{jqm-textinput value=model.rPassword type="password" placeholder=(t 'login.signup-p.repeat-password-f') required=true}}
+    {{jqm-textinput value=model.email type="email" placeholder=(t 'login.signup-p.email-f') required=true}}
+    {{jqm-textinput value=model.rEmail type="email" placeholder=(t 'login.signup-p.repeat-email-f') required=true}}
+    {{jqm-select theme="d" options=regions action=(action 'changeRegion' on='change')}}
+    {{jqm-button text=(t 'login.signup-p.signup-btn') icon="check" theme="b" disabled=cantSubmit}}
   </form>
+  {{#if showError}}
+    <p style="color: {{msgColor}};"><b>{{message}}</b></p>
+  {{/if}}
+  {{#if success}}
+    <p style="color: #669933;"><b>Welcome, {{model.username}}.<br>
+        Now you can <a href="" {{action 'showLoginPopup'}}>{{t 'login.text.login'}}</a></b></p>
+  {{/if}}
 {{/jqm-popup}}
