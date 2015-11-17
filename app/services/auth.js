@@ -1,27 +1,26 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  userLoggedIn: null,
+  userLoggedIn: false,
   userId: null,
 
   init() {
-    if( true ) {
-      this.set('userLoggedIn', false);
-    } else {
-      this.set('userLoggedIn', false);
+    if( localStorage.userId ) {
+      this.set('userId', localStorage.userId);
+      this.set('userLoggedIn', true);
     }
   },
 
   logIn(id) {
     // Store session here
-    Ember.debug("User with ID: " + id + " has logged in");
+    localStorage.userId = id;
     this.set('userId', id);
     this.set('userLoggedIn', true);
   },
 
   logOut() {
     // Remove session here
-    Ember.debug("User logged out");
+    localStorage.removeItem('userId');
     this.set('userLoggedIn', false);
     this.set('userId', null);
   },

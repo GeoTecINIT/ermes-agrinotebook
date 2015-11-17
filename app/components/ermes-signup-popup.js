@@ -9,7 +9,7 @@ export default Ember.Component.extend({
       return dd.getRegions(this);
     }),
   showError: false,
-  message: "This is a test message",
+  message: "",
   success: false,
   model: Ember.RSVP.hash({
     username: "",

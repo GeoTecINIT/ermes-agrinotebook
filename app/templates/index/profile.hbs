@@ -1,5 +1,5 @@
 {{#ermes-panel id=panelId title=(t 'fields.options-m.profile')}}
-  <form>
+  <form {{action "submit" on="submit"}}>
       {{#jqm-collapsibleset inset="false" theme="c"}}
         {{#jqm-collapsible collapsed="false"}}
           <h4>{{t "panel.profile.picture-section"}}</h4>
@@ -23,7 +23,7 @@
           {{jqm-textinput type="password" placeholder=(t "panel.profile.repeat-new-password-tooltip")}}
         {{/jqm-collapsible}}
       {{/jqm-collapsibleset}}
-      {{jqm-button action=(action "submit" on="submit") text=(t "panel.profile.update") theme="b"}}
+      {{jqm-button text=(t "panel.profile.update") theme="b"}}
   </form>
-  {{jqm-button text=(t "panel.profile.logout") theme="d" icon="power" iconPos="left"}}
+  {{jqm-button action='logOut' text=(t "panel.profile.logout") theme="d" icon="power" iconPos="left"}}
 {{/ermes-panel}}

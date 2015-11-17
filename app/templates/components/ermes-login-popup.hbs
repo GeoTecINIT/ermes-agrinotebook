@@ -1,7 +1,10 @@
 {{#jqm-popup id=pId title=(t 'login.text.login') theme="a" closeButton=true dismissible="false"}}
-  <form>
-    {{jqm-textinput placeholder=(t 'login.login-p.username-f')}}
-    {{jqm-textinput type="password" placeholder=(t 'login.login-p.password-f')}}
-    {{jqm-button action=(action "submit" on="submit") text=(t 'login.login-p.login-btn') icon="check" theme="b"}}
+  <form {{action "submit" on="submit"}}>
+    {{jqm-textinput value=model.username placeholder=(t 'login.login-p.username-f') required=true}}
+    {{jqm-textinput value=model.password type="password" placeholder=(t 'login.login-p.password-f') required=true}}
+    {{jqm-button text=(t 'login.login-p.login-btn') icon="check" theme="b"}}
   </form>
+  {{#if showError}}
+      <p class="animated fadeInDown" style="color: {{msgColor}};"><b>{{message}}</b></p>
+  {{/if}}
 {{/jqm-popup}}

@@ -7,10 +7,7 @@ export default Ember.Controller.extend({
     openPopup(popup) {
       $('#' + popup).popup('open');
     },
-    logIn() {
-      var auth = this.get('auth');
-      auth.logIn('a4g5a1wae8');
-
+    logIn() { // Check if another page was requested before this one
       var previous = this.get('previousTransition');
       if (previous) {
         this.set('previousTransition', null);
