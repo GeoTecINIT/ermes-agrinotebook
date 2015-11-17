@@ -23,7 +23,7 @@ export default Ember.Component.extend({
         //  'http://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer',
         //  'labels');
         //addOfflineTileLayer(map,
-        //  'http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/es_parcels/MapServer', 'spainParcels',
+        //  'http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/ES_parcels/MapServer', 'spainParcels',
         //  'http://ermes.dlsi.uji.es:6585/proxy');
         addOfflineTileLayer(map,
           'http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer', 'spainParcels',
