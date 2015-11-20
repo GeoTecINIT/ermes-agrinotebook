@@ -6,7 +6,7 @@
     </label>
     <label>
         <span>{{t "panel.observation.picture"}}</span>
-      {{jqm-textinput type="file" accept="image/*;capture=camera"}}
+      {{jqm-fileinput accept="image/*;capture=camera"}}
     </label>
     {{jqm-button text=(t "panel.observation.send-btn") action=(action "submit" on="submit") theme="b" icon="camera" iconPos="left"}}
   </form>
