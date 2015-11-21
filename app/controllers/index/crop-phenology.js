@@ -1,8 +1,8 @@
 import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/crop-phenology';
-import ProductUpload from 'ermes-smart-app/mixins/product-upload';
+import ProductUploadRDate from 'ermes-smart-app/mixins/product-upload-rdate';
 
-export default Ember.Controller.extend(ProductUpload, {
+export default Ember.Controller.extend(ProductUploadRDate, {
   panelId: 'crop-phenology',
   i18n: Ember.inject.service(),
   developmentStages: Ember.computed('i18n.locale', function() {
@@ -20,16 +20,5 @@ export default Ember.Controller.extend(ProductUpload, {
   }),
   hasNoStage: Ember.computed('model.growthStage', function () {
     return this.get('model.growthStage') === 'null';
-  }),
-  actions: {
-    submit() {
-      if (!this.get('model.date')) {
-        console.debug('Missing date validation');
-        this.set('dateError', 'Please fill date');
-      } else {
-        this.set('dateError', '');
-        this._super(this);
-      }
-    }
-  }
+  })
 });

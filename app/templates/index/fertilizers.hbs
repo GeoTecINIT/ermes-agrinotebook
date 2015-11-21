@@ -1,29 +1,30 @@
 {{#ermes-panel id=panelId title=(t 'fields.text.fertilizers')}}
-  <form>
+  <form {{action "submit" on="submit"}}>
     <label>
-        <span>{{t "panel.fertilizers.date"}}</span>
-      {{jqm-datepicker}}
+      <span>{{t "panel.fertilizers.date"}}</span>
+      {{jqm-datepicker value=model.date}}
+    </label>
+    {{ermes-message text=dateError color="red" animation="fadeInDown"}}
+    <label>
+      <span>{{t "panel.fertilizers.product"}}</span>
+      {{jqm-select value=model.product theme="d" options=products}}
     </label>
     <label>
-        <span>{{t "panel.fertilizers.product"}}</span>
-      {{jqm-select theme="d" options=products}}
+      <span>{{t "panel.fertilizers.quantity"}}</span>
+      {{jqm-textinput value=model.quantity type="number" min=0 step=0.01 placeholder=(t "panel.fertilizers.quantity-unit") required=true}}
     </label>
     <label>
-        <span>{{t "panel.fertilizers.quantity"}}</span>
-      {{jqm-textinput type="number" step=0.01 placeholder=(t "panel.fertilizers.quantity-unit")}}
+      <span>{{t "panel.fertilizers.nitrogen"}}</span>
+      {{jqm-textinput value=model.nitrogenContent type="number" min=0 step=0.01 placeholder=(t "panel.fertilizers.nitrogen-unit")}}
     </label>
     <label>
-        <span>{{t "panel.fertilizers.nitrogen"}}</span>
-      {{jqm-textinput type="number" step=0.01 placeholder=(t "panel.fertilizers.nitrogen-unit")}}
+      <span>{{t "panel.fertilizers.phosphorus"}}</span>
+      {{jqm-textinput value=model.phosphorusContent type="number" min=0 step=0.01 placeholder=(t "panel.fertilizers.phosphorus-unit")}}
     </label>
     <label>
-        <span>{{t "panel.fertilizers.phosphorus"}}</span>
-      {{jqm-textinput type="number" step=0.01 placeholder=(t "panel.fertilizers.phosphorus-unit")}}
+      <span>{{t "panel.fertilizers.potassium"}}</span>
+      {{jqm-textinput value=model.potassiumContent type="number" min=0 step=0.01 placeholder=(t "panel.fertilizers.potassium-unit")}}
     </label>
-    <label>
-        <span>{{t "panel.fertilizers.potassium"}}</span>
-      {{jqm-textinput type="number" step=0.01 placeholder=(t "panel.fertilizers.potassium-unit")}}
-    </label>
-    {{jqm-button text=(t "fields.text.add-new") action=(action "submit" on="submit") theme="b"}}
+    {{jqm-button text=(t "fields.text.add-new") theme="b"}}
   </form>
 {{/ermes-panel}}

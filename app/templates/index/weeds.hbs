@@ -1,25 +1,26 @@
 {{#ermes-panel id=panelId title=(t 'fields.text.weeds')}}
-    <form>
-        <label>
-            <span>{{t "panel.weeds.date"}}</span>
-          {{jqm-datepicker}}
-        </label>
-        <label>
-            <span>{{t "panel.weeds.name"}}</span>
-          {{jqm-select theme="d" options=names}}
-        </label>
-        <label>
-            <span>{{t "panel.weeds.comment"}}</span>
-          {{jqm-textarea}}
-        </label>
-        <label>
-            <span>{{t "panel.weeds.picture"}}</span>
-          {{jqm-fileinput accept="image/*;capture=camera"}}
-        </label>
-        <label>
-            <span>{{t "panel.weeds.damage"}}</span>
-          {{jqm-slider min=1 max=100 theme="d"}}
-        </label>
-      {{jqm-button text=(t "fields.text.add-new") action=(action "submit" on="submit") theme="b"}}
-    </form>
+  <form {{action "submit" on="submit"}}>
+    <label>
+      <span>{{t "panel.weeds.date"}}</span>
+      {{jqm-datepicker value=model.date}}
+    </label>
+    {{ermes-message text=dateError color="red" animation="fadeInDown"}}
+    <label>
+      <span>{{t "panel.weeds.name"}}</span>
+      {{jqm-select value=model.name theme="d" options=names}}
+    </label>
+    <label>
+      <span>{{t "panel.weeds.comment"}}</span>
+      {{jqm-textarea value=model.comments}}
+    </label>
+    <label>
+      <span>{{t "panel.weeds.picture"}}</span>
+      {{jqm-fileinput accept="image/*;capture=camera"}}
+    </label>
+    <label>
+      <span>{{t "panel.weeds.damage"}}</span>
+      {{jqm-slider value=model.damage min=1 max=100 theme="d"}}
+    </label>
+    {{jqm-button text=(t "fields.text.add-new") theme="b"}}
+  </form>
 {{/ermes-panel}}

@@ -1,25 +1,38 @@
 {{#ermes-panel id=panelId title=(t 'fields.text.irrigation')}}
-  <form>
+  <form {{action "submit" on="submit"}}>
     <label>
-        <span>{{t "panel.irrigation.start-date"}}</span>
-      {{jqm-datepicker}}
+      <span>{{t "panel.irrigation.start-date"}}</span>
+      {{jqm-datepicker value=model.startDate}}
     </label>
+    {{ermes-message text=startDateError color="red" animation="fadeInDown"}}
     <label>
-        <span>{{t "panel.irrigation.end-date"}}</span>
-      {{jqm-datepicker}}
+      <span>{{t "panel.irrigation.end-date"}}</span>
+      {{jqm-datepicker value=model.endDate}}
     </label>
+    {{ermes-message text=endDateError color="red" animation="fadeInDown"}}
     <label>
-        <span>{{t "panel.irrigation.measure"}}</span>
-      {{jqm-select theme="d" options=measures}}
+      <span>{{t "panel.irrigation.measure"}}</span>
+      {{jqm-select value=model.quantityOfWaterMeasure theme="d" options=measures}}
     </label>
-    <label>
+    {{#if hasMM}}
+      <label>
         <span>{{t "panel.irrigation.quantity"}}</span>
-      {{jqm-textinput type="number" step=0.01 placeholder=(t "panel.irrigation.quantity-unit-mm")}}
-    </label>
+        {{jqm-textinput value=model.waterQuantity type="number" min=0 step=0.01 placeholder=(t "panel.irrigation.quantity-unit-mm") required=true}}
+      </label>
+    {{else}}
+      <label>
+        <span>{{t "panel.irrigation.quantity"}}</span>
+        {{jqm-textinput value=model.waterQuantity type="number" min=0 step=0.01 placeholder=(t "panel.irrigation.quantity-unit-m3") required=true}}
+      </label>
+      <label>
+        <span>{{t "panel.irrigation.hours"}}</span>
+        {{jqm-textinput value=model.waterHours type="number" min=0 step=1 placeholder=(t "panel.irrigation.hours-unit") required=true}}
+      </label>
+    {{/if}}
     <label>
-        <span>{{t "panel.irrigation.depth"}}</span>
-      {{jqm-slider min=0 max=100 theme="d"}}
+      <span>{{t "panel.irrigation.depth"}}</span>
+      {{jqm-slider value=model.waterDepth min=0 max=100 theme="d"}}
     </label>
-    {{jqm-button text=(t "fields.text.add-new") action=(action "submit" on="submit") theme="b"}}
+    {{jqm-button text=(t "fields.text.add-new") theme="b"}}
   </form>
 {{/ermes-panel}}

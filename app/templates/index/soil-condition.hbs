@@ -1,11 +1,11 @@
 {{#ermes-panel id=panelId title=(t 'fields.text.soil-condition')}}
   <form {{action "submit" on="submit"}}>
     <label>
-        <span>{{t "panel.soil-condition.status"}}</span>
+      <span>{{t "panel.soil-condition.status"}}</span>
       {{jqm-select value=model.parcelStatus theme="d" options=parcelStatus}}
     </label>
     <label>
-        <span>{{t "panel.soil-condition.date"}}</span>
+      <span>{{t "panel.soil-condition.date"}}</span>
       {{jqm-datepicker value=model.date showToday=true}}
     </label>
     {{jqm-button text=(t "fields.text.add-new") theme="b"}}

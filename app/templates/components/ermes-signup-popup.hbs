@@ -8,7 +8,7 @@
     {{jqm-select value=model.region theme="d" options=regions}}
     {{jqm-button text=(t 'login.signup-p.signup-btn') icon="check" theme="b" disabled=cantSubmit}}
   </form>
-  {{ermes-message text=error color="red" animation="bounceInDown"}}
+  {{ermes-message text=error color="red" animation="fadeInDown"}}
   {{ermes-message text=info color="blue" animation="fadeIn"}}
   {{#if success}}
     <p align="center" class="animated fadeInDown" style="color: #669933;"><b>Welcome, {{model.username}}.<br>
