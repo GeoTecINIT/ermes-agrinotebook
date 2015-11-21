@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
   }),
 
   notIsRice: Ember.computed('model.cropType', function () {
-    if (this.get('model.cropType') == 'rice') {
+    if (this.get('model.cropType') === 'rice') {
       return false;
     } else {
       this.get('model').setProperties({
@@ -34,9 +34,6 @@ export default Ember.Controller.extend({
       this.set('model.uploadingDate', new Date());
       // Transform date
       this.get('model').save();
-    },
-    selectChange(name, value) {
-      this.get('model').set(name, value);
     }
   }
 });
