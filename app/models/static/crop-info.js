@@ -5,7 +5,7 @@ export function getCropTypes(context) {
     {text: context.get('i18n').t('data.crop-info.crop-types.corn'), value: 'corn'},
     {text: context.get('i18n').t('data.crop-info.crop-types.meadow'), value: 'meadow'},
     {text: context.get('i18n').t('data.crop-info.crop-types.poplar'), value: 'poplar'},
-    {text: context.get('i18n').t('data.crop-info.crop-types.rice'), value: 'rice', selected: 'true'},
+    {text: context.get('i18n').t('data.crop-info.crop-types.rice'), value: 'rice', selected: true},
     {text: context.get('i18n').t('data.crop-info.crop-types.set-aside'), value: 'set-aside'},
     {text: context.get('i18n').t('data.crop-info.crop-types.soybean'), value: 'soybean'}
   ];

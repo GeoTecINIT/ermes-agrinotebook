@@ -16,9 +16,27 @@ export default Ember.Controller.extend({
   sowingPractices: Ember.computed('i18n.locale', function() {
     return dd.getSowingPractices(this);
   }),
+
+  notIsRice: Ember.computed('model.cropType', function () {
+    if (this.get('model.cropType') == 'rice') {
+      return false;
+    } else {
+      this.get('model').setProperties({
+        riceVariety: 'null',
+        pudding: 'null',
+        sowingPractice: 'null'
+      });
+      return true;
+    }
+  }),
   actions: {
     submit() {
-
+      this.set('model.uploadingDate', new Date());
+      // Transform date
+      this.get('model').save();
+    },
+    selectChange(name, value) {
+      this.get('model').set(name, value);
     }
   }
 });
