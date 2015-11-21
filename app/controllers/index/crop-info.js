@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/crop-info';
+import ProductUpload from 'ermes-smart-app/mixins/product-upload';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(ProductUpload, {
   panelId: 'crop-info',
   i18n: Ember.inject.service(),
   cropTypes: Ember.computed('i18n.locale', function() {
@@ -28,12 +29,5 @@ export default Ember.Controller.extend({
       });
       return true;
     }
-  }),
-  actions: {
-    submit() {
-      this.set('model.uploadingDate', new Date());
-      // Transform date
-      this.get('model').save();
-    }
-  }
+  })
 });
