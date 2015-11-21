@@ -14,7 +14,7 @@ export function getDevelopmentStages(context) {
 
 export function getPhenologyGrowth(context) {
   return [
-    {text: context.get('i18n').t('data.crop-phenology.phenology-growth.null'), value: 'null:'},
+    {text: context.get('i18n').t('data.crop-phenology.phenology-growth.null'), value: 'null'},
     {text: context.get('i18n').t('data.crop-phenology.phenology-growth.0'), value: '0'},
     {text: context.get('i18n').t('data.crop-phenology.phenology-growth.1'), value: '1'},
     {text: context.get('i18n').t('data.crop-phenology.phenology-growth.2'), value: '2'},

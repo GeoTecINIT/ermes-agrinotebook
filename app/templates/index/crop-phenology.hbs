@@ -1,18 +1,18 @@
 {{#ermes-panel id=panelId title=(t 'fields.text.crop-phenology')}}
-  <form>
+  <form {{action "submit" on="submit"}}>
     <label>
         <span>{{t "panel.crop-phenology.date"}}</span>
-      {{jqm-datepicker}}
+      {{jqm-datepicker value=model.date required=true}}
     </label>
     <label>
         <span>{{t "panel.crop-phenology.development-stage"}}</span>
-      {{jqm-select theme="d" options=developmentStages}}
+      {{jqm-select value=model.developmentStage theme="d" options=developmentStages}}
     </label>
     <label>
         <span>{{t "panel.crop-phenology.bbch"}}</span>
-      {{jqm-select theme="d" options=phenologyGrowth action=(action "changeGrowth" on="change")}}
+      {{jqm-select value=model.growthStage theme="d" options=phenologyGrowth}}
     </label>
-    {{jqm-select theme="d" options=actualPhenologyCodes}}
-    {{jqm-button text=(t "fields.text.add-new") action=(action "submit" on="submit") theme="b"}}
+    {{jqm-select value=model.code theme="d" options=actualPhenologyCodes isDisabled=hasNoStage}}
+    {{jqm-button text=(t "fields.text.add-new") theme="b"}}
   </form>
 {{/ermes-panel}}

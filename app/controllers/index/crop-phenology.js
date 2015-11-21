@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/crop-phenology';
+import ProductUpload from 'ermes-smart-app/mixins/product-upload';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(ProductUpload, {
   panelId: 'crop-phenology',
   i18n: Ember.inject.service(),
   developmentStages: Ember.computed('i18n.locale', function() {
@@ -13,17 +14,14 @@ export default Ember.Controller.extend({
   phenologyCodes: Ember.computed('i18n.locale', function() {
     return dd.getPhenologyCodes(this);
   }),
-  actualPhenologyGrowth: 'null',
-  actualPhenologyCodes: Ember.computed('i18n.locale', 'actualPhenologyGrowth', function() {
-    let growth = this.get('actualPhenologyGrowth');
+  actualPhenologyCodes: Ember.computed('i18n.locale', 'model.growthStage', function() {
+    let growth = this.get('model.growthStage');
     return this.get('phenologyCodes')['cod_'+growth];
   }),
-  actions: {
-    submit() {
-
-    },
-    changeGrowth(growth) {
-      this.set('actualPhenologyGrowth', growth);
-    }
-  }
+  hasNoStage: Ember.computed('model.growthStage', function () {
+    return this.get('model.growthStage') === 'null';
+  })
+  /*
+  Check Date on submit
+   */
 });
