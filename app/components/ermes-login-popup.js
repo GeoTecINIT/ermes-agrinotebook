@@ -23,9 +23,16 @@ export default Ember.Component.extend({
         } else if (data.profile !== 'local') {
           this.set('error', 'This is a regional account');
         } else {
+          // Reset form
+          this.set('model.username', '');
+          this.set('model.password', '');
+
           auth.logIn(data.user);
           this.sendAction('logIn');
         }
+      }).fail(() => {
+        this.set('info', '');
+        this.set('error', 'Connection lost');
       });
     }
   }
