@@ -20,8 +20,16 @@ export default Ember.Controller.extend(ProductUpload, {
   }),
   hasNoStage: Ember.computed('model.growthStage', function () {
     return this.get('model.growthStage') === 'null';
-  })
-  /*
-  Check Date on submit
-   */
+  }),
+  actions: {
+    submit() {
+      if (!this.get('model.date')) {
+        console.debug('Missing date validation');
+        this.set('dateError', 'Please fill date');
+      } else {
+        this.set('dateError', '');
+        this._super(this);
+      }
+    }
+  }
 });

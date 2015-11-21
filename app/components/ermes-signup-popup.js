@@ -8,8 +8,6 @@ export default Ember.Component.extend({
   regions: Ember.computed('i18n.locale', function() {
       return dd.getRegions(this);
     }),
-  showError: false,
-  message: "",
   success: false,
   model: Ember.RSVP.hash({
     username: "",
@@ -17,38 +15,36 @@ export default Ember.Component.extend({
     rPassword: "",
     email: "",
     rEmail: "",
-    region: "greece"
+    region: ""
   }),
   actions: {
     submit() {
       let model = this.get('model');
-      this.hideMessage();
+      this.set('error', '');
 
       if (model.password !== model.rPassword) {
-        this.showMessage("Passwords don't match");
+        this.set('error', "Passwords don't match");
 
       } else if (model.email !== model.rEmail) {
-        this.showMessage("Emails don't match");
+        this.set('error', "Emails don't match");
 
       } else {
-        this.showMessage("Processing...", 'blue');
+        this.set('info', 'Processing...');
 
         post('/signup', {username: model.username,
           password: model.password, email: model.email, region: model.region})
         .done((data) => {
+          this.set('info', '');
           if (data) {
-            this.hideMessage();
             this.set('success', true);
           } else {
-            this.showMessage('Sorry, that user already exist');
+            this.set('error', 'Sorry, that user already exist');
           }
         }).fail(() => {
-          this.showMessage('Connection lost');
+          this.set('info', '');
+          this.set('error', 'Connection lost');
         });
       }
-    },
-    changeRegion(region) {
-      this.set('model.region', region);
     },
     showLoginPopup() {
       let loginPopup = $('#ermes-login-popup');
@@ -59,18 +55,7 @@ export default Ember.Component.extend({
         loginPopup.popup('open');
       }); // Prevent animation error
       signupPopup.popup('close'); // Close actual popup
+      this.set('success', false);
     }
-  },
-  showMessage(message, color) {
-    if (color) {
-      this.set('msgColor', color);
-    } else {
-      this.set('msgColor', 'brown');
-    }
-    this.set('message', message);
-    this.set('showError', true);
-  },
-  hideMessage() {
-    this.set('showError', false);
   }
 });
