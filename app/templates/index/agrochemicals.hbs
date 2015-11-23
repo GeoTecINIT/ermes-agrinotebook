@@ -1,17 +1,18 @@
 {{#ermes-panel id=panelId title=(t "fields.ui-special.agrochemicals")}}
-  <form>
+  <form {{action "submit" on="submit"}}>
     <label>
       <span>{{t "panel.agrochemicals.date"}}</span>
-      {{jqm-datepicker}}
+      {{jqm-datepicker value=model.date}}
     </label>
+    {{ermes-message text=dateError color="red" animation="fadeInDown"}}
     <label>
       <span>{{t "panel.agrochemicals.product"}}</span>
-      {{jqm-select theme="d" options=products}}
+      {{jqm-select value=model.product theme="d" options=products}}
     </label>
     <label>
       <span>{{t "panel.agrochemicals.quantity"}}</span>
-      {{jqm-textinput type="number" step=0.01 placeholder=(t "panel.agrochemicals.quantity-unit")}}
+      {{jqm-textinput value=model.amount type="number" step=0.01 placeholder=(t "panel.agrochemicals.quantity-unit")}}
     </label>
-    {{jqm-button text=(t "fields.text.add-new") action=(action "submit" on="submit") theme="b"}}
+    {{jqm-button text=(t "fields.text.add-new") theme="b"}}
   </form>
 {{/ermes-panel}}
