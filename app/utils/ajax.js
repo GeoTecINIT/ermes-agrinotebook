@@ -1,7 +1,7 @@
 import $ from 'jquery';
+import config from '../config/environment';
 
-const SERVER_URL = 'http://ermes.dlsi.uji.es:6585';
-
+const SERVER_URL = config.APP.apiServer;
 
 // Example ( '/login', { username: user, password: password } )
 export function post(uri, parameters) {
