@@ -1,13 +1,14 @@
 {{#ermes-panel panelId=panelId title=(t 'fields.text.observation')}}
-  <form>
+  <form {{action "submit" on="submit"}}>
     <label>
-        <span>{{t "panel.observation.comment"}}</span>
-      {{jqm-textarea}}
+      <span>{{t "panel.observation.comment"}}</span>
+      {{jqm-textarea value=model.comments}}
     </label>
     <label>
-        <span>{{t "panel.observation.picture"}}</span>
-      {{jqm-fileinput accept="image/*;capture=camera"}}
+      <span>{{t "panel.observation.picture"}}</span>
+      {{jqm-fileinput files=files accept="image/*;capture=camera"}}
     </label>
-    {{jqm-button text=(t "panel.observation.send-btn") action=(action "submit" on="submit") theme="b" icon="camera" iconPos="left"}}
+    {{ermes-message text=fileError color="red" animation="fadeInDown"}}
+    {{jqm-button text=(t "panel.observation.send-btn") theme="b" icon="camera" iconPos="left"}}
   </form>
 {{/ermes-panel}}
