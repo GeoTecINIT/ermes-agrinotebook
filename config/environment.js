@@ -14,7 +14,31 @@ module.exports = function(environment) {
     },
 
     APP: {
-      apiServer: "http://ermes.dlsi.uji.es:6585"
+      apiServer: "http://ermes.dlsi.uji.es:6585",
+      layerProxy: "http://ermes.dlsi.uji.es:6585/proxy",
+      regionLayers: {
+        spain: {
+          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer",
+          mapName: "spainBasemap",
+          parcelsLayer: "http://ermes.dlsi.uji.es:6080/ArcGIS/rest/services/2015-ES/landsat_spain_scene/MapServer/3",
+          maxZoom: 18,
+          minZoom: 14
+        },
+        italy: {
+          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-IT/IT_basemap/MapServer",
+          mapName: "italyBasemap",
+          parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-IT/IT_parcels/MapServer/0",
+          maxZoom: 17,
+          minZoom: 13
+        },
+        greece: {
+          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-GR/GR_basemap/MapServer",
+          mapName: "greeceBasemap",
+          parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-GR/GR_parcels/MapServer/0",
+          maxZoom: 6,
+          minZoom: 3
+        }
+      }
     }
   };
 

@@ -1,34 +1,51 @@
 import Ember from 'ember';
 import $ from 'jquery';
+import config from '../config/environment';
 import Map from 'esri/map';
 import { addOfflineTileLayer } from 'ermes-smart-app/utils/offline-map';
+import EditStore from 'oesri/offline-edit-store-src';
 
 export default Ember.Component.extend({
   elementId: 'mapDiv',
+  map: null,
+  editStore: null,
+  parcels: Ember.inject.service(),
 
   didInsertElement() {
-    var that = this;
-    $(document).ready(function () { // Wait until DOM is ready to prevent map fixed size
-      setTimeout(function () { // Extra wait to prevent errors due single page app
-        Ember.debug('Page shown');
-        var map = new Map(that.elementId, {
-          "center": [-0.3, 39.3],
-          "zoom": 15,
-          "logo": false
-        });
-
-        //addOfflineTileLayer(map,
-        //  'http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer', 'basemap');
-        //addOfflineTileLayer(map,
-        //  'http://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer',
-        //  'labels');
-        //addOfflineTileLayer(map,
-        //  'http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/ES_parcels/MapServer', 'spainParcels',
-        //  'http://ermes.dlsi.uji.es:6585/proxy');
-        addOfflineTileLayer(map,
-          'http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer', 'spainParcels',
-          'http://ermes.dlsi.uji.es:6585/proxy');
-      }, 50);
+    var _this = this;
+    $(document).ready(function() { // Wait until DOM is ready to prevent map fixed size
+      var editStore = new EditStore();
+      editStore.dbName = "fieldsStore";
+      editStore.objectStoreName = "fields";
+      editStore.init(function (success) {
+        if (success) {
+          _this.createMap();
+          _this.loadBasemap();
+          //_this.loadFieldsLayer();
+          //_this.initEventHandlers()
+        }
+        // else: load online basemap
+      });
+      _this.set('editStore', editStore);
     });
+  },
+  createMap() {
+    var pos = this.get('parcels').getUserLastPosition();
+    var mapInfo = this.get('parcels').getUserMapInfo();
+
+    var map = new Map(this.elementId, {
+      "center": [pos.lastX, pos.lastY],
+      "zoom": pos.zoom,
+      "maxZoom": mapInfo.maxZoom,
+      "minZoom": mapInfo.minZoom,
+      "logo": false
+    });
+    this.set('map', map);
+  },
+  loadBasemap() {
+    var mapInfo = this.get('parcels').getUserMapInfo();
+
+    addOfflineTileLayer(this.get('map'), mapInfo.baseMap, mapInfo.mapName,
+      config.APP.layerProxy);
   }
 });

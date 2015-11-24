@@ -4,5 +4,5 @@
 define('offline', [], function () {
   'use strict';
 
-  return { 'default': Offline };
+  return { 'default': window.Offline };
 });

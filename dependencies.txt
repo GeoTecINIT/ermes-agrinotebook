@@ -1,1 +1,1 @@
-'esri/map','oesri/offline-tiles-advanced-src'
+'esri/map','oesri/offline-edit-store-src','oesri/offline-tiles-advanced-src'
