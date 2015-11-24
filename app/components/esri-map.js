@@ -11,6 +11,8 @@ export default Ember.Component.extend(OfflineMap, {
   editStore: null,
   parcels: Ember.inject.service(),
 
+  editMode: true,
+
   didInsertElement() {
     var _this = this;
     $(document).ready(function() { // Wait until DOM is ready to prevent map fixed size
@@ -21,7 +23,7 @@ export default Ember.Component.extend(OfflineMap, {
         if (success) {
           _this.createMap();
           _this.loadBasemap();
-          //_this.loadFieldsLayer();
+          _this.loadFieldsLayer();
           //_this.initEventHandlers()
         }
         // else: load online basemap
@@ -45,7 +47,14 @@ export default Ember.Component.extend(OfflineMap, {
   loadBasemap() {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
-    this.addOfflineTileLayer(this.get('map'), mapInfo.baseMap, mapInfo.mapName,
-      config.APP.layerProxy);
+    this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy);
+  },
+  loadFieldsLayer() {
+    var mapInfo = this.get('parcels').getUserMapInfo();
+
+    this.addFeatureLayer(mapInfo.parcelsLayer);
+    if (this.get('editMode')) {
+      this.addCompleteFeatureLayer(mapInfo.parcelsLayer);
+    }
   }
 });

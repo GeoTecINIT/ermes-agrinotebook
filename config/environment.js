@@ -13,6 +13,15 @@ module.exports = function(environment) {
       }
     },
 
+    emberOffline: {
+      checks: {
+        image: {
+          url: 'http://ermes.dlsi.uji.es/images/logo.png'
+        },
+        active: 'image'
+      }
+    },
+
     APP: {
       apiServer: "http://ermes.dlsi.uji.es:6585",
       layerProxy: "http://ermes.dlsi.uji.es:6585/proxy",
