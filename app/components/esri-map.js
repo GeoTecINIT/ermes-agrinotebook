@@ -52,9 +52,9 @@ export default Ember.Component.extend(OfflineMap, {
   loadFieldsLayer() {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
-    this.addFeatureLayer(mapInfo.parcelsLayer);
+    this.addUserParcelsLayer(mapInfo.parcelsLayer);
     if (this.get('editMode')) {
-      this.addCompleteFeatureLayer(mapInfo.parcelsLayer);
+      this.addParcelsLayer(mapInfo.parcelsLayer);
     }
   }
 });
