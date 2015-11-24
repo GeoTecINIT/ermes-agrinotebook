@@ -35,12 +35,6 @@ module.exports = function(defaults) {
 
   // IndexedDBShim
   app.import('vendor/IndexedDBShim/indexeddbshim.js');
-  // OfflineJS
-  app.import('bower_components/offline/offline.min.js');
-  app.import('vendor/offline-shim/shim.js', {
-    type: 'vendor',
-    exports: {'offline': ['default']}
-  });
 
   // ArcGIS Offline library, globals
   app.import('bower_components/offline-editor-js/dist/offline-tiles-advanced-min.js');

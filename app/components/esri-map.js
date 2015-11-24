@@ -1,11 +1,11 @@
 import Ember from 'ember';
 import $ from 'jquery';
 import config from '../config/environment';
+import OfflineMap from 'ermes-smart-app/mixins/offline-map';
 import Map from 'esri/map';
-import { addOfflineTileLayer } from 'ermes-smart-app/utils/offline-map';
 import EditStore from 'oesri/offline-edit-store-src';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(OfflineMap, {
   elementId: 'mapDiv',
   map: null,
   editStore: null,
@@ -45,7 +45,7 @@ export default Ember.Component.extend({
   loadBasemap() {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
-    addOfflineTileLayer(this.get('map'), mapInfo.baseMap, mapInfo.mapName,
+    this.addOfflineTileLayer(this.get('map'), mapInfo.baseMap, mapInfo.mapName,
       config.APP.layerProxy);
   }
 });
