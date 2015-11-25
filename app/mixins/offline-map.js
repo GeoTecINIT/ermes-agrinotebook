@@ -7,8 +7,6 @@ import Color from "esri/Color";
 import Graphic from "esri/graphic";
 
 export default Ember.Mixin.create({
-  offline: Ember.inject.service(),
-  isOnline: Ember.computed.alias('offline.isUp'),
   layersMap: new Map(),
   parcelsGraphics: [],
 
@@ -17,16 +15,41 @@ export default Ember.Mixin.create({
     var tiledLayer = new OfflineTilesEnablerLayer(layerURL, (success) => {
       if (success) {
 
-        //When online, download the tiles locally.
-        this.get('map').on('update-end', () => {
-          if (this.get('isOnline')) {
-            downloadTiles(tiledLayer, this.get('map'));
-          }
-        });
+        //Manage offline mode
+        var downloadEvent;
+        var reloadEvent;
+        if (navigator.onLine) {
+          downloadEvent = this.get('map').on('update-end', () => {
+            if (navigator.onLine) {
+              var minZoomAdjust = -4;
+              var maxZoomAdjust = +4;
+              var zoom = tiledLayer.getMinMaxLOD(minZoomAdjust, maxZoomAdjust);
+
+              //Download tiles
+              tiledLayer.prepareForOffline(zoom.min, zoom.max, this.get('map').extent, function (progress) {
+                //console.log("downloading tiles...");
+                if (progress.finishedDownloading) {
+                  console.log("Tile download complete");
+                }
+              });
+            } else {
+              this.liveReload();
+              downloadEvent.remove();
+            }
+          });
+        } else {
+          reloadEvent = this.get('map').on('update-end', () => {
+            if (navigator.onLine) {
+              reloadEvent.remove();
+              this.liveReload();
+            }
+          });
+        }
+
       } else {
         Ember.debug("Imposible to prepare layer for offline");
       }
-    }, true, {dbName: dbStore.toUpperCase(), objectStoreName: dbStore});
+    }, navigator.onLine, {dbName: dbStore.toUpperCase(), objectStoreName: dbStore});
 
     if (proxy) {
       tiledLayer.offline.proxyPath = proxy;
@@ -67,7 +90,7 @@ export default Ember.Mixin.create({
     querySentence += "PARCEL_ID = '" + userParcels[userParcels.length - 1] + "'";
 
     // Common online and offline FeatureLayer creator and injector
-    function createAndAddFL(layerReference) {
+    function createAndAddFL(layerReference, event) {
       var featureLayer = new FeatureLayer(layerReference, {
         model: FeatureLayer.MODE_ONDEMAND,
         outFields: ['PARCEL_ID'],
@@ -76,10 +99,11 @@ export default Ember.Mixin.create({
 
       featureLayer.setSelectionSymbol(symbol);
 
-      featureLayer.on('update-end', () => {
-        if (_this.get('isOnline')) {
-          drawOwnerParcels(featureLayer, symbol, userParcels, _this.get('parcelsGraphics'));
+      var storeEvent = featureLayer.on(event, () => {
+        drawOwnerParcels(featureLayer, symbol, userParcels, _this.get('parcelsGraphics'));
+        if (navigator.onLine) {
           _this.storeUserParcelsLayer();
+          storeEvent.remove();
         }
       });
 
@@ -87,49 +111,41 @@ export default Ember.Mixin.create({
       _this.get('map').addLayer(featureLayer);
     }
 
-    if (this.get('isOnline')) {
-      createAndAddFL(layerURL);
+    if (navigator.onLine) {
+      createAndAddFL(layerURL, 'update-end');
     } else {
       this.get('editStore').getFeatureLayerJSON(function (success, featureLayer) {
         if (success) {
           Ember.debug('usersParcelLayer loaded successfully from the storage');
-          createAndAddFL(featureLayer);
+          createAndAddFL(featureLayer, 'resume');
         }
-      })
+      });
     }
   },
 
   // Store userParcelsLayer
   storeUserParcelsLayer() {
     this.get('editStore').pushFeatureLayerJSON(this.get('layersMap').get('userParcelsLayer').toJson(),
-      function (success, error) {
+      function (success) {
         if (success) {
           Ember.debug('userParcelsLayer successfully stored on the storage');
         } else {
           Ember.debug('Error: userParcelsLayer could no be stored');
         }
     });
+  },
+
+  /**
+   * liveReload, this method should remove all map layers and create them again, override it.
+   */
+  liveReload() {
+    Ember.debug('You should override this method for map layer reload');
   }
 });
 
-// Function for Offline Functionality.
-function downloadTiles(tiledLayer, map) {
-  var minZoomAdjust = -4;
-  var maxZoomAdjust = +4;
-  var zoom = tiledLayer.getMinMaxLOD(minZoomAdjust, maxZoomAdjust);
-
-  //Download tiles
-  tiledLayer.prepareForOffline(zoom.min, zoom.max, map.extent, function (progress) {
-    //console.log("downloading tiles...");
-    if (progress.finishedDownloading) {
-      console.log("Tile download complete");
-    }
-  });
-}
-
 // Paint actual user parcels over the FeatureLayer
 function drawOwnerParcels(layer, symbol, graphics) {
-  layer.graphics.forEach(function (item, index) {
+  layer.graphics.forEach(function (item) {
     let parcelId = item.attributes.PARCEL_ID;
     let geometry = item.geometry;
     graphics[parcelId] = new Graphic(geometry, symbol, item.attributes);

@@ -11,19 +11,7 @@ export default Ember.Component.extend(OfflineMap, {
   editStore: null,
   parcels: Ember.inject.service(),
 
-  editMode: true,
-
-  liveReload: Ember.observer('isOnline', function () {
-    //console.debug('Offline state changed:', this.get('offline').state);
-    //var layersMap = this.get('layersMap');
-    //for(let [layerName, layerObject] of layersMap.entries()) {
-    //  this.get('map').removeLayer(layerObject);
-    //}
-    ////console.debug(this.get('layersMap'));
-    //this.set('layersMap', new Map());
-    //this.loadBasemap();
-    //this.loadFieldsLayer();
-  }),
+  editMode: false, // Represents iif the user is editing his parcels or not
 
   didInsertElement() {
     var _this = this;
@@ -33,11 +21,10 @@ export default Ember.Component.extend(OfflineMap, {
       editStore.objectStoreName = "fields";
       editStore.init(function (success) {
         if (success) {
-          _this.get('offline').check();
           _this.createMap();
           _this.loadBasemap();
           _this.loadFieldsLayer();
-          //_this.initEventHandlers()
+          //_this.initEventHandlers();
         }
         // else: load online basemap
       });
@@ -69,5 +56,18 @@ export default Ember.Component.extend(OfflineMap, {
     if (this.get('editMode')) {
       this.addParcelsLayer(mapInfo.parcelsLayer);
     }
+  },
+
+  // Reload all layers
+  liveReload() {
+    var layersMap = this.get('layersMap');
+    for(let [layerName, layerObject] of layersMap.entries()) {
+      this.get('map').removeLayer(layerObject);
+    }
+
+    // Reset
+    this.get('layersMap').clear();
+    this.loadBasemap();
+    this.loadFieldsLayer();
   }
 });

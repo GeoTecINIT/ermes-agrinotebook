@@ -123,3 +123,39 @@ div.ui-panel td {
   padding: 0 10px 0 10px;
   text-align: left;
 }
+
+.ermes-side-buttons table {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+  z-index: 21;
+  text-align: center;
+}
+
+.ermes-side-buttons table, td, tr {
+  border: 0 !important;
+}
+
+.ermes-btn-med {
+  height: 40px;
+  width: 40px;
+}
+
+.ermes-btn-big {
+  height: 56px;
+  width: 56px;
+}
+
+.ermes-btn-med,
+.ermes-btn-big {
+  -webkit-border-radius:50% !important;
+  -moz-border-radius:50% !important;
+  border: none;
+  border-radius: 50% !important;
+  margin: 0;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
