@@ -9,7 +9,7 @@ import Graphic from "esri/graphic";
 export default Ember.Mixin.create({
   offline: Ember.inject.service(),
   isOnline: Ember.computed.alias('offline.isUp'),
-  layersMap: [],
+  layersMap: new Map(),
   parcelsGraphics: [],
 
   // For basemaps (Tiled maps in general)
@@ -32,7 +32,7 @@ export default Ember.Mixin.create({
       tiledLayer.offline.proxyPath = proxy;
     }
 
-    this.get('layersMap')[dbStore] = tiledLayer;
+    this.get('layersMap').set(dbStore, tiledLayer);
     this.get('map').addLayer(tiledLayer);
   },
 
@@ -43,7 +43,7 @@ export default Ember.Mixin.create({
       outFields: ['PARCEL_ID']
     });
 
-    this.get('layersMap')['parcelsLayer'] = featureLayer;
+    this.get('layersMap').set('parcelsLayer', featureLayer);
     this.get('map').addLayer(featureLayer);
   },
 
@@ -83,7 +83,7 @@ export default Ember.Mixin.create({
         }
       });
 
-      _this.get('layersMap')['userParcelsLayer'] = featureLayer;
+      _this.get('layersMap').set('userParcelsLayer', featureLayer);
       _this.get('map').addLayer(featureLayer);
     }
 
@@ -101,7 +101,7 @@ export default Ember.Mixin.create({
 
   // Store userParcelsLayer
   storeUserParcelsLayer() {
-    this.get('editStore').pushFeatureLayerJSON(this.get('layersMap')['userParcelsLayer'].toJson(),
+    this.get('editStore').pushFeatureLayerJSON(this.get('layersMap').get('userParcelsLayer').toJson(),
       function (success, error) {
         if (success) {
           Ember.debug('userParcelsLayer successfully stored on the storage');

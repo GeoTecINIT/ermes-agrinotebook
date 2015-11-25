@@ -13,6 +13,18 @@ export default Ember.Component.extend(OfflineMap, {
 
   editMode: true,
 
+  liveReload: Ember.observer('isOnline', function () {
+    //console.debug('Offline state changed:', this.get('offline').state);
+    //var layersMap = this.get('layersMap');
+    //for(let [layerName, layerObject] of layersMap.entries()) {
+    //  this.get('map').removeLayer(layerObject);
+    //}
+    ////console.debug(this.get('layersMap'));
+    //this.set('layersMap', new Map());
+    //this.loadBasemap();
+    //this.loadFieldsLayer();
+  }),
+
   didInsertElement() {
     var _this = this;
     $(document).ready(function() { // Wait until DOM is ready to prevent map fixed size
@@ -21,6 +33,7 @@ export default Ember.Component.extend(OfflineMap, {
       editStore.objectStoreName = "fields";
       editStore.init(function (success) {
         if (success) {
+          _this.get('offline').check();
           _this.createMap();
           _this.loadBasemap();
           _this.loadFieldsLayer();
