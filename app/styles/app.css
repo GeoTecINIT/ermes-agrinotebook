@@ -137,6 +137,10 @@ div.ui-panel td {
   border: 0 !important;
 }
 
+.ermes-side-buttons td {
+  padding-top: 0.4em;
+}
+
 .ermes-btn-med {
   height: 40px;
   width: 40px;

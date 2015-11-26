@@ -12,7 +12,17 @@ export default Ember.Component.extend(OfflineMap, {
   parcels: Ember.inject.service(),
 
   editMode: false, // Represents iif the user is editing his parcels or not
+  onMapLoad: Ember.on('mapLoaded', Ember.observer('editMode', function () {
+    // Enter edit mode
+    if (this.get('editMode')) {
+      this.loadFullParcelsLayer();
 
+    // Exit edit mode, remove full layer
+    } else if (this.get('layersMap').get('parcelsLayer')) {
+      this.get('map').removeLayer(this.get('layersMap').get('parcelsLayer'));
+      this.get('layersMap').delete('parcelsLayer')
+    }
+  })),
   didInsertElement() {
     var _this = this;
     $(document).ready(function() { // Wait until DOM is ready to prevent map fixed size
@@ -25,6 +35,7 @@ export default Ember.Component.extend(OfflineMap, {
           _this.loadBasemap();
           _this.loadFieldsLayer();
           //_this.initEventHandlers();
+          _this.mapLoaded();
         }
         // else: load online basemap
       });
@@ -53,9 +64,14 @@ export default Ember.Component.extend(OfflineMap, {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     this.addUserParcelsLayer(mapInfo.parcelsLayer);
-    if (this.get('editMode')) {
-      this.addParcelsLayer(mapInfo.parcelsLayer);
-    }
+    //if (this.get('editMode')) {
+    //  this.addParcelsLayer(mapInfo.parcelsLayer);
+    //}
+  },
+  loadFullParcelsLayer() {
+    var mapInfo = this.get('parcels').getUserMapInfo();
+
+    this.addParcelsLayer(mapInfo.parcelsLayer);
   },
 
   // Reload all layers
@@ -64,10 +80,19 @@ export default Ember.Component.extend(OfflineMap, {
     for(let [layerName, layerObject] of layersMap.entries()) {
       this.get('map').removeLayer(layerObject);
     }
+    //this.get('layersMap').forEach(function (item) {
+    //  this.get('map').removeLayer(item);
+    //});
 
     // Reset
     this.get('layersMap').clear();
     this.loadBasemap();
     this.loadFieldsLayer();
+  },
+
+  // This is important, once this is called, then user can start editing
+  mapLoaded() {
+    Ember.debug('Map was successfully loaded');
+    this.notifyPropertyChange('editMode');
   }
 });

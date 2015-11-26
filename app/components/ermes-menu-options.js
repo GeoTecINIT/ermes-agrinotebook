@@ -7,11 +7,11 @@ export default JqmPopup.extend({
   theme: 'c',
   transition: 'slidedown',
   i18n: Ember.inject.service(),
-  options: Ember.computed('i18n.locale', function() {
+  options: Ember.computed('i18n.locale', 'editMode', function() {
       return [
-        {text: this.get('i18n').t('fields.options-m.profile'), icon: "user", action: "showPanel", actionParam: "index.profile"},
-        {text: this.get('i18n').t('fields.options-m.fields'), icon: "bullets", action: "enterEditMode", actionParam: null},
-        {text: this.get('i18n').t('fields.options-m.about'), icon: "info", action: "showPanel", actionParam: "index.about"}
+        {text: this.get('i18n').t('fields.options-m.profile'), icon: "user", action: "showPanel", actionParam: "index.profile", isShown: true},
+        {text: this.get('i18n').t('fields.options-m.fields'), icon: "bullets", action: "enterEditMode", actionParam: null, isShown: !this.get('editMode')},
+        {text: this.get('i18n').t('fields.options-m.about'), icon: "info", action: "showPanel", actionParam: "index.about", isShown: true}
       ];
     }),
   actions: {
@@ -20,7 +20,8 @@ export default JqmPopup.extend({
       this.sendAction('showPanel', name);
     },
     enterEditMode() {
-
+      $('#'+this.get('id')).popup('close');
+      this.set('editMode', true);
     }
   }
 

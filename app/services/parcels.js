@@ -33,9 +33,14 @@ export default Ember.Service.extend({
     this.set('user', model);
   },
 
-  // Useful for creating a new map
+  // Useful when creating a new map
   getUserLastPosition() {
     return this.get('user.lastPosition');
+  },
+
+  // Store actual position on the database
+  setUserLastPosition(position) {
+    this.set('user.lastPosition', position);
   },
 
   // Useful for loading map layers
@@ -46,15 +51,6 @@ export default Ember.Service.extend({
   // Retrieve user owned parcels
   getUserParcels() {
     return this.get('user.parcels');
-  },
-
-  // =================================================================
-  //          PARCELS
-  // =================================================================
-
-  // Get the actual selected parcels pushed by map click events
-  getSelectedParcels() {
-    return this.get('selectedParcels');
   }
 
 });
