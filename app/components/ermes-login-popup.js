@@ -24,11 +24,12 @@ export default Ember.Component.extend({
         } else if (data.profile !== 'local') {
           this.set('error', this.get('i18n').t('panel.notification.regional-error'));
         } else {
+
+          auth.logIn(data.user, data.user+";"+model.password);
+
           // Reset form
           this.set('model.username', '');
           this.set('model.password', '');
-
-          auth.logIn(data.user);
           this.sendAction('logIn');
         }
       }).fail(() => {
