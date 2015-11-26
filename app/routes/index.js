@@ -3,9 +3,13 @@ import Ember from 'ember';
 import AuthChecker from 'ermes-smart-app/mixins/auth-checker';
 
 export default Ember.Route.extend(AuthChecker, {
+  parcels: Ember.inject.service(),
   model() {
     var username = this.get('auth').getCurrentUserId();
     return this.store.findRecord('user', username);
+  },
+  afterModel(user) {
+    this.set('parcels.user', user);
   },
   actions: {
     willTransition() {

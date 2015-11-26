@@ -6,42 +6,12 @@ export default Ember.Service.extend({
   selectedParcels: null,
 
   init() {
-    // Fake user
-    var user = {
-      parcels: [
-        "ES52346237A00400032A",
-        "ES52346237A00400294A",
-        "ES52346237A00400075A"
-      ],
-      lastPosition: {
-        lastX: -0.3,
-          lastY: 39.3,
-          zoom: 15
-      },
-      region: 'spain'
-    };
-    this.setUser(user);
     this.set('selectedParcels', []);
   },
 
   // =================================================================
   //          USER
   // =================================================================
-
-  // Initialize de service with a new user
-  setUser(model) {
-    this.set('user', model);
-  },
-
-  // Useful when creating a new map
-  getUserLastPosition() {
-    return this.get('user.lastPosition');
-  },
-
-  // Store actual position on the database
-  setUserLastPosition(position) {
-    this.set('user.lastPosition', position);
-  },
 
   // Useful for loading map layers
   getUserMapInfo() {

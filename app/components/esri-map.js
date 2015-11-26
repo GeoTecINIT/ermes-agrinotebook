@@ -20,7 +20,8 @@ export default Ember.Component.extend(OfflineMap, {
     // Exit edit mode, remove full layer
     } else if (this.get('layersMap').get('parcelsLayer')) {
       this.get('map').removeLayer(this.get('layersMap').get('parcelsLayer'));
-      this.get('layersMap').delete('parcelsLayer')
+      this.get('layersMap').delete('parcelsLayer');
+      this.liveReload();
     }
   })),
   didInsertElement() {
@@ -43,12 +44,12 @@ export default Ember.Component.extend(OfflineMap, {
     });
   },
   createMap() {
-    var pos = this.get('parcels').getUserLastPosition();
+    var pos = this.get('parcels.user.lastPosition');
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     var map = new Map(this.elementId, {
-      "center": [pos.lastX, pos.lastY],
-      "zoom": pos.zoom,
+      "center": [pos.get('lastX'), pos.get('lastY')],
+      "zoom": pos.get('zoom'),
       "maxZoom": mapInfo.maxZoom,
       "minZoom": mapInfo.minZoom,
       "logo": false
