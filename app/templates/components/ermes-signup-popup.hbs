@@ -11,7 +11,7 @@
   {{ermes-message text=error color="red" animation="fadeInDown"}}
   {{ermes-message text=info color="blue" animation="fadeIn"}}
   {{#if success}}
-    <p align="center" class="animated fadeInDown" style="color: #669933;"><b>Welcome, {{model.username}}.<br>
-        Now you can <a href="" {{action 'showLoginPopup'}}>{{t 'login.text.login'}}</a></b></p>
+    <p align="center" class="animated fadeInDown" style="color: #669933;"><b>{{t 'panel.notification.welcome' username=model.username}}.<br>
+        {{t 'panel.notification.login-allowed'}} <a href="" {{action 'showLoginPopup'}}>{{t 'login.text.login'}}</a></b></p>
   {{/if}}
 {{/jqm-popup}}

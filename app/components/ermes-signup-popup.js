@@ -23,13 +23,13 @@ export default Ember.Component.extend({
       this.set('error', '');
 
       if (model.password !== model.rPassword) {
-        this.set('error', "Passwords don't match");
+        this.set('error', this.get('i18n').t('panel.notification.password-mismatch'));
 
       } else if (model.email !== model.rEmail) {
-        this.set('error', "Emails don't match");
+        this.set('error', this.get('i18n').t('panel.notification.email-mismatch'));
 
       } else {
-        this.set('info', 'Processing...');
+        this.set('info', this.get('i18n').t('panel.notification.processing'));
 
         post('/signup', {username: model.username,
           password: model.password, email: model.email, region: model.region})
@@ -38,11 +38,11 @@ export default Ember.Component.extend({
           if (data) {
             this.set('success', true);
           } else {
-            this.set('error', 'Sorry, that user already exist');
+            this.set('error', this.get('i18n').t('panel.notification.user-exits'));
           }
         }).fail(() => {
           this.set('info', '');
-          this.set('error', 'Connection lost');
+          this.set('error', this.get('i18n').t('panel.notification.offline'));
         });
       }
     },

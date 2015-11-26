@@ -172,11 +172,26 @@ export default {
       'logout': "Logout"
     },
     'notification': {
-      'downloading-data': "Downloading data...",
+      'downloading-data': "Downloading data... {{count}} / {{total}}",
       'offline': "Connection lost",
       'online': "Connection established",
       'product-upload': "Uploading parcel info",
-      'product-upload-later': "Offline. Product will be uploaded later"
+      'product-upload-later': "Offline. Product will be uploaded later",
+      'login-error': "Wrong user or password",
+      'password-mismatch': "Passwords don't match",
+      'email-mismatch': "Emails don't match",
+      'regional-error': "This is a regional account",
+      'user-exits': "Sorry, that user already exist",
+      'processing': "Processing...",
+      'welcome': "Welcome, {{username}}",
+      'login-allowed': "Now you can,",
+      'missing-date': "Please fill date",
+      'missing-start-date': "Please fill start date",
+      'dates-inconsistency': "End date must be greater than start date",
+      'file-missing': "Please upload an image",
+      'offline-parcels': "Sorry, you need to go online to add or delete parcels",
+      'no-parcels-offline': "Sorry, you need to go online and add at least one parcel before start using the app",
+      'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom when finished"
     }
   },
   'region': {

@@ -176,7 +176,22 @@ export default {
       'offline': "Conexión perdida",
       'online': "Conexión establecida",
       'product-upload': "Subiendo info. de parcela",
-      'product-upload-later': "Sin conexión. El producto se subirá más tarde"
+      'product-upload-later': "Sin conexión. El producto se subirá más tarde",
+      'login-error': "Usuario o contraseña incorrectos",
+      'password-mismatch': "Las contraseñas no coinciden",
+      'email-mismatch': "Los emails no coinciden",
+      'regional-error': "Esta es una cuenta regional",
+      'user-exits': "Lo sentimos, ese usuario ya existe",
+      'processing': "Procesando...",
+      'welcome': "Bienvenido, {{username}}",
+      'login-allowed': "Ahora puedes,",
+      'missing-date': "Por favor, introduce una fecha",
+      'missing-start-date': "Por favor, introduce la fecha inicial",
+      'dates-inconsistency': "La fecha de fin debe ser mayor que la fecha de inicio",
+      'file-missing': "Por favor, selecciona una imagen",
+      'offline-parcels': "Lo sentimos, tienes que estar conectado para añadir o eliminar parcelas",
+      'no-parcels-offline': "Lo sentimos, para empezar a utilizar la aplicación, primero debes añadir por lo menos una parcela cuando estés conectado",
+      'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado"
     }
   },
   'region': {

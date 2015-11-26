@@ -3,6 +3,7 @@ import { post } from 'ermes-smart-app/utils/ajax';
 
 export default Ember.Component.extend({
   auth: Ember.inject.service(),
+  i18n: Ember.inject.service(),
   model: Ember.RSVP.hash({
     username: "",
     password: ""
@@ -14,14 +15,14 @@ export default Ember.Component.extend({
 
       this.set('error', '');
 
-      this.set('info', 'Processing...');
+      this.set('info', this.get('i18n').t('panel.notification.processing'));
       post('/login', {username: model.username, password: model.password })
       .done((data) => {
         this.set('info', '');
         if (!data) {
-          this.set('error', 'Wrong user or password');
+          this.set('error', this.get('i18n').t('panel.notification.login-error'));
         } else if (data.profile !== 'local') {
-          this.set('error', 'This is a regional account');
+          this.set('error', this.get('i18n').t('panel.notification.regional-error'));
         } else {
           // Reset form
           this.set('model.username', '');
@@ -32,7 +33,7 @@ export default Ember.Component.extend({
         }
       }).fail(() => {
         this.set('info', '');
-        this.set('error', 'Connection lost');
+        this.set('error', this.get('i18n').t('panel.notification.offline'));
       });
     }
   }

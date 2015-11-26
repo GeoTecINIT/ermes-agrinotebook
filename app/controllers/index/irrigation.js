@@ -15,10 +15,10 @@ export default Ember.Controller.extend(ProductUpload, {
     submit() {
       var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
       if (!this.get('model.startDate')) {
-        this.set('startDateError', 'Please fill start date');
+        this.set('startDateError', this.get('i18n').t('panel.notification.missing-start-date'));
       } else if (this.get('model.endDate') && new Date(this.get('model.endDate').replace(pattern, '$3-$2-$1')) < new Date(this.get('model.startDate').replace(pattern, '$3-$2-$1'))) {
           this.set('startDateError', '');
-          this.set('endDateError', 'End date must be greater than start date');
+          this.set('endDateError', this.get('i18n').t('panel.notification.dates-inconsistency'));
       } else {
           this.set('startDateError', '');
           this.set('endDateError', '');
