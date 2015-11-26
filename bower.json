@@ -17,7 +17,8 @@
     "jquery-mobile-bower": "~1.4.5",
     "jquery-mobile-datepicker-wrapper": "arschmitz/jquery-mobile-datepicker-wrapper#~0.1.9",
     "animate.css": "~3.4.0",
-    "offline": "~0.7.14"
+    "offline": "~0.7.14",
+    "ember-data-model-fragments": "2.1.0"
   },
   "resolutions": {
     "jquery": "~2.1.4",

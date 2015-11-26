@@ -25,9 +25,5 @@ export default Ember.Controller.extend({
   init() {
     this._super();
     document.title = this.get('pageTitle');
-    //var classes = $($.mobile.activePage).attr('class').split(' ');
-    //if (!'ember-view' in classes) {
-    //  console.debug('I have to render this')
-    //}
   }
 });
