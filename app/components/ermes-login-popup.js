@@ -8,6 +8,7 @@ export default Ember.Component.extend({
     username: "",
     password: ""
   }),
+  username: Ember.computed.alias('model.username'),
   actions: {
     submit() {
       let model = this.get('model');
@@ -25,7 +26,7 @@ export default Ember.Component.extend({
           this.set('error', this.get('i18n').t('panel.notification.regional-error'));
         } else {
 
-          auth.logIn(data.user, data.user+";"+model.password);
+          auth.logIn(data.user, data.user+";"+model.password, data.lang);
 
           // Reset form
           this.set('model.username', '');

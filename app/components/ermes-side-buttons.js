@@ -26,7 +26,7 @@ export default Ember.Component.extend({
       this.set('editMode', false);
     },
     foo() {
-      console.debug('Hey there!')
+      console.debug('Hey there!');
     }
   }
 });

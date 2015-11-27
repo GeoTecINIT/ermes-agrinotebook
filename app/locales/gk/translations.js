@@ -58,7 +58,7 @@ export default {
       'fertilizers': "Λιπάσματα",
       'agrochemicals': "Αγροχημικά",
       'irrigation': "Άρδευση",
-      'yield': "Παραγωγή/Απόδοση",
+      'yield': "Παραγωγή / Απόδοση",
       'observation': "Παρατηρήσεις",
       'parcel-info': "Πληροφορίες Αγροτεμαχίου",
       'add-new': "Προσθέστε πληροφορίες"
@@ -73,7 +73,7 @@ export default {
       'options-tooltip': "Επιλογές χρήστη"
     },
     'options-m': {
-      'title': "Γεια σας, {{όνομα χρήστη}}",
+      'title': "Γεια σας, {{username}}",
       'profile': "Το προφίλ μου",
       'fields': "Τα Αγροτεμάχια μου",
       'about': "Σχετικά με"

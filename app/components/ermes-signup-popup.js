@@ -50,7 +50,8 @@ export default Ember.Component.extend({
       let loginPopup = $('#ermes-login-popup');
       let signupPopup = $('#ermes-signup-popup');
       loginPopup.find('form').trigger('reset'); // Clear login
-      $(loginPopup.find('form').find('input')[0]).val(this.get('model.username')); // Set login username
+      //$(loginPopup.find('form').find('input')[0]).val(this.get('model.username')); // Set login username
+      this.set('username', this.get('model.username'));
       signupPopup.one('popupafterclose', function () {
         loginPopup.popup('open');
       }); // Prevent animation error
