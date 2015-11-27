@@ -15,7 +15,7 @@ module.exports = function(environment) {
 
     APP: {
       apiServer: "http://lsivirtual11.dlsi.uji.es:6686",
-      layerProxy: "http://ermes.dlsi.uji.es:6585/proxy",
+      layerProxy: "http://lsivirtual11.dlsi.uji.es:6686/proxy",
       regionLayers: {
         spain: {
           baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer",

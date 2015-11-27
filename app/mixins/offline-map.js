@@ -94,7 +94,7 @@ export default Ember.Mixin.create({
       featureLayer.setSelectionSymbol(symbol);
 
       var storeEvent = featureLayer.on(event, () => {
-        drawOwnerParcels(featureLayer, symbol, userParcels, _this.get('parcelsGraphics'));
+        drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
         if (navigator.onLine) {
           _this.storeUserParcelsLayer();
           storeEvent.remove();

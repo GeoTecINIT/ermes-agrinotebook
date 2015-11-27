@@ -24,7 +24,7 @@ export default Ember.Component.extend({
       this.sendAction('openPanel', 'index.parcel-info');
     },
     commitChanges() {
-      this.get('parcels.user').save().then(function () {
+      this.get('parcels.user').save().then(() => {
         this.set('editMode', false);
       }, function () {
         console.debug('No se ha podido guardar el usuario');

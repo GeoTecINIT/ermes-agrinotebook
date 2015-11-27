@@ -12,7 +12,7 @@ export default Ember.Mixin.create({
       var userParcelsLayer = _this.get('layersMap').get('userParcelsLayer');
       var parcelsLayer = _this.get('layersMap').get('parcelsLayer');
       var userParcels = _this.get('parcels.user.parcels');
-      var selectedParcels = _this.get('parcels.selectedParcels');
+      //var selectedParcels = _this.get('parcels.selectedParcels');
 
       var userParcelsGraphics = this.get('parcelsGraphics');
       var symbol = this.get('userParcelSymbol');
