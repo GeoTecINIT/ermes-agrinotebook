@@ -1,9 +1,7 @@
 import Ember from 'ember';
+
 import OfflineTilesEnablerLayer from 'oesri/offline-tiles-advanced-src';
 import FeatureLayer from "esri/layers/FeatureLayer";
-import SimpleFillSymbol from "esri/symbols/SimpleFillSymbol";
-import SimpleLineSymbol from "esri/symbols/SimpleLineSymbol";
-import Color from "esri/Color";
 import Graphic from "esri/graphic";
 
 export default Ember.Mixin.create({
@@ -75,14 +73,10 @@ export default Ember.Mixin.create({
     var _this = this;
 
     // Symbol for painting parcels
-    var symbol = new SimpleFillSymbol(
-      SimpleFillSymbol.STYLE_SOLID,
-      new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 0]), 2),
-      new Color([255, 255, 0, 0.90])
-    );
+    var symbol = this.get('userParcelSymbol');
 
     // Query, to gather only user parcels from the FeatureLayer service
-    var userParcels = this.get('parcels').getUserParcels();
+    var userParcels = this.get('parcels.user.parcels').toArray();
     var querySentence = "";
     for (var i = 0; i < userParcels.length - 1; i++) {
       querySentence += "PARCEL_ID = '" + userParcels[i] + "' or ";

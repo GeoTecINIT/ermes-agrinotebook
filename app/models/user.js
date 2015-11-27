@@ -8,5 +8,5 @@ export default DS.Model.extend({
   profile: DS.attr('string'),
   language: DS.attr('string'),
   lastPosition: MF.fragment('last-position'),
-  parcels: DS.hasMany('parcel')
+  parcels: MF.array('string')
 });

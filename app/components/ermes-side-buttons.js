@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['ermes-side-buttons'],
+  parcels: Ember.inject.service(),
 
   buttons: Ember.computed('editMode', function () {
     if (this.get('editMode')) {
@@ -23,7 +24,11 @@ export default Ember.Component.extend({
       this.sendAction('openPanel', 'index.parcel-info');
     },
     commitChanges() {
-      this.set('editMode', false);
+      this.get('parcels.user').save().then(function () {
+        this.set('editMode', false);
+      }, function () {
+        console.debug('No se ha podido guardar el usuario');
+      });
     },
     foo() {
       console.debug('Hey there!');
