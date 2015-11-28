@@ -38,11 +38,17 @@ module.exports = function(environment) {
           maxZoom: 6,
           minZoom: 3
         }
-      }
+      },
+      defaultDateFormat: 'DD/MM/YYYY'
     }
   };
 
+  // Internationalization settings
   ENV.i18n = { defaultLocale: 'en' };
+
+  // Moment (Dates) settings
+  ENV.moment = { includeLocales: ['en', 'el', 'es', 'it']};
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

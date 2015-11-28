@@ -1,6 +1,10 @@
 import Ember from 'ember';
+import Moment from 'moment';
 import * as dd from 'ermes-smart-app/models/static/irrigation';
 import ProductUpload from 'ermes-smart-app/mixins/product-upload';
+import config from '../../config/environment';
+
+var dFormat = config.APP.defaultDateFormat;
 
 export default Ember.Controller.extend(ProductUpload, {
   panelId: 'irrigation',
@@ -13,10 +17,10 @@ export default Ember.Controller.extend(ProductUpload, {
   }),
   actions: {
     submit() {
-      var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
       if (!this.get('model.startDate')) {
         this.set('startDateError', this.get('i18n').t('panel.notification.missing-start-date'));
-      } else if (this.get('model.endDate') && new Date(this.get('model.endDate').replace(pattern, '$3-$2-$1')) < new Date(this.get('model.startDate').replace(pattern, '$3-$2-$1'))) {
+      } else if (this.get('model.endDate') &&
+        new Moment(this.get('model.endDate'), dFormat) < new Moment(this.get('model.startDate'), dFormat)) {
           this.set('startDateError', '');
           this.set('endDateError', this.get('i18n').t('panel.notification.dates-inconsistency'));
       } else {

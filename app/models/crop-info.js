@@ -6,5 +6,5 @@ export default DS.Model.extend({
   riceVariety: DS.attr('string'),
   pudding: DS.attr('string'),
   sowingPractice: DS.attr('string'),
-  date: DS.attr('date')
+  date: DS.attr('user-date')
 });

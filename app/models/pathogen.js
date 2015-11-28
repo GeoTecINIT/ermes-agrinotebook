@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  date: DS.attr('date'),
+  date: DS.attr('user-date'),
   uploadingDate: DS.attr('date'),
   name: DS.attr('string'),
   comments: DS.attr('string'),
