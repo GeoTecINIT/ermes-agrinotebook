@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['ermes-side-buttons'],
+  tagName: 'table',
   parcels: Ember.inject.service(),
 
   buttons: Ember.computed('editMode', function () {

@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import MF from 'model-fragments';
 
 export default DS.Model.extend({
   date: DS.attr('user-date'),
@@ -6,5 +7,6 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   comments: DS.attr('string'),
   file: DS.attr('string'),
-  damage: DS.attr('number')
+  damage: DS.attr('number'),
+  parcels: MF.array('string')
 });

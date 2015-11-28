@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import MF from 'model-fragments';
 
 export default DS.Model.extend({
   startDate: DS.attr('user-date'),
@@ -7,5 +8,6 @@ export default DS.Model.extend({
   waterQuantity: DS.attr('number'),
   waterHours: DS.attr('number'),
   waterDepth: DS.attr('number'),
-  uploadingDate: DS.attr('date')
+  uploadingDate: DS.attr('date'),
+  parcels: MF.array('string')
 });

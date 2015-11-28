@@ -14,7 +14,11 @@ export default Ember.Mixin.create({
         this.set('parcelError', '');
         this.set('model.parcels', this.get('parcels.selectedParcels'));
         this.set('model.uploadingDate', new Moment());
-        this.get('model').save();
+        this.get('model').save().then(function () {
+          console.debug('OK!!');
+        }, function () {
+          console.debug(';(');
+        });
       }
     }
   }

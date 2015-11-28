@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import MF from 'model-fragments';
 
 export default DS.Model.extend({
   date: DS.attr('user-date'),
@@ -7,5 +8,6 @@ export default DS.Model.extend({
   quantity: DS.attr('number'),
   nitrogenContent: DS.attr('number'),
   phosphorusContent: DS.attr('number'),
-  potassiumContent: DS.attr('number')
+  potassiumContent: DS.attr('number'),
+  parcels: MF.array('string')
 });

@@ -124,16 +124,17 @@ div.ui-panel td {
   text-align: left;
 }
 
-.ermes-side-buttons table {
+table.ermes-side-buttons {
   position: fixed;
   bottom: 0;
   right: 0;
   padding: 1em;
   z-index: 21;
   text-align: center;
+  border: 0;
 }
 
-.ermes-side-buttons table, td, tr {
+table.ermes-side-buttons td, tr {
   border: 0 !important;
 }
 
