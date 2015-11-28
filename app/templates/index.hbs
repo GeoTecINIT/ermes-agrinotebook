@@ -4,8 +4,8 @@
       <div class="ermes-bar">
           <div class="ui-grid-b">
               <div class="ui-block-a">
-                  {{jqm-anchor id="add-info-btn" action=(action "openPopup" "ermes-menu-fields") title=(t 'fields.header.add-info-tooltip') inline="true" allCorners="true" icon="plus" iconPos="notext" theme="b"}}
-                  {{jqm-anchor action=(action "showPanel" "index.observation") title=(t 'fields.header.observation-tooltip') inline="true" allCorners="true" icon="eye" iconPos="notext" theme="b"}}
+                  {{jqm-anchor id="add-info-btn" action=(action "openPopup" "ermes-menu-fields") title=(t 'fields.header.add-info-tooltip') inline="true" allCorners="true" icon="plus" iconPos="notext" theme="b" isDisabled=editMode}}
+                  {{jqm-anchor action=(action "showPanel" "index.observation") title=(t 'fields.header.observation-tooltip') inline="true" allCorners="true" icon="eye" iconPos="notext" theme="b" isDisabled=editMode}}
               </div>
               <div class="ui-block-b" align="center">
                   <h1><img src="assets/ermes-images/logo.png" class="ermes-header-logo"> {{t 'fields.header.title'}}</h1>

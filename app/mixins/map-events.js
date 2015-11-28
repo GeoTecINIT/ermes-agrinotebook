@@ -3,16 +3,33 @@ import Graphic from "esri/graphic";
 
 export default Ember.Mixin.create({
   store: Ember.inject.service(),
+  selectedParcelsGraphics: new Map(),
+
   selectParcelEvent(evt) {
-    console.debug('Select:', evt.graphic);
+    if (evt.graphic) {
+      var selectedParcels = this.get('parcels.selectedParcels');
+      var userParcelsLayer = this.get('layersMap').get('userParcelsLayer');
+
+      var selectedParcelId = evt.graphic.attributes.PARCEL_ID;
+
+      if (selectedParcels.contains(selectedParcelId)) {
+        selectedParcels.removeObject(selectedParcelId);
+        Ember.debug('UNSELECTED PARCEL_ID: ' + selectedParcelId);
+      } else {
+        selectedParcels.pushObject(selectedParcelId);
+        Ember.debug('SELECTED PARCEL_ID: ' + selectedParcelId);
+      }
+
+      userParcelsLayer.refresh();
+      Ember.debug('SELECTED PARCELS: ' + selectedParcels);
+    }
   },
-  editParcelEvent(evt, _this) {
+  editParcelEvent(evt) {
     if (evt.graphic) {
 
-      var userParcelsLayer = _this.get('layersMap').get('userParcelsLayer');
-      var parcelsLayer = _this.get('layersMap').get('parcelsLayer');
-      var userParcels = _this.get('parcels.user.parcels');
-      //var selectedParcels = _this.get('parcels.selectedParcels');
+      var userParcelsLayer = this.get('layersMap').get('userParcelsLayer');
+      var parcelsLayer = this.get('layersMap').get('parcelsLayer');
+      var userParcels = this.get('parcels.user.parcels');
 
       var userParcelsGraphics = this.get('parcelsGraphics');
       var symbol = this.get('userParcelSymbol');

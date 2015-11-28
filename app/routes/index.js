@@ -9,7 +9,7 @@ export default Ember.Route.extend(AuthChecker, {
     return this.store.findRecord('user', username);
   },
   afterModel(user) {
-    this.set('parcels.user', user);
+    this.get('parcels').setUser(user);
   },
   actions: {
     willTransition() {

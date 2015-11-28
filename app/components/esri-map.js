@@ -9,6 +9,7 @@ import EditStore from 'oesri/offline-edit-store-src';
 import SimpleFillSymbol from "esri/symbols/SimpleFillSymbol";
 import SimpleLineSymbol from "esri/symbols/SimpleLineSymbol";
 import Color from "esri/Color";
+import Graphic from "esri/graphic";
 
 export default Ember.Component.extend(OfflineMap, MapEvents, {
   elementId: 'mapDiv',
@@ -16,38 +17,29 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   editStore: null,
   parcels: Ember.inject.service(),
   clickEvent: null,
+  editMode: false, // Represents iif the user is editing his parcels or not
+
+  /**
+   * Persistent symbol
+   */
   userParcelSymbol: new SimpleFillSymbol(
     SimpleFillSymbol.STYLE_SOLID,
-    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 0]), 2),
-    new Color([255, 255, 0, 0.90])
+    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([135, 238, 124]), 2),
+    new Color([255, 213, 87, 1])
   ),
 
-  editMode: false, // Represents iif the user is editing his parcels or not
-  onMapLoad: Ember.on('mapLoaded', Ember.observer('editMode', function () {
-    var clickEvent = this.get('clickEvent');
-    // Enter edit mode
-    if (this.get('editMode')) {
-      this.loadFullParcelsLayer();
+  /**
+   * Volatile symbol
+   */
+  selectSymbol: new SimpleFillSymbol(
+    SimpleFillSymbol.STYLE_SOLID,
+    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([242, 38, 19]), 2),
+    new Color([211, 84, 0, 1])
+  ),
 
-      if (clickEvent) {
-        clickEvent.remove();
-      }
-      this.set('clickEvent', this.get('map').on('click', (evt) => {
-        this.editParcelEvent(evt, this);
-      }));
-      return;
-    // Exit edit mode, remove full layer
-    } else if (this.get('layersMap').get('parcelsLayer')) {
-      this.get('map').removeLayer(this.get('layersMap').get('parcelsLayer'));
-      this.get('layersMap').delete('parcelsLayer');
-      this.liveReload();
-    }
-
-    if (clickEvent) {
-      clickEvent.remove();
-    }
-    this.set('clickEvent', this.get('map').on('click', this.selectParcelEvent));
-  })),
+  /**
+   * Esri map component inserted to the DOM
+   */
   didInsertElement() {
     var _this = this;
     $(document).ready(function() { // Wait until DOM is ready to prevent map fixed size
@@ -58,8 +50,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
         if (success) {
           _this.createMap();
           _this.loadBasemap();
-          _this.loadFieldsLayer();
-          //_this.initEventHandlers();
+          _this.loadUserParcelsLayer();
           _this.mapLoaded();
         }
         // else: load online basemap
@@ -67,6 +58,10 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       _this.set('editStore', editStore);
     });
   },
+
+  /**
+   * Map layers fully initialized
+   */
   createMap() {
     var pos = this.get('parcels.user.lastPosition');
     var mapInfo = this.get('parcels').getUserMapInfo();
@@ -80,12 +75,20 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     });
     this.set('map', map);
   },
+
+  /**
+   * Load default basemap for the actual user region
+   */
   loadBasemap() {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy);
   },
-  loadFieldsLayer() {
+
+  /**
+   * Special feature layer, contains only actual user fields
+   */
+  loadUserParcelsLayer() {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     this.addUserParcelsLayer(mapInfo.parcelsLayer);
@@ -93,31 +96,96 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     //  this.addParcelsLayer(mapInfo.parcelsLayer);
     //}
   },
+
+  /**
+   * Full parcels layer for the actual user region
+   */
   loadFullParcelsLayer() {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     this.addParcelsLayer(mapInfo.parcelsLayer);
   },
 
-  // Reload all layers
+  /**
+   * Reload all layer for the current esri map configuration
+   */
   liveReload() {
     var layersMap = this.get('layersMap');
-    for(let [layerName, layerObject] of layersMap.entries()) {
+    for(let layerObject of layersMap.values()) {
       this.get('map').removeLayer(layerObject);
     }
-    //this.get('layersMap').forEach(function (item) {
-    //  this.get('map').removeLayer(item);
-    //});
 
-    // Reset
     this.get('layersMap').clear();
     this.loadBasemap();
-    this.loadFieldsLayer();
+    this.loadUserParcelsLayer();
   },
 
-  // This is important, once this is called, then user can start editing
+  /**
+   * Once the map has been fully configured,
+   * trigger Edit Mode decision event
+   */
   mapLoaded() {
     Ember.debug('Map was successfully loaded');
     this.notifyPropertyChange('editMode');
-  }
+  },
+
+  /**
+   * Decides if it is needed to switch to the editMode or not
+   * on map load and when editMode variable changes
+   */
+  onMapLoad: Ember.on('mapLoaded', Ember.observer('editMode', function () {
+    var clickEvent = this.get('clickEvent');
+    // If an event already exists, remove it
+    if (clickEvent) {
+      clickEvent.remove();
+    }
+
+    // Enter edit mode
+    if (this.get('editMode')) {
+      this.get('parcels.selectedParcels').clear();
+      this.loadFullParcelsLayer();
+      this.set('clickEvent', this.get('map').on('click', (evt) => this.editParcelEvent(evt) ));
+      return;
+      // Exit edit mode, remove full layer
+    } else if (this.get('layersMap').get('parcelsLayer')) {
+      this.get('map').removeLayer(this.get('layersMap').get('parcelsLayer'));
+      this.get('layersMap').delete('parcelsLayer');
+      this.liveReload();
+    }
+    // Default behavior while not editing
+    this.set('clickEvent', this.get('map').on('click', (evt) => this.selectParcelEvent(evt) ));
+  })),
+
+  /**
+   * When a parcel is selected / deselected, update map graphics
+   */
+  onParcelSelectionChange: Ember.on('mapLoaded', Ember.observer('parcels.selectedParcels.[]', function () {
+    var userParcelsLayer = this.get('layersMap').get('userParcelsLayer');
+    var selectedParcels = this.get('parcels.selectedParcels');
+    var selectedParcelsGraphics = this.get('selectedParcelsGraphics');
+    var symbol = this.get('selectSymbol');
+
+    var parcelsCount = selectedParcels.length;
+    var graphicsCount = selectedParcelsGraphics.size;
+
+    if (graphicsCount < parcelsCount) {
+      userParcelsLayer.graphics.forEach((element) => {
+        var parcelId = element.attributes.PARCEL_ID;
+        if (selectedParcels.contains(parcelId) && !selectedParcelsGraphics.has(parcelId)) {
+          var selectedAttr = { 'PARCEL_ID': parcelId};
+          selectedParcelsGraphics.set(parcelId, new Graphic(element.geometry, symbol, selectedAttr));
+          userParcelsLayer.add(selectedParcelsGraphics.get(parcelId));
+        }
+      });
+
+    } else if (graphicsCount > parcelsCount) {
+      for (var [parcelId, graphic] of selectedParcelsGraphics.entries()) {
+        if (!selectedParcels.contains(parcelId)) {
+          userParcelsLayer.remove(graphic);
+          selectedParcelsGraphics.delete(parcelId);
+        }
+      }
+    }
+    userParcelsLayer.refresh();
+  }))
 });

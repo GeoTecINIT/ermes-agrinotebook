@@ -13,6 +13,11 @@ export default Ember.Service.extend({
   //          USER
   // =================================================================
 
+  setUser(user) {
+    this.set('user', user);
+    this.set('selectedParcels', []);
+  },
+
   // Useful for loading map layers
   getUserMapInfo() {
     return config.APP.regionLayers[this.get('user.region')];

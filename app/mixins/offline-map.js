@@ -19,8 +19,8 @@ export default Ember.Mixin.create({
         if (navigator.onLine) {
           downloadEvent = this.get('map').on('update-end', () => {
             if (navigator.onLine) {
-              var minZoomAdjust = -4;
-              var maxZoomAdjust = +4;
+              var minZoomAdjust = -2;
+              var maxZoomAdjust = +2;
               var zoom = tiledLayer.getMinMaxLOD(minZoomAdjust, maxZoomAdjust);
 
               //Download tiles
