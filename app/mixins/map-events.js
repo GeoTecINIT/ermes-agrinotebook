@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import Graphic from "esri/graphic";
+import webMercatorUtils from "esri/geometry/webMercatorUtils";
 
 export default Ember.Mixin.create({
   store: Ember.inject.service(),
@@ -57,7 +58,23 @@ export default Ember.Mixin.create({
         Ember.debug("ADDED PARCEL_ID: " + parcelNum);
       }
 
+      updateLastPosition(this.get('parcels.user.lastPosition'), this.get('map'));
       parcelsLayer.refresh();
     }
   }
 });
+
+/**
+ * Updates user last position on owned parcels change
+ * @param lastPosition
+ * @param map
+ */
+function updateLastPosition(lastPosition, map) {
+  var actualPosition = webMercatorUtils.webMercatorToGeographic(map.extent.getCenter());
+  lastPosition.setProperties({
+    lastX: actualPosition.x,
+    lastY: actualPosition.y,
+    zoom: map.getLevel(),
+    spatialReference: (actualPosition.spatialReference.wkid).toString()
+  });
+}

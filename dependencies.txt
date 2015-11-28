@@ -1,1 +1,1 @@
-'esri/Color','esri/graphic','esri/layers/FeatureLayer','esri/map','esri/symbols/SimpleFillSymbol','esri/symbols/SimpleLineSymbol','oesri/offline-edit-store-src','oesri/offline-tiles-advanced-src'
+'esri/Color','esri/geometry/webMercatorUtils','esri/graphic','esri/layers/FeatureLayer','esri/map','esri/symbols/SimpleFillSymbol','esri/symbols/SimpleLineSymbol','oesri/offline-edit-store-src','oesri/offline-tiles-advanced-src'
