@@ -202,6 +202,7 @@ export default {
       'welcome': "Welcome, {{username}}",
       'login-allowed': "Now you can,",
       'missing-date': "Please fill date",
+      'missing-parcel': "Please select at least one parcel",
       'missing-start-date': "Please fill start date",
       'dates-inconsistency': "End date must be greater than start date",
       'file-missing': "Please upload an image",

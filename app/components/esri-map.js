@@ -16,8 +16,6 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   map: null,
   editStore: null,
   parcels: Ember.inject.service(),
-  clickEvent: null,
-  editMode: false, // Represents iif the user is editing his parcels or not
 
   /**
    * Persistent symbol
@@ -92,9 +90,6 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     this.addUserParcelsLayer(mapInfo.parcelsLayer);
-    //if (this.get('editMode')) {
-    //  this.addParcelsLayer(mapInfo.parcelsLayer);
-    //}
   },
 
   /**

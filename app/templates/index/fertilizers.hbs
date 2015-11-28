@@ -26,5 +26,6 @@
       {{jqm-textinput value=model.potassiumContent type="number" min=0 step=0.01 placeholder=(t "panel.fertilizers.potassium-unit")}}
     </label>
     {{jqm-button text=(t "fields.text.add-new") theme="b"}}
+    {{ermes-message text=parcelError color="red" animation="fadeInDown"}}
   </form>
 {{/ermes-panel}}

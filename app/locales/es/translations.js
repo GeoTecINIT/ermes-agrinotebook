@@ -186,6 +186,7 @@ export default {
       'welcome': "Bienvenido, {{username}}",
       'login-allowed': "Ahora puedes,",
       'missing-date': "Por favor, introduce una fecha",
+      'missing-parcel': "Por favor, selecciona al menos una parcela",
       'missing-start-date': "Por favor, introduce la fecha inicial",
       'dates-inconsistency': "La fecha de fin debe ser mayor que la fecha de inicio",
       'file-missing': "Por favor, selecciona una imagen",
