@@ -14,16 +14,21 @@
         {{#jqm-collapsible}}
           <h4>{{t "panel.profile.email-section"}}</h4>
           <p>{{model.email}}</p>
-          {{jqm-textinput type="email" placeholder=(t "panel.profile.email-tooltip")}}
+          {{jqm-textinput value=newModel.email type="email" placeholder=(t "panel.profile.email-tooltip")}}
         {{/jqm-collapsible}}
         {{#jqm-collapsible}}
           <h4>{{t "panel.profile.password-section"}}</h4>
-          {{jqm-textinput type="password" placeholder=(t "panel.profile.old-password-tooltip")}}
-          {{jqm-textinput type="password" placeholder=(t "panel.profile.new-password-tooltip")}}
-          {{jqm-textinput type="password" placeholder=(t "panel.profile.repeat-new-password-tooltip")}}
+          {{jqm-textinput value=newModel.oldPass type="password" placeholder=(t "panel.profile.old-password-tooltip")}}
+          {{jqm-textinput value=newModel.newPass type="password" placeholder=(t "panel.profile.new-password-tooltip")}}
+          {{jqm-textinput value=newModel.rNewPass type="password" placeholder=(t "panel.profile.repeat-new-password-tooltip")}}
+        {{/jqm-collapsible}}
+        {{#jqm-collapsible}}
+          <h4>{{t "panel.profile.language-section"}}</h4>
+          {{jqm-select value=i18n.locale theme="c" options=languages}}
         {{/jqm-collapsible}}
       {{/jqm-collapsibleset}}
       {{jqm-button text=(t "panel.profile.update") theme="b"}}
+      {{ermes-message text=info color="blue" animation="fadeInDown"}}
   </form>
   {{jqm-button action='logOut' text=(t "panel.profile.logout") theme="d" icon="power" iconPos="left"}}
 {{/ermes-panel}}

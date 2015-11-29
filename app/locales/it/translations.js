@@ -163,6 +163,7 @@ export default {
       'picture-section': "Profile picture",
       'username-section': "Username",
       'email-section': "Email",
+      'language-section': "Language",
       'email-tooltip': "Change email",
       'password-section': "Password",
       'old-password-tooltip': "Old password",
@@ -196,7 +197,8 @@ export default {
       'reconnect': "Reconnect",
       'retrieving-info': "We are recovering your profile from our servers. Please wait...",
       'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
-      'got-it': "Got it"
+      'got-it': "Got it",
+      'saved': "Saved"
     }
   },
   'region': {

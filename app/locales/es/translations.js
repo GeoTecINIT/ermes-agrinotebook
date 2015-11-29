@@ -163,6 +163,7 @@ export default {
       'picture-section': "Imagen de perfil",
       'username-section': "Usuario",
       'email-section': "Email",
+      'language-section': "Idioma",
       'email-tooltip': "Cambiar email",
       'password-section': "Contraseña",
       'old-password-tooltip': "Contraseña antigua",
@@ -196,7 +197,8 @@ export default {
       'reconnect': "Reconectar",
       'retrieving-info': "Estamos recuperando tu perfil de nuestros servidores. Por favor, espera...",
       'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado",
-      'got-it': "Entendido"
+      'got-it': "Entendido",
+      'saved': "Guardado"
     }
   },
   'region': {

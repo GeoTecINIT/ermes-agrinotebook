@@ -179,6 +179,7 @@ export default {
       'picture-section': "Φωτογραφία προφίλ",
       'username-section': "Όνομα χρήστη",
       'email-section': "Email",
+      'language-section': "Language",
       'email-tooltip': "Αλλαγή email",
       'password-section': "Κωδικός πρόσβασης",
       'old-password-tooltip': "Παλιός κωδικός πρόσβασης",
@@ -212,7 +213,8 @@ export default {
       'reconnect': "Reconnect",
       'retrieving-info': "We are recovering your profile from our servers. Please wait...",
       'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
-      'got-it': "Got it"
+      'got-it': "Got it",
+      'saved': "Saved"
     }
   },
   'region': {
