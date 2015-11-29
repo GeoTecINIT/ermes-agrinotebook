@@ -192,7 +192,8 @@ export default {
       'file-missing': "Por favor, selecciona una imagen",
       'offline-parcels': "Lo sentimos, tienes que estar conectado para añadir o eliminar parcelas",
       'no-parcels-offline': "Lo sentimos, para empezar a utilizar la aplicación, primero debes añadir por lo menos una parcela cuando estés conectado",
-      'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado"
+      'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado",
+      'got-it': "Entendido"
     }
   },
   'region': {

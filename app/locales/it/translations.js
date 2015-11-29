@@ -192,7 +192,8 @@ export default {
       'file-missing': "Please upload an image",
       'offline-parcels': "Sorry, you need to go online to add or delete parcels",
       'no-parcels-offline': "Sorry, you need to go online and add at least one parcel before start using the app",
-      'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom when finished"
+      'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
+      'got-it': "Got it"
     }
   },
   'region': {

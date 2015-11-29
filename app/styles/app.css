@@ -164,3 +164,15 @@ table.ermes-side-buttons td, tr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
+
+div.ermes-inner-window {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  margin-right: 5%;
+  /*margin-right: auto;*/
+  margin-left: auto;
+  height: auto;
+  max-width: 400px;
+  background: #FFF;
+}

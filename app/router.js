@@ -24,6 +24,7 @@ Router.map(function() {
     this.route('profile', {});
     this.route('about', {});
     this.route('parcel-info', {});
+    this.route('welcome', {});
   });
 });
 
