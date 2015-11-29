@@ -10,6 +10,9 @@ export default Ember.Route.extend(AuthChecker, {
   },
   afterModel(user) {
     this.get('parcels').setUser(user);
+    if (user.get('parcels.length') === 0) {
+      this.controllerFor('index').set('editMode', true);
+    }
   },
   actions: {
     willTransition() {
