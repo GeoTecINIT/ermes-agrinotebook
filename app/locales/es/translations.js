@@ -194,6 +194,7 @@ export default {
       'no-data-offline': "Parece que has perdido tu conexión y nosotros no tenemos ninguna información tuya en este dispositivo",
       'try-again': "Puedes intentar",
       'reconnect': "Reconectar",
+      'retrieving-info': "Estamos recuperando tu perfil de nuestros servidores. Por favor, espera...",
       'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado",
       'got-it': "Entendido"
     }

@@ -27,6 +27,7 @@ Router.map(function() {
     this.route('welcome', {});
   });
   this.route('index-error', {});
+  this.route('index-loading', {});
 });
 
 export default Router;

@@ -210,6 +210,7 @@ export default {
       'no-data-offline': "Seems that you have lost your connection and we do not have any info stored about you on this device",
       'try-again': "You can try to",
       'reconnect': "Reconnect",
+      'retrieving-info': "We are recovering your profile from our servers. Please wait...",
       'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
       'got-it': "Got it"
     }
