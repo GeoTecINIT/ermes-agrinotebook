@@ -29,6 +29,13 @@
       {{/each}}
     </table>
   {{else}}
-    <p>{{t 'panel.parcel-info.none-selected'}}</p>
+    {{#unless loading}}
+      <p>{{t 'panel.parcel-info.none-selected'}}</p>
+    {{/unless}}
   {{/if}}
+  {{#if loading}}
+    <p>{{t 'panel.notification.processing'}}</p>
+    <div class="animated pulse infinite">
+      <img src="/assets/ermes-images/logo.png">
+    </div>  {{/if}}
 {{/ermes-panel}}

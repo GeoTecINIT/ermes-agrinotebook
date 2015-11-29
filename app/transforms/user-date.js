@@ -6,10 +6,10 @@ var dFormat = config.APP.defaultDateFormat;
 
 export default DS.Transform.extend({
   deserialize: function(serialized) {
-    return moment(serialized).format(dFormat);
+    return new Moment(serialized).format(dFormat);
   },
 
   serialize: function(deserialized) {
-    return moment(deserialized, dFormat).add(1, 'hours');
+    return new Moment(deserialized, dFormat).add(1, 'hours');
   }
 });

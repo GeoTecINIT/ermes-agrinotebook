@@ -3,10 +3,10 @@ import Moment from 'moment';
 
 export default DS.Transform.extend({
   deserialize: function(serialized) {
-    return moment(serialized).format('lll');
+    return new Moment(serialized).format('lll');
   },
 
   serialize: function(deserialized) {
-    return moment(deserialized).toISOString();
+    return new Moment(deserialized).toISOString();
   }
 });

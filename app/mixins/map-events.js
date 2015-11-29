@@ -59,7 +59,7 @@ export default Ember.Mixin.create({
       }
 
       updateLastPosition(this.get('parcels.user.lastPosition'), this.get('map'));
-      parcelsLayer.refresh();
+      //parcelsLayer.refresh();
     }
   }
 });

@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import Moment from 'moment';
-import config from '../config/environment';
 
 export default Ember.Mixin.create({
   productService: Ember.inject.service('products'),
@@ -16,7 +15,7 @@ export default Ember.Mixin.create({
         this.get('model').save().then(() => {
           this.set('model', this.get('productService')
             .archiveProduct(Ember.String.singularize(this.get('panelId'))));
-          console.debug('success!')
+          console.debug('success!');
         }, () => {
           console.debug('ERROR');
         });

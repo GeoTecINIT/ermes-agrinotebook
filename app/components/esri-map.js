@@ -155,25 +155,17 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    * When a parcel is selected / deselected, update map graphics
    */
   onParcelSelectionChange: Ember.on('mapLoaded', Ember.observer('parcels.selectedParcels.[]', function () {
-    var userParcelsLayer = this.get('layersMap').get('userParcelsLayer');
-    var selectedParcels = this.get('parcels.selectedParcels');
-    var selectedParcelsGraphics = this.get('selectedParcelsGraphics');
-    var symbol = this.get('selectSymbol');
-
-    var parcelsCount = selectedParcels.length;
-    var graphicsCount = selectedParcelsGraphics.size;
+    var parcelsCount = this.get('parcels.selectedParcels').length;
+    var graphicsCount = this.get('selectedParcelsGraphics').size;
 
     if (graphicsCount < parcelsCount) {
-      userParcelsLayer.graphics.forEach((element) => {
-        var parcelId = element.attributes.PARCEL_ID;
-        if (selectedParcels.contains(parcelId) && !selectedParcelsGraphics.has(parcelId)) {
-          var selectedAttr = { 'PARCEL_ID': parcelId};
-          selectedParcelsGraphics.set(parcelId, new Graphic(element.geometry, symbol, selectedAttr));
-          userParcelsLayer.add(selectedParcelsGraphics.get(parcelId));
-        }
-      });
+      Ember.run.once(this, 'addSelectedGraphics'); // Reduces cost from exponential to linear on multiple update
 
     } else if (graphicsCount > parcelsCount) {
+      var userParcelsLayer = this.get('layersMap').get('userParcelsLayer');
+      var selectedParcels = this.get('parcels.selectedParcels');
+      var selectedParcelsGraphics = this.get('selectedParcelsGraphics');
+
       for (var [parcelId, graphic] of selectedParcelsGraphics.entries()) {
         if (!selectedParcels.contains(parcelId)) {
           userParcelsLayer.remove(graphic);
@@ -181,6 +173,24 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
         }
       }
     }
-    userParcelsLayer.refresh();
-  }))
+  })),
+
+  /**
+   * Adds missing parcel graphics
+   */
+  addSelectedGraphics() {
+    var userParcelsLayer = this.get('layersMap').get('userParcelsLayer');
+    var selectedParcels = this.get('parcels.selectedParcels');
+    var selectedParcelsGraphics = this.get('selectedParcelsGraphics');
+
+    var symbol = this.get('selectSymbol');
+    userParcelsLayer.graphics.forEach((element) => {
+      var parcelId = element.attributes.PARCEL_ID;
+      if (selectedParcels.contains(parcelId) && !selectedParcelsGraphics.has(parcelId)) {
+        var selectedAttr = { 'PARCEL_ID': parcelId};
+        selectedParcelsGraphics.set(parcelId, new Graphic(element.geometry, symbol, selectedAttr));
+        userParcelsLayer.add(selectedParcelsGraphics.get(parcelId));
+      }
+    });
+  }
 });

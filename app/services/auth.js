@@ -29,10 +29,13 @@ export default Ember.Service.extend({
     // Store session here
     localStorage.userId = id;
     localStorage.token = token;
-    localStorage.lang = lang;
     this.set('userId', id);
     this.set('token', token);
     this.set('userLoggedIn', true);
+    if (!lang) {
+      lang = 'en'; //Default locale if missing
+    }
+    localStorage.lang = lang;
     this.get('i18n').set('locale', lang);
     if (lang === 'gk') { // TODO Change this on the backend
       lang = 'el';
