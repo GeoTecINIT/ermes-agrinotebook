@@ -1,11 +1,13 @@
-<div class="ermes-inner-window animated bounceInLeft">
-  {{#jqm-component role='header'}}
-    <h1>{{t 'fields.options-m.title' username=model.username}}</h1>
-  {{/jqm-component}}
-  {{#jqm-content}}
-    {{t 'panel.notification.first-login'}}
-  {{/jqm-content}}
-  <div align="right">
-      {{jqm-button text=(t 'panel.notification.got-it') action='dismiss' inline='true' mini='true' theme='b'}}
-  </div>
-</div>
+{{#jqm-component}}
+    <div class="ermes-inner-window animated bounceInLeft">
+      {{#jqm-component role='header'}}
+          <h1>{{t 'fields.options-m.title' username=model.username}}</h1>
+      {{/jqm-component}}
+      <div style="padding: 1em">
+        {{t 'panel.notification.first-login'}}
+      </div>
+      <div align="right">
+        {{jqm-button text=(t 'panel.notification.got-it') action='dismiss' inline='true' mini='true' theme='b'}}
+      </div>
+    </div>
+{{/jqm-component}}

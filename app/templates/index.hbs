@@ -19,10 +19,10 @@
   {{#jqm-content class="esri-map"}}
     <div class="map-container">
       {{esri-map editMode=editMode}}
-      {{ermes-side-buttons editMode=editMode openPanel='showPanel'}}
+      {{ermes-side-buttons editMode=editMode openPanel='showPanel' cannotEdit='cannotEdit'}}
     </div>
     {{ermes-menu-fields showPanel="showPanel" positionTo="#add-info-btn" id="ermes-menu-fields"}}
-    {{ermes-menu-options showPanel="showPanel" positionTo="#options-btn" username=model.username id="ermes-menu-options" editMode=editMode}}
+    {{ermes-menu-options showPanel="showPanel" cannotEdit='cannotEdit' positionTo="#options-btn" username=model.username id="ermes-menu-options" editMode=editMode}}
   {{/jqm-content}}
   {{outlet}}
 {{/jqm-page}}

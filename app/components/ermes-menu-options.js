@@ -21,7 +21,11 @@ export default JqmPopup.extend({
     },
     enterEditMode() {
       $('#'+this.get('id')).popup('close');
-      this.set('editMode', true);
+      if(navigator.onLine) {
+        this.set('editMode', true);
+      } else {
+        this.sendAction('cannotEdit');
+      }
     }
   }
 

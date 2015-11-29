@@ -1,0 +1,13 @@
+{{#jqm-component}}
+  <div class="ermes-inner-window animated bounceInLeft">
+    {{#jqm-component role='header'}}
+        <h1>{{t 'panel.notification.offline'}}</h1>
+    {{/jqm-component}}
+    <div style="padding: 1em">
+      {{t 'panel.notification.offline-parcels'}}
+    </div>
+    <div align="right">
+      {{jqm-button text=(t 'panel.notification.got-it') action='dismiss' inline='true' mini='true' theme='b'}}
+    </div>
+  </div>
+{{/jqm-component}}

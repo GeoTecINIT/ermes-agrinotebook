@@ -20,6 +20,9 @@ export default Ember.Controller.extend({
     },
     openPopup(popup) {
       $('#' + popup).popup('open');
+    },
+    cannotEdit() {
+      this.transitionToRoute('index.cannot-edit');
     }
   },
   init() {

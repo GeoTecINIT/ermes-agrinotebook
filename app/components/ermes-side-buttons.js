@@ -25,12 +25,20 @@ export default Ember.Component.extend({
       this.sendAction('openPanel', 'index.parcel-info');
     },
     commitChanges() {
-      this.get('parcels.user').save().then(() => {
+      if (navigator.onLine){
+        this.get('parcels.user').save().then(() => {
+          this.set('editMode', false);
+        }, (err) => {
+          console.debug('No se ha podido guardar el usuario');
+          this.set('editMode', false);
+          console.debug(err);
+        });
+      } else {
+        this.get('parcels.user').rollbackAttributes();
         this.set('editMode', false);
-      }, function (err) {
-        console.debug('No se ha podido guardar el usuario');
-        console.debug(err);
-      });
+        this.sendAction('cannotEdit');
+      }
+
     },
     selectAll() {
       var userParcels = this.get('parcels.user.parcels');
