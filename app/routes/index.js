@@ -14,6 +14,8 @@ export default Ember.Route.extend(AuthChecker, {
       if (navigator.onLine) {
         this.controllerFor('index').set('editMode', true);
         this.transitionTo('index.welcome');
+      } else {
+        this.transitionTo('index-error');
       }
     }
   },

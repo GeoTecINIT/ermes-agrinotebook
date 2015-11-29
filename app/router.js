@@ -26,6 +26,7 @@ Router.map(function() {
     this.route('parcel-info', {});
     this.route('welcome', {});
   });
+  this.route('index-error', {});
 });
 
 export default Router;

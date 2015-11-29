@@ -207,7 +207,9 @@ export default {
       'dates-inconsistency': "End date must be greater than start date",
       'file-missing': "Please upload an image",
       'offline-parcels': "Sorry, you need to go online to add or delete parcels",
-      'no-parcels-offline': "Sorry, you need to go online and add at least one parcel before start using the app",
+      'no-data-offline': "Seems that you have lost your connection and we do not have any info stored about you on this device",
+      'try-again': "You can try to",
+      'reconnect': "Reconnect",
       'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
       'got-it': "Got it"
     }

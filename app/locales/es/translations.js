@@ -191,7 +191,9 @@ export default {
       'dates-inconsistency': "La fecha de fin debe ser mayor que la fecha de inicio",
       'file-missing': "Por favor, selecciona una imagen",
       'offline-parcels': "Lo sentimos, tienes que estar conectado para añadir o eliminar parcelas",
-      'no-parcels-offline': "Lo sentimos, para empezar a utilizar la aplicación, primero debes añadir por lo menos una parcela cuando estés conectado",
+      'no-data-offline': "Parece que has perdido tu conexión y nosotros no tenemos ninguna información tuya en este dispositivo",
+      'try-again': "Puedes intentar",
+      'reconnect': "Reconectar",
       'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado",
       'got-it': "Entendido"
     }

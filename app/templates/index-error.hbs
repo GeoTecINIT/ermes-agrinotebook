@@ -1,0 +1,17 @@
+<!-- Index error page -->
+<div class="ermes-full-window ui-page-theme-a">
+  {{#jqm-header position="fixed"}}
+      <h1>{{t 'panel.notification.offline'}}</h1>
+  {{/jqm-header}}
+  {{#jqm-content}}
+      <div class="ermes-center-content animated bounceInDown" align="center">
+          <div>
+              <img src="/assets/ermes-images/logo.png">
+          </div>
+          <div>
+              <p>{{t 'panel.notification.no-data-offline'}}</p>
+              <p>{{t 'panel.notification.try-again'}} {{jqm-button text=(t 'panel.notification.reconnect') action='reconnect' inline='true' mini='true' theme='b'}}</p>
+          </div>
+      </div>
+  {{/jqm-content}}
+</div>
