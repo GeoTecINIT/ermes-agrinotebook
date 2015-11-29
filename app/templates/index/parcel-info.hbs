@@ -8,11 +8,11 @@
       </tr>
       <tr>
         <td><b>{{t 'panel.crop-info.crop-type'}}</b></td>
-        <td>{{cropType}}</td>
+        <td>{{cropInfo.cropType}}</td>
       </tr>
       <tr>
         <td><b>{{t 'panel.crop-info.rice-variety'}}</b></td>
-        <td>{{riceVariety}}</td>
+        <td>{{cropInfo.riceVariety}}</td>
       </tr>
     </table>
     <p>{{t 'panel.parcel-info.product-text'}}</p>
@@ -21,10 +21,10 @@
         <th>{{t 'panel.parcel-info.product-table-product'}}</th>
         <th>{{t 'panel.parcel-info.product-table-date'}}</th>
       </tr>
-      {{#each products as |product|}}
+      {{#each parcel as |product|}}
         <tr>
-          <td><b>{{product.text}}</b></td>
-          <td>{{lastProductDate}}</td>
+          <td><b>{{product.name}}</b></td>
+          <td>{{product.lastDate}}</td>
         </tr>
       {{/each}}
     </table>

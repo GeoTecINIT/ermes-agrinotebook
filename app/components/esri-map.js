@@ -192,5 +192,6 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
         userParcelsLayer.add(selectedParcelsGraphics.get(parcelId));
       }
     });
+    userParcelsLayer.refresh();
   }
 });

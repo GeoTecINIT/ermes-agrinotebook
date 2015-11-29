@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 export function getProducts(context) {
   return [
     {text: context.get('i18n').t('fields.text.crop-info'), panel: 'index.crop-info'},
@@ -12,4 +14,15 @@ export function getProducts(context) {
     {text: context.get('i18n').t('fields.text.irrigation'), panel: 'index.irrigation'},
     {text: context.get('i18n').t('fields.text.yield'), panel: 'index.yield'}
   ];
+}
+
+export function getProductsNames(context) {
+  var products = getProducts(context).map(function (product) {
+    return {
+      text: product.text,
+      name: Ember.String.singularize(product.panel.split('.')[1])
+    }
+  });
+  products.push({text: context.get('i18n').t('fields.text.observation'), name: 'observation'});
+  return products;
 }
