@@ -11,13 +11,17 @@ export default Ember.Mixin.create({
         this.set('parcelError', '');
         this.set('model.parcels', this.get('parcels.selectedParcels'));
         this.set('model.uploadingDate', new Moment());
-        console.debug('uploading product...');
+        this.set('info', this.get('i18n').t('panel.notification.processing'));
         this.get('model').save().then(() => {
+          this.set('info', this.get('i18n').t('panel.notification.saved'));
           this.set('model', this.get('productService')
             .archiveProduct(Ember.String.singularize(this.get('panelId'))));
-          console.debug('success!');
+          setTimeout(() => this.set('info', ''), 2000);
         }, () => {
-          console.debug('ERROR');
+          this.set('info', this.get('i18n').t('panel.notification.saved'));
+          this.set('model', this.get('productService')
+            .archiveProduct(Ember.String.singularize(this.get('panelId'))));
+          setTimeout(() => this.set('info', ''), 2000);
         });
       }
     }

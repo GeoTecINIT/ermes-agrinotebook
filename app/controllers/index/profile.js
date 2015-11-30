@@ -21,11 +21,20 @@ export default Ember.Controller.extend({
       model.set('language', this.get('i18n.locale'));
       localStorage.lang = this.get('i18n.locale');
       this.set('info', this.get('i18n').t('panel.notification.processing'));
-      model.save().then(() => {
-        this.set('info', this.get('i18n').t('panel.notification.saved'))
-      }, () => {
-        console.debug('Error saving user');
-      });
+      if (navigator.online) {
+        model.save().then(() => {
+          this.set('info', this.get('i18n').t('panel.notification.saved'));
+          setTimeout(() => this.set('info', ''), 2000);
+        }, () => {
+          this.set('info', '');
+          this.set('info', this.get('i18n').t('panel.notification.offline-profile-update'));
+          setTimeout(() => this.set('info', ''), 2000);
+        });
+      } else {
+        this.set('info', '');
+        this.set('info', this.get('i18n').t('panel.notification.offline-profile-update'));
+        setTimeout(() => this.set('info', ''), 2000);
+      }
     },
     logOut() {
       this.get('auth').logOut();

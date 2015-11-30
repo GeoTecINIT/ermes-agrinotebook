@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
       return {
         cropType: cropInfo.get('cropType') ? cropTypes.findBy('value', cropInfo.get('cropType')).text : '----',
         riceVariety: cropInfo.get('riceVariety') ? riceVarieties.findBy('value', cropInfo.get('riceVariety')).text : '----'
-      }
+      };
     } else {
       return {
         cropType: '----',

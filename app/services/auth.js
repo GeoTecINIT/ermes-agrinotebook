@@ -32,7 +32,7 @@ export default Ember.Service.extend({
     this.set('userId', id);
     this.set('token', token);
     this.set('userLoggedIn', true);
-    if (!lang) {
+    if (!lang || lang === 'undefined') {
       lang = 'en'; //Default locale if missing
     }
     localStorage.lang = lang;

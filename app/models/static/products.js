@@ -21,7 +21,7 @@ export function getProductsNames(context) {
     return {
       text: product.text,
       name: Ember.String.singularize(product.panel.split('.')[1])
-    }
+    };
   });
   products.push({text: context.get('i18n').t('fields.text.observation'), name: 'observation'});
   return products;
