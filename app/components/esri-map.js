@@ -10,6 +10,8 @@ import SimpleFillSymbol from "esri/symbols/SimpleFillSymbol";
 import SimpleLineSymbol from "esri/symbols/SimpleLineSymbol";
 import Color from "esri/Color";
 import Graphic from "esri/graphic";
+import PictureMarkerSymbol from 'esri/symbols/PictureMarkerSymbol';
+import Point from 'esri/geometry/Point';
 
 export default Ember.Component.extend(OfflineMap, MapEvents, {
   elementId: 'mapDiv',
@@ -113,6 +115,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     this.get('layersMap').clear();
     this.loadBasemap();
     this.loadUserParcelsLayer();
+
   },
 
   /**
@@ -122,6 +125,39 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   mapLoaded() {
     Ember.debug('Map was successfully loaded');
     this.notifyPropertyChange('editMode');
+    this.get('map').on('update-end', () => this.setPositionMarker());
+  },
+
+  /**
+   * Sets a marker for the actual user position
+   */
+  setPositionMarker(){
+    if (navigator.geolocation) {
+      var map = this.get('map');
+      var myPositionGraphic = this.get('myPositionGraphic');
+      navigator.geolocation.getCurrentPosition((location) => {
+        var myPos = new Point(location.coords.longitude, location.coords.latitude);
+        if (!myPositionGraphic) {
+          var myPositionSymbol = new PictureMarkerSymbol({
+            "angle": 0,
+            "xoffset": 2,
+            "yoffset": 8,
+            "type": "esriPMS",
+            "url": "assets/ermes-images/BlueCircleLargeB.png",
+            "contentType": "image/png",
+            "width": 24,
+            "height": 24
+          });
+          myPositionGraphic = new Graphic(myPos, myPositionSymbol);
+          map.graphics.add(myPositionGraphic);
+          this.set('myPositionGraphic', myPositionGraphic);
+        }
+        else { //move the graphic if it already exists
+          myPositionGraphic.setGeometry(myPos);
+          map.graphics.add(myPositionGraphic);
+        }
+      });
+    }
   },
 
   /**

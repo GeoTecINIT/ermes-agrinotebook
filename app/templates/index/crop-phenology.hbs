@@ -2,7 +2,7 @@
   <form {{action 'submit' on='submit'}}>
     <label>
       <span>{{t 'panel.crop-phenology.date'}}</span>
-      {{jqm-datepicker value=model.date required=true}}
+      {{ermes-datepicker value=model.date required=true}}
     </label>
     {{ermes-message text=dateError color="red" animation="fadeInDown"}}
     <label>

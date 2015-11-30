@@ -2,12 +2,12 @@
   <form {{action "submit" on="submit"}}>
     <label>
       <span>{{t "panel.irrigation.start-date"}}</span>
-      {{jqm-datepicker value=model.startDate}}
+      {{ermes-datepicker value=model.startDate}}
     </label>
     {{ermes-message text=startDateError color="red" animation="fadeInDown"}}
     <label>
       <span>{{t "panel.irrigation.end-date"}}</span>
-      {{jqm-datepicker value=model.endDate}}
+      {{ermes-datepicker value=model.endDate}}
     </label>
     {{ermes-message text=endDateError color="red" animation="fadeInDown"}}
     <label>
