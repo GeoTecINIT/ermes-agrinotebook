@@ -192,6 +192,7 @@ export default {
       'dates-inconsistency': "La fecha de fin debe ser mayor que la fecha de inicio",
       'file-missing': "Por favor, selecciona una imagen",
       'offline-parcels': "Lo sentimos, tienes que estar conectado para añadir o eliminar parcelas",
+      'offline-profile-update': "Sorry, you cannot update your profile while offline",
       'no-data-offline': "Parece que has perdido tu conexión y nosotros no tenemos ninguna información tuya en este dispositivo",
       'try-again': "Puedes intentar",
       'reconnect': "Reconectar",
