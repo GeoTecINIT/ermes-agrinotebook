@@ -1,423 +1,886 @@
 export default {
-  //
-  // WARNING! Translate only text between " " characters
-  // It is important to avoid translating text between ' ' and {{ }}
-  //
-  // Please, try to use strings with a similar length to the original.
-  // Use short synonyms as possible, always keeping the same meaning.
-  // This is primordial to keep UI homogeneity.
-  //
-  // Thanks for your collaboration
-  //
+
+
+
+  // Please, translate ONLY the text between " " characters,
+
+  // just replace the English string with the translation in your language.
+
+  // Please DO NOT translate the text between ' ' and {{ }} !!
+
+
+
+  // For example, in the following, you only need to translate "Log in" and "Sign up" (indiated with <---- below)
+
+
+
+  // 'login': {
+
+  //  'text': {
+
+  //    'login': "Log in",  <----
+
+  //    'signup': "Sign up" <----
+
+  //  },
+
+
+
+  // Your result would look as follows (for example, for the Spanish translation):
+
+
+
+  // 'login': {
+
+  //  'text': {
+
+  //    'login': "Entrar",
+
+  //    'signup': "Registrar"
+
+  //  },
+
+
+
+  // Please try to keep the strings as short as possible.
+
+  // Please Always use the same translation for the same term (do not use synonyms).
+
+
+
+  // Thanks for your collaboration!
+
+
+
+
 
   'login': {
+
     'text': {
-      'login': "Log in",
-      'signup': "Sign up"
+
+      'login': "Entra",
+
+      'signup': "Registrati"
+
     },
+
     'login-p': {
-      'username-f': "Enter username",
-      'password-f': "Enter password",
-      'login-btn': "Log in"
+
+      'username-f': "Nome Utente",
+
+      'password-f': "Password",
+
+      'login-btn': "Entra"
+
     },
+
     'signup-p': {
-      'username-f': "Enter desired username",
-      'password-f': "Your password",
-      'repeat-password-f': "Repeat your password",
-      'email-f': "Your email",
-      'repeat-email-f': "Repeat your email",
-      'signup-btn': "Sign up"
+
+      'username-f': "Scegli Nome Utente",
+
+      'password-f': "Scegli password",
+
+      'repeat-password-f': "Ripeti password",
+
+      'email-f': "Indirizzo email",
+
+      'repeat-email-f': "Ripeti Indirizzo email",
+
+      'signup-btn': "Registrati"
+
     }
+
   },
+
   'fields': {
+
     'text': {
-      'my-fields': "My fields",
+
+      'my-fields': "I miei campi",
+
       'crop-info': "Crop Info",
+
       'soil-type': "Soil Type",
-      'soil-condition': "Soil Condition",
-      'crop-phenology': "Crop Phenology",
-      'pathogens': "Pathogens",
-      'diseases': "Diseases",
-      'weeds': "Weeds",
-      'fertilizers': "Fertilizers",
-      'agrochemicals': "Agrochemicals",
-      'irrigation': "Irrigation",
-      'yield': "Yield",
-      'observation': "Observation",
-      'parcel-info': "Parcel Info",
-      'add-new': "Add info"
+
+      'soil-condition': "Condizioni Suolo",
+
+      'crop-phenology': "Fenologia",
+
+      'pathogens': "Patogeni",
+
+      'diseases': "Malattie",
+
+      'weeds': "Infestanti",
+
+      'fertilizers': "Fertilizzazioni",
+
+      'agrochemicals': "Trattamenti",
+
+      'irrigation': "Irrigazione",
+
+      'yield': "Resa",
+
+      'observation': "Osservazioni",
+
+      'parcel-info': "Informazioni sulla parcella",
+
+      'add-new': "IAggiungi Dati"
+
     },
+
     'ui-special': {
-      'agrochemicals': "Agro chemicals"
+
+      'agrochemicals': "Trattamenti"
+
     },
+
     'header': {
-      'title': "General View",
-      'add-info-tooltip': "Add field(s) info",
-      'observation-tooltip': "Add new observation",
-      'options-tooltip': "User menu"
+
+      'title': "Vista Generale",
+
+      'add-info-tooltip': "Aggiungi dati per i tuoi campi",
+
+      'observation-tooltip': "Aggiungi un'osservazione",
+
+      'options-tooltip': "Menu utente"
+
     },
+
     'options-m': {
-      'title': "Hello, {{username}}",
-      'profile': "My profile",
-      'fields': "My fields",
-      'about': "About"
+
+      'title': "Ciao, {{username}}",
+
+      'profile': "Il mio profilo",
+
+      'fields': "I miei campi",
+
+      'about': "Info"
+
     }
+
   },
+
   'panel': {
+
     'about': {
-      'content': "Developed by GEOTEC group"
+
+      'content': "Sviluppato da GEOTEC group"
+
     },
+
     'agrochemicals': {
-      'date': "Date of usage",
-      'product': "Product",
-      'quantity': "Quantity",
-      'quantity-unit': "Kg/hectare"
+
+      'date': "Data Trattamento",
+
+      'product': "Prodotto",
+
+      'quantity': "Quantità",
+
+      'quantity-unit': "Kg/ettaro"
+
     },
+
     'crop-info': {
-      'crop-type': "Crop type",
-      'rice-variety': "Rice variety",
+
+      'crop-type': "Tipo Coltura",
+
+      'rice-variety': "Varietà Riso",
+
       'pudding': 'Pudding',
-      'sowing-practice': "Sowing practice",
-      'date': 'Sowing date'
+
+      'sowing-practice': "Metodo di semina",
+
+      'date': 'Data di semina'
+
     },
+
     'crop-phenology': {
-      'date': "Date of observation",
-      'development-stage': "Development stage",
+
+      'date': "Data osservazione",
+
+      'development-stage': "Stadio di sviluppo",
+
       'bbch': "BBCH"
+
     },
+
     'diseases': {
-      'date': "Date of observation",
-      'name': "Name",
-      'comment': "Add a comment",
-      'picture': "Add a picture",
-      'damage': "Damage (1 min - 10 max)"
+
+      'date': "Data Osservazione",
+
+      'name': "Nome",
+
+      'comment': "Aggiungi Commento",
+
+      'picture': "Aggiungi Foto",
+
+      'damage': "Danno (1 min - 10 max)"
+
     },
+
     'fertilizers': {
-      'date': "Date of usage",
-      'product': "Product",
-      'quantity': "Quantity",
-      'quantity-unit': "Kg/hectare",
-      'nitrogen': "Nitrogen content",
-      'nitrogen-unit': "Kg/hectare",
-      'phosphorus': "Phosphorus content",
-      'phosphorus-unit': "Kg/hectare",
-      'potassium': "Potassium content",
-      'potassium-unit': "Kg/hectare"
+
+      'date': "Data Trattamento",
+
+      'product': "Prodotto",
+
+      'quantity': "Quantità",
+
+      'quantity-unit': "Kg/ettaro",
+
+      'nitrogen': "Contenuto in Azoto",
+
+      'nitrogen-unit': "Kg/ettaro",
+
+      'phosphorus': "Contenuto in Fosforo",
+
+      'phosphorus-unit': "Kg/ettaro",
+
+      'potassium': "Contenuto in Potassio",
+
+      'potassium-unit': "Kg/ettaro"
+
     },
+
     'irrigation': {
-      'start-date': "Start date",
-      'end-date': "End date",
-      'measure': "Measure",
-      'quantity': "Quantity",
-      'quantity-unit-mm': "Millimeters",
-      'quantity-unit-m3': "Cubic meters",
-      'hours': "Hours",
-      'hours-unit': "Hours",
-      'depth': "Water depth"
+
+      'start-date': "Data Inizio",
+
+      'end-date': "Data Fine",
+
+      'measure': "Unità Misura",
+
+      'quantity': "Quantità",
+
+      'quantity-unit-mm': "Millimetri",
+
+      'quantity-unit-m3': "Metri Cubi",
+
+      'hours': "Ore",
+
+      'hours-unit': "Ore",
+
+      'depth': "Altezza Acqua"
+
     },
+
     'observation': {
-      'comment': "Add a comment",
-      'picture': "Add a picture",
+
+      'comment': "Aggiungi Commento",
+
+      'picture': "Aggiungi Foto",
+
       'send-btn': "Send observation"
+
     },
+
     'pathogens': {
-      'date': "Date of observation",
-      'name': "Name",
-      'comment': "Add a comment",
-      'picture': "Add a picture",
-      'damage': "Damage (1 min - 10 max)"
+
+      'date': "Data Osservazione",
+
+      'name': "Nome",
+
+      'comment': "Aggiungi Commento",
+
+      'picture': "Aggiungi Foto",
+
+      'damage': "Danno (1 min - 10 max)"
+
     },
+
     'soil-condition': {
-      'status': "Parcel status",
-      'date': "Date of observation"
+
+      'status': "Stato del campo",
+
+      'date': "Data Osservazione"
+
     },
+
     'soil-type': {
+
       'texture': "Select the soil texture",
-      'organic-matter': "Organic matter",
-      'organic-matter-unit':"Percent organic matter",
+
+      'organic-matter': "Sostanza Organica",
+
+      'organic-matter-unit':"Percentuale Sostanza Organica",
+
       'ph': "Ph (min 0 - max 14)",
-      'date': "Date"
+
+      'date': "Data"
+
     },
+
     'weeds': {
-      'date': "Date of observation",
-      'name': "Name",
-      'comment': "Add a comment",
-      'picture': "Add a picture",
-      'damage': "Percent covered (1 min - 100 max)"
+
+      'date': "Data Osservazione",
+
+      'name': "Nome",
+
+      'comment': "Aggiungi Commento",
+
+      'picture': "Aggiungi Foto",
+
+      'damage': "Percentuale di copertura (1 min - 100 max)"
+
     },
+
     'yield':{
-      'date': "Harvest date",
-      'yield': "Yield (dry weight)",
+
+      'date': "Data Raccolto",
+
+      'yield': "Resa (peso secco)",
+
       'yield-unit': "Ton/ha",
-      'comments': "Comments"
+
+      'comments': "Commenti"
+
     },
+
     'parcel-info': {
-      'none-selected': "Please select one parcel",
-      'crop-info-text': "Parcel crop information",
+
+      'none-selected': "Seleziona una parcella",
+
+      'crop-info-text': "Informazioni parcella",
+
       'info-table-content': "Content",
-      'product-text': "Last product upload dates",
-      'product-table-product': "Product",
-      'product-table-date': "Date"
+
+      'product-text': "Ultime date di aggiornamento",
+
+      'product-table-product': "Prodotto",
+
+      'product-table-date': "Data"
+
     },
+
     'profile': {
-      'picture-section': "Profile picture",
-      'username-section': "Username",
+
+      'picture-section': "Immagine Profilo",
+
+      'username-section': "Nome Utente",
+
       'email-section': "Email",
-      'language-section': "Language",
-      'email-tooltip': "Change email",
+
+      'language-section': "Lingua/Language",
+
+      'email-tooltip': "Cambia email",
+
       'password-section': "Password",
-      'old-password-tooltip': "Old password",
-      'new-password-tooltip': "New password",
-      'repeat-new-password-tooltip': "Repeat new password",
-      'update': "Update profile",
-      'logout': "Logout"
+
+      'old-password-tooltip': "Vecchia password",
+
+      'new-password-tooltip': "Nuova password",
+
+      'repeat-new-password-tooltip': "Ripeti Nuova password",
+
+      'update': "Aggiorna profilo",
+
+      'logout': "Esci"
+
     },
+
     'notification': {
-      'downloading-data': "Downloading data... {{count}} / {{total}}",
-      'offline': "Connection lost",
-      'online': "Connection established",
-      'product-upload': "Uploading parcel info",
-      'product-upload-later': "Offline. Product will be uploaded later",
-      'login-error': "Wrong user or password",
-      'password-mismatch': "Passwords don't match",
-      'email-mismatch': "Emails don't match",
-      'regional-error': "This is a regional account",
-      'user-exits': "Sorry, that user already exist",
-      'processing': "Processing...",
-      'welcome': "Welcome, {{username}}",
-      'login-allowed': "Now you can,",
-      'missing-date': "Please fill date",
-      'missing-parcel': "Please select at least one parcel",
-      'missing-start-date': "Please fill start date",
-      'dates-inconsistency': "End date must be greater than start date",
-      'file-missing': "Please upload an image",
-      'offline-parcels': "Sorry, you need to go online to add or delete parcels",
-      'offline-profile-update': "Sorry, you cannot update your profile while offline",
-      'no-data-offline': "Seems that you have lost your connection and we do not have any info stored about you on this device",
-      'try-again': "You can try to",
-      'reconnect': "Reconnect",
-      'retrieving-info': "We are recovering your profile from our servers. Please wait...",
-      'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
-      'got-it': "Got it",
-      'saved': "Saved"
+
+      'downloading-data': "Scaricamento dati...",
+
+      'offline': "Connessione persa",
+
+      'online': "Connessione stabilita",
+
+      'product-upload': "Caricamento info parcelle",
+
+      'product-upload-later': "Sei Offline. I dati verranno caricati più tardi",
+
+      'login-error': "Nome Utente o Password errata",
+
+     'password-mismatch': "Le password non coincidono",
+
+     'email-mismatch': "Le email non coincidono",
+
+     'regional-error': "Questo é un account ERMES regionale",
+
+     'user-exits': "Utente già esistente",
+
+     'processing': "Elaborazione...",
+
+     'welcome': "Benvenuto, {{username}}",
+
+     'login-allowed': "Ora puoi,",
+
+     'missing-date': "Inserisci una data",
+
+     'missing-parcel': "Selezionare almeno una parcella",
+
+     'missing-start-date': "Inserire la data di inizio",
+
+     'dates-inconsistency': "La data finale deve essere successiva alla data di inizio",
+
+     'file-missing': "Allega un'immagine, per favore",
+
+     'offline-parcels': "Spiacenti, devi essere on-line per aggiungere o cancellare parcelle",
+
+     'offline-profile-update': "Spiacenti, devi essere on-line per modificare il tuo profilo",
+
+     'no-data-offline': "Sembra che tu abbia perso la connessione e non ci sono dati salvati su questo device",
+
+     'try-again': "Ora puoi provare a ",
+
+     'reconnect': "Riconnetterti",
+
+     'retrieving-info': "Stiamo recuperando il tuo profilo dal server. Attendi...",
+
+     'first-login': "Seleziona le tue parcelle cliccandoci sopra,.Premi il pulsante nell'angolo in basso a destra quando hai finito. ",
+
+     'got-it': "Fatto",
+
+     'saved': "Salvato"
+
     }
+
   },
+
   'region': {
-    'greece': "Greece",
-    'italy': "Italy",
-    'spain': "Spain"
+
+    'greece': "Grecia",
+
+    'italy': "Italia",
+
+    'spain': "Spagna"
+
   },
+
   'data': {
+
     'crop-info': {
+
       'crop-types': {
-        'alpha_alpha': "Alpha_alpha",
-        'clover': "Clover",
-        'corn': "Corn",
-        'meadow': "Meadow",
-        'poplar': "Poplar",
-        'rice': "Rice",
-        'set-aside': "Set-aside",
-        'soybean': "Soybean"
+
+        'alpha_alpha': "Erba Medica",
+
+        'clover': "Trifoglio",
+
+        'corn': "Mais",
+
+        'meadow': "Prato",
+
+        'poplar': "Pioppo",
+
+        'rice': "Riso",
+
+        'set-aside': "Riposo",
+
+        'soybean': "Soia"
+
       },
+
       'puddings': {
+
         'null': "----",
-        'yes': "Yes",
+
+        'yes': "Si",
+
         'no': "No"
+
       },
+
       'rice-varieties': {
+
         'null': "----",
+
         'alexandros': "Alexandros",
+
         'augusto': "Augusto",
+
         'axios': "Axios",
+
         'bomba': "Bomba",
+
         'carnaroli': "Carnaroli",
+
         'cl-12': "Cl 12",
+
         'cl-26': "Cl 26",
+
         'cl-46': "Cl 46",
+
         'cl-80': "Cl 80",
+
         'clxl745': "Clxl745",
+
         'dimitra': "Dimitra",
+
         'dion': "Dion",
+
         'ecco-61': "Ecco 61",
+
         'gladio': "Gladio",
+
         'gleva': "Gleva",
+
         'luna': "Luna",
+
         'mare-cl': "Mare cl",
+
         'olympiada': "Olympiada",
+
         'opale': "Opale",
+
         'ronaldo': "Ronaldo",
+
         'roxani': "Roxani",
+
         'selenio': "Selenio",
+
         'sirio-cl': "Sirio cl",
+
         'sole-cl': "Sole cl",
+
         'terra-cl': "Terra cl"
+
       },
+
       'sowing-practices': {
+
         'null': "----",
-        'direct-seeding': "Direct seeding",
-        'scattered-seeding': "Scattered seeding"
+
+        'direct-seeding': "In Asciutta",
+
+        'scattered-seeding': "In Acqua"
+
       }
+
     },
+
     'soil-type': {
+
       'soil-textures': {
-        'clay': "Clay",
-        'silt-clay': "Silt clay",
-        'silt-clay-loam': "Silt clay loam",
-        'medium-textured': "Medium textured"
+
+        'clay': "Argilloso",
+
+        'silt-clay': "Argilloso-Sabbioso",
+
+        'silt-clay-loam': "Argilloso-Limoso-Sabbioso",
+
+        'medium-textured': "Media Tessitura"
+
       }
+
     },
+
     'soil-condition': {
+
       'parcel-status': {
-        'bare-soil': "Bare soil",
-        'plowed': "Plowed",
-        'sowed': "Sowed",
-        'flooded': "Flooded"
+
+        'bare-soil': "Suolo Nudo",
+
+        'plowed': "Arato",
+
+        'sowed': "Seminato",
+
+        'flooded': "Inondato"
+
       }
+
     },
+
     'crop-phenology': {
+
       'development-stages': {
-        'emergence': "Emergence",
-        '2nd-leaf': "2nd leaf",
-        '3rd-leaf': "3rd leaf",
-        '4th-leaf': "4th leaf",
-        'beginning-of-tillering': "Beginning of tillering",
-        'panicle-initiation': "Panicle initiation",
-        'heading': "Heading",
-        'flowering': "Flowering",
-        'maturity': "Maturity"
+
+        'emergence': "Emergenza",
+
+        '2nd-leaf': "2nda foglia",
+
+        '3rd-leaf': "3rd foglia",
+
+        '4th-leaf': "4th foglia",
+
+        'beginning-of-tillering': "Inizio Accestimento",
+
+        'panicle-initiation': "Inizializzazione Pannocchia",
+
+        'heading': "Levata",
+
+        'flowering': "Fioritura",
+
+        'maturity': "Maturità "
+
       },
+
       'phenology-growth': {
-        'null': "Growth stage",
-        '0': "0: germination",
-        '1': "1: leaf development",
-        '2': "2: tillering",
-        '3': "3: stem elongation",
-        '4': "4: booting",
-        '5': "5: inflorescence emergence, heading",
-        '6': "6: flowering, anthesis",
-        '7': "7: development of fruit",
-        '8': "8: ripening",
-        '9': "9: senescence"
+
+        'null': "Stadio Crescita",
+
+        '0': "0: Germinazione",
+
+        '1': "1: Sviluppo fogliare",
+
+        '2': "2: Accestimento",
+
+        '3': "3: Allungamento fusto ",
+
+        '4': "4: Botticella",
+
+        '5': "5: Emergenza infiorescenza, spigatura",
+
+        '6': "6: Fioritura, antesi",
+
+        '7': "7: Sviluppo dei frutti",
+
+        '8': "8: Maturazione",
+
+        '9': "9: Senescenza"
+
       },
+
       'phenology-codes': {
-        'null': "Code",
-        '0': "0: dry seed (caryopsis)",
-        '1': "1: beginning of seed imbibition",
-        '3': "3: seed imbibition complete (pigeon breast)",
-        '5': "5: radicle emerged from caryopsis",
-        '6': "6: radicle elongated, root hairs and/or side roots visible",
-        '7': "7: coleoptile emerged from caryopsis (in water-rice this stage occurs before stage 05)",
-        '9': "9: imperfect leaf emerges (still rolled) at the tip of the coleoptile",
-        '10': "10: imperfect leaf unrolled, tip of first true leaf visible",
-        '11': "11: first leaf unfolded",
-        '12': "12: 2 leaves unfolded",
-        '13': "13: 3 leaves unfolded",
-        '14': "14: 4 leaves unfolded",
-        '15': "15: 5 leaves unfolded",
-        '16': "16: 6 leaves unfolded",
-        '17': "17: 7 leaves unfolded",
-        '18': "18: 8 leaves unfolded ",
-        '19': "19: 9 or more leaves unfolded",
-        '21': "21: beginning of tillering: first tiller detectable",
-        '22': "22: 2 tillers detectable",
-        '23': "23: 3 tillers detectable",
-        '24': "24: 4 tillers detectable",
-        '25': "25: 5 tillers detectable",
-        '26': "26: 6 tillers detectable",
-        '27': "27: 7 tillers detectable",
-        '28': "28: 8 tillers detectable",
-        '29': "29: maximum number of tillers detectable",
-        '30': "30: panicle initiation or green ring stage: chlorophyll accumulates in the stem tissue, forming a green ring",
-        '32': "32: panicle formation: panicle 1–2 mm in length (variety-dependent)",
-        '34': "34: internode elongation or jointing stage: internodes begin to elongate, panicle more than 2 mm long",
-        '37': "37: flag leaf just visible, still rolled, panicle moving upwards",
-        '39': "39: flag leaf stage: flag leaf unfolded, collar regions (auricle and ligule) of flag leaf and penultimate leaf aligned (pre-boot stage)",
-        '41': "41: early boot stage: upper part of stem slightly thickened, sheath of flag leaf about 5 cm out of penultimate",
-        '43': "43: mid boot stage: sheath of flag leaf 5–10 cm out of the penultimate leaf sheath",
-        '45': "45: late boot stage: flag leaf sheath swollen, sheath of flag leaf more than 10 cm out of penultimate leaf sheath",
-        '47': "47: flag leaf sheath opening",
-        '49': "49: flag leaf sheath open",
-        '51': "51: beginning of panicle emergence: tip of inflorescence emerged from sheath",
-        '52': "52: 20% of panicle emerged",
-        '53': "53: 30% of panicle emerged",
-        '54': "54: 40% of panicle emerged",
-        '55': "55: middle of panicle emergence: neck node still in sheath",
-        '56': "56: 60% of panicle emerged",
-        '57': "57: 70% of panicle emerged",
-        '58': "58: 80% of panicle emerged",
-        '59': "59: end of panicle emergence: neck node level with the flag leaf auricle, anthers not yet visible",
-        '61': "61: beginning of flowering: anthers visible at top of panicle",
-        '65': "65: full flowering: anthers visible on most spikelets",
-        '69': "69: end of flowering: all spikelets have completed flowering but some dehydrated anthers may remain",
-        '71': "71: watery ripe: first grains have reached half their final size",
-        '73': "73: early milk",
-        '75': "75: medium milk: grain content milky",
-        '77': "77: late milk",
-        '83': "83: early dough",
-        '85': "85: soft dough: grain content soft but dry, fingernail impression not held, grains and glumes still green",
-        '87': "87: hard dough: grain content solid, fingernail impression held",
-        '89': "89: fully ripe: grain hard, difficult to divide with thumbnail",
-        '92': "92: over-ripe: grain very hard, cannot be dented by thumbnail",
-        '97': "97: plant dead and collapsing ",
-        '99': "99: harvested product"
+
+        'null': "Codice",
+
+        '0': "0: Seme asciutto",
+
+        '1': "1: Inizio imbibizione",
+
+        '3': "3: Imbibizione completa",
+
+        '5': "5: Emergenza radichetta",
+
+        '6': "6: Allungamento radice, formazione peli radicali e/o radici laterali",
+
+        '7': "7: Emersione coleoptile dalla cariosside (con semina in immersione avviene prima dello stadio 05)",
+
+        '9': "9: Foglie imperfette emergono (ancora arrotolate) alla punta del coleoptile",
+
+        '10': "10: Prima foglia imperfetta dispiegata, punta della prima foglia vera visibile",
+
+        '11': "11: Prima foglia dispiegata",
+
+        '12': "12: 2 Foglie dispiegate",
+
+        '13': "13: 3 Foglie dispiegate",
+
+        '14': "14: 4 Foglie dispiegate",
+
+        '15': "15: 5 Foglie dispiegate",
+
+        '16': "16: 6 Foglie dispiegate",
+
+        '17': "17: 7 Foglie dispiegate",
+
+        '18': "18: 8 Foglie dispiegate",
+
+        '19': "19: 9 o più Foglie dispiegate",
+
+        '21': "21: Inizio accestimento: primo fusto d’accestimento visibile",
+
+        '22': "22: 2 Fusti d’accestimento visibili",
+
+        '23': "23: 3 Fusti d’accestimento visibili",
+
+        '24': "24: 4 Fusti d’accestimento visibili",
+
+        '25': "25: 5 Fusti d’accestimento visibili",
+
+        '26': "26: 6 Fusti d’accestimento visibili",
+
+        '27': "27: 7 Fusti d’accestimento visibili",
+
+        '28': "28: 8 Fusti d’accestimento visibili",
+
+        '29': "29: Massimo numero di fusti d’accestimento visibili",
+
+        '30': "30: Inizio formazione della pannocchia o stadio dell’anello verde: la clorofilla accumulata nei tessuti del fusto forma un anello verde",
+
+        '32': "32: Formazione della pannocchia: 1-2 mm in lunghezza",
+
+        '34': "34: Allungamento internodi o fase di congiungimento: gli internodi cominciano ad allungarsi, pannocchia lunga più di 2 mm",
+
+        '37': "37: Foglia a bandiera visibile, ancora arrotolata, pannocchia muove verso l’alto",
+
+        '39': "39: Stadio di foglia a bandiera: foglia a bandiera completamente srotolata, auricole e ligula visibile",
+
+        '41': "41: Inizio stadio di botticella: la parte superiore del fusto si ispessisce un po', guaina della foglia bandiera circa 5 centimetri fuori dalla guaina della penultima foglia ",
+
+        '43': "43: Stadio di botticella medio: guaina della foglia a bandiera 5-10 cm fuori dalla guaina della penultima foglia",
+
+        '45': "45: Fine stadio di botticella: guaina della foglia a bandiera gonfia, guaina della foglia a bandiera almeno 10 cm fuori dalla guaina della penultima foglia",
+
+        '47': "47: Apertura della guaina della foglia a bandiera",
+
+        '49': "49: Guaina della foglia a bandiera aperta",
+
+        '51': "51: Inizio emergenza pannocchia: punta dell’infiorescenza emersa dalla guaina",
+
+        '52': "52: 20% dell’infiorescenza emersa",
+
+        '53': "53: 30% dell’infiorescenza emersa",
+
+        '54': "54: 40% dell’infiorescenza emersa",
+
+        '55': "55: Metà dell’infiorescenza emersa (metà spigatura)",
+
+        '56': "56: 60% dell’infiorescenza emersa",
+
+        '57': "57: 70% dell’infiorescenza emersa",
+
+        '58': "58: 80% dell’infiorescenza emersa",
+
+        '59': "59: Fine spigatura (antere non ancora visibili)",
+
+        '61': "61: Inizio fioritura: prime antere visibili al top della pannocchia",
+
+        '65': "65: Piena fioritura: antere visibili sulla maggior parte delle spighette ",
+
+        '69': "69: Piena fioritura: antere visibili sulla maggior parte delle spighette",
+
+        '71': "71: Cariossidi in maturazione acquosa, i primi chicchi hanno raggiunto la metà della taglia finale",
+
+        '73': "73: Inizio maturazione lattea",
+
+        '75': "75: Maturazione lattea media: consistenza lattea",
+
+        '77': "77: Fine maturazione lattea",
+
+        '83': "83: Inizio maturazione cerosa",
+
+        '85': "85: maturazione cerosa soffice, chicchi soffici ma secchi, il segno dell’unghia non rimane, grani e glume ancora verdi",
+
+        '87': "87: Maturazione cerosa avanzata: contenuto dei chicchi solido, il segno dell’unghia rimane",
+
+        '89': "89: Piena maturazione: difficoltà a dividere i chicchi con l’unghia del pollice",
+
+        '92': "92: Sovra-maturazione: chicchi duri, non possono essere scalfiti con l’unghia del pollice",
+
+        '97': "97: Piante morte",
+
+        '99': "99: Prodotto Raccolto"
+
       }
+
     },
+
+
+
+    // Note: starting from here, scientific names have not been translated!
+
+
+
     'pathogens': {
+
       'names': {
-        'aphids': "Aphids",
-        'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematods': "Nematods",
+
+        'aphids': "Afidi",
+
+        'lissorhoptrus-oryzophilus': "Punteruolo",
+
+        'nematods': "Nematodi",
+
         'pomacea': "Pomacea"
+
       }
+
     },
+
     'diseases': {
+
       'names': {
+
         'bipolaris': "Bipolaris",
+
         'cercospora': "Cercospora",
+
         'fusarium': "Fusarium",
-        'pyricularia-(blast)': "Pyricularia (blast)"
+
+        'pyricularia-(blast)': "Brusone"
+
       }
+
     },
+
     'weeds': {
+
       'names': {
+
         'bidens': "Bidens",
-        'ciperus-difformis': "Ciperus difformis",
-        'echinochloa-crus-galli': "Echinochloa crus-galli",
+
+        'ciperus-difformis': "Ciperus (Zigolo)",
+
+        'echinochloa-crus-galli': "Giavone",
+
         'heteranthera': "Heteranthera",
-        'leersia-oryzoides': "Leersia oryzoides",
-        'oryza-sativa': "Oryza sativa",
-        'scirpus-maritimus': "Scirpus maritimus"
+
+        'leersia-oryzoides': "Leersia (riso selvatico)",
+
+        'oryza-sativa': "Riso Crodo",
+
+        'scirpus-maritimus': "Scirpus (Cipollino, Lisca marittima)"
+
       }
+
     },
+
     'fertilizers': {
+
       'products': {
+
         'calcium-cyanamide': "Calcium cyanamide",
+
         'entec-26-(n+-k)': "Entec 26 (n+k)",
+
         'entec-46-(n+k)': "Entec 46 (n+k)",
+
         'flexammon': "Flexammon",
+
         'nitrophoska': "Nitrophoska",
+
         'novammon-(n+k)': "Novammon (n+k)",
-        'organic': "Organic",
+
+        'organic': "Organico",
+
         'urea': "Urea",
+
         'utec-46-': "Utec 46 "
+
       }
+
     },
+
     'agrochemicals': {
+
       'products': {
-        'bentazon': "Bentazon",
+
+        'bentazon': "Bentazone",
+
+        'tryciclazol': "Triciclazolo (BEAM)",
+
         'celest-syngenta-(fludioxonil)': "Celest syngenta (fludioxonil)",
-        'mixed-product': "Mixed product",
-        'oxodiazon': "Oxodiazon",
-        'propanil': "Propanil",
-        'pyretroids': "Pyretroids",
+
+        'mixed-product': "Prodotto misto",
+
+        'oxodiazon': "Oxodiazone",
+
+        'propanil': "Propanile",
+
+        'pyretroids': "Pyretroidi",
+
         'touchdown-syngenta-(glyphosate)': "Touchdown syngenta (glyphosate)"
+
       }
+
     },
+
     'irrigation': {
+
       'measures': {
+
         'mm': "mm/day",
+
         'm3': "m3/h"
+
       }
+
     }
+
   }
+
 };
+
