@@ -98,9 +98,9 @@ export default {
 
       'my-fields': "I miei campi",
 
-      'crop-info': "Crop Info",
+      'crop-info': "Informazioni Coltura",
 
-      'soil-type': "Soil Type",
+      'soil-type': "Tipo di suolo",
 
       'soil-condition': "Condizioni Suolo",
 
@@ -270,7 +270,7 @@ export default {
 
       'picture': "Aggiungi Foto",
 
-      'send-btn': "Send observation"
+      'send-btn': "Invia Osservazione"
 
     },
 
@@ -298,7 +298,7 @@ export default {
 
     'soil-type': {
 
-      'texture': "Select the soil texture",
+      'texture': "Seleziona la tessitura",
 
       'organic-matter': "Sostanza Organica",
 
@@ -342,7 +342,7 @@ export default {
 
       'crop-info-text': "Informazioni parcella",
 
-      'info-table-content': "Content",
+      'info-table-content': "Contenuto",
 
       'product-text': "Ultime date di aggiornamento",
 
@@ -872,7 +872,7 @@ export default {
 
       'measures': {
 
-        'mm': "mm/day",
+        'mm': "mm/giorno",
 
         'm3': "m3/h"
 
