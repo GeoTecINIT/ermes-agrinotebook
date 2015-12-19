@@ -10,5 +10,13 @@ export default DS.RESTAdapter.extend({
     return {
       "X-Auth-Key": this.get("auth.token")
     };
-  })
+  }),
+  findRecord(store, type, id, snapshot) {
+    return this._super(store, type, id, snapshot).then((res) => {
+      window.localforage.setItem(type +'#'+ id, res);
+      return res;
+    }, (err) => {
+      return window.localforage.getItem(type +'#'+ id).then((obj) => obj, () => err);
+    });
+  }
 });

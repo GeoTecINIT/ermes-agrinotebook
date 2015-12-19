@@ -36,6 +36,9 @@ module.exports = function(defaults) {
   // IndexedDBShim
   app.import('vendor/IndexedDBShim/indexeddbshim.js');
 
+  // Mozilla localForage
+  app.import('bower_components/localforage/dist/localforage.js');
+
   // ArcGIS Offline library, globals
   app.import('bower_components/offline-editor-js/dist/offline-tiles-advanced-min.js');
   app.import('bower_components/offline-editor-js/dist/offline-edit-min.js');
