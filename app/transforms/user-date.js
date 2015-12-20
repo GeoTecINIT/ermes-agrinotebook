@@ -10,6 +10,6 @@ export default DS.Transform.extend({
   },
 
   serialize: function(deserialized) {
-    return new Moment(deserialized, dFormat).add(1, 'hours');
+    return new Moment(deserialized, dFormat).add(1, 'hours').toISOString();
   }
 });

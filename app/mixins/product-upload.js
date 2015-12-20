@@ -10,7 +10,7 @@ export default Ember.Mixin.create({
       } else {
         this.set('parcelError', '');
         this.set('model.parcels', this.get('parcels.selectedParcels'));
-        this.set('model.uploadingDate', new Moment());
+        this.set('model.uploadingDate', new Moment().format('lll'));
         this.set('info', this.get('i18n').t('panel.notification.processing'));
         this.get('model').save().then(() => {
           this.set('info', this.get('i18n').t('panel.notification.saved'));
