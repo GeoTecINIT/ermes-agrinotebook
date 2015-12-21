@@ -107,11 +107,16 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    * Reload all layer for the current esri map configuration
    */
   liveReload() {
+    // Clear parcel selection
+    this.get('parcels.selectedParcels').clear();
+
+    // Remove all layers
     var layersMap = this.get('layersMap');
     for(let layerObject of layersMap.values()) {
       this.get('map').removeLayer(layerObject);
     }
 
+    // Add layers
     this.get('layersMap').clear();
     this.loadBasemap();
     this.loadUserParcelsLayer();

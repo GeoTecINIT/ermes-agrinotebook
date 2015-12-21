@@ -3,7 +3,7 @@ import Ember from 'ember';
 import AuthChecker from 'ermes-smart-app/mixins/auth-checker';
 
 export default Ember.Route.extend(AuthChecker, {
-  offlineStorage: Ember.inject.service(),
+  uploadQueue: Ember.inject.service(),
   parcels: Ember.inject.service(),
   model() {
     var username = this.get('auth').getCurrentUserId();
@@ -20,27 +20,7 @@ export default Ember.Route.extend(AuthChecker, {
       }
     }
 
-    this.get('offlineStorage').get('storage').getItem('upload-pending-products').then((prods) => {
-      if (prods) {
-        var prod = prods[0].split(':');
-        console.debug('PROD_T:', prod[1], 'PROD:', prod[2]);
-        this.store.findRecord(prod[1], prod[2]).then((agro) => {
-          console.debug('AGRO:', agro);
-          agro.save().then((saved) => {
-            console.debug('SAVED:', saved);
-          }, (err) => {
-            console.debug('SAVE_ERR:', err);
-          });
-        }, (err) => {
-          console.debug('NEW RECORD');
-          this.get('offlineStorage').get('storage').getItem(prods[0]).then((agro) => {
-            if (agro) {
-              console.debug('CREATED:', this.store.createRecord(prod[1], agro[prod[1]]));
-            }
-          })
-        });
-      }
-    });
+    this.get('uploadQueue').start();
   },
   actions: {
     willTransition() {
