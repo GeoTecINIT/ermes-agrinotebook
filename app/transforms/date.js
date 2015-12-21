@@ -7,6 +7,9 @@ export default DS.Transform.extend({
   },
 
   serialize: function(deserialized) {
+    if (new Moment(deserialized, Moment.ISO_8601).isValid()){
+      return deserialized
+    }
     return new Moment(deserialized, 'lll').toISOString();
   }
 });
