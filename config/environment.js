@@ -71,7 +71,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/prototype/smartappv3';
+    ENV.baseURL = '/prototype/smartappv4';
     ENV.locationType = 'hash';
   }
 

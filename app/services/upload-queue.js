@@ -24,9 +24,17 @@ export default Ember.Service.extend({
           prods.forEach((offlineProduct, productNumber) => {
             var prodElem = offlineProduct.split(':');
             this.get('store').findRecord(prodElem[1], prodElem[2]).then((product) => {
-              product.save().then(() => Ember.debug('Pending product uploaded (' + (productNumber+1) + '/' + prods.length + ')'));
-              this.get('offlineStorage').get('storage').removeItem(offlineProduct);
-            }, () => {
+              return new Ember.RSVP.Promise((resolve, reject) => {
+                // Solution to Ember Data production error, pushes product into store without id
+                if (product.get('id')) {
+                  product.save().then(() => Ember.debug('Pending product uploaded (' + (productNumber+1) + '/' + prods.length + ')'));
+                  this.get('offlineStorage').get('storage').removeItem(offlineProduct);
+                  resolve(product);
+                } else {
+                  reject(product);
+                }
+              });
+            }).then((o) => o, () => {
               this.get('offlineStorage').get('storage').getItem(offlineProduct).then((product) => {
                 if (product) {
                   this.get('store').createRecord(prodElem[1], product[prodElem[1]]).save().then(() => {
@@ -47,12 +55,6 @@ export default Ember.Service.extend({
           });
         } catch(e) {}
         this.get('offlineStorage').get('storage').setItem('upload-pending-products', remainingProducts);
-
-        //if (remainingProducts.length !== 0) {
-        //  this.get('offlineStorage').get('storage').setItem('upload-pending-products', remainingProducts);
-        //} else {
-        //  this.get('offlineStorage').get('storage').removeItem('upload-pending-products');
-        //}
         this.set('stopped', true);
       }
     });
