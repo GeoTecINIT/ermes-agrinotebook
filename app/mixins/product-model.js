@@ -1,14 +1,16 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 import Agrochemical from 'ermes-smart-app/models/agrochemical';
 import Moment from 'moment';
 
 export default DS.Model.extend({
+  offlineStorage: Ember.inject.service(),
   save() {
     return this._super().then((obj) => {
       // Store product for offline use
       var prod = {};
       prod[this._internalModel.modelName] = this.serialize({includeId: true});
-      window.localforage.setItem(this._internalModel.type + this.id, prod);
+      this.get('offlineStorage').get('storage').setItem(this._internalModel.type + this.id, prod);
       return obj;
     }, (err) => {
       var old = !!this.get('id');
@@ -26,15 +28,15 @@ export default DS.Model.extend({
       } else { // Without id record cannot be pushed, create a new record instead
         prod[this._internalModel.modelName] = this.serialize();
       }
-      window.localforage.setItem(key, prod);
+      this.get('offlineStorage').get('storage').setItem(key, prod);
 
       // Mark it as pending
-      window.localforage.getItem('upload-pending-products').then((products) => {
+      this.get('offlineStorage').get('storage').getItem('upload-pending-products').then((products) => {
         if (products !== null) { // There are other pending products
           products.push(key);
-          window.localforage.setItem('upload-pending-products', products);
+          this.get('offlineStorage').get('storage').setItem('upload-pending-products', products);
         } else { // First pending product is going to be stored
-          window.localforage.setItem('upload-pending-products', [key]);
+          this.get('offlineStorage').get('storage').setItem('upload-pending-products', [key]);
         }
       });
       return err;

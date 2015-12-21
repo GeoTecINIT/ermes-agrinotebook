@@ -3,6 +3,7 @@ import Ember from 'ember';
 import AuthChecker from 'ermes-smart-app/mixins/auth-checker';
 
 export default Ember.Route.extend(AuthChecker, {
+  offlineStorage: Ember.inject.service(),
   parcels: Ember.inject.service(),
   model() {
     var username = this.get('auth').getCurrentUserId();
@@ -19,7 +20,7 @@ export default Ember.Route.extend(AuthChecker, {
       }
     }
 
-    window.localforage.getItem('upload-pending-products').then((prods) => {
+    this.get('offlineStorage').get('storage').getItem('upload-pending-products').then((prods) => {
       if (prods) {
         var prod = prods[0].split(':');
         console.debug('PROD_T:', prod[1], 'PROD:', prod[2]);
@@ -32,7 +33,7 @@ export default Ember.Route.extend(AuthChecker, {
           });
         }, (err) => {
           console.debug('NEW RECORD');
-          window.localforage.getItem(prods[0]).then((agro) => {
+          this.get('offlineStorage').get('storage').getItem(prods[0]).then((agro) => {
             if (agro) {
               console.debug('CREATED:', this.store.createRecord(prod[1], agro[prod[1]]));
             }
