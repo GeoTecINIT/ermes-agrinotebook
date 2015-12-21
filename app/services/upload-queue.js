@@ -46,11 +46,13 @@ export default Ember.Service.extend({
             }
           });
         } catch(e) {}
-        if (remainingProducts.length !== 0) {
-          this.get('offlineStorage').get('storage').setItem('upload-pending-products', remainingProducts);
-        } else {
-          this.get('offlineStorage').get('storage').removeItem('upload-pending-products');
-        }
+        this.get('offlineStorage').get('storage').setItem('upload-pending-products', remainingProducts);
+
+        //if (remainingProducts.length !== 0) {
+        //  this.get('offlineStorage').get('storage').setItem('upload-pending-products', remainingProducts);
+        //} else {
+        //  this.get('offlineStorage').get('storage').removeItem('upload-pending-products');
+        //}
         this.set('stopped', true);
       }
     });

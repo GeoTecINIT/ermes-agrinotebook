@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import DS from 'ember-data';
-import Agrochemical from 'ermes-smart-app/models/agrochemical';
 import Moment from 'moment';
 
 export default DS.Model.extend({
