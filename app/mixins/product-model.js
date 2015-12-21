@@ -11,18 +11,25 @@ export default DS.Model.extend({
       window.localforage.setItem(this._internalModel.type + this.id, prod);
       return obj;
     }, (err) => {
+      var old = false; // New record or modified
+
       // Generate a unique identifier for the product
-      const id = Math.round(Math.random()*1e8) + Moment().format('x');
+      var id = Math.round(Math.random()*1e8) + Moment().format('x');
+      if (this.get('id')) { // If the product is going to be modified
+        id = this.get('id');
+        old = true;
+      }
 
       // Prepare the product key for its storage
       const key = this._internalModel.type + id;
 
-      // Setting temporal id
-      this.set('id', id);
-
       // Store product
       var prod = {};
-      prod[this._internalModel.modelName] = this.serialize({includeId: true});
+      if (old) {
+        prod[this._internalModel.modelName] = this.serialize({includeId: true});
+      } else { // Without id record cannot be pushed, create a new record instead
+        prod[this._internalModel.modelName] = this.serialize();
+      }
       window.localforage.setItem(key, prod);
 
       // Mark it as pending

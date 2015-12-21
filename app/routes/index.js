@@ -19,32 +19,24 @@ export default Ember.Route.extend(AuthChecker, {
       }
     }
 
-    //this.store.pushPayload({
-    //  'agrochemicals': {
-    //    _id: '7245860192514548521',
-    //    amount: 15,
-    //    date: '2015-12-16T00:00:00.000Z',
-    //    parcels: ['ITC4801814400700005A'],
-    //    product: 'oxodiazon',
-    //    uploadingDate: '2015-12-20T21:12:00.000Z'
-    //  }
-    //});
-    //this.store.findRecord('agrochemical', '7245860192514548521').then((agrochemical) => {
-    //  agrochemical.save().then((agro) => {
-    //    console.debug('AGRO:', agro);
-    //  }, (err) => {
-    //    console.debug('ERR:', err);
-    //  });
-    //});
-
     window.localforage.getItem('upload-pending-products').then((prods) => {
       if (prods) {
         var prod = prods[0].split(':');
         console.debug('PROD_T:', prod[1], 'PROD:', prod[2]);
         this.store.findRecord(prod[1], prod[2]).then((agro) => {
           console.debug('AGRO:', agro);
+          agro.save().then((saved) => {
+            console.debug('SAVED:', saved);
+          }, (err) => {
+            console.debug('SAVE_ERR:', err);
+          });
         }, (err) => {
-          console.debug('ERROR:', err);
+          console.debug('NEW RECORD');
+          window.localforage.getItem(prods[0]).then((agro) => {
+            if (agro) {
+              console.debug('CREATED:', this.store.createRecord(prod[1], agro[prod[1]]));
+            }
+          })
         });
       }
     });
