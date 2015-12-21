@@ -15,7 +15,7 @@ export default DS.Model.extend({
       var old = !!this.get('id');
 
       // Generate a unique identifier for the product offline storage
-      var id = Math.round(Math.random()*1e8) + Moment().format('x');
+      var id = Math.round(Math.random()*1e8) + new Moment().format('x');
 
       // Prepare the product key for its storage
       const key = this._internalModel.type + id;
