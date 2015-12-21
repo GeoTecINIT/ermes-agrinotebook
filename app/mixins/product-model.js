@@ -6,22 +6,32 @@ export default DS.Model.extend({
   save() {
     return this._super().then((obj) => {
       // Store product for offline use
-      window.localforage.setItem(this._internalModel.modelName +'#'+ this.id, this.serialize());
+      var prod = {};
+      prod[this._internalModel.modelName] = this.serialize({includeId: true});
+      window.localforage.setItem(this._internalModel.type + this.id, prod);
       return obj;
     }, (err) => {
       // Generate a unique identifier for the product
-      const id = this._internalModel.modelName +'#'+ Math.random()*1e20 + Moment().format('x');
+      const id = Math.round(Math.random()*1e8) + Moment().format('x');
+
+      // Prepare the product key for its storage
+      const key = this._internalModel.type + id;
+
+      // Setting temporal id
+      this.set('id', id);
 
       // Store product
-      window.localforage.setItem(id, this.serialize());
+      var prod = {};
+      prod[this._internalModel.modelName] = this.serialize({includeId: true});
+      window.localforage.setItem(key, prod);
 
       // Mark it as pending
       window.localforage.getItem('upload-pending-products').then((products) => {
         if (products !== null) { // There are other pending products
-          products.push(id);
+          products.push(key);
           window.localforage.setItem('upload-pending-products', products);
         } else { // First pending product is going to be stored
-          window.localforage.setItem('upload-pending-products', [id]);
+          window.localforage.setItem('upload-pending-products', [key]);
         }
       });
       return err;

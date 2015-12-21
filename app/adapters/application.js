@@ -13,10 +13,10 @@ export default DS.RESTAdapter.extend({
   }),
   findRecord(store, type, id, snapshot) {
     return this._super(store, type, id, snapshot).then((res) => { // Record found online
-      window.localforage.setItem(type +'#'+ id, res);
+      window.localforage.setItem(type + id, res);
       return res;
     }, (err) => { // Record not found, connection lost
-      return window.localforage.getItem(type +'#'+ id).then((obj) => { // Recovering record from the local database
+      return window.localforage.getItem(type + id).then((obj) => { // Recovering record from the local database
         // Masquerade for not breaking the Application.RESTAdapter object
         return new Ember.RSVP.Promise(function(resolve, reject) {
           if (obj !== null) {
