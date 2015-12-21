@@ -34,7 +34,7 @@ export default Ember.Service.extend({
                   reject(product);
                 }
               });
-            }).then((o) => o, () => {
+            }).catch(() => {
               this.get('offlineStorage').get('storage').getItem(offlineProduct).then((product) => {
                 if (product) {
                   this.get('store').createRecord(prodElem[1], product[prodElem[1]]).save().then(() => {
