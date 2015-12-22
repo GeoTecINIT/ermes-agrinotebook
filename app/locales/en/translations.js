@@ -56,6 +56,12 @@ export default {
       'observation-tooltip': "Add new observation",
       'options-tooltip': "User menu"
     },
+    'map-tools': {
+      'confirm-selection': "Add fields",
+      'select-all': "Select all fields",
+      'invert-selection': "Invert selected fields",
+      'parcel-info': "Selected parcel info"
+    },
     'options-m': {
       'title': "Hello, {{username}}",
       'profile': "My profile",

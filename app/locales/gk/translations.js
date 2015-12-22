@@ -72,6 +72,12 @@ export default {
       'observation-tooltip': "Προσθέστε νέα παρατήρηση",
       'options-tooltip': "Επιλογές χρήστη"
     },
+    'map-tools': {
+      'confirm-selection': "Add fields",
+      'select-all': "Select all fields",
+      'invert-selection': "Invert selected fields",
+      'parcel-info': "Selected parcel info"
+    },
     'options-m': {
       'title': "Γεια σας, {{username}}",
       'profile': "Το προφίλ μου",

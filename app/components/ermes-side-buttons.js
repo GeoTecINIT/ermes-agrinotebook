@@ -4,22 +4,26 @@ export default Ember.Component.extend({
   classNames: ['ermes-side-buttons'],
   tagName: 'table',
   parcels: Ember.inject.service(),
-
-  buttons: Ember.computed('editMode', function () {
+  i18n: Ember.inject.service(),
+  buttons: Ember.computed('editMode', 'i18n.locale', function () {
     if (this.get('editMode')) {
       return this.get('editButtons');
     } else {
       return this.get('selectButtons');
     }
   }),
-  selectButtons: [
-    {title: 'Parcel info', icon: 'info', class: 'ermes-btn-med', action: 'openInfoPanel'},
-    {title: 'Invert selected fields', icon: 'action', class: 'ermes-btn-med', action: 'invertSelection'},
-    {title: 'Select all fields', icon: 'grid', class: 'ermes-btn-big', action: 'selectAll'}
-  ],
-  editButtons: [
-    {title: 'Add fields', icon: 'check', class: 'ermes-btn-big', action: 'commitChanges'}
-  ],
+  selectButtons: Ember.computed('i18n.locale', function() {
+    return [
+      {title: this.get('i18n').t('fields.map-tools.parcel-info'), icon: 'info', class: 'ermes-btn-med', action: 'openInfoPanel'},
+      {title: this.get('i18n').t('fields.map-tools.invert-selection'), icon: 'action', class: 'ermes-btn-med', action: 'invertSelection'},
+      {title: this.get('i18n').t('fields.map-tools.select-all'), icon: 'grid', class: 'ermes-btn-big', action: 'selectAll'}
+    ];
+  }),
+  editButtons: Ember.computed('i18n.locale', function() {
+    return [
+      {title: this.get('i18n').t('fields.map-tools.confirm-selection'), icon: 'check', class: 'ermes-btn-big', action: 'commitChanges'}
+    ];
+  }),
   actions: {
     openInfoPanel() {
       this.sendAction('openPanel', 'index.parcel-info');
