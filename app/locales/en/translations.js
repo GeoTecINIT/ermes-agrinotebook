@@ -188,7 +188,7 @@ export default {
       'password-mismatch': "Passwords don't match",
       'email-mismatch': "Emails don't match",
       'regional-error': "This is a regional account",
-      'user-exits': "Sorry, that user already exist",
+      'user-exits': "Sorry, that user already exists",
       'processing': "Processing...",
       'welcome': "Welcome, {{username}}",
       'login-allowed': "Now you can,",

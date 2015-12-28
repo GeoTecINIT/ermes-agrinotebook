@@ -72,10 +72,10 @@ export default {
       'options-tooltip': "Menu utente"
     },
     'map-tools': {
-      'confirm-selection': "Add fields",
-      'select-all': "Select all fields",
-      'invert-selection': "Invert selected fields",
-      'parcel-info': "Selected parcel info"
+      'confirm-selection': "Aggiungi campi",
+      'select-all': "Seleziona tutti i campi",
+      'invert-selection': "Inverti la selezione",
+      'parcel-info': "Info su campo selezionato"
     },
     'options-m': {
       'title': "Ciao, {{username}}",
