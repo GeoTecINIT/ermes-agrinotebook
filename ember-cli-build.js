@@ -40,8 +40,8 @@ module.exports = function(defaults) {
   app.import('bower_components/localforage/dist/localforage.js');
 
   // ArcGIS Offline library, globals
-  app.import('bower_components/offline-editor-js/dist/offline-tiles-advanced-min.js');
-  app.import('bower_components/offline-editor-js/dist/offline-edit-min.js');
+  //app.import('bower_components/offline-editor-js/dist/offline-tiles-advanced-min.js');
+  //app.import('bower_components/offline-editor-js/dist/offline-edit-min.js');
 
   // Animate.css
   app.import('bower_components/animate.css/animate.css');

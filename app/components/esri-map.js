@@ -49,9 +49,20 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       editStore.init(function (success) {
         if (success) {
           _this.createMap();
+           var loaded = false;
+           var __this = _this;
+           _this.get("map").on("layer-add-result",(evt)=>{
+
+             if (!loaded){
+               __this.loadUserParcelsLayer();
+               __this.mapLoaded();
+               loaded = true;
+             }
+
+             //loadBaseMapEvent.remove();
+           });
           _this.loadBasemap();
-          _this.loadUserParcelsLayer();
-          _this.mapLoaded();
+
         }
         // else: load online basemap
       });
@@ -69,9 +80,10 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     var map = new Map(this.elementId, {
       "center": [pos.get('lastX'), pos.get('lastY')],
       "zoom": pos.get('zoom'),
-      "maxZoom": mapInfo.maxZoom,
-      "minZoom": mapInfo.minZoom,
-      "logo": false
+      "maxZoom": 12/*mapInfo.maxZoom Luis*/,
+      "minZoom": 10/*mapInfo.minZoom*/,
+      "logo": false,
+      "fitExtent":  true
     });
     this.set('map', map);
   },
@@ -80,9 +92,9 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    * Load default basemap for the actual user region
    */
   loadBasemap() {
-    var mapInfo = this.get('parcels').getUserMapInfo();
-
-    this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy);
+      var mapInfo = this.get('parcels').getUserMapInfo();
+      //this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy, mapInfo);
+      this.addTPKLayer("assets/offline/basemap.zip");
   },
 
   /**
@@ -118,8 +130,13 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
 
     // Add layers
     this.get('layersMap').clear();
+   /* var _this = this;
+    var loadBaseMapEvent = this.get("map").on("layer-add-result",(evt)=>{
+      _this.loadUserParcelsLayer();
+      loadBaseMapEvent.remove();
+    });*/
+
     this.loadBasemap();
-    this.loadUserParcelsLayer();
 
   },
 
@@ -130,7 +147,9 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   mapLoaded() {
     Ember.debug('Map was successfully loaded');
     this.notifyPropertyChange('editMode');
+
     this.get('map').on('update-end', () => this.setPositionMarker());
+
   },
 
   /**

@@ -27,11 +27,21 @@ define([
      * @private
      */
     this._getTiles =  function(image,imageType,url,tileid,store,query,showBlankTiles){
+      /*Luis is there an image to fulfill, is it really necessary to retrieve, lets say while prepatring for offline??*/
+      /*image = query("img[src="+tileid+"]")[0];
+      if (image === "undefined") {
+         console.log("seems unnecessary to retrive the tile: " + url);
+         return "";
+      }*/
+      /*End luis code*/
       store.retrieve(url, function(success, offlineTile)
-      { console.log("TILE RETURN " + success + ", " + offlineTile.url);
+      {
+        console.log("TILE RETURN " + success + ", " + offlineTile.url);
         /* when the .getTileUrl() callback is triggered we replace the temporary URL originally returned by the data:image url */
         // search for the img with src="void:"+level+"-"+row+"-"+col and replace with actual url
         image = query("img[src="+tileid+"]")[0];
+        /*** Luis */if (image == null) return "";/* goes no where*/
+
         var imgURL;
 
         console.assert(image !== "undefined", "undefined image detected");
