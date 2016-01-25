@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'ermes-smart-app',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    defaultLocationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -40,6 +40,11 @@ module.exports = function(environment) {
         }
       },
       defaultDateFormat: 'DD/MM/YYYY'
+    },
+
+    cordova: {
+      rebuildOnChange: false,
+      emulate: false
     }
   };
 
@@ -52,10 +57,10 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
@@ -71,13 +76,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/';
-    ENV.locationType = 'hash';
-  }
 
-  //if (environment === 'cordova') {
-  //  ENV.locationType = 'hash';
-  //}
+  }
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
