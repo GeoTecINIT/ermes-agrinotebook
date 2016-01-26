@@ -18,6 +18,8 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   map: null,
   editStore: null,
   parcels: Ember.inject.service(),
+  ermesCordova: Ember.inject.service(),
+
 
   /**
    * Persistent symbol
@@ -81,7 +83,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       "center": [pos.get('lastX'), pos.get('lastY')],
       "zoom": pos.get('zoom'),
       "minZoom": 9/*mapInfo.minZoom*/,
-      "maxZoom": 14/*mapInfo.maxZoom Luis*/,
+      "maxZoom": 18/*mapInfo.maxZoom Luis*/,
       "logo": false//,
       //"fitExtent":  true
     });
@@ -94,7 +96,13 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   loadBasemap() {
       var mapInfo = this.get('parcels').getUserMapInfo();
       //this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy, mapInfo);
-      /*this.addTPKLayer("assets/offline/basemap_tpk_png.zip");//*/this.addTPKLayer("assets/offline/basemap.zip");
+      /*this.addTPKLayer("assets/offline/basemap_tpk_png.zip");//*/
+    //this.addTPKLayer("assets/offline/basemap4.zip");
+
+    if (this.get('ermesCordova').isNative()) {
+
+    }
+    this.addTPKLayer("assets/offline/basemapjpg.zip");
   },
 
   /**
@@ -253,5 +261,35 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       }
     });
     userParcelsLayer.refresh();
-  }
+  },
+
+  //URL of our asset
+  assetURL = "https://raw.githubusercontent.com/cfjedimaster/Cordova-Examples/master/readme.md",
+
+//File name of our important data file we didn't ship with the app
+fileName = "mydatafile.txt",
+
+function initCordova() {
+
+  store = cordova.file.dataDirectory;
+
+  //Check for the file.
+  window.resolveLocalFileSystemURL(store + fileName, appStart, downloadAsset);
+
+}
+
+function downloadAsset() {
+  var fileTransfer = new FileTransfer();
+  console.log("About to start transfer");
+  fileTransfer.download(assetURL, store + fileName,
+    function(entry) {
+      console.log("Success!");
+      appStart();
+    },
+    function(err) {
+      console.log("Error");
+      console.dir(err);
+    });
+}
+
 });

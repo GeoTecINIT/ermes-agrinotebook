@@ -273,7 +273,6 @@ liveReload()
     var map = this.get('map');
 
     var tpkLayer = new TPKLayer();
-    //tpkLayer.TILE_PATH = "/v101/landsat_spain_scene_mercator_clip_tpk_cache/";//"/v101/Layers/";
     tpkLayer.on("progress", function (evt) {
       console.log("TPK loading..." + evt);
     });
