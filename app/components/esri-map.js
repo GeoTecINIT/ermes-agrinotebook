@@ -58,7 +58,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
                __this.mapLoaded();
                loaded = true;
              }
-
+            console.log("delete me, I am a test!!");
              //loadBaseMapEvent.remove();
            });
           _this.loadBasemap();
@@ -80,10 +80,10 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     var map = new Map(this.elementId, {
       "center": [pos.get('lastX'), pos.get('lastY')],
       "zoom": pos.get('zoom'),
-      "maxZoom": 12/*mapInfo.maxZoom Luis*/,
-      "minZoom": 10/*mapInfo.minZoom*/,
-      "logo": false,
-      "fitExtent":  true
+      "minZoom": 9/*mapInfo.minZoom*/,
+      "maxZoom": 14/*mapInfo.maxZoom Luis*/,
+      "logo": false//,
+      //"fitExtent":  true
     });
     this.set('map', map);
   },
@@ -94,7 +94,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   loadBasemap() {
       var mapInfo = this.get('parcels').getUserMapInfo();
       //this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy, mapInfo);
-      this.addTPKLayer("assets/offline/basemap.zip");
+      /*this.addTPKLayer("assets/offline/basemap_tpk_png.zip");//*/this.addTPKLayer("assets/offline/basemap.zip");
   },
 
   /**
