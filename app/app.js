@@ -13,6 +13,16 @@ App = Ember.Application.extend({
   Resolver: Resolver
 });
 
-loadInitializers(App, config.modulePrefix);
+if (document.URL.match(/^https?:\/\//)) {
+  //alert("Browser!!");
+  loadInitializers(App, config.modulePrefix);
+} else {
+  document.addEventListener('deviceready', function() {
+    //alert("Hybrid!!");
+    loadInitializers(App, config.modulePrefix);
+  }, false);
+}
+
+//loadInitializers(App, config.modulePrefix);
 
 export default App;

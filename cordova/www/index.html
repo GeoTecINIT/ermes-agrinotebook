@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ErmesSmartApp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
+    <meta name="theme-color" content="#8cc63f">
+    <link rel="icon" href="assets/ermes-images/logo.png">
+
+    
+<meta name="ermes-smart-app/config/environment" content="%7B%22modulePrefix%22%3A%22ermes-smart-app%22%2C%22environment%22%3A%22development%22%2C%22baseURL%22%3A%22/%22%2C%22defaultLocationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22apiServer%22%3A%22http%3A//ermes.dlsi.uji.es%3A6686%22%2C%22layerProxy%22%3A%22http%3A//ermes.dlsi.uji.es%3A6686/proxy%22%2C%22regionLayers%22%3A%7B%22spain%22%3A%7B%22baseMap%22%3A%22http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer%22%2C%22mapName%22%3A%22spainBasemap%22%2C%22parcelsLayer%22%3A%22http%3A//ermes.dlsi.uji.es%3A6080/ArcGIS/rest/services/2015-ES/landsat_spain_scene/MapServer/3%22%2C%22maxZoom%22%3A18%2C%22minZoom%22%3A14%7D%2C%22italy%22%3A%7B%22baseMap%22%3A%22http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/services/2015-IT/IT_basemap/MapServer%22%2C%22mapName%22%3A%22italyBasemap%22%2C%22parcelsLayer%22%3A%22http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/services/2015-IT/IT_parcels/MapServer/0%22%2C%22maxZoom%22%3A17%2C%22minZoom%22%3A13%7D%2C%22greece%22%3A%7B%22baseMap%22%3A%22http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/services/2015-GR/GR_basemap/MapServer%22%2C%22mapName%22%3A%22greeceBasemap%22%2C%22parcelsLayer%22%3A%22http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/services/2015-GR/GR_parcels/MapServer/0%22%2C%22maxZoom%22%3A6%2C%22minZoom%22%3A3%7D%7D%2C%22defaultDateFormat%22%3A%22DD/MM/YYYY%22%2C%22LOG_ACTIVE_GENERATION%22%3Atrue%2C%22LOG_VIEW_LOOKUPS%22%3Atrue%2C%22name%22%3A%22ermes-smart-app%22%2C%22version%22%3A%220.0.0+622b37ed%22%7D%2C%22cordova%22%3A%7B%22rebuildOnChange%22%3Afalse%2C%22emulate%22%3Afalse%2C%22liveReload%22%3A%7B%22enabled%22%3Afalse%2C%22platform%22%3A%22ios%22%7D%7D%2C%22i18n%22%3A%7B%22defaultLocale%22%3A%22en%22%7D%2C%22moment%22%3A%7B%22includeLocales%22%3A%5B%22en%22%2C%22el%22%2C%22es%22%2C%22it%22%5D%7D%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27none%27%22%2C%22script-src%22%3A%22%27self%27%20%27unsafe-eval%27%20%27unsafe-inline%27%20%3A49152%20http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/services/%20http%3A//js.arcgis.com/%20https%3A//js.arcgis.com/%22%2C%22font-src%22%3A%22%27self%27%22%2C%22connect-src%22%3A%22%27self%27%20http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/%20http%3A//ermes.dlsi.uji.es%3A6686%20http%3A//ermes.dlsi.uji.es%3A6585/%20http%3A//server.arcgisonline.com/arcgis/rest/services/%20http%3A//services.arcgisonline.com/%20http%3A//www.arcgis.com/%20http%3A//static.arcgis.com/%22%2C%22img-src%22%3A%22%27self%27%20http%3A//ermes.dlsi.uji.es%20http%3A//ermes.dlsi.uji.es%3A6080/arcgis/rest/services/%20void%3A%20data%3A%20http%3A//js.arcgis.com/%20http%3A//services.arcgisonline.com/%20http%3A//server.arcgisonline.com/%22%2C%22style-src%22%3A%22%27self%27%20%27unsafe-inline%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22isCordovaBuild%22%3Atrue%2C%22locationType%22%3A%22hash%22%2C%22exportApplicationGlobal%22%3Atrue%7D" />
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/ermes-smart-app.css">
+
+    
+  </head>
+  <body>
+
+    <div id="loading-splash" class="animated infinite rubberBand" align="center">
+      <img src="assets/ermes-images/logo.png">
+    </div>
+
+    <script>
+      // Please refere to RequireJS configuration options
+      // http://requirejs.org/docs/api.html#config
+      // If using Dojo, this configuration will be treated like dojoConfig.
+      // Please refer to Dojo documentation for details
+      // http://dojotoolkit.org/documentation/tutorials/1.10/dojo_config/
+      var reqConfig = {
+        locale: 'en-us',
+        isDebug: true
+      };
+      var dojoConfig = reqConfig;
+      dojoConfig.async = true;
+    </script>
+
+    <script src="arcgis/dojo/dojo.js"></script>
+<script>
+require([
+'esri/Color','esri/geometry/Point','esri/geometry/webMercatorUtils','esri/graphic','esri/layers/FeatureLayer','esri/map','esri/symbols/PictureMarkerSymbol','esri/symbols/SimpleFillSymbol','esri/symbols/SimpleLineSymbol','oesri/offline-edit-store-src','oesri/offline-tiles-advanced-src'], function(
+mod0,mod1,mod2,mod3,mod4,mod5,mod6,mod7,mod8,mod9,mod10) {
+adoptable = [{name:"esri/Color",obj:mod0},{name:"esri/geometry/Point",obj:mod1},{name:"esri/geometry/webMercatorUtils",obj:mod2},{name:"esri/graphic",obj:mod3},{name:"esri/layers/FeatureLayer",obj:mod4},{name:"esri/map",obj:mod5},{name:"esri/symbols/PictureMarkerSymbol",obj:mod6},{name:"esri/symbols/SimpleFillSymbol",obj:mod7},{name:"esri/symbols/SimpleLineSymbol",obj:mod8},{name:"oesri/offline-edit-store-src",obj:mod9},{name:"oesri/offline-tiles-advanced-src",obj:mod10},];
+var vendor=document.createElement("script");
+vendor.setAttribute("src", "assets/vendor.js");
+vendor.onload=function(){
+var app=document.createElement("script");
+app.setAttribute("src", "assets/ermes-smart-app.js");
+document.body.appendChild(app);
+}
+document.body.appendChild(vendor);
+});
+</script>
+
+    <script src="cordova.js"></script>
+
+    
+
+  </body>
+</html>
