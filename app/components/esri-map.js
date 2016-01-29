@@ -100,9 +100,11 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     //this.addTPKLayer("assets/offline/basemap4.zip");
 
     if (this.get('ermesCordova').isNative()) {
-
+        //initCordova("basemapjpg.zip", );
     }
-    this.addTPKLayer("assets/offline/basemapjpg.zip");
+    else {
+      this.addTPKLayer("assets/offline/basemap4.zip");
+    }
   },
 
   /**
@@ -138,11 +140,11 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
 
     // Add layers
     this.get('layersMap').clear();
-   /* var _this = this;
+    var _this = this;
     var loadBaseMapEvent = this.get("map").on("layer-add-result",(evt)=>{
       _this.loadUserParcelsLayer();
       loadBaseMapEvent.remove();
-    });*/
+    });
 
     this.loadBasemap();
 
@@ -156,7 +158,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     Ember.debug('Map was successfully loaded');
     this.notifyPropertyChange('editMode');
 
-    this.get('map').on('update-end', () => this.setPositionMarker());
+    //this.get('map').on('update-end', () => this.setPositionMarker());
 
   },
 
@@ -164,6 +166,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    * Sets a marker for the actual user position
    */
   setPositionMarker(){
+    //todo: check NaN
     if (navigator.geolocation) {
       var map = this.get('map');
       var myPositionGraphic = this.get('myPositionGraphic');
@@ -246,6 +249,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   /**
    * Adds missing parcel graphics
    */
+
   addSelectedGraphics() {
     var userParcelsLayer = this.get('layersMap').get('userParcelsLayer');
     var selectedParcels = this.get('parcels.selectedParcels');
@@ -261,35 +265,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       }
     });
     userParcelsLayer.refresh();
-  },
-
-  //URL of our asset
-  assetURL = "https://raw.githubusercontent.com/cfjedimaster/Cordova-Examples/master/readme.md",
-
-//File name of our important data file we didn't ship with the app
-fileName = "mydatafile.txt",
-
-function initCordova() {
-
-  store = cordova.file.dataDirectory;
-
-  //Check for the file.
-  window.resolveLocalFileSystemURL(store + fileName, appStart, downloadAsset);
-
-}
-
-function downloadAsset() {
-  var fileTransfer = new FileTransfer();
-  console.log("About to start transfer");
-  fileTransfer.download(assetURL, store + fileName,
-    function(entry) {
-      console.log("Success!");
-      appStart();
-    },
-    function(err) {
-      console.log("Error");
-      console.dir(err);
-    });
-}
+  }
 
 });
+

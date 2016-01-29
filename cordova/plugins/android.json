@@ -47,6 +47,12 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.ermesfp7.esa"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ermesfp7.esa"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ermesfp7.esa"
         }
     },
     "dependent_plugins": {}

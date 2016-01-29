@@ -29,6 +29,7 @@ Router.map(function() {
   });
   this.route('index-error', {});
   this.route('index-loading', {});
+  this.route('download-asset');
 });
 
 export default Router;

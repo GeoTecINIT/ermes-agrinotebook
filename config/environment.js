@@ -16,6 +16,29 @@ module.exports = function(environment) {
     APP: {
       apiServer: "http://ermes.dlsi.uji.es:6686",
       layerProxy: "http://ermes.dlsi.uji.es:6686/proxy",
+
+      //resourcesServer: "http://altairi.lan:4200/",
+      resourcesServer: "",
+      assetDescriptor: "assets/offline/assetdescriptor.json",
+
+      /* sample descriptor file entry
+      regionsBaseMaps: {
+        spain: {
+          //address of the asset descriptor json file
+          tpkUrl: "<set the uri here in the descriptor file>",
+          version: "1.0.0"
+        },
+        italy: {
+         tpkUrl: "<set the uri here in the descriptor file>",
+         version: "1.0.0"
+
+       },
+        greece: {
+         tpkUrl: "<set the uri here in the descriptor file>",
+         version: "1.0.0"
+        }
+      }
+     */
       regionLayers: {
         spain: {
           baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer",

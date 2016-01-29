@@ -1,9 +1,10 @@
 import $ from 'jquery';
 import Ember from 'ember';
 import AuthChecker from 'ermes-smart-app/mixins/auth-checker';
+import InitialTasks from 'ermes-smart-app/mixins/initial-tasks';
 
-export default Ember.Route.extend(AuthChecker, {
-  uploadQueue: Ember.inject.service(),
+export default Ember.Route.extend(AuthChecker, InitialTasks, {
+  //uploadQueue: Ember.inject.service(),
   parcels: Ember.inject.service(),
   model() {
     var username = this.get('auth').getCurrentUserId();
@@ -11,16 +12,8 @@ export default Ember.Route.extend(AuthChecker, {
   },
   afterModel(user) {
     this.get('parcels').setUser(user);
-    if (user.get('parcels.length') === 0) {
-      if (navigator.onLine) {
-        this.controllerFor('index').set('editMode', true);
-        this.transitionTo('index.welcome');
-      } else {
-        this.transitionTo('index-error');
-      }
-    }
-
-    this.get('uploadQueue').start();
+    this.initialChecks();
+  //is being done in InitialTaks this.get('uploadQueue').start();
   },
   actions: {
     willTransition() {

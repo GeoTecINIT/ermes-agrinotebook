@@ -9,6 +9,7 @@ import Graphic from "esri/graphic";
 export default Ember.Mixin.create({
   layersMap: new Map(),
   parcelsGraphics: [],
+  ermesCordova: Ember.inject.service(),
 
   // For basemaps (Tiled maps in general)
   addOfflineTileLayer(layerURL, dbStore, proxy, /*Luis*/mapInfo/*luis*/)
@@ -135,6 +136,7 @@ addParcelsLayer(layerURL)
   });
 
   this.get('layersMap').set('parcelsLayer', featureLayer);
+
   this.get('map').addLayer(featureLayer);
 },
 
@@ -166,17 +168,22 @@ addUserParcelsLayer(layerURL)
 
     var storeEvent = featureLayer.on(event, () => {
         drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
-    if (navigator.onLine) {
-      _this.storeUserParcelsLayer();
-      storeEvent.remove();
-    }
-  }
-
-)
-  ;
+        if (navigator.onLine) {
+          _this.storeUserParcelsLayer();
+          storeEvent.remove();
+        }
+     }
+   );
 
   _this.get('layersMap').set('userParcelsLayer', featureLayer);
-  _this.get('map').addLayer(featureLayer);
+  /*_this.get('map').on('layer-add-result', (evt)=> {
+    drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
+    if (navigator.onLine) {
+      _this.storeUserParcelsLayer();
+      //storeEvent.remove();
+    }
+  });*/
+    _this.get('map').addLayer(featureLayer);
 }
 
 if (navigator.onLine) {
@@ -231,40 +238,50 @@ liveReload()
   });
 },
 // Retrieve the TPK file via an HTTP request
-  addTPKLayer(url){
-    //todo: maybe based on this url we could decide if taking the tpk from File API or form URL
-    var xhrRequest = new XMLHttpRequest();
-    var _this = this;
-    xhrRequest.open("GET", url, true);
-    xhrRequest.responseType = "blob";
-    xhrRequest.onprogress = function(evt){
-      var percent = 0;
-      if(/*evt.hasOwnProperty("total")*/typeof evt["total"] !== 'undefined'){
-        percent = (parseFloat(evt.loaded / evt.total) * 100).toFixed(0);
-      }
-      else{
-        percent = (parseFloat(evt.loaded / evt.totalSize) * 100).toFixed(0);
-      }
+  addTPKLayer(url, local){
 
-      console.log("Get file via url " + percent + "%");
-      console.log("Begin downloading remote tpk file...");
-    };
+   /* if (typeof local == 'undefined') {
 
-    xhrRequest.error = function(err){
-      console.log("ERROR retrieving TPK file: " + err.toString());
-      alert("There was a problem retrieve the file.");
-    };
-    var __this = _this;
-    xhrRequest.onload = function(oEvent) {
-      if(this.status === 200) {
-        console.log("Remote tpk download finished." + oEvent);
-        __this.zipParser(this.response);
-      }
-      else{
-        alert("There was a problem loading the file. " + this.status + ": " + this.statusText );
-      }
-    };
-    xhrRequest.send();
+      //todo: maybe based on this url we could decide if taking the tpk from File API or form URL
+      var xhrRequest = new XMLHttpRequest();
+      var _this = this;
+      xhrRequest.open("GET", url, true);
+      xhrRequest.responseType = "blob";
+      xhrRequest.onprogress = function(evt){
+        var percent = 0;
+        if(/!*evt.hasOwnProperty("total")*!/typeof evt["total"] !== 'undefined'){
+          percent = (parseFloat(evt.loaded / evt.total) * 100).toFixed(0);
+        }
+        else{
+          percent = (parseFloat(evt.loaded / evt.totalSize) * 100).toFixed(0);
+        }
+
+        console.log("Get file via url " + percent + "%");
+        console.log("Begin downloading remote tpk file...");
+      };
+
+      xhrRequest.error = function(err){
+        console.log("ERROR retrieving TPK file: " + err.toString());
+        alert("There was a problem retrieve the file.");
+      };
+      var __this = _this;
+      xhrRequest.onload = function(oEvent) {
+        if(this.status === 200) {
+          console.log("Remote tpk download finished." + oEvent);
+          __this.zipParser(this.response);
+        }
+        else{
+          alert("There was a problem loading the file. " + this.status + ": " + this.statusText );
+        }
+      };
+      xhrRequest.send();
+    }
+*/
+    if (this.get('ermesCordova').isNative()){
+      var basemapName = this.get('parcels').get('basemapName');
+
+        //todo: recover file  this.zipParser();
+    }
 
 },
   // Initialize the Map and the TPKLayer
