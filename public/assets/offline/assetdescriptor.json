@@ -1,15 +1,15 @@
 {
   "regionsBaseMaps": {
     "spain": {
-      "tpkUrl": "assets/offline/basemap_spain_v1.0.0.zip",
+      "url": "assets/offline/basemap_spain_v1.0.0.zip",
       "version": "1.0.0"
     },
     "italy": {
-      "tpkUrl": "assets/offline/basemap_italy_v1.0.0.zip",
+      "url": "assets/offline/basemap_italy_v1.0.0.zip",
       "version": "1.0.0"
     },
     "greece": {
-      "tpkUrl": "assets/offline/basemap_greece_v1.0.0.zip",
+      "url": "assets/offline/basemap_greece_v1.0.0.zip",
       "version": "1.0.0"
     }
   }

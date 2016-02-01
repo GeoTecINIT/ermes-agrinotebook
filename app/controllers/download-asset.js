@@ -94,7 +94,7 @@ export default Ember.Controller.extend({
                  });
                },
                function(err) {
-                 Ember.debug.log("Error downloading asset..");
+                 Ember.debug("Error downloading asset..");
                  _this.set('downloadError', err)
                });});
 
