@@ -1,15 +1,15 @@
 {
   "regionsBaseMaps": {
     "spain": {
-      "url": "assets/offline/basemap_spain_v1.0.0.zip",
+      "url": "http://geo4.dlsi.uji.es:8080/basemap_spain_v1.0.0.zip",
       "version": "1.0.0"
     },
     "italy": {
-      "url": "assets/offline/basemap_italy_v1.0.0.zip",
+      "url": "http://geo4.dlsi.uji.es:8080/basemap_spain_v1.0.0.zip",
       "version": "1.0.0"
     },
     "greece": {
-      "url": "assets/offline/basemap_greece_v1.0.0.zip",
+      "url": "http://geo4.dlsi.uji.es:8080/basemap_spain_v1.0.0.zip",
       "version": "1.0.0"
     }
   }

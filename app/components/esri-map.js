@@ -99,12 +99,12 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       /*this.addTPKLayer("assets/offline/basemap_tpk_png.zip");//*/
     //this.addTPKLayer("assets/offline/basemap4.zip");
 
-    if (this.get('ermesCordova').isNative()) {
+    /*if (this.get('ermesCordova').isNative()) {
         //initCordova("basemapjpg.zip", );
     }
-    else {
+    else {*/
       this.addTPKLayer("assets/offline/basemap4.zip");
-    }
+    /*}*/
   },
 
   /**

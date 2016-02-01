@@ -278,13 +278,37 @@ liveReload()
     }
 */
     if (this.get('ermesCordova').isNative()){
-      var basemapName = this.get('parcels').get('basemapName');
 
-        //todo: recover file  this.zipParser();
+      var basemapName = this.get('parcels').get('basemapName');
+      var store = cordova.file.dataDirectory;
+      var fileName = basemapName;
+
+      this.getBaseMapZip (store, fileName).then((binary)=>{
+        if (binary!== null) {
+          this.zipParser(binary);
+        }
+        else {
+           Ember.debug("getBaseMapZip: error loading the zip file");
+        }
+      });
     }
 
 },
-  // Initialize the Map and the TPKLayer
+  getBaseMapZip(store, fileName){
+  return new Ember.RSVP.Promise( (resolve, reject )=> {
+    window.resolveLocalFileSystemURL(store + fileName,  (fileEntry) => {
+      //delete the file
+      fileEntry.file((file)=>{
+          console.debug("the file was opened successfuly");
+          resolve(file);
+       });
+      }
+      , ()=> { resolve(null)});
+  } );
+},
+
+
+// Initialize the Map and the TPKLayer
   initMap(entries){
     //Destroy the old map so we can reload a new map
     var map = this.get('map');
