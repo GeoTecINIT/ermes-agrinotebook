@@ -176,6 +176,17 @@ div.ermes-inner-window {
   background: #FFF;
 }
 
+div.ermes-inner-window-center {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  margin-right: 5%;
+  margin-left: auto;
+  height: auto;
+  max-width: 200px;
+  background: #FFF;
+}
+
 div.ermes-center-content {
   position: absolute;
   top: 15%;

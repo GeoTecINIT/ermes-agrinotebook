@@ -231,6 +231,7 @@ liveReload()
       //if(entries)alert("TPK downloaded and unzipped!");
       zipReader.close(function(evt){
         console.log("Done reading zip file." + evt);
+        this.set("loading", false);
       });
     }, function (err) {
       alert("There was a problem reading the file!: " + err);
@@ -240,7 +241,8 @@ liveReload()
 // Retrieve the TPK file via an HTTP request
   addTPKLayer(url, local){
 
-   /* if (typeof local == 'undefined') {
+    //<editor-fold desc="old code to eliminate">
+    /* if (typeof local == 'undefined') {
 
       //todo: maybe based on this url we could decide if taking the tpk from File API or form URL
       var xhrRequest = new XMLHttpRequest();
@@ -277,12 +279,13 @@ liveReload()
       xhrRequest.send();
     }
 */
+    //</editor-fold>
     if (this.get('ermesCordova').isNative()){
 
       var basemapName = this.get('parcels').get('basemapName');
       var store = cordova.file.dataDirectory;
       var fileName = basemapName;
-
+      this.set("loading", true);
       this.getBaseMapZip (store, fileName).then((binary)=>{
         if (binary!== null) {
           this.zipParser(binary);

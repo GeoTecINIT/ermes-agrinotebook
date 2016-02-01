@@ -1,1 +1,16 @@
+{{#if loading }}
+  {{#jqm-component}}
+      <div class="ermes-inner-window-center animated bounceInLeft">
+        {{#jqm-component role='header'}}
+            <h1>Loading...</h1>
+        {{/jqm-component}}
+          <div style="padding: 1em">
+              <div class="animated pulse infinite">
+                  <img src="assets/ermes-images/logo.png">
+              </div>
+          </div>
+      </div>
+  {{/jqm-component}}
+{{/if}}
+
 {{yield}}
