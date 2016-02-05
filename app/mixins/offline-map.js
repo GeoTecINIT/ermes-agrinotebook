@@ -231,7 +231,7 @@ liveReload()
       //if(entries)alert("TPK downloaded and unzipped!");
       zipReader.close(function(evt){
         console.log("Done reading zip file." + evt);
-        this.set("loading", false);
+        _this.set("loading", false);
       });
     }, function (err) {
       alert("There was a problem reading the file!: " + err);
@@ -311,12 +311,14 @@ liveReload()
 },
 
 
+
 // Initialize the Map and the TPKLayer
   initMap(entries){
     //Destroy the old map so we can reload a new map
     var map = this.get('map');
 
     var tpkLayer = new TPKLayer();
+
     tpkLayer.on("progress", function (evt) {
       console.log("TPK loading..." + evt);
     });

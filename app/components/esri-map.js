@@ -19,7 +19,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   editStore: null,
   parcels: Ember.inject.service(),
   ermesCordova: Ember.inject.service(),
-  loading : false,
+  loading : true,
 
 
   /**

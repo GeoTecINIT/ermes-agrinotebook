@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
          return -1;
        }
 
-       if (typeof this.get("progressLoaded") == 'undefined'){
+       if (typeof this.get("progressLoaded") === 'undefined'){
          return 0;
        }
 
@@ -74,8 +74,9 @@ export default Ember.Controller.extend({
                  if (progressEvent.lengthComputable) {
                    var progress = progressEvent.loaded / progressEvent.total;
                      Ember.debug("downloading asset" + progress);
-                     _this.set("progressLoaded",  progressEvent.loaded);
-                     _this.set("progressTotal", progressEvent.total);
+                      const MBRate = 1048576;
+                     _this.set("progressLoaded",  progressEvent.loaded/(MBRate)/*to mb*/ );
+                     _this.set("progressTotal", progressEvent.total/(MBRate)/*to mb*/);
                      _this.set("progressUndetermined", false);
 
                  } else {

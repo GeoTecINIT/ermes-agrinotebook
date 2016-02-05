@@ -47,5 +47,9 @@ module.exports = function(defaults) {
   // Animate.css
   app.import('bower_components/animate.css/animate.css');
 
+  //ProgressBar.js  component progress-bar
+  app.import('bower_components/progressbar.js/dist/progressbar.js');
+  app.import('vendor/progress-bar/shim.js',{ type: 'vendor', exports: { 'progress-bar': ['default'] } });
+
   return app.toTree();
 };
