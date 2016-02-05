@@ -1,27 +1,42 @@
-{{#jqm-page}}
+<div class="ui-page-theme-a">
   {{#jqm-content}}
       <div align="center">
+
+        {{!--
+        <p>
+            <span>Input</span>
+            URL: {{downloadUrl}}
+            File: {{assetsKey}}
+            Details: {{assetsDetails}}
+        </p>
+
+        <p>
+            <span>Progress</span>
+            progress: {{progressLoaded}}
+            progressTotal: {{progressTotal}}
+            normalizedProgress: {{normalizedProgress}}
+        </p>
+
+        <p>
+            <span>Output</span>
+            Error: {{downloadError}}
+        </p>
+        --}}
           <p>
-              <span>Input</span>
-              URL: {{downloadUrl}}
-              File: {{assetsKey}}
-              Details: {{assetsDetails}}
+              <span>Downloading some application resources </span>
           </p>
 
-          <p>
-              <span>Progress</span>
-              progress: {{progressLoaded}}
-              progressTotal: {{progressTotal}}
-              normalizedProgress: {{normalizedProgress}}
-          </p>
+          <div style="max-width: 300px">
+            {{progress-bar type="Circle" progress=normalizedProgress count=progressLoaded color="#8cc63f" fill="#fff" strokeWidth=3 }}
+          </div>
 
-          <p>
-              <span>Output</span>
-              Error: {{downloadError}}
-          </p>
+        {{#if downloadError}}
+            <p>
+                <span>An error occurred while downloading the application resources..</span>
+            </p>
 
-          {{progress-bar type="Circle" progress=normalizedProgress count=progressLoaded color="#8cc63f" fill="#fff" strokeWidth=3 }}
-
+          {{jqm-button text='retry' action='downloadAsset' inline='true' mini='true' theme='b'}}
+        {{/if}}
       </div>
   {{/jqm-content}}
-{{/jqm-page}}
+</div>
