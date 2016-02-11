@@ -39,6 +39,7 @@ module.exports = function(environment) {
         }
       }
      */
+      /*todo: cleanup this zooms, etc can disappear*/
       regionLayers: {
         spain: {
           baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer",

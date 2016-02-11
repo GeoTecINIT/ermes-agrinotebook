@@ -14,7 +14,7 @@ export default Ember.Route.extend(AuthChecker, {
 
   actions: {
     didTransition: function() {
-      this.controller.send('downloadAsset');
+      //this.controller.send('downloadAsset');
       //this.controller.get('errors.base').clear();
       return true; // Bubble the didTransition event
     }

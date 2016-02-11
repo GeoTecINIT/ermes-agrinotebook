@@ -18,7 +18,7 @@
   {{/jqm-header}}
   {{#jqm-content class="esri-map"}}
     <div class="map-container">
-      {{esri-map editMode=editMode}}
+      {{esri-map editMode=editMode useOnlineBasemap=useOnlineBasemap}}
       {{ermes-side-buttons editMode=editMode openPanel='showPanel' cannotEdit='cannotEdit'}}
     </div>
     {{ermes-menu-fields showPanel="showPanel" positionTo="#add-info-btn" id="ermes-menu-fields"}}

@@ -205,7 +205,8 @@ export default {
       'retrieving-info': "We are recovering your profile from our servers. Please wait...",
       'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
       'got-it': "Got it",
-      'saved': "Saved"
+      'saved': "Saved",
+      'download-basemap': "Download resources for enabling offline capabilities?"
     }
   },
   'region': {

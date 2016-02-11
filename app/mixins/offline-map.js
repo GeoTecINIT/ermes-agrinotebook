@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 import TPKLayer from "oesri/offline-tpk-src";
-//import OfflineTilesEnablerLayer from 'oesri/offline-tiles-advanced-src';
+import OfflineTilesEnablerLayer from 'oesri/offline-tiles-advanced-src';
 import TiledMapServiceLayer from "esri/layers/TiledMapServiceLayer";
 import FeatureLayer from "esri/layers/FeatureLayer";
 import Graphic from "esri/graphic";

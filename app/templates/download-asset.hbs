@@ -1,42 +1,69 @@
-<div class="ui-page-theme-a">
-  {{#jqm-content}}
+<div class="ui-page-theme-a ermes-full-window">
+  {{#jqm-component}}
       <div align="center">
+          {{#if askingForDownload}}
+              <span>{{t message}}</span>
+            {{jqm-button text="It's ok!" action='confirmDownload' inline='true' mini='true' theme='b'}}
+            {{jqm-button text="No way!" action='rejectDownload' inline='true' mini='true' theme='b'}}
+          {{else}}
+              {{#unless connectionAcceptable}}
+                  <span>{{t "panel.notification.connection-acceptable"}}</span>
+                {{jqm-button text="It's ok!" action='confirmConnection' inline='true' mini='true' theme='b'}}
+                {{jqm-button text="No way!" action='rejectDownload' inline='true' mini='true' theme='b'}}
+              {{else}}
+                  <!--the real downloading form -->
+                  <p>
+                      <span>{{t "panel.notification.donwloading-assets"}}</span>
+                  </p>
 
-        {{!--
-        <p>
-            <span>Input</span>
-            URL: {{downloadUrl}}
-            File: {{assetsKey}}
-            Details: {{assetsDetails}}
-        </p>
+                  <div style="max-width: 300px">
+                    {{progress-bar type="Circle" progress=normalizedProgress count=progressLoaded color="#8cc63f" fill="#fff" strokeWidth=3 }}
+                  </div>
 
-        <p>
-            <span>Progress</span>
-            progress: {{progressLoaded}}
-            progressTotal: {{progressTotal}}
-            normalizedProgress: {{normalizedProgress}}
-        </p>
+                {{#if downloadError}}
+                    <p>
+                        <span>An error occurred while downloading the application resources..</span>
+                    </p>
 
-        <p>
-            <span>Output</span>
-            Error: {{downloadError}}
-        </p>
-        --}}
-          <p>
-              <span>Downloading some application resources </span>
-          </p>
+                  {{jqm-button text='retry' action='downloadAsset' inline='true' mini='true' theme='b'}}
+                {{/if}}
+              {{/unless}}
 
-          <div style="max-width: 300px">
-            {{progress-bar type="Circle" progress=normalizedProgress count=progressLoaded color="#8cc63f" fill="#fff" strokeWidth=3 }}
-          </div>
+          {{/if}}
 
-        {{#if downloadError}}
-            <p>
-                <span>An error occurred while downloading the application resources..</span>
-            </p>
-
-          {{jqm-button text='retry' action='downloadAsset' inline='true' mini='true' theme='b'}}
-        {{/if}}
       </div>
-  {{/jqm-content}}
+  {{/jqm-component}}
 </div>
+
+
+
+{{!--
+{{#unless isWifinetwork }}
+  <p>
+      <span>An error occurred while downloading the application resources..</span>
+  </p>
+
+{{jqm-button text='retry' action='downloadAsset' inline='true' mini='true' theme='b'}}
+{{/unless}}
+--}}
+
+{{!--
+<p>
+    <span>Input</span>
+    URL: {{downloadUrl}}
+    File: {{assetsKey}}
+    Details: {{assetsDetails}}
+</p>
+
+<p>
+    <span>Progress</span>
+    progress: {{progressLoaded}}
+    progressTotal: {{progressTotal}}
+    normalizedProgress: {{normalizedProgress}}
+</p>
+
+<p>
+    <span>Output</span>
+    Error: {{downloadError}}
+</p>
+--}}

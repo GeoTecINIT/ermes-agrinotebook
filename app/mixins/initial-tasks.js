@@ -10,6 +10,7 @@ export default Ember.Mixin.create({
   parcels: Ember.inject.service(),
   offlineStorage: Ember.inject.service(),
   ermesCordova:  Ember.inject.service(),
+  //index: Ember.inject.controller(),
 
   //downloadAsset: Ember.inject.controller(),
   //user: Ember.computed.alias('parcels.user'),
@@ -19,7 +20,8 @@ export default Ember.Mixin.create({
     var user = this.get('parcels.user');
 
     //if with cordova .. the tpk should be downloaded
-    if (this.get('ermesCordova').isNative()) {
+    var useOnline = this.controllerFor('index').get('useOnlineBasemap');
+    if (this.get('ermesCordova').isNative() && !useOnline) {
       this.prepareBaseMap();
     }
 
@@ -59,14 +61,14 @@ export default Ember.Mixin.create({
               if (basemap) {
                 var version = basemap.version;
                 if (regionEntry.version!== version){
-                  this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry });
+                  this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "panel.notification.download-basemap" });
                   offlineStorage.set('downloading', true);
                   this.transitionTo('download-asset');
                 }
                 //else  no need to download nothing
               }
               else {
-                this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry });
+                this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "panel.notification.download-basemap"});
                 offlineStorage.set('downloading', true);
                 this.transitionTo('download-asset');
               }

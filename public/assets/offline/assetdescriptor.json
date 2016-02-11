@@ -5,8 +5,8 @@
       "version": "1.0.0"
     },
     "italy": {
-      "url": "http://geo4.dlsi.uji.es:8080/basemap_spain_v1.0.0.zip",
-      "version": "1.0.0"
+      "url": "http://geo4.dlsi.uji.es:8080/basemap_italy_v1.0.1.zip",
+      "version": "1.0.1"
     },
     "greece": {
       "url": "http://geo4.dlsi.uji.es:8080/basemap_greece_v1.0.1.zip",

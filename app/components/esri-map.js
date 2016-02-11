@@ -96,16 +96,15 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    */
   loadBasemap() {
       var mapInfo = this.get('parcels').getUserMapInfo();
-      //this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy, mapInfo);
-      /*this.addTPKLayer("assets/offline/basemap_tpk_png.zip");//*/
-    //this.addTPKLayer("assets/offline/basemap4.zip");
 
-    /*if (this.get('ermesCordova').isNative()) {
-        //initCordova("basemapjpg.zip", );
-    }
-    else {*/
-      this.addTPKLayer("assets/offline/basemap4.zip");
-    /*}*/
+      if (this.get('ermesCordova').isNative() && !this.get('useOnlineBasemap')) {
+        this.addTPKLayer();
+      }
+      else {
+        this.addOfflineTileLayer(mapInfo.baseMap, mapInfo.mapName, config.APP.layerProxy, mapInfo);
+        this.set("loading", false);
+      }
+
   },
 
   /**
