@@ -88,9 +88,6 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ermesfp7.esa"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.ermesfp7.esa"
         },
@@ -104,6 +101,9 @@
             "PACKAGE_NAME": "com.ermesfp7.esa"
         },
         "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ermesfp7.esa"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ermesfp7.esa"
         }
     },

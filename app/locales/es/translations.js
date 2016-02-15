@@ -205,9 +205,19 @@ export default {
       'retrieving-info': "Estamos recuperando tu perfil de nuestros servidores. Por favor, espera...",
       'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado",
       'got-it': "Entendido",
-      'saved': "Guardado",
-      'download-basemap': "Descargar ficheros para habilitar la funcionalidad offline?"
+      'saved': "Guardado"
     }
+  },
+  'download-assets':{
+    'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad offline?",
+    'connection-acceptable': "Actualmente estás empleando una tarifa de datos. En función de tu región podemos descargar hasta 150 MB. ¿Estás de acuerdo?",
+    'downloading-assets': "Actualmente estamos descargando ficheros esenciales para la funcionalidad offline, te redirigiremos cuando hayamos terminado. Sé paciente, por favor",
+    'download-error': "Ha ocurrido un error mientras descargábamos",
+    'proceed': "Proceder",
+    'later': "Más tarde",
+    'it-is-ok': "¡De acuerdo!",
+    'no-way': "¡Ni hablar!",
+    'retry': "Reintentar"
   },
   'region': {
     'greece': "Grecia",

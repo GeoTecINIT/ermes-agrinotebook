@@ -1,38 +1,53 @@
-<div class="ui-page-theme-a ermes-full-window">
-  {{#jqm-component}}
-      <div align="center">
-          {{#if askingForDownload}}
-              <span>{{t message}}</span>
-            {{jqm-button text="It's ok!" action='confirmDownload' inline='true' mini='true' theme='b'}}
-            {{jqm-button text="No way!" action='rejectDownload' inline='true' mini='true' theme='b'}}
+<!-- Download asset page -->
+<div class="ermes-full-window ui-page-theme-a">
+  {{#jqm-content}}
+      <div class="ermes-center-content" align="center">
+        {{#if askingForDownload}}
+            <div>
+                <img src="assets/ermes-images/logo.png">
+            </div>
+            <br>
+            <span>{{t message}}</span>
+            <p>
+              {{jqm-anchor text=(t 'download-assets.proceed') action='confirmDownload' inline='true' mini='true' theme='b'}}
+              {{jqm-anchor text=(t 'download-assets.later') action='rejectDownload' inline='true' mini='true' theme='b'}}
+            </p>
+        {{else}}
+          {{#unless connectionAcceptable}}
+              <div>
+                  <img src="assets/ermes-images/logo.png">
+              </div>
+              <br>
+              <span>{{t 'download-assets.connection-acceptable'}}</span>
+              <p>
+                {{jqm-anchor text=(t 'download-assets.it-is-ok') action='confirmConnection' inline='true' mini='true' theme='b'}}
+                {{jqm-anchor text=(t 'download-assets.no-way') action='rejectDownload' inline='true' mini='true' theme='b'}}
+              </p>
           {{else}}
-              {{#unless connectionAcceptable}}
-                  <span>{{t "panel.notification.connection-acceptable"}}</span>
-                {{jqm-button text="It's ok!" action='confirmConnection' inline='true' mini='true' theme='b'}}
-                {{jqm-button text="No way!" action='rejectDownload' inline='true' mini='true' theme='b'}}
-              {{else}}
-                  <!--the real downloading form -->
-                  <p>
-                      <span>{{t "panel.notification.donwloading-assets"}}</span>
-                  </p>
+              <p>
+                  <span>{{t 'download-assets.downloading-assets'}}</span>
+              </p>
 
-                  <div style="max-width: 300px">
-                    {{progress-bar type="Circle" progress=normalizedProgress count=progressLoaded color="#8cc63f" fill="#fff" strokeWidth=3 }}
-                  </div>
+              <div style="max-width: 300px">
+                {{progress-bar type="Circle" progress=normalizedProgress count=progressLoaded color="#8cc63f" fill="#fff" strokeWidth=3 }}
+              </div>
 
-                {{#if downloadError}}
-                    <p>
-                        <span>An error occurred while downloading the application resources..</span>
-                    </p>
+            {{#if downloadError}}
+                <div>
+                    <img src="assets/ermes-images/logo.png">
+                </div>
+                <br>
+                <p>
+                    <span>{{t 'download-assets.download-error'}}</span>
+                </p>
 
-                  {{jqm-button text='retry' action='downloadAsset' inline='true' mini='true' theme='b'}}
-                {{/if}}
-              {{/unless}}
+              {{jqm-anchor text=(t 'download-assets.retry') action='downloadAsset' inline='true' mini='true' theme='b'}}
+            {{/if}}
+          {{/unless}}
 
-          {{/if}}
-
+        {{/if}}
       </div>
-  {{/jqm-component}}
+  {{/jqm-content}}
 </div>
 
 

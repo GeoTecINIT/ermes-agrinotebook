@@ -221,9 +221,19 @@ export default {
       'retrieving-info': "Κάνουμε ανάκτηση του προφίλ σας απο τους διακομιστές μας. Παρακαλώ περιμένετε...",
       'first-login': "Παρακαλώ επιλέξτε τα αγροτεμάχια σας πατώντας πάνω τους, και πατήστε το πλήκτρο αποδοχής στην κάτω δεξιά γωνία όταν τελειώσετε",
       'got-it': "Το κατάλαβα",
-      'saved': "Αποθηκεύτηκε",
-      'download-basemap': "Download resources for enabling offline capabilities?"
+      'saved': "Αποθηκεύτηκε"
     }
+  },
+  'download-assets':{
+    'download-basemap': "Download resources for enabling offline capabilities?",
+    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 150 MB. Is that OK for you?",
+    'downloading-assets': "We're currently downloading files for enabling offline mode, we'll redirect you when finished. Please be patient",
+    'download-error': "An error occurred while downloading",
+    'proceed': "Proceed",
+    'later': "Not now",
+    'it-is-ok': "It's OK!",
+    'no-way': "No way!",
+    'retry': "Retry"
   },
   'region': {
     'greece': "Ελλάδα",

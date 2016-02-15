@@ -220,9 +220,19 @@ export default {
      'retrieving-info': "Stiamo recuperando il tuo profilo dal server. Attendi...",
      'first-login': "Seleziona le tue parcelle cliccandoci sopra,.Premi il pulsante nell'angolo in basso a destra quando hai finito. ",
      'got-it': "Fatto",
-     'saved': "Salvato",
-     'download-basemap': "Download resources for enabling offline capabilities?"
+     'saved': "Salvato"
     }
+  },
+  'download-assets':{
+    'download-basemap': "Download resources for enabling offline capabilities?",
+    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 150 MB. Is that OK for you?",
+    'downloading-assets': "We're currently downloading files for enabling offline mode, we'll redirect you when finished. Please be patient",
+    'download-error': "An error occurred while downloading",
+    'proceed': "Proceed",
+    'later': "Not now",
+    'it-is-ok': "It's OK!",
+    'no-way': "No way!",
+    'retry': "Retry"
   },
   'region': {
     'greece': "Grecia",

@@ -242,12 +242,12 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-file": "4.1.0",
     "cordova-plugin-camera": "2.1.0",
     "cordova-plugin-indexedDB": "0.1.2",
     "cordova-plugin-network-information": "1.2.0",
-    "cordova-plugin-file-transfer": "1.5.0"
+    "cordova-plugin-file-transfer": "1.5.0",
+    "cordova-plugin-whitelist": "1.2.1"
 }
 // BOTTOM OF METADATA
 });
