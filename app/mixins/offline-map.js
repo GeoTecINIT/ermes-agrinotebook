@@ -65,8 +65,8 @@ export default Ember.Mixin.create({
       /**Luis only load  the tiles of not already loaded for the levels of the map
        */
       if (!tilesLoaded) {
-        var minZoomAdjust = -2;
-        var maxZoomAdjust = +2;
+        var minZoomAdjust = -1;
+        var maxZoomAdjust = +1;
         /*get all levels.. */
         tiledLayer.getMaxZoom(function (max) {
           maxZoomAdjust = max;

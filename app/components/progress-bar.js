@@ -35,7 +35,7 @@ export default Ember.Component.extend({
   },
 
   _step(state, bar, ctx){
-      bar.setText(Math.round(ctx.get('count')) + " "+ ctx.get("subFix"));
+      bar.setText(Math.round(ctx.get('count')) + " / " + Math.round(ctx.get('total')) + " " + ctx.get("subFix"));
   }
 
 });

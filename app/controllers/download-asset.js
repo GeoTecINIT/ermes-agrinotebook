@@ -36,23 +36,12 @@ normalizedProgress: Ember.computed("progressLoaded", "progressTotal", "progressU
        return this.get("progressLoaded")/ this.get("progressTotal");
   }),
 
-/*
- {"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry }
-*/
-/*
-  beforeModel(transition) {
-    this._super(transition);
-    var isDownloading = this.get('offlineStorage').get('downloading');
-    if (!isDownloading) {
-      this.transitionTo('index');
-    }
-  },
-*/
-
   actions: {
     downloadAsset(){
       //var isDownloading = this.get('offlineStorage').get('downloading');
       this.set('downloadError', undefined);
+      this.set("progressLoaded",  0);
+      this.set("progressTotal", 1);
 
       var isNative = this.get("ermesCordova").isNative();
       var downloadUrl = this.get("downloadUrl");
@@ -113,7 +102,7 @@ normalizedProgress: Ember.computed("progressLoaded", "progressTotal", "progressU
                },
                function(err) {
                  Ember.debug("Error downloading asset..");
-                 _this.set('downloadError', err)
+                 _this.set('downloadError', err);
                });});
 
          }

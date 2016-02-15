@@ -61,14 +61,14 @@ export default Ember.Mixin.create({
               if (basemap) {
                 var version = basemap.version;
                 if (regionEntry.version!== version){
-                  this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap" });
+                  this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap", "askingForDownload": true });
                   offlineStorage.set('downloading', true);
                   this.transitionTo('download-asset');
                 }
                 //else  no need to download nothing
               }
               else {
-                this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap"});
+                this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap", "askingForDownload": true});
                 offlineStorage.set('downloading', true);
                 this.transitionTo('download-asset');
               }
