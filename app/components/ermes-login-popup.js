@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     username: "",
     password: ""
   }),
-  username: Ember.computed.alias('model.username'),
+  //username: Ember.computed.alias('model.username'),
   actions: {
     submit() {
       let model = this.get('model');
@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       this.set('error', '');
 
       this.set('info', this.get('i18n').t('panel.notification.processing'));
-      var token = btoa(model.username+':'+model.password);
+      var token = btoa(model.username.toLowerCase().trim()+':'+model.password);
       //post('/login', {username: model.username, password: model.password })
       post('/login', {headers: {'Authorization': 'Basic ' + token}})
       .done((data) => {
@@ -29,7 +29,7 @@ export default Ember.Component.extend({
           this.set('error', this.get('i18n').t('panel.notification.regional-error'));
         } else {
 
-          auth.logIn(user.username, token, data.language);
+          auth.logIn(user.username.toLowerCase().trim(), token, data.language);
 
           // Reset form
           this.set('model.username', '');

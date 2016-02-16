@@ -3,13 +3,17 @@ import DS from 'ember-data';
 import config from '../config/environment';
 
 export default DS.RESTAdapter.extend({
-  namespace: 'api/products',
+  namespace: 'api-v1/products',
   host: config.APP.apiServer,
   auth: Ember.inject.service(),
   headers: Ember.computed('auth.token', function() {
-    return {
-      "X-Auth-Key": this.get("auth.token")
-    };
+    var token = this.get("auth.token");
+    if (token) {
+      return {
+        "Authorization": 'Basic ' + token
+      };
+    }
+    return {};
   }),
   offlineStorage: Ember.inject.service(),
   findRecord(store, type, id, snapshot) {
@@ -29,5 +33,14 @@ export default DS.RESTAdapter.extend({
         });
       });
     });
+  },
+
+  // Detect server errors
+  handleResponse(status, headers, payload) {
+    if (payload.errors) {
+      var error = payload.errors[0];
+      return Ember.RSVP.reject(error);
+    }
+    return this._super(status, headers, payload);
   }
 });

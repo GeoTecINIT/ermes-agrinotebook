@@ -1,6 +1,7 @@
 {{#jqm-popup id=pId title=(t 'login.text.signup') theme="a" closeButton=true dismissible="false"}}
   <form {{action "submit" on="submit"}}>
     {{jqm-textinput value=model.username placeholder=(t 'login.signup-p.username-f') required=true pattern='[A-Za-z0-9]+'}}
+    {{jqm-textinput value=model.collaboratesWith placeholder=(t 'login.signup-p.collaborating-with')}}
     {{jqm-textinput value=model.password type="password" placeholder=(t 'login.signup-p.password-f') required=true}}
     {{jqm-textinput value=model.rPassword type="password" placeholder=(t 'login.signup-p.repeat-password-f') required=true}}
     {{jqm-textinput value=model.email type="email" placeholder=(t 'login.signup-p.email-f') required=true}}
@@ -11,7 +12,7 @@
   {{ermes-message text=error color="red" animation="fadeInDown"}}
   {{ermes-message text=info color="blue" animation="fadeIn"}}
   {{#if success}}
-    <p align="center" class="animated fadeInDown" style="color: #669933;"><b>{{t 'panel.notification.welcome' username=model.username}}.<br>
-        {{t 'panel.notification.login-allowed'}} <a href="" {{action 'showLoginPopup'}}>{{t 'login.text.login'}}</a></b></p>
+    <p align="center" class="animated fadeInDown" style="color: #669933;"><b>{{t 'panel.notification.activation-needed'}}<br>
+        {{t 'panel.notification.email-sent'}}</b></p>
   {{/if}}
 {{/jqm-popup}}
