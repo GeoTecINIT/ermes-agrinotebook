@@ -16,55 +16,23 @@ export default Ember.Mixin.create({
     var tiledLayer = new OfflineTilesEnablerLayer(layerURL, (success) => {
       if (success) {
         var maxExtent = this.get('map').extent;
-        var buffer = 0;
-        var adjustedEx = maxExtent;
-        var flag = false;
         var map = this.get('map');
- /*   this.get('map').on('pan-end', (d) => {
-      var extent = d.extent;
-      if(extent.xmin < maxExtent.xmin - buffer)
-    {
-      adjustedEx.xmin = maxExtent.xmin;
-      adjustedEx.xmax = Math.abs(extent.xmin - maxExtent.xmin) + extent.xmax;
-      flag = true;
-    }
-    if (extent.ymin < maxExtent.ymin - buffer) {
-      adjustedEx.ymin = maxExtent.ymin;
-      adjustedEx.ymax = Math.abs(extent.ymin - maxExtent.ymin) + extent.ymax;
-      flag = true;
-    }
-    if (extent.xmax - buffer > maxExtent.xmax) {
-      adjustedEx.xmax = maxExtent.xmax;
-      adjustedEx.xmin = extent.xmin - Math.abs(extent.xmax - maxExtent.xmax);
-      flag = true;
-    }
-    if (extent.ymax - buffer > maxExtent.ymax) {
-      adjustedEx.ymax = maxExtent.ymax;
-      adjustedEx.ymin = extent.ymin - Math.abs(extent.ymax - maxExtent.ymax);
-      flag = true;
-    }
-    if (flag === true) {
-      map.setExtent(adjustedEx);
-    }
-    flag = false;
-  }
-);*/
 
         //Manage offline mode
         var downloadEvent;
         var reloadEvent;
         var tilesLoaded = false;//Luis E
 
-
-        if (navigator.onLine) {
+        // FIXME Uncomment this section to re-enable the partial offline functionality on browsers (non-hybrid)
+        /*if (navigator.onLine) {
           downloadEvent = this.get('map').on('update-end', () => {
             if (navigator.onLine) {
-              /**Luis only load  the tiles of not already loaded for the levels of the map
-              */
+              /!**Luis only load  the tiles of not already loaded for the levels of the map
+              *!/
               if (!tilesLoaded) {
                 var minZoomAdjust = -2;
                 var maxZoomAdjust = +2;
-                /*get all levels.. */
+                /!*get all levels.. *!/
                 tiledLayer.getMaxZoom(function (max) {
                   maxZoomAdjust = max;
                 });
@@ -74,7 +42,7 @@ export default Ember.Mixin.create({
                 var zoom = tiledLayer.getMinMaxLOD(minZoomAdjust, maxZoomAdjust);
                 zoom.max = Math.min(mapInfo.maxZoom, maxZoomAdjust);//10;
                 zoom.min = Math.max(mapInfo.minZoom, minZoomAdjust);//12;
-                /*Luis*/
+                /!*Luis*!/
                 //Download tiles
                 tiledLayer.prepareForOffline(zoom.min, zoom.max, this.get('map').extent, function (progress) {
                   //console.log("downloading tiles...");
@@ -98,7 +66,7 @@ export default Ember.Mixin.create({
               this.liveReload();
             }
           });
-        }
+        }*/
       } else {
         Ember.debug("Imposible to prepare layer for offline");
       }

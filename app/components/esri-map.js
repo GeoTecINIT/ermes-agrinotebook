@@ -61,7 +61,6 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
                __this.mapLoaded();
                loaded = true;
              }
-            console.log("delete me, I am a test!!");
              //loadBaseMapEvent.remove();
            });
           _this.loadBasemap();
