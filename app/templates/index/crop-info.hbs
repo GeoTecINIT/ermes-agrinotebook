@@ -10,15 +10,15 @@
     </label>
     <label>
         <span>{{t "panel.crop-info.pudding"}}</span>
-      {{jqm-select value=model.pudding theme="d" options=puddings isDisabled=notIsRice}}
+      {{jqm-select value=model.puddling theme="d" options=puddings isDisabled=notIsRice}}
     </label>
     <label>
       <span>{{t "panel.crop-info.sowing-practice"}}</span>
-      {{jqm-select value=model.sowingPractice theme="d" options=sowingPractices isDisabled=notIsRice}}
+      {{jqm-select value=model.sowingType theme="d" options=sowingPractices isDisabled=notIsRice}}
     </label>
     <label>
       <span>{{t "panel.crop-info.date"}}</span>
-      {{ermes-datepicker value=model.date}}
+      {{ermes-datepicker value=model.sowingDate}}
     </label>
     {{jqm-button text=(t "fields.text.add-new") theme="b"}}
     {{ermes-message text=parcelError color="red" animation="fadeInDown"}}

@@ -6,7 +6,7 @@ export function getProducts(context) {
     {text: context.get('i18n').t('fields.text.soil-type'), panel: 'index.soil-type'},
     {text: context.get('i18n').t('fields.text.soil-condition'), panel: 'index.soil-condition'},
     {text: context.get('i18n').t('fields.text.crop-phenology'), panel: 'index.crop-phenology'},
-    {text: context.get('i18n').t('fields.text.pathogens'), panel: 'index.pathogens'},
+    {text: context.get('i18n').t('fields.text.insects'), panel: 'index.insects'},
     {text: context.get('i18n').t('fields.text.diseases'), panel: 'index.diseases'},
     {text: context.get('i18n').t('fields.text.weeds'), panel: 'index.weeds'},
     {text: context.get('i18n').t('fields.text.fertilizers'), panel: 'index.fertilizers'},

@@ -12,7 +12,7 @@
     {{ermes-message text=endDateError color="red" animation="fadeInDown"}}
     <label>
       <span>{{t "panel.irrigation.measure"}}</span>
-      {{jqm-select value=model.quantityOfWaterMeasure theme="d" options=measures}}
+      {{jqm-select value=model.measureUnit theme="d" options=measures}}
     </label>
     {{#if hasMM}}
       <label>
@@ -31,7 +31,7 @@
     {{/if}}
     <label>
       <span>{{t "panel.irrigation.depth"}}</span>
-      {{jqm-slider value=model.waterDepth min=0 max=100 theme="d"}}
+      {{jqm-slider value=model.waterHeight min=0 max=100 theme="d"}}
     </label>
     {{jqm-button text=(t "fields.text.add-new") theme="b"}}
     {{ermes-message text=parcelError color="red" animation="fadeInDown"}}

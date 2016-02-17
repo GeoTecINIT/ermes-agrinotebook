@@ -37,7 +37,7 @@ export default {
       'soil-type': "Tipo de suelo",
       'soil-condition': "Estado del suelo",
       'crop-phenology': "Fenología del cultivo",
-      'pathogens': "Patógenos",
+      'insects': "Insectos",
       'diseases': "Enfermedades",
       'weeds': "Malas hierbas",
       'fertilizers': "Fertilizantes",
@@ -127,7 +127,7 @@ export default {
       'picture': "Añadir una foto",
       'send-btn': "Enviar observación"
     },
-    'pathogens': {
+    'insects': {
       'date': "Fecha de observación",
       'name': "Nombre",
       'comment': "Añadir un comentario",
@@ -386,7 +386,7 @@ export default {
         '99': "99: Partes cosechadas (estadio para señalar tratamientos de post-cosecha)"
       }
     },
-    'pathogens': {
+    'insects': {
       'names': {
         'aphids': "Aphidoidea",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",

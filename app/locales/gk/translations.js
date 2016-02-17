@@ -53,7 +53,7 @@ export default {
       'soil-type': "Τύπος εδάφους",
       'soil-condition': "Κατάσταση εδάφους",
       'crop-phenology': "Στάδιο ανάπτυξης της καλλιέργειας",
-      'pathogens': "Παθογόνα",
+      'insects': "Insects",
       'diseases': "Ασθένειες",
       'weeds': "Ζιζάνια",
       'fertilizers': "Λιπάσματα",
@@ -143,7 +143,7 @@ export default {
       'picture': "Προσθέστε εικόνα",
       'send-btn': "Αποστολή παρατήρησης"
     },
-    'pathogens': {
+    'insects': {
       'date': "Ημερομηνία παρατήρησης",
       'name': "Όνομα",
       'comment': "Προσθέστε σχόλιο",
@@ -406,7 +406,7 @@ export default {
 
     // Note: starting from here, scientific names have not been translated!
 
-    'pathogens': {
+    'insects': {
       'names': {
         'aphids': "Αφίδες",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",

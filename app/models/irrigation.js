@@ -3,12 +3,12 @@ import ProductModel from 'ermes-smart-app/mixins/product-model';
 import MF from 'model-fragments';
 
 export default ProductModel.extend({
+  uploadingDate: DS.attr('date'),
   startDate: DS.attr('user-date'),
   endDate: DS.attr('user-date'),
-  quantityOfWaterMeasure: DS.attr('string', { defaultValue() { return 'mm'; }}),
+  measureUnit: DS.attr('string', { defaultValue() { return 'mm'; }}),
   waterQuantity: DS.attr('number'),
   waterHours: DS.attr('number'),
-  waterDepth: DS.attr('number'),
-  uploadingDate: DS.attr('date'),
+  waterHeight: DS.attr('number'),
   parcels: MF.array('string')
 });

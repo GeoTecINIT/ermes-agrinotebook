@@ -37,7 +37,7 @@ export default {
       'soil-type': "Soil Type",
       'soil-condition': "Soil Condition",
       'crop-phenology': "Crop Phenology",
-      'pathogens': "Pathogens",
+      'insects': "Insects",
       'diseases': "Diseases",
       'weeds': "Weeds",
       'fertilizers': "Fertilizers",
@@ -127,7 +127,7 @@ export default {
       'picture': "Add a picture",
       'send-btn': "Send observation"
     },
-    'pathogens': {
+    'insects': {
       'date': "Date of observation",
       'name': "Name",
       'comment': "Add a comment",
@@ -386,7 +386,7 @@ export default {
         '99': "99: harvested product"
       }
     },
-    'pathogens': {
+    'insects': {
       'names': {
         'aphids': "Aphids",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",

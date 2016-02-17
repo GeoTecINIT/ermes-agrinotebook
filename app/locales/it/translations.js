@@ -52,7 +52,7 @@ export default {
       'soil-type': "Tipo di suolo",
       'soil-condition': "Condizioni Suolo",
       'crop-phenology': "Fenologia",
-      'pathogens': "Patogeni",
+      'insects': "Insects",
       'diseases': "Malattie",
       'weeds': "Infestanti",
       'fertilizers': "Fertilizzazioni",
@@ -142,7 +142,7 @@ export default {
       'picture': "Aggiungi Foto",
       'send-btn': "Invia Osservazione"
     },
-    'pathogens': {
+    'insects': {
       'date': "Data Osservazione",
       'name': "Nome",
       'comment': "Aggiungi Commento",
@@ -405,7 +405,7 @@ export default {
 
     // Note: starting from here, scientific names have not been translated!
 
-    'pathogens': {
+    'insects': {
       'names': {
         'aphids': "Afidi",
         'lissorhoptrus-oryzophilus': "Punteruolo",

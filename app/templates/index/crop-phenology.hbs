@@ -2,7 +2,7 @@
   <form {{action 'submit' on='submit'}}>
     <label>
       <span>{{t 'panel.crop-phenology.date'}}</span>
-      {{ermes-datepicker value=model.date required=true}}
+      {{ermes-datepicker value=model.observationDate required=true}}
     </label>
     {{ermes-message text=dateError color="red" animation="fadeInDown"}}
     <label>

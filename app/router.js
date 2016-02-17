@@ -14,7 +14,7 @@ Router.map(function() {
     this.route('soil-type', {});
     this.route('soil-condition', {});
     this.route('crop-phenology', {});
-    this.route('pathogens', {});
+    this.route('insects', {});
     this.route('diseases', {});
     this.route('weeds', {});
     this.route('fertilizers', {});
