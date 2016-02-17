@@ -30,12 +30,20 @@ export default Ember.Component.extend({
     },
     commitChanges() {
       if (navigator.onLine){
-        this.get('parcels.user').save().then(() => {
-          this.set('editMode', false);
-        }, (err) => {
-          console.debug('No se ha podido guardar el usuario');
-          this.set('editMode', false);
-          console.debug(err);
+        this.get('parcels.user.parcels').then((parcels) => {
+          var wait = [];
+          parcels.forEach((parcel) => {
+            wait.push(parcel.save());
+          });
+          Ember.RSVP.Promise.all(wait).then(() => {
+            return this.get('parcels.user').save();
+          }).then(() => {
+            this.set('editMode', false);
+          }).catch((err) => {
+            console.debug('No se ha podido guardar el usuario');
+            this.set('editMode', false);
+            console.debug(err);
+          });
         });
       } else {
         this.get('parcels.user').rollbackAttributes();

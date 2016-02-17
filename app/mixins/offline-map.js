@@ -98,14 +98,7 @@ export default Ember.Mixin.create({
 
     // Symbol for painting parcels
     var symbol = this.get('userParcelSymbol');
-
-    // Query, to gather only user parcels from the FeatureLayer service
-    var userParcels = this.get('parcels.user.parcels').toArray();
     var querySentence = "";
-    for (var i = 0; i < userParcels.length - 1; i++) {
-      querySentence += "PARCEL_ID = '" + userParcels[i] + "' or ";
-    }
-    querySentence += "PARCEL_ID = '" + userParcels[userParcels.length - 1] + "'";
 
     // Common online and offline FeatureLayer creator and injector
     function createAndAddFL(layerReference, event) {
@@ -136,16 +129,26 @@ export default Ember.Mixin.create({
       _this.get('map').addLayer(featureLayer);
     }
 
-    if (navigator.onLine) {
-      createAndAddFL(layerURL, 'update-end');
-    } else {
-      this.get('editStore').getFeatureLayerJSON(function (success, featureLayer) {
-        if (success) {
-          Ember.debug('usersParcelLayer loaded successfully from the storage');
-          createAndAddFL(featureLayer, 'resume');
-        }
-      });
-    }
+    // Query, to gather only user parcels from the FeatureLayer service
+    this.get('parcels.user.parcels').then((parcels) => {
+      var userParcels = parcels.map((parcel) => parcel.get('parcelId').toUpperCase());
+
+      for (var i = 0; i < userParcels.length - 1; i++) {
+        querySentence += "PARCEL_ID = '" + userParcels[i] + "' or ";
+      }
+      querySentence += "PARCEL_ID = '" + userParcels[userParcels.length - 1] + "'";
+
+      if (navigator.onLine) {
+        createAndAddFL(layerURL, 'update-end');
+      } else {
+        this.get('editStore').getFeatureLayerJSON(function (success, featureLayer) {
+          if (success) {
+            Ember.debug('usersParcelLayer loaded successfully from the storage');
+            createAndAddFL(featureLayer, 'resume');
+          }
+        });
+      }
+    });
   },
 
   // Store userParcelsLayer
