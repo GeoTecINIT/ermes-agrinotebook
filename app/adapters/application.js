@@ -10,7 +10,7 @@ export default DS.RESTAdapter.extend({
     var token = this.get("auth.token");
     if (token) {
       return {
-        "Authorization": 'Basic ' + token
+        "X-Authorization": 'Bearer ' + token
       };
     }
     return {};

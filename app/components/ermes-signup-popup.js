@@ -46,6 +46,8 @@ export default Ember.Component.extend({
                 this.set('error', this.get('i18n').t('panel.notification.user-exits'));
               } else if (err.message.match(/email/)) {
                 this.set('error', this.get('i18n').t('panel.notification.repeated-email'));
+              } else {
+                this.set('error', this.get('i18n').t('panel.notification.offline'));
               }
             } else {
               this.set('error', this.get('i18n').t('panel.notification.offline'));

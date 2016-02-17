@@ -19,7 +19,7 @@ export default Ember.Component.extend({
       this.set('info', this.get('i18n').t('panel.notification.processing'));
       var token = btoa(model.username.toLowerCase().trim()+':'+model.password);
       //post('/login', {username: model.username, password: model.password })
-      post('/login', {headers: {'Authorization': 'Basic ' + token}})
+      post('/login', {headers: {'X-Authorization': 'Bearer ' + token}})
       .done((data) => {
         this.set('info', '');
         var user = data.user;
@@ -39,12 +39,16 @@ export default Ember.Component.extend({
       }).fail((err) => {
         this.set('info', '');
         var message = err.responseText;
-        if (message.match(/USER_NOT_FOUND/)){
-          this.set('error', this.get('i18n').t('panel.notification.user-not-found'));
-        } else if (message.match(/WRONG_PASSWORD/)) {
-          this.set('error', this.get('i18n').t('panel.notification.login-error'));
-        } else if (message.match(/INACTIVE_ACCOUNT/)) {
-          this.set('error', this.get('i18n').t('panel.notification.inactive-account'));
+        if (message) {
+          if (message.match(/USER_NOT_FOUND/)){
+            this.set('error', this.get('i18n').t('panel.notification.user-not-found'));
+          } else if (message.match(/WRONG_PASSWORD/)) {
+            this.set('error', this.get('i18n').t('panel.notification.login-error'));
+          } else if (message.match(/INACTIVE_ACCOUNT/)) {
+            this.set('error', this.get('i18n').t('panel.notification.inactive-account'));
+          } else {
+            this.set('error', this.get('i18n').t('panel.notification.offline'));
+          }
         } else {
           this.set('error', this.get('i18n').t('panel.notification.offline'));
         }
