@@ -42,6 +42,8 @@ export default Ember.Component.extend({
             if (err.message) {
               if (err.message.match(/Owner/)) {
                 this.set('error', this.get('i18n').t('panel.notification.unknown-owner'));
+              } else if(err.message.match(/Region/)) {
+                this.set('error', this.get('i18n').t('panel.notification.region-mismatch'));
               } else if (err.message.match(/username/)) {
                 this.set('error', this.get('i18n').t('panel.notification.user-exits'));
               } else if (err.message.match(/email/)) {

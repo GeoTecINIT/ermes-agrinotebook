@@ -24,15 +24,18 @@ export default Ember.Mixin.create({
     if (this.get('ermesCordova').isNative() && !useOnline) {
       this.prepareBaseMap();
     }
-
-    if (user.get('parcels.length') === 0) {
-      if (navigator.onLine) {
-        this.controllerFor('index').set('editMode', true);
-        this.transitionTo('index.welcome');
-      } else {
-        this.transitionTo('index-error');
+    user.get('parcels').then((parcels) => {
+      if (parcels.length === 0) {
+        if (navigator.onLine) {
+          this.controllerFor('index').set('editMode', true);
+          this.transitionTo('index.welcome');
+        } else {
+          throw new Error();
+        }
       }
-    }
+    }).catch(() => {
+      this.transitionTo('index-error');
+    });
     this.startSync();
 
   },

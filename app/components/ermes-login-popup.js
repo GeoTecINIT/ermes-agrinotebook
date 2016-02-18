@@ -29,7 +29,7 @@ export default Ember.Component.extend({
           this.set('error', this.get('i18n').t('panel.notification.regional-error'));
         } else {
 
-          auth.logIn(user.username.toLowerCase().trim(), token, data.language);
+          auth.logIn(user.username.toLowerCase().trim(), token, user.language);
 
           // Reset form
           this.set('model.username', '');

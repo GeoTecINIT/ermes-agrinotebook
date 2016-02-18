@@ -11,6 +11,6 @@ export function getLanguajes() {
     {text: 'English', value: 'en', selected: true},
     {text: 'Español', value: 'es'},
     {text: 'Italiano', value: 'it'},
-    {text: 'Ελληνικά', value: 'gk'}
+    {text: 'Ελληνικά', value: 'el'}
   ];
 }

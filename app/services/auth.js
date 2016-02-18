@@ -17,9 +17,6 @@ export default Ember.Service.extend({
       if (localStorage.lang) {
         var lang = localStorage.lang;
         this.get('i18n').set('locale', lang);
-        if (lang === 'gk') { // TODO Change this on the backend
-          lang = 'el';
-        }
         Moment.locale(lang);
       }
     }
@@ -37,9 +34,6 @@ export default Ember.Service.extend({
     }
     localStorage.lang = lang;
     this.get('i18n').set('locale', lang);
-    if (lang === 'gk') { // TODO Change this on the backend
-      lang = 'el';
-    }
     Moment.locale(lang);
   },
 

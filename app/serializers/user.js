@@ -9,6 +9,11 @@ export default DS.RESTSerializer.extend({
     if (record.get('password')) {
       json.password = record.get('password');
     }
+
+    if (record.get('oldPassword')) {
+      json.oldPassword = record.get('oldPassword')
+    }
+
     if (record.get('collaboratesWith')) {
       json.collaboratesWith = record.get('collaboratesWith');
     }

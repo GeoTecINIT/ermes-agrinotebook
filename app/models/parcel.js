@@ -2,6 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   parcelId: DS.attr('string'),
+  inDanger: DS.attr('boolean'),
   observations: DS.hasMany('observation'),
   weeds: DS.hasMany('weed'),
   diseases: DS.hasMany('disease'),

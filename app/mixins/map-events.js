@@ -49,6 +49,7 @@ export default Ember.Mixin.create({
           parcel = userParcels.findBy('parcelId', parcelNum);
           userParcels.removeObject(parcel);
           parcel.deleteRecord();
+          parcel.save();
           parcelsLayer.remove(userParcelsGraphics[parcelNum]);
           userParcelsLayer.remove(userParcelsGraphics[parcelNum]);
           delete(userParcelsGraphics[parcelNum]);
