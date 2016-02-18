@@ -1,8 +1,8 @@
 {
   "regionsBaseMaps": {
     "spain": {
-      "url": "http://geo4.dlsi.uji.es:8080/basemap_spain_v1.0.2.zip",
-      "version": "1.0.2"
+      "url": "http://geo4.dlsi.uji.es:8080/basemap_spain_v1.0.3.zip",
+      "version": "1.0.3"
     },
     "italy": {
       "url": "http://geo4.dlsi.uji.es:8080/basemap_italy_v1.0.2.zip",
