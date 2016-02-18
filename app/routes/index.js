@@ -8,7 +8,9 @@ export default Ember.Route.extend(AuthChecker, InitialTasks, {
   parcels: Ember.inject.service(),
   model() {
     var username = this.get('auth').getCurrentUserId();
-    return this.store.findRecord('user', username);
+    return this.store.findRecord('user', username).then((user) => {
+      return user.reload();
+    });
   },
   afterModel(user) {
     this.get('parcels').setUser(user);
