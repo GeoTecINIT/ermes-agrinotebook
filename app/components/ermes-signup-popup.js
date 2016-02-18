@@ -36,6 +36,7 @@ export default Ember.Component.extend({
           model.save().then(() => {
             this.set('info', '');
             this.set('success', true);
+            setTimeout(() => this.set('success', false), 5000);
           }).catch((err) => {
             this.set('info', '');
 
