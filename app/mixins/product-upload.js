@@ -15,7 +15,7 @@ export default Ember.Mixin.create({
         this.set('model.parcels', this.get('parcels.selectedParcels'));
 
         // Set the uploading date
-        this.set('model.uploadingDate', new Moment().format('lll'));
+        this.set('model.uploadDate', new Moment().format('lll'));
 
         // Update info and save model
         this.set('info', this.get('i18n').t('panel.notification.processing'));

@@ -18,10 +18,12 @@ export default Ember.Controller.extend({
   modelChange: Ember.on('init', Ember.observer('parcels.selectedParcels.[]', function () {
     this.set('loading', true);
 
-    var selectedParcels = this.get('parcels.selectedParcels');
+    var selectedParcels = this.get('parcels.selectedParcels').toArray();
     if (selectedParcels.length === 1) {
-      let parcel = selectedParcels.get('lastObject');
-      this.store.findRecord('parcel', parcel).then((parcel) => {
+      let parcelId = selectedParcels[0];
+      this.store.findRecord('parcel', parcelId).then((parcel) => {
+        return parcel.reload();
+      }).then((parcel) => {
         this.set('model', parcel);
         this.set('loading', false);
       });
@@ -53,7 +55,7 @@ export default Ember.Controller.extend({
     var parcel = [];
     model.eachRelationship((name, descriptor) => {
       var product = model.get(name).get('firstObject');
-      parcel.push({name: productsNames.findBy('name', descriptor.type).text, lastDate: product ? product.get('uploadingDate') : ''});
+      parcel.push({name: productsNames.findBy('name', descriptor.type).text, lastDate: product ? product.get('uploadDate') : ''});
     });
     return parcel;
   })

@@ -14,8 +14,8 @@ export default Ember.Route.extend(AuthChecker, InitialTasks, {
   },
   afterModel(user) {
     this.get('parcels').setUser(user);
-    this.initialChecks();
-  //is being done in InitialTaks this.get('uploadQueue').start();
+    this.initialChecks();     // TODO this return a promise
+    //is being done in InitialTaks this.get('uploadQueue').start();
   },
   actions: {
     willTransition() {

@@ -3,7 +3,7 @@ import ProductModel from 'ermes-smart-app/mixins/product-model';
 import MF from 'model-fragments';
 
 export default ProductModel.extend({
-  uploadingDate: DS.attr('date'),
+  uploadDate: DS.attr('date'),
   developmentStage: DS.attr('string', { defaultValue() { return 'emergence'; }}),
   growthStage: DS.attr('string', { defaultValue() { return 'null'; }}),
   code: DS.attr('string', { defaultValue() { return 'null'; }}),

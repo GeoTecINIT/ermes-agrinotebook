@@ -3,7 +3,7 @@ import ProductModel from 'ermes-smart-app/mixins/product-model';
 import MF from 'model-fragments';
 
 export default ProductModel.extend({
-  uploadingDate: DS.attr('date'),
+  uploadDate: DS.attr('date'),
   startDate: DS.attr('user-date'),
   endDate: DS.attr('user-date'),
   measureUnit: DS.attr('string', { defaultValue() { return 'mm'; }}),
