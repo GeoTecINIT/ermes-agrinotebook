@@ -76,7 +76,12 @@ export default Ember.Mixin.create({
                 this.transitionTo('download-asset');
               }
             } //download is done
-          ).fail ((error) => {console.log(error);}) ;
+          ).fail ((error) => {
+            console.log(error);
+            if (!basemap) {
+              this.transitionTo('index-error');
+            }
+          }) ;
 
         }
        else /*offline*/
