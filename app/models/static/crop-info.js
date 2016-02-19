@@ -53,8 +53,8 @@ export function getRiceVarieties(context) {
 export function getSowingTypes(context) {
   return [
     {text: context.get('i18n').t('data.crop-info.sowing-types.null'), value: 'null'},
-    {text: context.get('i18n').t('data.crop-info.sowing-types.dry-soil-direct-seeding'), value: 'direct-seeding'},
-    {text: context.get('i18n').t('data.crop-info.sowing-types.broadcast-scattered-seeding'), value: 'scattered-seeding'}
+    {text: context.get('i18n').t('data.crop-info.sowing-types.dry-soil-direct-seeding'), value: 'dry-soil-direct-seeding'},
+    {text: context.get('i18n').t('data.crop-info.sowing-types.broadcast-scattered-seeding'), value: 'broadcast-scattered-seeding'}
   ];
 }
 

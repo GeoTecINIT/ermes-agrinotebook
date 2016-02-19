@@ -307,9 +307,17 @@ export default {
     'soil-type': {
       'soil-textures': {
         'clay': "Αργιλώδη",
-        'silt-clay': "Ιλυοαργιλώδη",
-        'silt-clay-loam': "Ιλυοαργιλοπηλώδη",
-        'medium-textured': "Μέσης σύστασης"
+        'sandy-clay': "Sandy clay",
+        'silty-clay': "Silty clay",
+        'sandy-clay-loam': "Sandy clay loam",
+        'clay-loam': "Clay loam",
+        'silty-clay-loam': "Silty clay loam",
+        'sandy-loam': "Sandy loam",
+        'loam': "Loam",
+        'silt-loam': "Silt loam",
+        'silt': "Silt",
+        'loamy-sand': "Loamy sand",
+        'sand': "Sand"
       }
     },
     'soil-condition': {

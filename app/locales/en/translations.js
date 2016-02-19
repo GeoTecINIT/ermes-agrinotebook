@@ -144,7 +144,7 @@ export default {
       'texture': "Select the soil texture",
       'organic-matter': "Organic matter",
       'organic-matter-unit':"Percent organic matter",
-      'ph': "Ph (min 0 - max 14)",
+      'ph': "pH (min 0 - max 14)",
       'date': "Date"
     },
     'weeds': {
@@ -290,9 +290,17 @@ export default {
     'soil-type': {
       'soil-textures': {
         'clay': "Clay",
-        'silt-clay': "Silt clay",
-        'silt-clay-loam': "Silt clay loam",
-        'medium-textured': "Medium textured"
+        'sandy-clay': "Sandy clay",
+        'silty-clay': "Silty clay",
+        'sandy-clay-loam': "Sandy clay loam",
+        'clay-loam': "Clay loam",
+        'silty-clay-loam': "Silty clay loam",
+        'sandy-loam': "Sandy loam",
+        'loam': "Loam",
+        'silt-loam': "Silt loam",
+        'silt': "Silt",
+        'loamy-sand': "Loamy sand",
+        'sand': "Sand"
       }
     },
     'soil-condition': {
