@@ -123,7 +123,7 @@ if (proxy) {
   tiledLayer.offline.proxyPath = proxy;
 }
 
-this.get('layersMap').set(dbStore, tiledLayer);
+//this.get('layersMap').set(dbStore, tiledLayer);
 this.get('map').addLayer(tiledLayer);
 },
 
@@ -239,7 +239,7 @@ liveReload()
   });
 },
 // Retrieve the TPK file via an HTTP request
-  addTPKLayer(url, local){
+  addTPKLayer(){
 
     //<editor-fold desc="old code to eliminate">
     /* if (typeof local == 'undefined') {

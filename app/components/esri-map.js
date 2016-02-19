@@ -61,7 +61,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
                __this.mapLoaded();
                loaded = true;
              }
-            console.log("delete me, I am a test!!");
+             //console.log("delete me, I am a test!!");
              //loadBaseMapEvent.remove();
            });
           _this.loadBasemap();
@@ -76,6 +76,12 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   /**
    * Map layers fully initialized
    */
+  getBaseMapLayer(){
+    var map = this.get('map');
+    var layer = map.getLayer(map.layerIds[0]);
+    return layer;
+  },
+
   createMap() {
     var pos = this.get('parcels.user.lastPosition');
     var mapInfo = this.get('parcels').getUserMapInfo();
@@ -87,7 +93,30 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       "maxZoom": 18/*mapInfo.maxZoom Luis*/,
       "logo": false//,
       //"fitExtent":  true
+
     });
+
+
+    var maxExtent;
+
+    map.on("load", ()=>{
+      var layer =  this.getBaseMapLayer();//map.getLayer(map.layerIds[0]);
+      maxExtent = layer.fullExtent;//map.fullExtent;
+    });
+
+    map.on("extent-change", function(extent) {
+      if (!maxExtent) return;
+
+      if ((map.extent.xmin < maxExtent.xmin) ||
+        (map.extent.ymin < maxExtent.ymin) ||
+        (map.extent.xmax > maxExtent.xmax) ||
+        (map.extent.ymax > maxExtent.ymax)
+      ) {
+        map.setExtent(maxExtent);
+        console.log("max extent reached, rolling back to previous extent");
+      }
+    });
+
     this.set('map', map);
   },
 
@@ -134,19 +163,25 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
 
     // Remove all layers
     var layersMap = this.get('layersMap');
+    //var baseLayer = this.getBaseMapLayer();
+
     for(let layerObject of layersMap.values()) {
-      this.get('map').removeLayer(layerObject);
+      //if (layerObject.id !== baseLayer.id) {
+        this.get('map').removeLayer(layerObject);
+      //}
     }
 
     // Add layers
     this.get('layersMap').clear();
     var _this = this;
-    var loadBaseMapEvent = this.get("map").on("layer-add-result",(evt)=>{
+   /* var loadBaseMapEvent = this.get("map").on("layer-add-result",(evt)=>{
       _this.loadUserParcelsLayer();
       loadBaseMapEvent.remove();
-    });
+    });*/
 
-    this.loadBasemap();
+    _this.loadUserParcelsLayer();
+
+    //this.loadBasemap();
 
   },
 
