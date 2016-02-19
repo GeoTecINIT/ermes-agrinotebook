@@ -403,8 +403,11 @@ export default {
       'names': {
         'aphids': "Aphids",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematods': "Nematods",
-        'pomacea': "Pomacea"
+        'nematodes': "Nematodes",
+        'pomacea': "Pomacea",
+        'sesamia': "Sesamia",
+        'chironomus': "Chironomus",
+        'chilo': "Chilo"
       }
     },
     'diseases': {
