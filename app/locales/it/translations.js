@@ -98,8 +98,10 @@ export default {
     'crop-info': {
       'crop-type': "Tipo Coltura",
       'rice-variety': "Varietà Riso",
-      'pudding': 'Pudding',
-      'sowing-practice': "Metodo di semina",
+      'puddling': 'Puddling',
+      'sowing-types': "Metodo di semina",
+      'amount': "Amount",
+      'seeds-per-ha': "Seeds/Ha",
       'date': 'Data di semina'
     },
     'crop-phenology': {
@@ -262,7 +264,7 @@ export default {
         'set-aside': "Riposo",
         'soybean': "Soia"
       },
-      'puddings': {
+      'puddlings': {
         'null': "----",
         'yes': "Si",
         'no': "No"
@@ -295,10 +297,10 @@ export default {
         'sole-cl': "Sole cl",
         'terra-cl': "Terra cl"
       },
-      'sowing-practices': {
+      'sowing-types': {
         'null': "----",
-        'direct-seeding': "In Asciutta",
-        'scattered-seeding': "In Acqua"
+        'dry-soil-direct-seeding': "Dry soil direct seeding",
+        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
       }
     },
     'soil-type': {

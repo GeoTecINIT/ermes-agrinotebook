@@ -83,8 +83,10 @@ export default {
     'crop-info': {
       'crop-type': "Crop type",
       'rice-variety': "Rice variety",
-      'pudding': 'Pudding',
-      'sowing-practice': "Sowing practice",
+      'puddling': 'Pudding',
+      'sowing-type': "Sowing type",
+      'amount': "Amount",
+      'seeds-per-ha': "Seeds/Ha",
       'date': 'Sowing date'
     },
     'crop-phenology': {
@@ -246,7 +248,7 @@ export default {
         'set-aside': "Set-aside",
         'soybean': "Soybean"
       },
-      'puddings': {
+      'puddlings': {
         'null': "----",
         'yes': "Yes",
         'no': "No"
@@ -279,10 +281,10 @@ export default {
         'sole-cl': "Sole cl",
         'terra-cl': "Terra cl"
       },
-      'sowing-practices': {
+      'sowing-types': {
         'null': "----",
-        'direct-seeding': "Direct seeding",
-        'scattered-seeding': "Scattered seeding"
+        'dry-soil-direct-seeding': "Dry soil direct seeding",
+        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
       }
     },
     'soil-type': {

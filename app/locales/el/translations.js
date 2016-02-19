@@ -99,8 +99,10 @@ export default {
     'crop-info': {
       'crop-type': "Τύπος καλλιέργειας",
       'rice-variety': "Ποικιλία ρυζιού",
-      'pudding': 'Ψιλοχωμάτισμα',
-      'sowing-practice': "Τρόπος σποράς",
+      'puddling': 'Ψιλοχωμάτισμα',
+      'sowing-type': "Τρόπος σποράς",
+      'amount': "Amount",
+      'seeds-per-ha': "Seeds/Ha",
       'date': 'Ημερομηνία σποράς'
     },
     'crop-phenology': {
@@ -263,7 +265,7 @@ export default {
         'set-aside': "Αγρανάπαυση",
         'soybean': "Σόγια"
       },
-      'puddings': {
+      'puddlings': {
         'null': "----",
         'yes': "Ναι",
         'no': "Όχι"
@@ -296,10 +298,10 @@ export default {
         'sole-cl': "Sole cl",
         'terra-cl': "Terra cl"
       },
-      'sowing-practices': {
+      'sowing-types': {
         'null': "----",
-        'direct-seeding': "Direct seeding",
-        'scattered-seeding': "Scattered seeding"
+        'dry-soil-direct-seeding': "Dry soil direct seeding",
+        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
       }
     },
     'soil-type': {

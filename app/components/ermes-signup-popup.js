@@ -47,7 +47,7 @@ export default Ember.Component.extend({
                 this.set('error', this.get('i18n').t('panel.notification.region-mismatch'));
               } else if (err.message.match(/username/)) {
                 this.set('error', this.get('i18n').t('panel.notification.user-exits'));
-              } else if (err.message.match(/email/)) {
+              } else if (err.message.match(/email/i)) {
                 this.set('error', this.get('i18n').t('panel.notification.repeated-email'));
               } else {
                 this.set('error', this.get('i18n').t('panel.notification.offline'));

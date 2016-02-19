@@ -11,11 +11,11 @@ export function getCropTypes(context) {
   ];
 }
 
-export function getPuddings(context) {
+export function getPuddlings(context) {
   return [
-    {text: context.get('i18n').t('data.crop-info.puddings.null'), value: 'null'},
-    {text: context.get('i18n').t('data.crop-info.puddings.yes'), value: 'yes'},
-    {text: context.get('i18n').t('data.crop-info.puddings.no'), value: 'no'}
+    {text: context.get('i18n').t('data.crop-info.puddlings.null'), value: 'null'},
+    {text: context.get('i18n').t('data.crop-info.puddlings.yes'), value: 'yes'},
+    {text: context.get('i18n').t('data.crop-info.puddlings.no'), value: 'no'}
   ];
 }
 
@@ -50,11 +50,11 @@ export function getRiceVarieties(context) {
   ];
 }
 
-export function getSowingPractices(context) {
+export function getSowingTypes(context) {
   return [
-    {text: context.get('i18n').t('data.crop-info.sowing-practices.null'), value: 'null'},
-    {text: context.get('i18n').t('data.crop-info.sowing-practices.direct-seeding'), value: 'direct-seeding'},
-    {text: context.get('i18n').t('data.crop-info.sowing-practices.scattered-seeding'), value: 'scattered-seeding'}
+    {text: context.get('i18n').t('data.crop-info.sowing-types.null'), value: 'null'},
+    {text: context.get('i18n').t('data.crop-info.sowing-types.dry-soil-direct-seeding'), value: 'direct-seeding'},
+    {text: context.get('i18n').t('data.crop-info.sowing-types.broadcast-scattered-seeding'), value: 'scattered-seeding'}
   ];
 }
 

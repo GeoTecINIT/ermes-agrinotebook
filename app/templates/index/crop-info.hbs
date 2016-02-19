@@ -9,12 +9,16 @@
       {{jqm-select value=model.riceVariety theme="d" options=riceVarieties isDisabled=notIsRice}}
     </label>
     <label>
-        <span>{{t "panel.crop-info.pudding"}}</span>
-      {{jqm-select value=model.puddling theme="d" options=puddings isDisabled=notIsRice}}
+        <span>{{t "panel.crop-info.puddling"}}</span>
+      {{jqm-select value=model.puddling theme="d" options=puddlings isDisabled=notIsRice}}
     </label>
     <label>
-      <span>{{t "panel.crop-info.sowing-practice"}}</span>
-      {{jqm-select value=model.sowingType theme="d" options=sowingPractices isDisabled=notIsRice}}
+      <span>{{t "panel.crop-info.sowing-type"}}</span>
+      {{jqm-select value=model.sowingType theme="d" options=sowingTypes isDisabled=notIsRice}}
+    </label>
+    <label>
+      <span>{{t "panel.crop-info.amount"}}</span>
+      {{jqm-textinput type='number' step=0.01 value=model.seedsPerHa placeholder=(t "panel.crop-info.seeds-per-ha") theme="d"}}
     </label>
     <label>
       <span>{{t "panel.crop-info.date"}}</span>

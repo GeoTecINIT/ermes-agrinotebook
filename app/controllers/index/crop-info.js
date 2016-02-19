@@ -11,11 +11,11 @@ export default Ember.Controller.extend(ProductUpload, {
   riceVarieties: Ember.computed('i18n.locale', function() {
     return dd.getRiceVarieties(this);
   }),
-  puddings: Ember.computed('i18n.locale', function() {
-    return dd.getPuddings(this);
+  puddlings: Ember.computed('i18n.locale', function() {
+    return dd.getPuddlings(this);
   }),
-  sowingPractices: Ember.computed('i18n.locale', function() {
-    return dd.getSowingPractices(this);
+  sowingTypes: Ember.computed('i18n.locale', function() {
+    return dd.getSowingTypes(this);
   }),
 
   notIsRice: Ember.computed('model.cropType', function () {

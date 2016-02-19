@@ -83,8 +83,10 @@ export default {
     'crop-info': {
       'crop-type': "Tipo de cultivo",
       'rice-variety': "Variedad de arroz",
-      'pudding': "Mezcla",
-      'sowing-practice': "Método de siembra",
+      'puddling': "Mezcla",
+      'sowing-type': "Método de siembra",
+      'amount': "Cantidad",
+      'seeds-per-ha': "Semillas/Ha",
       'date': "Fecha de siembra"
     },
     'crop-phenology': {
@@ -246,7 +248,7 @@ export default {
         'set-aside': "Barbecho",
         'soybean': "Soja"
       },
-      'puddings': {
+      'puddlings': {
         'null': "----",
         'yes': "Sí",
         'no': "No"
@@ -279,10 +281,10 @@ export default {
         'sole-cl': "Sole cl",
         'terra-cl': "Terra cl"
       },
-      'sowing-practices': {
+      'sowing-types': {
         'null': "----",
-        'direct-seeding': "Siembra directa",
-        'scattered-seeding': "Siembra al voleo"
+        'dry-soil-direct-seeding': "Dry soil direct seeding",
+        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
       }
     },
     'soil-type': {
