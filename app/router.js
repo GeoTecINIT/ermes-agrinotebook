@@ -26,6 +26,7 @@ Router.map(function() {
     this.route('parcel-info', {});
     this.route('welcome', {});
     this.route('cannot-edit', {});
+    this.route('abiotic-stresses');
   });
   this.route('index-error', {});
   this.route('index-loading', {});

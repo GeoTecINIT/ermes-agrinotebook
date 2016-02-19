@@ -56,6 +56,7 @@ export default {
       'insects': "Insects",
       'diseases': "Ασθένειες",
       'weeds': "Ζιζάνια",
+      'abiotic-stresses': "Abiotic stresses",
       'fertilizers': "Λιπάσματα",
       'agrochemicals': "Αγροχημικά",
       'irrigation': "Άρδευση",
@@ -148,6 +149,13 @@ export default {
     'insects': {
       'date': "Ημερομηνία παρατήρησης",
       'name': "Όνομα",
+      'comment': "Προσθέστε σχόλιο",
+      'picture': "Προσθέστε εικόνα",
+      'damage': "Μέγεθος ζημίας από 1 (ελάχιστο) έως 10 (μέγιστο)"
+    },
+    'abiotic-stresses': {
+      'date': "Ημερομηνία παρατήρησης",
+      'cause': "Cause",
       'comment': "Προσθέστε σχόλιο",
       'picture': "Προσθέστε εικόνα",
       'damage': "Μέγεθος ζημίας από 1 (ελάχιστο) έως 10 (μέγιστο)"
@@ -450,6 +458,14 @@ export default {
         'phragmites-communis': "Phragmites communis",
         'butomus-umbellatus': "Butomus umbellatus",
         'polygonum-spp': "Polygonum spp"
+      }
+    },
+    'abiotic-stresses': {
+      'causes': {
+        'cold': "Cold",
+        'salinity': "Salinity",
+        'drought': "Drought",
+        'heat-wave': "Heat wave"
       }
     },
     'fertilizers': {

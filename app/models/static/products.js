@@ -9,6 +9,7 @@ export function getProducts(context) {
     {text: context.get('i18n').t('fields.text.insects'), panel: 'index.insects'},
     {text: context.get('i18n').t('fields.text.diseases'), panel: 'index.diseases'},
     {text: context.get('i18n').t('fields.text.weeds'), panel: 'index.weeds'},
+    {text: context.get('i18n').t('fields.text.abiotic-stresses'), panel: 'index.abiotic-stresses'},
     {text: context.get('i18n').t('fields.text.fertilizers'), panel: 'index.fertilizers'},
     {text: context.get('i18n').t('fields.text.agrochemicals'), panel: 'index.agrochemicals'},
     {text: context.get('i18n').t('fields.text.irrigation'), panel: 'index.irrigation'},

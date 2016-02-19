@@ -40,6 +40,7 @@ export default {
       'insects': "Insects",
       'diseases': "Diseases",
       'weeds': "Weeds",
+      'abiotic-stresses': "Abiotic Stresses",
       'fertilizers': "Fertilizers",
       'agrochemicals': "Agrochemicals",
       'irrigation': "Irrigation",
@@ -132,6 +133,13 @@ export default {
     'insects': {
       'date': "Date of observation",
       'name': "Name",
+      'comment': "Add a comment",
+      'picture': "Add a picture",
+      'damage': "Damage (1 min - 10 max)"
+    },
+    'abiotic-stresses': {
+      'date': "Date of observation",
+      'cause': "Cause",
       'comment': "Add a comment",
       'picture': "Add a picture",
       'damage': "Damage (1 min - 10 max)"
@@ -433,6 +441,14 @@ export default {
         'phragmites-communis': "Phragmites communis",
         'butomus-umbellatus': "Butomus umbellatus",
         'polygonum-spp': "Polygonum spp"
+      }
+    },
+    'abiotic-stresses': {
+      'causes': {
+        'cold': "Cold",
+        'salinity': "Salinity",
+        'drought': "Drought",
+        'heat-wave': "Heat wave"
       }
     },
     'fertilizers': {
