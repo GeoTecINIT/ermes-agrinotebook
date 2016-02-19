@@ -10,13 +10,5 @@ export default Ember.Route.extend(AuthChecker, {
         if (!isDownloading) {
           this.transitionTo('index');
         }
-    },
-
-  actions: {
-    didTransition: function() {
-      //this.controller.send('downloadAsset');
-      //this.controller.get('errors.base').clear();
-      return true; // Bubble the didTransition event
     }
-  }
 });
