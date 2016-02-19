@@ -420,13 +420,19 @@ export default {
     },
     'weeds': {
       'names': {
-        'bidens': "Bidens",
-        'ciperus-difformis': "Ciperus difformis",
-        'echinochloa-crus-galli': "Echinochloa crus-galli",
-        'heteranthera': "Heteranthera",
+        'bidens-sp': "Bidens sp",
+        'cyperus-difformis': "Cyperus difformis",
+        'heteranthera-sp': "Heteranthera sp",
+        'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli or oryzoides",
         'leersia-oryzoides': "Leersia oryzoides",
-        'oryza-sativa': "Oryza sativa",
-        'scirpus-maritimus': "Scirpus maritimus"
+        'red-rice-(oryza-sativa)': "Red rice (Oryza sativa)",
+        'scirpus-sp': "Scirpus sp",
+        'paspalum-distichum': "Paspalum distichum",
+        'ammania-spp': "Ammania spp",
+        'typha-spp': "Typha spp",
+        'phragmites-communis': "Phragmites communis",
+        'butomus-umbellatus': "Butomus umbellatus",
+        'polygonum-spp': "Polygonum spp"
       }
     },
     'fertilizers': {

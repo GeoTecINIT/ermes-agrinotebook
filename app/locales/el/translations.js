@@ -437,13 +437,19 @@ export default {
     },
     'weeds': {
       'names': {
-        'bidens': "Bidens",
-        'ciperus-difformis': "Κύπερη",
-        'echinochloa-crus-galli': "Μουχρίτσα",
-        'heteranthera': "Ετερανθέρα",
+        'bidens-sp': "Bidens sp",
+        'cyperus-difformis': "Cyperus difformis",
+        'heteranthera-sp': "Heteranthera sp",
+        'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli or oryzoides",
         'leersia-oryzoides': "Leersia oryzoides",
-        'oryza-sativa': "Κόκκινο ρύζι",
-        'scirpus-maritimus': "Ραγάζι"
+        'red-rice-(oryza-sativa)': "Red rice (Oryza sativa)",
+        'scirpus-sp': "Scirpus sp",
+        'paspalum-distichum': "Paspalum distichum",
+        'ammania-spp': "Ammania spp",
+        'typha-spp': "Typha spp",
+        'phragmites-communis': "Phragmites communis",
+        'butomus-umbellatus': "Butomus umbellatus",
+        'polygonum-spp': "Polygonum spp"
       }
     },
     'fertilizers': {
