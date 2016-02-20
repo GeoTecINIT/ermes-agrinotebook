@@ -84,7 +84,7 @@ export default {
     'crop-info': {
       'crop-type': "Crop type",
       'rice-variety': "Rice variety",
-      'puddling': 'Pudding',
+      'puddling': 'Puddling',
       'sowing-type': "Sowing type",
       'amount': "Amount",
       'seeds-per-ha': "Seeds/Ha",
@@ -123,7 +123,7 @@ export default {
       'quantity-unit-m3': "Cubic meters",
       'hours': "Hours",
       'hours-unit': "Hours",
-      'depth': "Water depth"
+      'height': "Water height"
     },
     'observation': {
       'comment': "Add a comment",
@@ -166,7 +166,9 @@ export default {
       'date': "Harvest date",
       'yield': "Yield (dry weight)",
       'yield-unit': "Ton/ha",
-      'comments': "Comments"
+      'comments': "Comments",
+      'grain-moisture': "Grain moisture",
+      'percent-grain-moisture': "Humidity (%)"
     },
     'parcel-info': {
       'none-selected': "Please select one parcel",
@@ -423,7 +425,7 @@ export default {
         'bipolaris': "Bipolaris",
         'cercospora': "Cercospora",
         'fusarium': "Fusarium",
-        'pyricularia-(blast)': "Pyricularia (blast)"
+        'pyricularia-(blast)': "Pyricularia (Rice blast)"
       }
     },
     'weeds': {

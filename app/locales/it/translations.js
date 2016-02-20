@@ -138,7 +138,7 @@ export default {
       'quantity-unit-m3': "Metri Cubi",
       'hours': "Ore",
       'hours-unit': "Ore",
-      'depth': "Altezza Acqua"
+      'height': "Water height"
     },
     'observation': {
       'comment': "Aggiungi Commento",
@@ -181,7 +181,9 @@ export default {
       'date': "Data Raccolto",
       'yield': "Resa (peso secco)",
       'yield-unit': "Ton/ha",
-      'comments': "Commenti"
+      'comments': "Commenti",
+      'grain-moisture': "Grain moisture",
+      'percent-grain-moisture': "Humidity (%)"
     },
     'parcel-info': {
       'none-selected': "Seleziona una parcella",

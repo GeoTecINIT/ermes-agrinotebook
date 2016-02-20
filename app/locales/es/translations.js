@@ -84,7 +84,7 @@ export default {
     'crop-info': {
       'crop-type': "Tipo de cultivo",
       'rice-variety': "Variedad de arroz",
-      'puddling': "Mezcla",
+      'puddling': "Pudelado",
       'sowing-type': "Método de siembra",
       'amount': "Cantidad",
       'seeds-per-ha': "Semillas/Ha",
@@ -123,7 +123,7 @@ export default {
       'quantity-unit-m3': "Metros cúbicos",
       'hours': "Horas",
       'hours-unit': "Horas",
-      'depth': "Profundidad del agua"
+      'height': "Water height"
     },
     'observation': {
       'comment': "Añadir un comentario",
@@ -166,7 +166,9 @@ export default {
       'date': "Fecha de cosecha",
       'yield': "Cosecha (peso en seco)",
       'yield-unit': "Ton/ha",
-      'comments': "Comentarios"
+      'comments': "Comentarios",
+      'grain-moisture': "Humedad del grano",
+      'percent-grain-moisture': "% de humedad"
     },
     'parcel-info': {
       'none-selected': "Por favor selecciona una parcela",
@@ -420,7 +422,7 @@ export default {
         'bipolaris': "Bipolaris",
         'cercospora': "Cercospora",
         'fusarium': "Fusarium",
-        'pyricularia-(blast)': "Pyricularia (blast)"
+        'pyricularia-(blast)': "Pyricularia (Rice blast)"
       }
     },
     'weeds': {

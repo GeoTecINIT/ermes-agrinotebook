@@ -7,6 +7,7 @@ export default DS.Model.extend({
   weeds: DS.hasMany('weed'),
   diseases: DS.hasMany('disease'),
   insects: DS.hasMany('insect'),
+  abioticStresses: DS.hasMany('abiotic-stress'),
   phenologies: DS.hasMany('crop-phenology'),
   agrochemicals: DS.hasMany('agrochemical'),
   fertilizers: DS.hasMany('fertilizer'),

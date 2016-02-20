@@ -100,7 +100,7 @@ export default {
     'crop-info': {
       'crop-type': "Τύπος καλλιέργειας",
       'rice-variety': "Ποικιλία ρυζιού",
-      'puddling': 'Ψιλοχωμάτισμα',
+      'puddling': 'Puddling',
       'sowing-type': "Τρόπος σποράς",
       'amount': "Amount",
       'seeds-per-ha': "Seeds/Ha",
@@ -139,7 +139,7 @@ export default {
       'quantity-unit-m3': "Κυβικά μέτρα",
       'hours': "Ώρες",
       'hours-unit': "Ώρες",
-      'depth': "Ύψος νερού"
+      'height': "Water height"
     },
     'observation': {
       'comment': "Προσθέστε σχόλιο",
@@ -182,7 +182,9 @@ export default {
       'date': "Ημερομηνία συγκομιδής",
       'yield': "Απόδοση (βάρος ξηρής ουσίας)",
       'yield-unit': "τόνοι/εκτάριο (1000στρ)",
-      'comments': "Σχόλια"
+      'comments': "Σχόλια",
+      'grain-moisture': "Grain moisture",
+      'percent-grain-moisture': "Humidity (%)"
     },
     'parcel-info': {
       'none-selected': "Παρακαλώ επιλέξτε ένα αγροτεμάχιο",

@@ -8,6 +8,9 @@
     <label>
       <span>{{t "panel.yield.yield"}}</span>
       {{jqm-textinput value=model.yield type="number" min=0 step=0.01 placeholder=(t "panel.yield.yield-unit") required=true}}
+    </label><label>
+      <span>{{t "panel.yield.grain-moisture"}}</span>
+      {{jqm-textinput value=model.grainMoisture type="number" min=0 step=0.01 placeholder=(t "panel.yield.percent-grain-moisture")}}
     </label>
     <label>
       <span>{{t "panel.yield.comments"}}</span>
