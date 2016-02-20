@@ -463,9 +463,9 @@ export default {
     },
     'agrochemicals': {
       'products': {
-        'herbicides': "Herbicides",
-        'fungicides': "Fungicides",
-        'insecticides': "Insecticides"
+        'herbicides': "Herbicidas",
+        'fungicides': "Fungicidas",
+        'insecticides': "Insecticidas"
       },
       'herbicides': {
         'azimsulfuron': "Azimsulfuron",
