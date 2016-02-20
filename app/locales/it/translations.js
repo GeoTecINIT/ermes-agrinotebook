@@ -482,14 +482,32 @@ export default {
     },
     'agrochemicals': {
       'products': {
-        'bentazon': "Bentazone",
-        'tryciclazol': "Triciclazolo (BEAM)",
-        'celest-syngenta-(fludioxonil)': "Celest syngenta (fludioxonil)",
-        'mixed-product': "Prodotto misto",
-        'oxodiazon': "Oxodiazone",
-        'propanil': "Propanile",
-        'pyretroids': "Pyretroidi",
-        'touchdown-syngenta-(glyphosate)': "Touchdown syngenta (glyphosate)"
+        'herbicides': "Herbicides",
+        'fungicides': "Fungicides",
+        'insecticides': "Insecticides"
+      },
+      'herbicides': {
+        'azimsulfuron': "Azimsulfuron",
+        'cyhalofop-butyl': "Cyhalofop Butyl",
+        'imazamox-(clear-field)': "Imazamox (Clear field)",
+        'penoxulam': "Penoxulam",
+        'profixydim': "Profixydim",
+        'quinclorac': "Quinclorac",
+        'bentazon': "Bentazon",
+        'fludioxonil': "Fludioxonil",
+        'oxodiazon': "Oxodiazon",
+        'propanil': "Propanil",
+        'mcpa': "MCPA",
+        'glyphosate-(only-for-paddy-mounds)': "Glyphosate (Only for paddy mounds)"
+      },
+      'fungicides': {
+        'azoxistrobin': "Azoxistrobin",
+        'propiconazole-prochloraz': "Propiconazole + Prochloraz",
+        'trebuconazole': "Trebuconazole",
+        'tricyclazone': "Tricyclazone"
+      },
+      'insecticides': {
+        'pyrethroids': "Pyrethroids"
       }
     },
     'irrigation': {

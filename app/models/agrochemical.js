@@ -4,7 +4,7 @@ import MF from 'model-fragments';
 
 export default ProductModel.extend({
   uploadDate: DS.attr('date'),
-  name: DS.attr('string', { defaultValue() { return 'bentazon'; }}),
+  name: DS.attr('string', { defaultValue() { return 'azimsulfuron'; }}),
   amount: DS.attr('number'),
   observationDate: DS.attr('user-date'),
   parcels: MF.array('string')
