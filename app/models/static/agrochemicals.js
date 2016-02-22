@@ -32,7 +32,6 @@ export function getProducts(context) {
         {text: context.get('i18n').t('data.agrochemicals.insecticides.pyrethroids'), value: 'pyrethroids'}
       ]
     }
-    // TODO add custom section
   ];
 }
 
