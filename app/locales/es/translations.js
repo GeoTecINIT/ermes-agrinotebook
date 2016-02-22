@@ -227,8 +227,8 @@ export default {
       'retrieving-info': "Estamos recuperando tu perfil de nuestros servidores. Por favor, espera...",
       'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado",
       'got-it': "Entendido",
-      'saved': "Guardado"
-    }
+      'saved': "Guardado",
+      'loading-map': "Cargando mapa..."}
   },
   'download-assets':{
     'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad offline?",

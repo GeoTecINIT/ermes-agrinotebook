@@ -243,7 +243,8 @@ export default {
       'retrieving-info': "Stiamo recuperando il tuo profilo dal server. Attendi...",
       'first-login': "Seleziona le tue parcelle cliccandoci sopra,.Premi il pulsante nell'angolo in basso a destra quando hai finito. ",
       'got-it': "Fatto",
-      'saved': "Salvato"
+      'saved': "Salvato",
+      'loading-map': "Loading map..."
     }
   },
   'download-assets':{
