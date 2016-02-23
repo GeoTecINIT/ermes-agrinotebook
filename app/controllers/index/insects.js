@@ -8,7 +8,7 @@ export default Ember.Controller.extend(ProductUploadRDateCO, {
   names: Ember.computed('i18n.locale', 'model.customOptions.options.[]', function () {
     // User options
     var customOptions = {
-      optgroup: this.get('i18n').t('fields.text.default'),
+      optgroup: this.get('i18n').t('fields.text.custom'),
       elements: this.get('model.customOptions.options').toArray()
     };
 

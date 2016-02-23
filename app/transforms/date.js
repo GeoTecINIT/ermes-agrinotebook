@@ -7,6 +7,7 @@ export default DS.Transform.extend({
   },
 
   serialize: function(deserialized) {
+    if (typeof deserialized === 'undefined') return null;
     if (new Moment(deserialized, Moment.ISO_8601).isValid()){
       return deserialized;
     }

@@ -11,12 +11,11 @@ export default Ember.Controller.extend(ProductUploadCO, {
   riceVarieties: Ember.computed('i18n.locale', 'model.customOptions.options.[]', function () {
     // User options
     var customOptions = {
-      optgroup: this.get('i18n').t('fields.text.default'),
+      optgroup: this.get('i18n').t('fields.text.custom'),
       elements: this.get('model.customOptions.options').toArray()
     };
 
     // Default options + user options
-    //var productNames = dd.getRiceVarieties(this).concat(customOptions);
     var productNames = dd.getRiceVarieties(this);
     if (customOptions.elements.length !== 0) {
       productNames = productNames.concat(customOptions);
@@ -39,8 +38,8 @@ export default Ember.Controller.extend(ProductUploadCO, {
     } else {
       this.get('model.product').setProperties({
         riceVariety: 'null',
-        pudding: 'null',
-        sowingPractice: 'null'
+        puddling: 'null',
+        sowingType: 'null'
       });
       return true;
     }

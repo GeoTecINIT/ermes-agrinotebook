@@ -24,26 +24,33 @@ export default Ember.Mixin.create({
         // Set the uploading date
         this.set('model.product.uploadDate', new Moment().format('lll'));
 
-        // Check if a new option has to be added
-        if (this.get('model.product.'+optionField[this.get('panelId')]) === 'other') {
-          var newOptionText = this.get('model.newOption');
-          var newOptionValue = Ember.String.underscore(newOptionText).toLowerCase();
+        new Ember.RSVP.Promise((resolve, reject) => {
+          // Check if a new option has to be added
+          if (this.get('model.product.'+optionField[this.get('panelId')]) === 'other') {
+            var newOptionText = this.get('model.newOption');
+            var newOptionValue = Ember.String.underscore(newOptionText).toLowerCase();
 
-          // Save the new option
-          var customOptions = this.get('model.customOptions');
-          customOptions.get('options').createFragment({text: newOptionText, value: newOptionValue});
-          customOptions.save();
+            // Add the option to the model
+            this.set('model.product.'+optionField[this.get('panelId')], newOptionValue);
 
-          // Add the option to the model
-          this.set('model.product.'+optionField[this.get('panelId')], newOptionValue);
-        }
+            // Save the new option
+            var customOptions = this.get('model.customOptions');
+            customOptions.get('options').createFragment({text: newOptionText, value: newOptionValue});
+            customOptions.save().then(() => resolve(), () => reject());
+          } else {
+            return resolve();
+          }
+        }).finally(() => {
+          // Remove newOption from the form
+          this.set('model.newOption', '');
 
-        // Update info and save model
-        this.set('info', this.get('i18n').t('panel.notification.processing'));
-        this.get('model.product').save().then(() => { // Successfully saved
-          archiveAndCreateANewProduct(this);
-        }, () => { // Save has failed, offline
-          archiveAndCreateANewProduct(this);
+          // Update info and save model
+          this.set('info', this.get('i18n').t('panel.notification.processing'));
+          this.get('model.product').save().then(() => { // Successfully saved
+            archiveAndCreateANewProduct(this);
+          }, () => { // Save has failed, offline
+            archiveAndCreateANewProduct(this);
+          });
         });
       }
     }
