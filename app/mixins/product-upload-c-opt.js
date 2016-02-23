@@ -1,12 +1,8 @@
 import Ember from 'ember';
 import Moment from 'moment';
+import * as dd from 'ermes-smart-app/models/static/custom-options';
 
-const optionField = {
-  'crop-info': 'riceVariety',
-  'weeds': 'name',
-  'diseases': 'name',
-  'insects': 'name'
-};
+const optionField = dd.getCustomOptionProducts();
 
 export default Ember.Mixin.create({
   productService: Ember.inject.service('products'),

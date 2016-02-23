@@ -1,7 +1,9 @@
 import Ember from 'ember';
 import {getJSON} from 'ermes-smart-app/utils/ajax';
 import config from '../config/environment';
+import * as dd from 'ermes-smart-app/models/static/custom-options';
 
+const customOptionProducts = dd.getCustomOptionProducts();
 const ASSETS_URL = config.APP.assetDescriptor;
 
 export default Ember.Mixin.create({
@@ -27,6 +29,7 @@ export default Ember.Mixin.create({
       this.transitionTo('index-error');
     });
     this.startSync();
+    this.retrieveCustomOptions();
 
     //if with cordova .. the tpk should be downloaded
     var useOnline = this.controllerFor('index').get('useOnlineBasemap');
@@ -37,8 +40,14 @@ export default Ember.Mixin.create({
     }
   },
 
-  startSync(){
+  startSync() {
     this.get('uploadQueue').start();
+  },
+
+  retrieveCustomOptions() {
+    for (var productType in customOptionProducts) {
+      this.store.findRecord('custom-option', Ember.String.camelize(Ember.String.pluralize(productType)));
+    }
   },
 
   prepareBaseMap(user){
@@ -62,7 +71,7 @@ export default Ember.Mixin.create({
             reject(err);
           });
         }).catch((err) => {
-          console.log(error);
+          console.log(err);
           if (!basemap) {
             return Ember.RSVP.reject(err);
           }
