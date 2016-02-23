@@ -1,6 +1,13 @@
 import Ember from 'ember';
 import Moment from 'moment';
 
+const optionField = {
+  'crop-info': 'riceVariety',
+  'weeds': 'name',
+  'diseases': 'name',
+  'insects': 'name'
+};
+
 export default Ember.Mixin.create({
   productService: Ember.inject.service('products'),
   actions: {
@@ -18,7 +25,7 @@ export default Ember.Mixin.create({
         this.set('model.product.uploadDate', new Moment().format('lll'));
 
         // Check if a new option has to be added
-        if (this.get('model.product.name') === 'other') {
+        if (this.get('model.product.'+optionField[this.get('panelId')]) === 'other') {
           var newOptionText = this.get('model.newOption');
           var newOptionValue = Ember.String.underscore(newOptionText).toLowerCase();
 
@@ -28,7 +35,7 @@ export default Ember.Mixin.create({
           customOptions.save();
 
           // Add the option to the model
-          this.set('model.product.name', newOptionValue);
+          this.set('model.product.'+optionField[this.get('panelId')], newOptionValue);
         }
 
         // Update info and save model

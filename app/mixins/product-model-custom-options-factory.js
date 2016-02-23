@@ -7,7 +7,7 @@ export default Ember.Mixin.create({
     var productName = Ember.String.singularize(productType);
     return Ember.RSVP.hash({
       product: this.get('products').getProduct(productName),
-      customOptions: this.store.findRecord('customOption', productType)
+      customOptions: this.store.findRecord('customOption', Ember.String.pluralize(Ember.String.camelize(productType)))
     });
   }
 });

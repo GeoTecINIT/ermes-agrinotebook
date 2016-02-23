@@ -2,27 +2,30 @@
   <form {{action "submit" on="submit"}}>
     <label>
       <span>{{t "panel.crop-info.crop-type"}}</span>
-      {{jqm-select value=model.cropType theme="d" options=cropTypes}}
+      {{jqm-select value=model.product.cropType theme="d" options=cropTypes}}
     </label>
     <label>
       <span>{{t "panel.crop-info.rice-variety"}}</span>
-      {{jqm-select value=model.riceVariety theme="d" options=riceVarieties isDisabled=notIsRice}}
+      {{jqm-select value=model.product.riceVariety theme="d" options=riceVarieties isDisabled=notIsRice}}
     </label>
+    {{#if isOther}}
+      {{jqm-textinput value=model.newOption placeholder=(t "fields.text.other") required=true}}
+    {{/if}}
     <label>
         <span>{{t "panel.crop-info.puddling"}}</span>
-      {{jqm-select value=model.puddling theme="d" options=puddlings isDisabled=notIsRice}}
+      {{jqm-select value=model.product.puddling theme="d" options=puddlings isDisabled=notIsRice}}
     </label>
     <label>
       <span>{{t "panel.crop-info.sowing-type"}}</span>
-      {{jqm-select value=model.sowingType theme="d" options=sowingTypes isDisabled=notIsRice}}
+      {{jqm-select value=model.product.sowingType theme="d" options=sowingTypes isDisabled=notIsRice}}
     </label>
     <label>
       <span>{{t "panel.crop-info.amount"}}</span>
-      {{jqm-textinput type='number' min=0 step=0.01 value=model.seedsPerHa placeholder=(t "panel.crop-info.seeds-per-ha") theme="d"}}
+      {{jqm-textinput type='number' min=0 step=0.01 value=model.product.seedsPerHa placeholder=(t "panel.crop-info.seeds-per-ha") theme="d"}}
     </label>
     <label>
       <span>{{t "panel.crop-info.date"}}</span>
-      {{ermes-datepicker value=model.sowingDate}}
+      {{ermes-datepicker value=model.product.sowingDate}}
     </label>
     {{jqm-button text=(t "fields.text.add-new") theme="b"}}
     {{ermes-message text=parcelError color="red" animation="fadeInDown"}}
