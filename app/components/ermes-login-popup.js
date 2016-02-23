@@ -27,6 +27,8 @@ export default Ember.Component.extend({
           this.set('error', this.get('i18n').t('panel.notification.login-error'));
         } else if (user.profile !== 'local') {
           this.set('error', this.get('i18n').t('panel.notification.regional-error'));
+        } else if (user.type === 'guest') {
+          this.set('error', this.get('i18n').t('panel.notification.user-not-found'));
         } else {
 
           auth.logIn(user.username.toLowerCase().trim(), token, user.language);
