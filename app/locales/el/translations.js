@@ -63,7 +63,10 @@ export default {
       'yield': "Παραγωγή / Απόδοση",
       'observation': "Παρατηρήσεις",
       'parcel-info': "Πληροφορίες Αγροτεμαχίου",
-      'add-new': "Προσθέστε πληροφορίες"
+      'add-new': "Προσθέστε πληροφορίες",
+      'default': 'Default',
+      'custom': 'Custom',
+      'other': 'Other (specify)'
     },
     'ui-special': {
       'agrochemicals': "Αγροχημικά"
@@ -432,10 +435,13 @@ export default {
 
     'insects': {
       'names': {
-        'aphids': "Αφίδες",
+        'aphids': "Aphids",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematods': "Νηματώδη",
-        'pomacea': "Σαλιγκαράκι"
+        'nematodes': "Nematodes",
+        'pomacea': "Pomacea",
+        'sesamia': "Sesamia",
+        'chironomus': "Chironomus",
+        'chilo': "Chilo"
       }
     },
     'diseases': {

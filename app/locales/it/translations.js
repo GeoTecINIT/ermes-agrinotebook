@@ -62,7 +62,10 @@ export default {
       'yield': "Resa",
       'observation': "Osservazioni",
       'parcel-info': "Informazioni sulla parcella",
-      'add-new': "IAggiungi Dati"
+      'add-new': "IAggiungi Dati",
+      'default': 'Default',
+      'custom': 'Custom',
+      'other': 'Other (specify)'
     },
     'ui-special': {
       'agrochemicals': "Trattamenti"
@@ -431,10 +434,13 @@ export default {
 
     'insects': {
       'names': {
-        'aphids': "Afidi",
-        'lissorhoptrus-oryzophilus': "Punteruolo",
-        'nematods': "Nematodi",
-        'pomacea': "Pomacea"
+        'aphids': "Aphids",
+        'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
+        'nematodes': "Nematodes",
+        'pomacea': "Pomacea",
+        'sesamia': "Sesamia",
+        'chironomus': "Chironomus",
+        'chilo': "Chilo"
       }
     },
     'diseases': {

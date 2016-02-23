@@ -47,7 +47,10 @@ export default {
       'yield': "Producción",
       'observation': "Observación",
       'parcel-info': "Parcela",
-      'add-new': "Añadir información"
+      'add-new': "Añadir información",
+      'default': 'Por defecto',
+      'custom': 'Personalizados',
+      'other': 'Otro (indica)'
     },
     'ui-special': {
       'agrochemicals': "Pesticidas"
@@ -411,10 +414,13 @@ export default {
     },
     'insects': {
       'names': {
-        'aphids': "Aphidoidea",
+        'aphids': "Aphids",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematods': "Nematods",
-        'pomacea': "Pomacea"
+        'nematodes': "Nematodes",
+        'pomacea': "Pomacea",
+        'sesamia': "Sesamia",
+        'chironomus': "Chironomus",
+        'chilo': "Chilo"
       }
     },
     'diseases': {

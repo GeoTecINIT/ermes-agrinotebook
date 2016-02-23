@@ -47,7 +47,10 @@ export default {
       'yield': "Yield",
       'observation': "Observation",
       'parcel-info': "Parcel Info",
-      'add-new': "Add info"
+      'add-new': "Add info",
+      'default': 'Default',
+      'custom': 'Custom',
+      'other': 'Other (specify)'
     },
     'ui-special': {
       'agrochemicals': "Agro chemicals"
