@@ -17,8 +17,9 @@ export default Ember.Mixin.create({
 
 
     user.get('parcels').then((parcels) => {
+      this.controllerFor('index').set('editMode', false);
       if (parcels.length === 0) {
-        if (navigator.onLine) {
+        if (navigator.onLine && user.get('type') !== 'collaborator') {
           this.controllerFor('index').set('editMode', true);
           this.transitionTo('index.welcome');
         } else {
