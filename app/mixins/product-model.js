@@ -30,15 +30,15 @@ export default DS.Model.extend({
       this.get('offlineStorage').get('storage').setItem(key, prod);
 
       // Mark it as pending
-      this.get('offlineStorage').get('storage').getItem('upload-pending-products').then((products) => {
+      return this.get('offlineStorage').get('storage').getItem('upload-pending-products').then((products) => {
         if (products !== null) { // There are other pending products
           products.push(key);
           this.get('offlineStorage').get('storage').setItem('upload-pending-products', products);
         } else { // First pending product is going to be stored
           this.get('offlineStorage').get('storage').setItem('upload-pending-products', [key]);
         }
+        return err;
       });
-      return err;
     });
   }
 });
