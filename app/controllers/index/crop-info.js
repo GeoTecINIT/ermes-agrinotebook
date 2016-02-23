@@ -16,7 +16,11 @@ export default Ember.Controller.extend(ProductUploadCO, {
     };
 
     // Default options + user options
-    var productNames = dd.getRiceVarieties(this).concat(customOptions);
+    //var productNames = dd.getRiceVarieties(this).concat(customOptions);
+    var productNames = dd.getRiceVarieties(this);
+    if (customOptions.elements.length !== 0) {
+      productNames = productNames.concat(customOptions);
+    }
     return productNames.concat({text: this.get('i18n').t('fields.text.other'), value: 'other'});
   }),
   isOther: Ember.computed('model.product.riceVariety', function() {

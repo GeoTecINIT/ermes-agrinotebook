@@ -13,7 +13,10 @@ export default Ember.Controller.extend(ProductUploadRDateCO, {
     };
 
     // Default options + user options
-    var productNames = dd.getNames(this).concat(customOptions);
+    var productNames = dd.getNames(this);
+    if (customOptions.elements.length !== 0) {
+      productNames = productNames.concat(customOptions);
+    }
     return productNames.concat({text: this.get('i18n').t('fields.text.other'), value: 'other'});
   }),
   isOther: Ember.computed('model.product.name', function() {
