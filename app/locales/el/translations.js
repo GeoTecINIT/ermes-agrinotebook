@@ -242,6 +242,7 @@ export default {
       'offline-parcels': "Συγγνώμη, πρέπει να συνδεθείτε στο διαδίκτυο για να προσθέστε ή να αφαιρέσετε αγροτεμάχια",
       'offline-profile-update': "Συγγνώμη, δεν μπορείτε να ενημερώσετε το προφίλ σας, ενώ είστε εκτός σύνδεσης",
       'no-data-offline': "Φαίνετε να έχει χαθεί η σύνδεση σας και δεν έχουμε αποθηκεύσει πληροφορίες για εσάς σε αυτήν την συσκευή",
+      'parcel-offline': "Sorry, it seems that there is no info about this parcel stored on this device and you don't have connection, try again later",
       'try-again': "Τώρα μπορείτε να προσπαθήσετε να",
       'reconnect': "Επανασύνδεση",
       'retrieving-info': "Κάνουμε ανάκτηση του προφίλ σας απο τους διακομιστές μας. Παρακαλώ περιμένετε...",

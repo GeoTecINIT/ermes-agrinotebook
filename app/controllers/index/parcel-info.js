@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Moment from 'moment';
 import * as dd from 'ermes-smart-app/models/static/products';
 import * as cInfo from 'ermes-smart-app/models/static/crop-info';
 
@@ -12,19 +13,29 @@ export default Ember.Controller.extend({
   cropTypes: Ember.computed('i18n.locale', function() {
     return cInfo.getCropTypes(this);
   }),
-  riceVarieties: Ember.computed('i18n.locale', function() {
-    return cInfo.getRiceVarieties(this);
+  riceVarieties: Ember.computed('i18n.locale', 'customVarieties.options.[]', function() {
+    var defaultVarieties = cInfo.getRiceVarieties(this)[0].elements;
+    var customVarieties = this.get('customVarieties.options').map((variety) => variety.toJSON());
+
+    return defaultVarieties.concat(customVarieties);
   }),
   modelChange: Ember.on('init', Ember.observer('parcels.selectedParcels.[]', function () {
+    this.set('parcelError', false);
     this.set('loading', true);
 
     var selectedParcels = this.get('parcels.selectedParcels').toArray();
     if (selectedParcels.length === 1) {
       let parcelId = selectedParcels[0];
+      this.store.findRecord('customOption', 'cropInfos').then((customVarieties) => {
+        this.set('customVarieties', customVarieties);
+      });
       this.store.findRecord('parcel', parcelId).then((parcel) => {
         return parcel.reload();
       }).then((parcel) => {
         this.set('model', parcel);
+      }).catch(() => {
+        this.set('parcelError', true);
+      }).finally(() => {
         this.set('loading', false);
       });
     } else {
@@ -54,7 +65,11 @@ export default Ember.Controller.extend({
 
     var parcel = [];
     model.eachRelationship((name, descriptor) => {
-      var product = model.get(name).get('firstObject');
+      //var product = model.get(name).get('first');
+      var product = model.get(name).reduce((lastProduct, actualProduct) => {
+
+        return new Moment(lastProduct.get('uploadDate'), 'lll') > new Moment(actualProduct.get('uploadDate'), 'lll') ? lastProduct : actualProduct;
+      }, new Ember.Object({uploadDate: new Moment(new Date(2000, 1, 1))}));
       parcel.push({name: productsNames.findBy('name', descriptor.type).text, lastDate: product ? product.get('uploadDate') : ''});
     });
     return parcel;

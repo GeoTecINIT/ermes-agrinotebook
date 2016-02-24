@@ -241,6 +241,7 @@ export default {
       'offline-parcels': "Spiacenti, devi essere on-line per aggiungere o cancellare parcelle",
       'offline-profile-update': "Spiacenti, devi essere on-line per modificare il tuo profilo",
       'no-data-offline': "Sembra che tu abbia perso la connessione e non ci sono dati salvati su questo device",
+      'parcel-offline': "Sorry, it seems that there is no info about this parcel stored on this device and you don't have connection, try again later",
       'try-again': "Ora puoi provare a ",
       'reconnect': "Riconnetterti",
       'retrieving-info': "Stiamo recuperando il tuo profilo dal server. Attendi...",

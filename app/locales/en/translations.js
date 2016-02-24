@@ -225,6 +225,7 @@ export default {
       'offline-parcels': "Sorry, you need to go online to add or delete parcels",
       'offline-profile-update': "Sorry, you cannot update your profile while offline",
       'no-data-offline': "Seems that you have lost your connection and we do not have any info stored about you on this device",
+      'parcel-offline': "Sorry, it seems that there is no info about this parcel stored on this device and you don't have connection, try again later",
       'try-again': "You can try to",
       'reconnect': "Reconnect",
       'retrieving-info': "We are recovering your profile from our servers. Please wait...",

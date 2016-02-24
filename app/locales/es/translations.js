@@ -225,6 +225,7 @@ export default {
       'offline-parcels': "Lo sentimos, tienes que estar conectado para añadir o eliminar parcelas",
       'offline-profile-update': "Sorry, you cannot update your profile while offline",
       'no-data-offline': "Parece que has perdido tu conexión y nosotros no tenemos ninguna información tuya en este dispositivo",
+      'parcel-offline': "Lo sentimos, parece que no hay información sobre esta parcela almacenada en este dispositivo y que has perdido la conexión, inténtalo de nuevo más tarde",
       'try-again': "Puedes intentar",
       'reconnect': "Reconectar",
       'retrieving-info': "Estamos recuperando tu perfil de nuestros servidores. Por favor, espera...",
