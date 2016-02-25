@@ -1,10 +1,9 @@
 import Ember from 'ember';
-import ProductUploadCO from './product-upload-c-opt';
 
-export default Ember.Mixin.create(ProductUploadCO, {
+export default Ember.Mixin.create({
   actions: {
     submit() {
-      if (!this.get('model.product.observationDate')) {
+      if (!this.get('model.observationDate')) {
         this.set('dateError', this.get('i18n').t('panel.notification.missing-date'));
       } else {
         this.set('dateError', '');

@@ -1,10 +1,9 @@
 import Ember from 'ember';
-import ProductUpload from './product-upload';
 
-export default Ember.Mixin.create(ProductUpload, {
+export default Ember.Mixin.create({
   actions: {
     submit() {
-      if (!this.get('model.observationDate')) {
+      if (!this.get('model.product.observationDate')) {
         this.set('dateError', this.get('i18n').t('panel.notification.missing-date'));
       } else {
         this.set('dateError', '');

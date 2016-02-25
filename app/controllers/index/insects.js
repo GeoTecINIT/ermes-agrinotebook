@@ -1,8 +1,9 @@
 import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/insects';
-import ProductUploadRDateCO from 'ermes-smart-app/mixins/product-upload-rdate-c-opt';
+import ProductUploadCO from 'ermes-smart-app/mixins/product-upload-c-opt';
+import ProductRequiredDateCO from 'ermes-smart-app/mixins/product-required-date-c-opt';
 
-export default Ember.Controller.extend(ProductUploadRDateCO, {
+export default Ember.Controller.extend(ProductUploadCO, ProductRequiredDateCO, {
   panelId: 'insects',
   i18n: Ember.inject.service(),
   names: Ember.computed('i18n.locale', 'model.customOptions.options.[]', function () {
