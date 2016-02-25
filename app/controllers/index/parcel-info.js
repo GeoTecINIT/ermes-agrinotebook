@@ -20,9 +20,10 @@ export default Ember.Controller.extend({
 
     return defaultVarieties.concat(customVarieties);
   }),
-  modelChange: Ember.on('init', Ember.observer('parcels.selectedParcels.[]', function () {
+  modelChange: Ember.on('init', Ember.observer('parcels.selectedParcels.[]', 'forceReload', function () {
     this.set('parcelError', false);
     this.set('loading', true);
+    this.set('model', null);
 
     var selectedParcels = this.get('parcels.selectedParcels').toArray();
     if (selectedParcels.length === 1) {
