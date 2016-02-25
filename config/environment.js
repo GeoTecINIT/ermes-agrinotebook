@@ -42,21 +42,21 @@ module.exports = function(environment) {
       /*todo: cleanup this zooms, etc can disappear*/
       regionLayers: {
         spain: {
-          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/landsat_spain_scene_mercator/MapServer",
+          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-ES/basemap/MapServer",
           mapName: "spainBasemap",
           parcelsLayer: "http://ermes.dlsi.uji.es:6080/ArcGIS/rest/services/2015-ES/landsat_spain_scene/MapServer/3",
           maxZoom: 18,
           minZoom: 14
         },
         italy: {
-          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-IT/IT_basemap/MapServer",
+          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-IT/basemap/MapServer",
           mapName: "italyBasemap",
           parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-IT/IT_parcels/MapServer/0",
           maxZoom: 17,
           minZoom: 13
         },
         greece: {
-          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-GR/GR_basemap/MapServer",
+          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-GR/basemap/MapServer",
           mapName: "greeceBasemap",
           parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-GR/GR_parcels/MapServer/0",
           maxZoom: 6,
