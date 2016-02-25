@@ -239,13 +239,13 @@ export default {
   },
   'download-assets':{
     'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad offline?",
-    'connection-acceptable': "Actualmente estás empleando una tarifa de datos. En función de tu región podemos descargar hasta 150 MB. ¿Estás de acuerdo?",
+    'connection-acceptable': "Actualmente estás empleando una tarifa de datos. En función de tu región podemos descargar hasta 50 MB. Pulsa \"De acuerdo\" para continuar",
     'downloading-assets': "Actualmente estamos descargando ficheros esenciales para la funcionalidad offline, te redirigiremos cuando hayamos terminado. Sé paciente, por favor",
     'download-error': "Ha ocurrido un error mientras descargábamos",
     'proceed': "Proceder",
     'later': "Más tarde",
-    'it-is-ok': "¡De acuerdo!",
-    'no-way': "¡Ni hablar!",
+    'it-is-ok': "De acuerdo",
+    'no-way': "Ahora no",
     'retry': "Reintentar"
   },
   'region': {
@@ -506,7 +506,7 @@ export default {
     'irrigation': {
       'measures': {
         'mm': "mm/día",
-        'm3': "m3/ha"
+        'm3': "m3/hora"
       }
     }
   }

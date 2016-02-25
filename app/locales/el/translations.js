@@ -106,7 +106,7 @@ export default {
       'puddling': 'Puddling',
       'sowing-type': "Τρόπος σποράς",
       'amount': "Amount",
-      'seeds-per-ha': "Seeds/Ha",
+      'seeds-per-ha': "Seeds/hectare",
       'date': 'Ημερομηνία σποράς'
     },
     'crop-phenology': {
@@ -225,15 +225,15 @@ export default {
       'old-password-needed': "You have to provide your old password",
       'email-mismatch': "Τα email δεν ταιριάζουν",
       'regional-error': "Λογαριασμός χρήστη περιφεριακού επιπέδου",
-      'unknown-owner': "That owner does not exist",
+      'unknown-owner': "Owner does not exist",
       'region-mismatch': "Owner isn't in that region",
-      'repeated-email': "That email is already on the system",
-      'user-exits': "Συγγνώμη, το όνoμα χρήστη που έχεται επιλέξει υπάρχει ήδη",
+      'repeated-email': "Email address is already in the system",
+      'user-exits': "Username already exits",
       'processing': "Επεργασία δεδομένων...",
       'welcome': "Καλώς ήρθατε, {{username}}",
       'login-allowed': "Τώρα μπορείτε να,",
       'activation-needed': "Your account will be activated",
-      'email-sent': "You'll receive a mail",
+      'email-sent': "You will receive an email",
       'missing-date': "Παρακαλώ συμπληρώστε την ημερομηνία",
       'missing-parcel': "Παρακαλώ επιλέξτε ένα αγροτεμάχιο",
       'missing-start-date': "Παρακαλώ επιλέξτε την αρχική ημερομηνία",
@@ -242,7 +242,7 @@ export default {
       'offline-parcels': "Συγγνώμη, πρέπει να συνδεθείτε στο διαδίκτυο για να προσθέστε ή να αφαιρέσετε αγροτεμάχια",
       'offline-profile-update': "Συγγνώμη, δεν μπορείτε να ενημερώσετε το προφίλ σας, ενώ είστε εκτός σύνδεσης",
       'no-data-offline': "Φαίνετε να έχει χαθεί η σύνδεση σας και δεν έχουμε αποθηκεύσει πληροφορίες για εσάς σε αυτήν την συσκευή",
-      'parcel-offline': "Sorry, it seems that there is no info about this parcel stored on this device and you don't have connection, try again later",
+      'parcel-offline': "Sorry, there is no info stored about this parcel on this device, and you don't have connection. Please, try again later",
       'try-again': "Τώρα μπορείτε να προσπαθήσετε να",
       'reconnect': "Επανασύνδεση",
       'retrieving-info': "Κάνουμε ανάκτηση του προφίλ σας απο τους διακομιστές μας. Παρακαλώ περιμένετε...",
@@ -251,18 +251,18 @@ export default {
       'saved': "Αποθηκεύτηκε",
       'loading-map': "Loading map...",
       'warning': "Warning",
-      'possible-outdated': "You're offline, by so, this info could be outdated"
+      'possible-outdated': "You're offline - this info could be outdated"
     }
   },
   'download-assets':{
     'download-basemap': "Download resources for enabling offline capabilities?",
-    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 150 MB. Is that OK for you?",
-    'downloading-assets': "We're currently downloading files for enabling offline mode, we'll redirect you when finished. Please be patient",
+    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 50 MB. Press OK to continue.",
+    'downloading-assets': "We're currently downloading maps to enable offline mode, we'll redirect you when finished. Please be patient",
     'download-error': "An error occurred while downloading",
     'proceed': "Proceed",
     'later': "Not now",
-    'it-is-ok': "It's OK!",
-    'no-way': "No way!",
+    'it-is-ok': "OK",
+    'no-way': "Later",
     'retry': "Retry"
   },
   'region': {
@@ -526,7 +526,7 @@ export default {
     'irrigation': {
       'measures': {
         'mm': "mm/day",
-        'm3': "m3/h"
+        'm3': "m3/hour"
       }
     }
   }

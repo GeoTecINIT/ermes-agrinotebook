@@ -76,7 +76,7 @@ export default {
   },
   'panel': {
     'about': {
-      'content': "Developed by GEOTEC group"
+      'content': "Developed by the GEOTEC group"
     },
     'agrochemicals': {
       'date': "Date of usage",
@@ -90,7 +90,7 @@ export default {
       'puddling': 'Puddling',
       'sowing-type': "Sowing type",
       'amount': "Amount",
-      'seeds-per-ha': "Seeds/Ha",
+      'seeds-per-ha': "Seeds/hectare",
       'date': 'Sowing date'
     },
     'crop-phenology': {
@@ -168,7 +168,7 @@ export default {
     'yield':{
       'date': "Harvest date",
       'yield': "Yield (dry weight)",
-      'yield-unit': "Ton/ha",
+      'yield-unit': "Ton/hectare",
       'comments': "Comments",
       'grain-moisture': "Grain moisture",
       'percent-grain-moisture': "Humidity (%)"
@@ -234,18 +234,18 @@ export default {
       'saved': "Saved",
       'loading-map': "Loading map...",
       'warning': "Warning",
-      'possible-outdated': "You're offline - this info could be outdated"
+      'possible-outdated': "Warning: you're offline - this info could be outdated"
     }
   },
   'download-assets':{
     'download-basemap': "Download resources for enabling offline capabilities?",
-    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 50 MB. Press OK to continue.",
+    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 150 MB. Is that OK for you?",
     'downloading-assets': "We're currently downloading maps to enable offline mode, we'll redirect you when finished. Please be patient",
     'download-error': "An error occurred while downloading",
     'proceed': "Proceed",
     'later': "Not now",
-    'it-is-ok': "OK",
-    'no-way': "Later",
+    'it-is-ok': "It's OK!",
+    'no-way': "No way!",
     'retry': "Retry"
   },
   'region': {
@@ -506,7 +506,7 @@ export default {
     'irrigation': {
       'measures': {
         'mm': "mm/day",
-        'm3': "m3/hour"
+        'm3': "m3/h"
       }
     }
   }

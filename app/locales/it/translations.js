@@ -105,7 +105,7 @@ export default {
       'puddling': 'Puddling',
       'sowing-types': "Metodo di semina",
       'amount': "Amount",
-      'seeds-per-ha': "Seeds/Ha",
+      'seeds-per-ha': "Seeds/hectare",
       'date': 'Data di semina'
     },
     'crop-phenology': {
@@ -183,7 +183,7 @@ export default {
     'yield':{
       'date': "Data Raccolto",
       'yield': "Resa (peso secco)",
-      'yield-unit': "Ton/ha",
+      'yield-unit': "Ton/hectare",
       'comments': "Commenti",
       'grain-moisture': "Grain moisture",
       'percent-grain-moisture': "Humidity (%)"
@@ -224,15 +224,15 @@ export default {
       'old-password-needed': "You have to provide your old password",
       'email-mismatch': "Le email non coincidono",
       'regional-error': "Questo é un account ERMES regionale",
-      'unknown-owner': "That owner does not exist",
+      'unknown-owner': "Owner does not exist",
       'region-mismatch': "Owner isn't in that region",
-      'repeated-email': "That email is already on the system",
+      'repeated-email': "Email address is already on the system",
       'user-exits': "Utente già esistente",
       'processing': "Elaborazione...",
       'welcome': "Benvenuto, {{username}}",
       'login-allowed': "Ora puoi,",
       'activation-needed': "Your account will be activated",
-      'email-sent': "You'll receive a mail",
+      'email-sent': "You will receive an email",
       'missing-date': "Inserisci una data",
       'missing-parcel': "Selezionare almeno una parcella",
       'missing-start-date': "Inserire la data di inizio",
@@ -241,7 +241,7 @@ export default {
       'offline-parcels': "Spiacenti, devi essere on-line per aggiungere o cancellare parcelle",
       'offline-profile-update': "Spiacenti, devi essere on-line per modificare il tuo profilo",
       'no-data-offline': "Sembra che tu abbia perso la connessione e non ci sono dati salvati su questo device",
-      'parcel-offline': "Sorry, it seems that there is no info about this parcel stored on this device and you don't have connection, try again later",
+      'parcel-offline': "Sorry, there is no info stored about this parcel on this device, and you don't have connection, try again later",
       'try-again': "Ora puoi provare a ",
       'reconnect': "Riconnetterti",
       'retrieving-info': "Stiamo recuperando il tuo profilo dal server. Attendi...",
@@ -250,18 +250,18 @@ export default {
       'saved': "Salvato",
       'loading-map': "Loading map...",
       'warning': "Warning",
-      'possible-outdated': "You're offline, by so, this info could be outdated"
+      'possible-outdated': "You're offline - this info could be outdated"
     }
   },
   'download-assets':{
     'download-basemap': "Download resources for enabling offline capabilities?",
-    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 150 MB. Is that OK for you?",
-    'downloading-assets': "We're currently downloading files for enabling offline mode, we'll redirect you when finished. Please be patient",
+    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 50 MB. Press OK to continue.",
+    'downloading-assets': "We're currently downloading maps to enable offline mode, we'll redirect you when finished. Please be patient",
     'download-error': "An error occurred while downloading",
     'proceed': "Proceed",
     'later': "Not now",
-    'it-is-ok': "It's OK!",
-    'no-way': "No way!",
+    'it-is-ok': "OK",
+    'no-way': "Later",
     'retry': "Retry"
   },
   'region': {
@@ -525,7 +525,7 @@ export default {
     'irrigation': {
       'measures': {
         'mm': "mm/giorno",
-        'm3': "m3/h"
+        'm3': "m3/hour"
       }
     }
   }
