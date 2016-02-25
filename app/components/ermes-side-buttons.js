@@ -53,24 +53,28 @@ export default Ember.Component.extend({
 
     },
     selectAll() {
-      var userParcels = this.get('parcels.user.parcels');
-      var selectedParcels = this.get('parcels.selectedParcels');
-      userParcels.forEach((parcel) => {
-        if (!selectedParcels.contains(parcel)) {
-          selectedParcels.pushObject(parcel);
-        }
+      this.get('parcels.user.parcels').then((userParcels) => {
+        var selectedParcels = this.get('parcels.selectedParcels');
+        userParcels.forEach((parcel) => {
+          var parcelId = parcel.get('parcelId');
+          if (!selectedParcels.contains(parcelId)) {
+            selectedParcels.pushObject(parcelId);
+          }
+        });
       });
     },
     invertSelection() {
-      var userParcels = this.get('parcels.user.parcels');
-      var selectedParcels = this.get('parcels.selectedParcels');
-      var previouslySelected = [];
-      previouslySelected.pushObjects(selectedParcels);
-      selectedParcels.clear();
-      userParcels.forEach((parcel) => {
-        if (!previouslySelected.contains(parcel)) {
-          selectedParcels.pushObject(parcel);
-        }
+      this.get('parcels.user.parcels').then((userParcels) => {
+        var selectedParcels = this.get('parcels.selectedParcels');
+        var previouslySelected = [];
+        previouslySelected.pushObjects(selectedParcels);
+        selectedParcels.clear();
+        userParcels.forEach((parcel) => {
+          var parcelId = parcel.get('parcelId');
+          if (!previouslySelected.contains(parcelId)) {
+            selectedParcels.pushObject(parcelId);
+          }
+        });
       });
     }
   }
