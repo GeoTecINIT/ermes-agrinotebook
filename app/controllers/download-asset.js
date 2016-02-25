@@ -33,7 +33,7 @@ normalizedProgress: Ember.computed("progressLoaded", "progressTotal", "progressU
          return 0;
        }
 
-       return this.get("progressLoaded")/ this.get("progressTotal");
+       return Math.round(this.get("progressLoaded")/ this.get("progressTotal")*100)/100;
   }),
 
   actions: {

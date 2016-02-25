@@ -61,8 +61,6 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
                __this.mapLoaded();
                loaded = true;
              }
-             //console.log("delete me, I am a test!!");
-             //loadBaseMapEvent.remove();
            });
           _this.loadBasemap();
 
@@ -83,12 +81,13 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   },
 
   createMap() {
-    var pos = this.get('parcels.user.lastPosition');
+    //var pos = this.get('parcels.user.lastPosition');
+    var user = this.get('parcels.user');
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     var map = new Map(this.elementId, {
-      "center": [pos.get('lastX'), pos.get('lastY')],
-      "zoom": pos.get('zoom'),
+      "center": [user.get('lastLongitude'), user.get('lastLatitude')],
+      "zoom": user.get('zoomLevel'),
       "minZoom": 9/*mapInfo.minZoom*/,
       "maxZoom": 18/*mapInfo.maxZoom Luis*/,
       "logo": false//,

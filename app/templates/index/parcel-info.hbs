@@ -1,41 +1,54 @@
 {{#ermes-panel id=panelId title=(t "fields.text.parcel-info")}}
-  {{#if model}}
-    <p>{{t 'panel.parcel-info.crop-info-text'}}</p>
-    <table>
-      <tr>
-        <th>{{t 'fields.text.crop-info'}}</th>
-        <th>{{t 'panel.parcel-info.info-table-content'}}</th>
-      </tr>
-      <tr>
-        <td><b>{{t 'panel.crop-info.crop-type'}}</b></td>
-        <td>{{cropInfo.cropType}}</td>
-      </tr>
-      <tr>
-        <td><b>{{t 'panel.crop-info.rice-variety'}}</b></td>
-        <td>{{cropInfo.riceVariety}}</td>
-      </tr>
-    </table>
-    <p>{{t 'panel.parcel-info.product-text'}}</p>
-    <table>
-      <tr>
-        <th>{{t 'panel.parcel-info.product-table-product'}}</th>
-        <th>{{t 'panel.parcel-info.product-table-date'}}</th>
-      </tr>
-      {{#each parcel as |product|}}
-        <tr>
-          <td><b>{{product.name}}</b></td>
-          <td>{{product.lastDate}}</td>
-        </tr>
-      {{/each}}
-    </table>
+  {{#if parcelError}}
+      <div class="animated jello">
+          <img src="assets/ermes-images/logo.png">
+      </div>
+      <p>{{t 'panel.notification.parcel-offline'}}</p>
   {{else}}
-    {{#unless loading}}
-      <p>{{t 'panel.parcel-info.none-selected'}}</p>
-    {{/unless}}
+    {{#if model}}
+      {{#unless networkChecker.online}}
+        <div class="animated bounceInRight">
+          <p><b style="color: orange;">{{t 'panel.notification.warning'}}:&nbsp;</b>{{t 'panel.notification.possible-outdated'}}</p>
+        </div>
+      {{/unless}}
+        <p>{{t 'panel.parcel-info.crop-info-text'}}</p>
+        <table>
+            <tr>
+                <th>{{t 'fields.text.crop-info'}}</th>
+                <th>{{t 'panel.parcel-info.info-table-content'}}</th>
+            </tr>
+            <tr>
+                <td><b>{{t 'panel.crop-info.crop-type'}}</b></td>
+                <td>{{cropInfo.cropType}}</td>
+            </tr>
+            <tr>
+                <td><b>{{t 'panel.crop-info.rice-variety'}}</b></td>
+                <td>{{cropInfo.riceVariety}}</td>
+            </tr>
+        </table>
+        <p>{{t 'panel.parcel-info.product-text'}}</p>
+        <table>
+            <tr>
+                <th>{{t 'panel.parcel-info.product-table-product'}}</th>
+                <th>{{t 'panel.parcel-info.product-table-date'}}</th>
+            </tr>
+          {{#each parcel as |product|}}
+              <tr>
+                  <td><b>{{product.name}}</b></td>
+                  <td>{{product.lastDate}}</td>
+              </tr>
+          {{/each}}
+        </table>
+    {{else}}
+      {{#unless loading}}
+          <p>{{t 'panel.parcel-info.none-selected'}}</p>
+      {{/unless}}
+    {{/if}}
+    {{#if loading}}
+        <p>{{t 'panel.notification.processing'}}</p>
+        <div class="animated pulse infinite">
+            <img src="assets/ermes-images/logo.png">
+        </div>
+    {{/if}}
   {{/if}}
-  {{#if loading}}
-    <p>{{t 'panel.notification.processing'}}</p>
-    <div class="animated pulse infinite">
-      <img src="assets/ermes-images/logo.png">
-    </div>  {{/if}}
 {{/ermes-panel}}

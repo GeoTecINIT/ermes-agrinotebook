@@ -3,11 +3,11 @@ import ProductModel from 'ermes-smart-app/mixins/product-model';
 import MF from 'model-fragments';
 
 export default ProductModel.extend({
-  date: DS.attr('user-date'),
-  uploadingDate: DS.attr('date'),
-  name: DS.attr('string', { defaultValue() { return 'bidens'; }}),
+  uploadDate: DS.attr('date'),
+  name: DS.attr('string', { defaultValue() { return 'bidens-sp'; }}),
   comments: DS.attr('string'),
   file: DS.attr('string'),
-  damage: DS.attr('number'),
+  percentCovered: DS.attr('number'),
+  observationDate: DS.attr('user-date'),
   parcels: MF.array('string')
 });

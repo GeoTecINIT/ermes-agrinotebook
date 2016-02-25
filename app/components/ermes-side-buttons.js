@@ -30,12 +30,20 @@ export default Ember.Component.extend({
     },
     commitChanges() {
       if (navigator.onLine){
-        this.get('parcels.user').save().then(() => {
-          this.set('editMode', false);
-        }, (err) => {
-          console.debug('No se ha podido guardar el usuario');
-          this.set('editMode', false);
-          console.debug(err);
+        this.get('parcels.user.parcels').then((parcels) => {
+          var wait = [];
+          parcels.forEach((parcel) => {
+            wait.push(parcel.save());
+          });
+          Ember.RSVP.Promise.all(wait).then(() => {
+            return this.get('parcels.user').save();
+          }).then(() => {
+            this.set('editMode', false);
+          }).catch((err) => {
+            console.debug('No se ha podido guardar el usuario');
+            this.set('editMode', false);
+            console.debug(err);
+          });
         });
       } else {
         this.get('parcels.user').rollbackAttributes();
@@ -45,24 +53,28 @@ export default Ember.Component.extend({
 
     },
     selectAll() {
-      var userParcels = this.get('parcels.user.parcels');
-      var selectedParcels = this.get('parcels.selectedParcels');
-      userParcels.forEach((parcel) => {
-        if (!selectedParcels.contains(parcel)) {
-          selectedParcels.pushObject(parcel);
-        }
+      this.get('parcels.user.parcels').then((userParcels) => {
+        var selectedParcels = this.get('parcels.selectedParcels');
+        userParcels.forEach((parcel) => {
+          var parcelId = parcel.get('parcelId');
+          if (!selectedParcels.contains(parcelId)) {
+            selectedParcels.pushObject(parcelId);
+          }
+        });
       });
     },
     invertSelection() {
-      var userParcels = this.get('parcels.user.parcels');
-      var selectedParcels = this.get('parcels.selectedParcels');
-      var previouslySelected = [];
-      previouslySelected.pushObjects(selectedParcels);
-      selectedParcels.clear();
-      userParcels.forEach((parcel) => {
-        if (!previouslySelected.contains(parcel)) {
-          selectedParcels.pushObject(parcel);
-        }
+      this.get('parcels.user.parcels').then((userParcels) => {
+        var selectedParcels = this.get('parcels.selectedParcels');
+        var previouslySelected = [];
+        previouslySelected.pushObjects(selectedParcels);
+        selectedParcels.clear();
+        userParcels.forEach((parcel) => {
+          var parcelId = parcel.get('parcelId');
+          if (!previouslySelected.contains(parcelId)) {
+            selectedParcels.pushObject(parcelId);
+          }
+        });
       });
     }
   }

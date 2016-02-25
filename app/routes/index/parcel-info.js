@@ -5,5 +5,10 @@ import PanelManager from 'ermes-smart-app/mixins/panel-manager';
 export default Ember.Route.extend(AuthChecker, PanelManager, {
   model() {
     // Leave it empty, so controller can take possession of this responsibility
+  },
+  actions: {
+    didTransition() {
+      this.controller.notifyPropertyChange('forceReload');
+    }
   }
 });

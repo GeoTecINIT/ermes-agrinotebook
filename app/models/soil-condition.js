@@ -7,8 +7,8 @@ import config from '../config/environment';
 var fDate = config.APP.defaultDateFormat;
 
 export default ProductModel.extend({
+  uploadDate: DS.attr('date'),
   parcelStatus: DS.attr('string', { defaultValue() { return 'bare-soil'; }}),
-  date: DS.attr('user-date', { defaultValue() { return new Moment().format(fDate); }}),
-  uploadingDate: DS.attr('date'),
+  observationDate: DS.attr('user-date', { defaultValue() { return new Moment().format(fDate); }}),
   parcels: MF.array('string')
 });

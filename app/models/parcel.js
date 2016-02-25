@@ -2,16 +2,18 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   parcelId: DS.attr('string'),
+  inDanger: DS.attr('boolean'),
   observations: DS.hasMany('observation'),
-  weeds: DS.hasMany('weed'),
-  diseases: DS.hasMany('disease'),
-  phatogens: DS.hasMany('pathogen'),
-  phenologies: DS.hasMany('crop-phenology'),
-  agrochemicals: DS.hasMany('agrochemical'),
-  fertilizers: DS.hasMany('fertilizer'),
-  irrigationInfos: DS.hasMany('irrigation'),
-  yields: DS.hasMany('yield'),
   cropInfos: DS.hasMany('crop-info'),
-  parcelStatus: DS.hasMany('soil-condition'),
-  soils: DS.hasMany('soil-type')
+  soilTypes: DS.hasMany('soil-type'),
+  soilConditions: DS.hasMany('soil-condition'),
+  cropPhenologies: DS.hasMany('crop-phenology'),
+  insects: DS.hasMany('insect'),
+  diseases: DS.hasMany('disease'),
+  weeds: DS.hasMany('weed'),
+  abioticStresses: DS.hasMany('abiotic-stress'),
+  fertilizers: DS.hasMany('fertilizer'),
+  agrochemicals: DS.hasMany('agrochemical'),
+  irrigations: DS.hasMany('irrigation'),
+  yields: DS.hasMany('yield')
 });

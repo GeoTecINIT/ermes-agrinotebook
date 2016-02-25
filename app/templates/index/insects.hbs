@@ -1,0 +1,31 @@
+{{#ermes-panel id=panelId title=(t 'fields.text.insects')}}
+  <form {{action "submit" on="submit"}}>
+    <label>
+      <span>{{t "panel.insects.date"}}</span>
+      {{ermes-datepicker value=model.product.observationDate}}
+    </label>
+    {{ermes-message text=dateError color="red" animation="fadeInDown"}}
+    <label>
+      <span>{{t "panel.insects.name"}}</span>
+      {{jqm-select value=model.product.name theme="d" options=names}}
+    </label>
+    {{#if isOther}}
+      {{jqm-textinput value=model.newOption placeholder=(t "fields.text.other") required=true}}
+    {{/if}}
+    <label>
+      <span>{{t "panel.insects.comment"}}</span>
+      {{jqm-textarea value=model.product.comments}}
+    </label>
+    <label>
+      <span>{{t "panel.insects.picture"}}</span>
+      {{jqm-fileinput accept="image/*;capture=camera"}}
+    </label>
+    <label>
+      <span>{{t "panel.insects.damage"}}</span>
+      {{jqm-slider value=model.product.damage min=1 max=10 theme="d"}}
+    </label>
+    {{jqm-button text=(t "fields.text.add-new") theme="b"}}
+    {{ermes-message text=parcelError color="red" animation="fadeInDown"}}
+    {{ermes-message text=info color="blue" animation="fadeInDown"}}
+  </form>
+{{/ermes-panel}}

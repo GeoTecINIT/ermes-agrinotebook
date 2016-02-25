@@ -1,7 +1,9 @@
 import Ember from 'ember';
 import {getJSON} from 'ermes-smart-app/utils/ajax';
 import config from '../config/environment';
+import * as dd from 'ermes-smart-app/models/static/custom-options';
 
+const customOptionProducts = dd.getCustomOptionProducts();
 const ASSETS_URL = config.APP.assetDescriptor;
 
 export default Ember.Mixin.create({
@@ -10,40 +12,47 @@ export default Ember.Mixin.create({
   parcels: Ember.inject.service(),
   offlineStorage: Ember.inject.service(),
   ermesCordova:  Ember.inject.service(),
-  //index: Ember.inject.controller(),
 
-  //downloadAsset: Ember.inject.controller(),
-  //user: Ember.computed.alias('parcels.user'),
+  initialChecks(user) {
 
-  initialChecks() {
-    //place here all the initial tasks
-    var user = this.get('parcels.user');
+
+    user.get('parcels').then((parcels) => {
+      this.controllerFor('index').set('editMode', false);
+      if (parcels.length === 0) {
+        if (navigator.onLine && user.get('type') !== 'collaborator') {
+          this.controllerFor('index').set('editMode', true);
+          this.transitionTo('index.welcome');
+        } else {
+          throw new Error();
+        }
+      }
+    }).catch(() => {
+      this.transitionTo('index-error');
+    });
+    this.startSync();
+    this.retrieveCustomOptions();
 
     //if with cordova .. the tpk should be downloaded
     var useOnline = this.controllerFor('index').get('useOnlineBasemap');
     if (this.get('ermesCordova').isNative() && !useOnline) {
-      this.prepareBaseMap();
+      return this.prepareBaseMap(user);
+    } else {
+      return Ember.RSVP.resolve();
     }
-
-    if (user.get('parcels.length') === 0) {
-      if (navigator.onLine) {
-        this.controllerFor('index').set('editMode', true);
-        this.transitionTo('index.welcome');
-      } else {
-        this.transitionTo('index-error');
-      }
-    }
-    this.startSync();
-
   },
 
-  startSync(){
+  startSync() {
     this.get('uploadQueue').start();
   },
 
-  prepareBaseMap(){
+  retrieveCustomOptions() {
+    for (var productType in customOptionProducts) {
+      this.store.findRecord('custom-option', Ember.String.camelize(Ember.String.pluralize(productType)));
+    }
+  },
 
-    var user = this.get('parcels.user');
+  prepareBaseMap(user){
+
     var region = user.get('region');
     var offlineStorage = this.get('offlineStorage');
     var configStorage = offlineStorage.get('configStorage');
@@ -51,41 +60,45 @@ export default Ember.Mixin.create({
 
     this.get('parcels').set('basemapName', basemapName);
 
-    configStorage.getItem(basemapName).then((basemap) => {
+    return configStorage.getItem(basemapName).then((basemap) => {
 
       // The same code, but using ES6 Promises.
-      //todo: check that navigator.onLine coul be changed to consume  a  service to ask for more appropriate things
+      //todo: check that navigator.onLine could be changed to consume  a  service to ask for more appropriate things
       if (navigator.onLine) {
+        return new Ember.RSVP.Promise((resolve, reject) => {
           getJSON(ASSETS_URL).done((descriptor) => {
-              var regionEntry =  descriptor.regionsBaseMaps[region];
-              if (basemap) {
-                var version = basemap.version;
-                if (regionEntry.version!== version){
-                  this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap", "askingForDownload": true });
-                  offlineStorage.set('downloading', true);
-                  this.transitionTo('download-asset');
-                }
-                //else  no need to download nothing
-              }
-              else {
-                this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap", "askingForDownload": true});
-                offlineStorage.set('downloading', true);
-                this.transitionTo('download-asset');
-              }
-            } //download is done
-          ).fail ((error) => {
-            console.log(error);
-            if (!basemap) {
-              this.transitionTo('index-error');
-            }
-          }) ;
-
-        }
-       else /*offline*/
+            resolve(descriptor);
+          }).fail((err) => {
+            reject(err);
+          });
+        }).catch((err) => {
+          console.log(err);
           if (!basemap) {
-             this.transitionTo('index-error');
-           }
-           //else nothing to do, no connection but a basemap was found
+            return Ember.RSVP.reject(err);
+          }
+        }).then((descriptor) => {
+          var regionEntry =  descriptor.regionsBaseMaps[region];
+          if (basemap) {
+            var version = basemap.version;
+            if (regionEntry.version!== version){
+              this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap", "askingForDownload": true });
+              offlineStorage.set('downloading', true);
+              this.transitionTo('download-asset');
+            }
+            //else  no need to download nothing
+          }
+          else {
+            this.controllerFor('download-asset').setProperties({"downloadUrl": regionEntry.url, "assetsKey": basemapName, "assetsDetails": regionEntry, "message": "download-assets.download-basemap", "askingForDownload": true});
+            offlineStorage.set('downloading', true);
+            this.transitionTo('download-asset');
+          }
+        });
+      } else if (!basemap) { /*offline*/
+        return Ember.RSVP.reject();
+      }
+      //else nothing to do, no connection but a basemap was found
+    }).catch(() => {
+      this.transitionTo('index-error');
     });
 
   }

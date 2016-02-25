@@ -22,6 +22,7 @@ export default {
     },
     'signup-p': {
       'username-f': "Enter desired username",
+      'collaborating-with': "Owner (optional)",
       'password-f': "Your password",
       'repeat-password-f': "Repeat your password",
       'email-f': "Your email",
@@ -36,16 +37,20 @@ export default {
       'soil-type': "Soil Type",
       'soil-condition': "Soil Condition",
       'crop-phenology': "Crop Phenology",
-      'pathogens': "Pathogens",
+      'insects': "Insects",
       'diseases': "Diseases",
       'weeds': "Weeds",
+      'abiotic-stresses': "Abiotic Stresses",
       'fertilizers': "Fertilizers",
       'agrochemicals': "Agrochemicals",
       'irrigation': "Irrigation",
       'yield': "Yield",
       'observation': "Observation",
       'parcel-info': "Parcel Info",
-      'add-new': "Add info"
+      'add-new': "Add info",
+      'default': 'Default',
+      'custom': 'Custom',
+      'other': 'Other (specify)'
     },
     'ui-special': {
       'agrochemicals': "Agro chemicals"
@@ -82,8 +87,10 @@ export default {
     'crop-info': {
       'crop-type': "Crop type",
       'rice-variety': "Rice variety",
-      'pudding': 'Pudding',
-      'sowing-practice': "Sowing practice",
+      'puddling': 'Puddling',
+      'sowing-type': "Sowing type",
+      'amount': "Amount",
+      'seeds-per-ha': "Seeds/Ha",
       'date': 'Sowing date'
     },
     'crop-phenology': {
@@ -119,16 +126,23 @@ export default {
       'quantity-unit-m3': "Cubic meters",
       'hours': "Hours",
       'hours-unit': "Hours",
-      'depth': "Water depth"
+      'height': "Water height"
     },
     'observation': {
       'comment': "Add a comment",
       'picture': "Add a picture",
       'send-btn': "Send observation"
     },
-    'pathogens': {
+    'insects': {
       'date': "Date of observation",
       'name': "Name",
+      'comment': "Add a comment",
+      'picture': "Add a picture",
+      'damage': "Damage (1 min - 10 max)"
+    },
+    'abiotic-stresses': {
+      'date': "Date of observation",
+      'cause': "Cause",
       'comment': "Add a comment",
       'picture': "Add a picture",
       'damage': "Damage (1 min - 10 max)"
@@ -141,7 +155,7 @@ export default {
       'texture': "Select the soil texture",
       'organic-matter': "Organic matter",
       'organic-matter-unit':"Percent organic matter",
-      'ph': "Ph (min 0 - max 14)",
+      'ph': "pH (min 0 - max 14)",
       'date': "Date"
     },
     'weeds': {
@@ -155,7 +169,9 @@ export default {
       'date': "Harvest date",
       'yield': "Yield (dry weight)",
       'yield-unit': "Ton/ha",
-      'comments': "Comments"
+      'comments': "Comments",
+      'grain-moisture': "Grain moisture",
+      'percent-grain-moisture': "Humidity (%)"
     },
     'parcel-info': {
       'none-selected': "Please select one parcel",
@@ -184,14 +200,23 @@ export default {
       'online': "Connection established",
       'product-upload': "Uploading parcel info",
       'product-upload-later': "Offline. Product will be uploaded later",
-      'login-error': "Wrong user or password",
+      'user-not-found': "User not found",
+      'login-error': "Wrong password",
+      'wrong-old-password': "Wrong old password",
+      'inactive-account': "Your account has to be activated",
       'password-mismatch': "Passwords don't match",
+      'old-password-needed': "You have to provide your old password",
       'email-mismatch': "Emails don't match",
       'regional-error': "This is a regional account",
+      'unknown-owner': "That owner does not exist",
+      'region-mismatch': "Owner isn't in that region",
+      'repeated-email': "That email is already on the system",
       'user-exits': "Sorry, that user already exists",
       'processing': "Processing...",
       'welcome': "Welcome, {{username}}",
       'login-allowed': "Now you can,",
+      'activation-needed': "Your account will be activated",
+      'email-sent': "You'll receive a mail",
       'missing-date': "Please fill date",
       'missing-parcel': "Please select at least one parcel",
       'missing-start-date': "Please fill start date",
@@ -200,12 +225,16 @@ export default {
       'offline-parcels': "Sorry, you need to go online to add or delete parcels",
       'offline-profile-update': "Sorry, you cannot update your profile while offline",
       'no-data-offline': "Seems that you have lost your connection and we do not have any info stored about you on this device",
+      'parcel-offline': "Sorry, it seems that there is no info about this parcel stored on this device and you don't have connection, try again later",
       'try-again': "You can try to",
       'reconnect': "Reconnect",
       'retrieving-info': "We are recovering your profile from our servers. Please wait...",
       'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
       'got-it': "Got it",
-      'saved': "Saved"
+      'saved': "Saved",
+      'loading-map': "Loading map...",
+      'warning': "Warning",
+      'possible-outdated': "You're offline, by so, this info could be outdated"
     }
   },
   'download-assets':{
@@ -236,7 +265,7 @@ export default {
         'set-aside': "Set-aside",
         'soybean': "Soybean"
       },
-      'puddings': {
+      'puddlings': {
         'null': "----",
         'yes': "Yes",
         'no': "No"
@@ -269,18 +298,26 @@ export default {
         'sole-cl': "Sole cl",
         'terra-cl': "Terra cl"
       },
-      'sowing-practices': {
+      'sowing-types': {
         'null': "----",
-        'direct-seeding': "Direct seeding",
-        'scattered-seeding': "Scattered seeding"
+        'dry-soil-direct-seeding': "Dry soil direct seeding",
+        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
       }
     },
     'soil-type': {
       'soil-textures': {
         'clay': "Clay",
-        'silt-clay': "Silt clay",
-        'silt-clay-loam': "Silt clay loam",
-        'medium-textured': "Medium textured"
+        'sandy-clay': "Sandy clay",
+        'silty-clay': "Silty clay",
+        'sandy-clay-loam': "Sandy clay loam",
+        'clay-loam': "Clay loam",
+        'silty-clay-loam': "Silty clay loam",
+        'sandy-loam': "Sandy loam",
+        'loam': "Loam",
+        'silt-loam': "Silt loam",
+        'silt': "Silt",
+        'loamy-sand': "Loamy sand",
+        'sand': "Sand"
       }
     },
     'soil-condition': {
@@ -379,12 +416,15 @@ export default {
         '99': "99: harvested product"
       }
     },
-    'pathogens': {
+    'insects': {
       'names': {
         'aphids': "Aphids",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematods': "Nematods",
-        'pomacea': "Pomacea"
+        'nematodes': "Nematodes",
+        'pomacea': "Pomacea",
+        'sesamia': "Sesamia",
+        'chironomus': "Chironomus",
+        'chilo': "Chilo"
       }
     },
     'diseases': {
@@ -392,18 +432,32 @@ export default {
         'bipolaris': "Bipolaris",
         'cercospora': "Cercospora",
         'fusarium': "Fusarium",
-        'pyricularia-(blast)': "Pyricularia (blast)"
+        'pyricularia-(blast)': "Pyricularia (Rice blast)"
       }
     },
     'weeds': {
       'names': {
-        'bidens': "Bidens",
-        'ciperus-difformis': "Ciperus difformis",
-        'echinochloa-crus-galli': "Echinochloa crus-galli",
-        'heteranthera': "Heteranthera",
+        'bidens-sp': "Bidens sp",
+        'cyperus-difformis': "Cyperus difformis",
+        'heteranthera-sp': "Heteranthera sp",
+        'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli or oryzoides",
         'leersia-oryzoides': "Leersia oryzoides",
-        'oryza-sativa': "Oryza sativa",
-        'scirpus-maritimus': "Scirpus maritimus"
+        'red-rice-(oryza-sativa)': "Red rice (Oryza sativa)",
+        'scirpus-sp': "Scirpus sp",
+        'paspalum-distichum': "Paspalum distichum",
+        'ammania-spp': "Ammania spp",
+        'typha-spp': "Typha spp",
+        'phragmites-communis': "Phragmites communis",
+        'butomus-umbellatus': "Butomus umbellatus",
+        'polygonum-spp': "Polygonum spp"
+      }
+    },
+    'abiotic-stresses': {
+      'causes': {
+        'cold': "Cold",
+        'salinity': "Salinity",
+        'drought': "Drought",
+        'heat-wave': "Heat wave"
       }
     },
     'fertilizers': {
@@ -421,13 +475,32 @@ export default {
     },
     'agrochemicals': {
       'products': {
+        'herbicides': "Herbicides",
+        'fungicides': "Fungicides",
+        'insecticides': "Insecticides"
+      },
+      'herbicides': {
+        'azimsulfuron': "Azimsulfuron",
+        'cyhalofop-butyl': "Cyhalofop Butyl",
+        'imazamox-(clear-field)': "Imazamox (Clear field)",
+        'penoxulam': "Penoxulam",
+        'profixydim': "Profixydim",
+        'quinclorac': "Quinclorac",
         'bentazon': "Bentazon",
-        'celest-syngenta-(fludioxonil)': "Celest syngenta (fludioxonil)",
-        'mixed-product': "Mixed product",
+        'fludioxonil': "Fludioxonil",
         'oxodiazon': "Oxodiazon",
         'propanil': "Propanil",
-        'pyretroids': "Pyretroids",
-        'touchdown-syngenta-(glyphosate)': "Touchdown syngenta (glyphosate)"
+        'mcpa': "MCPA",
+        'glyphosate-(only-for-paddy-mounds)': "Glyphosate (Only for paddy mounds)"
+      },
+      'fungicides': {
+        'azoxistrobin': "Azoxistrobin",
+        'propiconazole-prochloraz': "Propiconazole + Prochloraz",
+        'trebuconazole': "Trebuconazole",
+        'tricyclazone': "Tricyclazone"
+      },
+      'insecticides': {
+        'pyrethroids': "Pyrethroids"
       }
     },
     'irrigation': {

@@ -12,8 +12,8 @@ export default Ember.Controller.extend(ProductUpload, {
   measures: Ember.computed('i18n.locale', function () {
     return dd.getMeasures(this);
   }),
-  hasMM: Ember.computed('model.quantityOfWaterMeasure', function () {
-    return this.get('model.quantityOfWaterMeasure') === 'mm';
+  hasMM: Ember.computed('model.measureUnit', function () {
+    return this.get('model.measureUnit') === 'mm';
   }),
   actions: {
     submit() {

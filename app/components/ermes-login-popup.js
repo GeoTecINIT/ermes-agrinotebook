@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     username: "",
     password: ""
   }),
-  username: Ember.computed.alias('model.username'),
+  //username: Ember.computed.alias('model.username'),
   actions: {
     submit() {
       let model = this.get('model');
@@ -17,25 +17,43 @@ export default Ember.Component.extend({
       this.set('error', '');
 
       this.set('info', this.get('i18n').t('panel.notification.processing'));
-      post('/login', {username: model.username, password: model.password })
+      var token = btoa(model.username.toLowerCase().trim()+':'+model.password);
+      //post('/login', {username: model.username, password: model.password })
+      post('/login', {headers: {'X-Authorization': 'Bearer ' + token}})
       .done((data) => {
         this.set('info', '');
-        if (!data) {
+        var user = data.user;
+        if (!user) {
           this.set('error', this.get('i18n').t('panel.notification.login-error'));
-        } else if (data.profile !== 'local') {
+        } else if (user.profile !== 'local') {
           this.set('error', this.get('i18n').t('panel.notification.regional-error'));
+        } else if (user.type === 'guest') {
+          this.set('error', this.get('i18n').t('panel.notification.user-not-found'));
         } else {
 
-          auth.logIn(data.user, data.user+";"+model.password, data.lang);
+          auth.logIn(user.username.toLowerCase().trim(), token, user.language);
 
           // Reset form
           this.set('model.username', '');
           this.set('model.password', '');
           this.sendAction('logIn');
         }
-      }).fail(() => {
+      }).fail((err) => {
         this.set('info', '');
-        this.set('error', this.get('i18n').t('panel.notification.offline'));
+        var message = err.responseText;
+        if (message) {
+          if (message.match(/USER_NOT_FOUND/)){
+            this.set('error', this.get('i18n').t('panel.notification.user-not-found'));
+          } else if (message.match(/WRONG_PASSWORD/)) {
+            this.set('error', this.get('i18n').t('panel.notification.login-error'));
+          } else if (message.match(/INACTIVE_ACCOUNT/)) {
+            this.set('error', this.get('i18n').t('panel.notification.inactive-account'));
+          } else {
+            this.set('error', this.get('i18n').t('panel.notification.offline'));
+          }
+        } else {
+          this.set('error', this.get('i18n').t('panel.notification.offline'));
+        }
       });
     }
   }
