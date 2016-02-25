@@ -4,18 +4,20 @@ import config from '../config/environment';
 const SERVER_API_URL = config.APP.apiServer;
 const SERVER_RESOURCES_URL = config.APP.resourcesServer;
 
-// Example ( '/login', { username: user, password: password } )
 export function post(uri, parameters) {
-  //return $.post(SERVER_API_URL + uri, parameters);
   var options = {
     url: SERVER_API_URL + uri,
     type: 'post',
-    data: parameters.data,
-    dataType: 'json'
+    data: parameters.data
   };
   if(parameters.headers) {
     options.headers = parameters.headers;
   }
+
+  if (!parameters.form) {
+    options.dataType = 'json';
+  }
+
   return $.ajax(options);
 }
 

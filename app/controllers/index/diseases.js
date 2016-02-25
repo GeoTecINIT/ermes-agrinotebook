@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/diseases';
 import ProductUploadCO from 'ermes-smart-app/mixins/product-upload-c-opt';
-import ProductRequiredDateCO from 'ermes-smart-app/mixins/product-required-date-c-opt';
+import ProductRequiredDate from 'ermes-smart-app/mixins/product-required-date';
 
-export default Ember.Controller.extend(ProductUploadCO, ProductRequiredDateCO, {
+export default Ember.Controller.extend(ProductUploadCO, ProductRequiredDate, {
   panelId: 'diseases',
   i18n: Ember.inject.service(),
   names: Ember.computed('i18n.locale', 'model.customOptions.options.[]', function () {

@@ -6,6 +6,10 @@ export default Ember.Service.extend({
       name: 'productStorage'
     }));
 
+    this.set('imageStorage', window.localforage.createInstance({
+      name: 'imageStorage'
+    }));
+
     this.set('configStorage', window.localforage.createInstance({
       name: 'configStorage'
     }));
