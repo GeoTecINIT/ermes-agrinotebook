@@ -104,7 +104,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     });
 
     map.on("extent-change", function(extent) {
-      if (!maxExtent) return;
+     /* if (!maxExtent) return;
 
       if ((map.extent.xmin < maxExtent.xmin) ||
         (map.extent.ymin < maxExtent.ymin) ||
@@ -113,7 +113,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       ) {
         map.setExtent(maxExtent);
         console.log("max extent reached, rolling back to previous extent");
-      }
+      }*/
     });
 
     this.set('map', map);
