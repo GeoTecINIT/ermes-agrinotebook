@@ -232,7 +232,10 @@ export default {
       'first-login': "Por favor, selecciona tus parcelas haciendo clic sobre ellas, haz clic en el botón de confirmación una vez hayas finalizado",
       'got-it': "Entendido",
       'saved': "Guardado",
-      'loading-map': "Cargando mapa..."}
+      'loading-map': "Cargando mapa...",
+      'warning': "Advertencia",
+      'possible-outdated': "Estás offline, por lo tanto, esta información podría estar desactualizada"
+    }
   },
   'download-assets':{
     'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad offline?",

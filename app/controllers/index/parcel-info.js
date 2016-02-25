@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   panelId: 'parcel-info',
   i18n: Ember.inject.service(),
   parcels: Ember.inject.service(),
+  networkChecker: Ember.inject.service(),
   productsNames: Ember.computed('i18n.locale', function() {
     return dd.getProductsNames(this);
   }),
@@ -68,8 +69,14 @@ export default Ember.Controller.extend({
       //var product = model.get(name).get('first');
       var product = model.get(name).reduce((lastProduct, actualProduct) => {
 
+        // First to reduce
+        if (lastProduct === null) {
+          return actualProduct;
+        }
+
+        // Get the last one
         return new Moment(lastProduct.get('uploadDate'), 'lll') > new Moment(actualProduct.get('uploadDate'), 'lll') ? lastProduct : actualProduct;
-      }, new Ember.Object({uploadDate: new Moment(new Date(2000, 1, 1))}));
+      }, null);
       parcel.push({name: productsNames.findBy('name', descriptor.type).text, lastDate: product ? product.get('uploadDate') : ''});
     });
     return parcel;

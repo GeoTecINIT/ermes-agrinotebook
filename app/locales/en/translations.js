@@ -232,7 +232,9 @@ export default {
       'first-login': "Please select your parcels by clicking on them, and hit the check button in the right bottom corner when finished",
       'got-it': "Got it",
       'saved': "Saved",
-      'loading-map': "Loading map..."
+      'loading-map': "Loading map...",
+      'warning': "Warning",
+      'possible-outdated': "You're offline, by so, this info could be outdated"
     }
   },
   'download-assets':{

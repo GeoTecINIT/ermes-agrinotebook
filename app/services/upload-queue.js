@@ -2,15 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   offlineStorage: Ember.inject.service(),
+  networkChecker: Ember.inject.service(),
   store: Ember.inject.service(),
   init() {
-    // Polling about online status
+    /*// Polling about online status
     this.set('online', navigator.onLine);
     setInterval(() => {
       if(this.get('online') !== String(navigator.onLine)) {
         this.set('online', navigator.onLine);
       }
-    }, 1000);
+    }, 1000);*/
 
     // Daemon stopped by default
     this.set('stopped', true);
@@ -20,7 +21,7 @@ export default Ember.Service.extend({
     if (!this.get('lock')) {
       this.set('lock', true);
       this.get('offlineStorage').get('storage').getItem('upload-pending-products').then((prods) => {
-        if (prods && this.get('online')) {
+        if (prods && this.get('networkChecker.online')) {
           this.set('stopped', false);
           var remainingProducts = prods.compact();
           try {
@@ -52,7 +53,7 @@ export default Ember.Service.extend({
               remainingProducts.removeObject(offlineProduct);
 
               // Offline control
-              if (!this.get('online')) {
+              if (!this.get('networkChecker.online')) {
                 throw new Error();
               }
             });
@@ -65,8 +66,8 @@ export default Ember.Service.extend({
       });
     }
   },
-  daemonControl: Ember.observer('online', function() {
-    if (this.get('online') && this.get('stopped')){
+  daemonControl: Ember.observer('networkChecker.online', function() {
+    if (this.get('networkChecker.online') && this.get('stopped')){
       this.start();
     }
   })

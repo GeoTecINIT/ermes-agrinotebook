@@ -6,6 +6,11 @@
       <p>{{t 'panel.notification.parcel-offline'}}</p>
   {{else}}
     {{#if model}}
+      {{#unless networkChecker.online}}
+        <div class="animated bounceInRight">
+          <p><b style="color: orange;">{{t 'panel.notification.warning'}}:&nbsp;</b>{{t 'panel.notification.possible-outdated'}}</p>
+        </div>
+      {{/unless}}
         <p>{{t 'panel.parcel-info.crop-info-text'}}</p>
         <table>
             <tr>

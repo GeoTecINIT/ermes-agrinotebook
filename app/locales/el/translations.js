@@ -249,7 +249,9 @@ export default {
       'first-login': "Παρακαλώ επιλέξτε τα αγροτεμάχια σας πατώντας πάνω τους, και πατήστε το πλήκτρο αποδοχής στην κάτω δεξιά γωνία όταν τελειώσετε",
       'got-it': "Το κατάλαβα",
       'saved': "Αποθηκεύτηκε",
-      'loading-map': "Loading map..."
+      'loading-map': "Loading map...",
+      'warning': "Warning",
+      'possible-outdated': "You're offline, by so, this info could be outdated"
     }
   },
   'download-assets':{

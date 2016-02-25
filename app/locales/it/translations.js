@@ -248,7 +248,9 @@ export default {
       'first-login': "Seleziona le tue parcelle cliccandoci sopra,.Premi il pulsante nell'angolo in basso a destra quando hai finito. ",
       'got-it': "Fatto",
       'saved': "Salvato",
-      'loading-map': "Loading map..."
+      'loading-map': "Loading map...",
+      'warning': "Warning",
+      'possible-outdated': "You're offline, by so, this info could be outdated"
     }
   },
   'download-assets':{
