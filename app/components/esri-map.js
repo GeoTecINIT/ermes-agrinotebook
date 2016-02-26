@@ -88,8 +88,8 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     var map = new Map(this.elementId, {
       "center": [user.get('lastLongitude'), user.get('lastLatitude')],
       "zoom": user.get('zoomLevel'),
-      "minZoom": 9/*mapInfo.minZoom*/,
-      "maxZoom": 18/*mapInfo.maxZoom Luis*/,
+      "minZoom": 13/*mapInfo.minZoom*/,
+      "maxZoom": 17/*mapInfo.maxZoom Luis*/,
       "logo": false//,
       //"fitExtent":  true
 
