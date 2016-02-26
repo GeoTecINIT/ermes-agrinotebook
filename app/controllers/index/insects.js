@@ -2,8 +2,10 @@ import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/insects';
 import ProductUploadCO from 'ermes-smart-app/mixins/product-upload-c-opt';
 import ProductRequiredDate from 'ermes-smart-app/mixins/product-required-date';
+import ProductParcelCheck from 'ermes-smart-app/mixins/product-parcel-check';
 
-export default Ember.Controller.extend(ProductUploadCO, ProductRequiredDate, {
+
+export default Ember.Controller.extend(ProductUploadCO, ProductParcelCheck, ProductRequiredDate, {
   panelId: 'insects',
   i18n: Ember.inject.service(),
   names: Ember.computed('i18n.locale', 'model.customOptions.options.[]', function () {

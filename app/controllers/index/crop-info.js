@@ -1,8 +1,9 @@
 import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/crop-info';
 import ProductUploadCO from 'ermes-smart-app/mixins/product-upload-c-opt';
+import ProductParcelCheck from 'ermes-smart-app/mixins/product-parcel-check';
 
-export default Ember.Controller.extend(ProductUploadCO, {
+export default Ember.Controller.extend(ProductUploadCO, ProductParcelCheck, {
   panelId: 'crop-info',
   i18n: Ember.inject.service(),
   cropTypes: Ember.computed('i18n.locale', function() {

@@ -10,12 +10,14 @@ export default Ember.Mixin.create({
           // THEN model.setURL()
           // CATCH model.setLocalDBId()
           // FINALLY super()
-      var file = this.get('model.file') || this.get('model.product.file');
+      var files = this.get('files');
 
-      if (file) {
+      if (files.length === 1) {
+        var image = files[0];
+
         new Ember.RSVP.Promise((resolve, reject) => {
           var data = new FormData();
-          data.append('image', file);
+          data.append('image', image);
         });
       }
     }

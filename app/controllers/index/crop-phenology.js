@@ -2,8 +2,9 @@ import Ember from 'ember';
 import * as dd from 'ermes-smart-app/models/static/crop-phenology';
 import ProductUpload from 'ermes-smart-app/mixins/product-upload';
 import ProductRequiredDate from 'ermes-smart-app/mixins/product-required-date';
+import ProductParcelCheck from 'ermes-smart-app/mixins/product-parcel-check';
 
-export default Ember.Controller.extend(ProductUpload, ProductRequiredDate, {
+export default Ember.Controller.extend(ProductUpload, ProductParcelCheck, ProductRequiredDate, {
   panelId: 'crop-phenology',
   i18n: Ember.inject.service(),
   developmentStages: Ember.computed('i18n.locale', function() {

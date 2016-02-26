@@ -1,7 +1,9 @@
 import Ember from 'ember';
 import ProductUpload from 'ermes-smart-app/mixins/product-upload';
+import ImageUpload from 'ermes-smart-app/mixins/image-upload';
+import ProductParcelCheck from 'ermes-smart-app/mixins/product-parcel-check';
 
-export default Ember.Controller.extend(ProductUpload, {
+export default Ember.Controller.extend(ProductUpload, ProductParcelCheck, ImageUpload, {
   panelId: 'observation',
   i18n: Ember.inject.service(),
   actions: {
