@@ -16,6 +16,9 @@ export function post(uri, parameters) {
 
   if (!parameters.form) {
     options.dataType = 'json';
+  } else {
+    options.contentType = false;
+    options.processData = false;
   }
 
   return $.ajax(options);
