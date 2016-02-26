@@ -18,6 +18,7 @@ export default Ember.Mixin.create({
         var product = this.get('model.product') || this.get('model');
 
         var _super = this._super.bind(this);
+        var imageStorage = this.get('offlineStorage.imageStorage');
 
         // Tell the user that the request is being processed
         this.set('info', this.get('i18n').t('panel.notification.processing'));
@@ -27,6 +28,7 @@ export default Ember.Mixin.create({
           // Store offline
           var key = Date.now();
           product.set('file', key);
+          imageStorage.setItem(key, image);
         }).finally(() => {
           _super();
         });

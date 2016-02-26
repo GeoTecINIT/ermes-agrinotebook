@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ImageUpload from 'ermes-smart-app/mixins/image-upload';
 
-export default Ember.Service.extend({
+export default Ember.Service.extend(ImageUpload, {
   offlineStorage: Ember.inject.service(),
   networkChecker: Ember.inject.service(),
   store: Ember.inject.service(),
@@ -31,9 +32,33 @@ export default Ember.Service.extend({
                 return new Ember.RSVP.Promise((resolve, reject) => {
                   // Solution to Ember Data production error, pushes product into store without id
                   if (product.get('id')) {
-                    product.save().then(() => Ember.debug('Pending product uploaded (' + (productNumber + 1) + '/' + prods.length + ')'));
-                    this.get('offlineStorage').get('storage').removeItem(offlineProduct);
-                    resolve(product);
+                    new Ember.RSVP.Promise((res, rej) => {
+                      if (product.get('file') && product.get('file').match(/^[0-9]/)) {
+                        var key = product.get('file');
+                        this.get('offlineStorage.imageStorage').getItem(key).then((image) => {
+                          if (image) {
+                            this.uploadImage(image).then((data) => {
+                              product.set('file', data.image.url);
+                              res();
+                            }).catch(() => {
+                              product.set('file', '');
+                              res();
+                            }).finally(() => {
+                              this.get('offlineStorage.imageStorage').removeItem(key);
+                            });
+                          } else {
+                            product.set('file', '');
+                            res();
+                          }
+                        });
+                      } else {
+                        res();
+                      }
+                    }).then(() => {
+                      product.save().then(() => Ember.debug('Pending product uploaded (' + (productNumber + 1) + '/' + prods.length + ')'));
+                      this.get('offlineStorage').get('storage').removeItem(offlineProduct);
+                      resolve(product);
+                    });
                   } else {
                     reject(product);
                   }
@@ -41,10 +66,36 @@ export default Ember.Service.extend({
               }).catch(() => {
                 this.get('offlineStorage').get('storage').getItem(offlineProduct).then((product) => {
                   if (product) {
-                    this.get('store').createRecord(prodElem[1], product[prodElem[1]]).save().then(() => {
-                      Ember.debug('Pending product uploaded (' + (productNumber + 1) + '/' + prods.length + ')');
+                    var productInstance = this.get('store').createRecord(prodElem[1], product[prodElem[1]]);
+
+                    new Ember.RSVP.Promise((res, rej) => {
+                      if (productInstance.get('file') && productInstance.get('file').match(/^[0-9]/)) {
+                        var key = productInstance.get('file');
+                        this.get('offlineStorage.imageStorage').getItem(key).then((image) => {
+                          if (image) {
+                            this.uploadImage(image).then((data) => {
+                              productInstance.set('file', data.image.url);
+                              res();
+                            }).catch(() => {
+                              productInstance.set('file', '');
+                              res();
+                            }).finally(() => {
+                              this.get('offlineStorage.imageStorage').removeItem(key);
+                            });
+                          } else {
+                            productInstance.set('file', '');
+                            res();
+                          }
+                        });
+                      } else {
+                        res();
+                      }
+                    }).then(() => {
+                      productInstance.save().then(() => {
+                        Ember.debug('Pending product uploaded (' + (productNumber + 1) + '/' + prods.length + ')');
+                      });
+                      this.get('offlineStorage').get('storage').removeItem(offlineProduct);
                     });
-                    this.get('offlineStorage').get('storage').removeItem(offlineProduct);
                   }
                 });
               });
