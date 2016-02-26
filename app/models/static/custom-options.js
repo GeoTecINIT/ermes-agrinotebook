@@ -3,8 +3,7 @@ export function getCustomOptionProducts() {
     'crop-info': 'riceVariety',
     'weeds': 'name',
     'diseases': 'name',
-    'insects': 'name'
+    'insects': 'name',
+    'fertilizers': 'name'
   };
 }
-
-

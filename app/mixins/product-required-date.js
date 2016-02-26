@@ -3,7 +3,8 @@ import Ember from 'ember';
 export default Ember.Mixin.create({
   actions: {
     submit() {
-      if (!this.get('model.observationDate') || !this.get('model.product.observationDate')) {
+      var observationDate = this.get('model.observationDate') || this.get('model.product.observationDate');
+      if (!observationDate) {
         this.set('dateError', this.get('i18n').t('panel.notification.missing-date'));
       } else {
         this.set('dateError', '');
