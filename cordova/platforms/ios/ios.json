@@ -31,6 +31,18 @@
                         {
                             "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -67,6 +79,9 @@
             "PACKAGE_NAME": "com.ermesfp7.esa"
         },
         "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ermesfp7.esa"
+        },
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.ermesfp7.esa"
         }
     },
@@ -341,6 +356,14 @@
             "clobbers": [
                 "navigator.geolocation"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -350,6 +373,7 @@
         "cordova-plugin-network-information": "1.2.0",
         "cordova-plugin-file-transfer": "1.5.0",
         "cordova-plugin-whitelist": "1.2.1",
-        "cordova-plugin-geolocation": "2.1.0"
+        "cordova-plugin-geolocation": "2.1.0",
+        "cordova-plugin-statusbar": "2.1.1"
     }
 }

@@ -108,6 +108,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.ermesfp7.esa"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ermesfp7.esa"
         }
     },
     "dependent_plugins": {}
