@@ -26,5 +26,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="DisallowOverscroll" value="true" />
-  <preference name="StatusBarBackgroundColor" value="#8cc63f" />
+  <preference name="StatusBarBackgroundColor" value="#77A936" />
 </widget>
