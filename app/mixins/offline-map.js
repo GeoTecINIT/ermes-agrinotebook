@@ -276,7 +276,7 @@ export default Ember.Mixin.create({
 
     tpkLayer.map = map;
     var addedLayer =  map.addLayer(tpkLayer, 0);
-    this.get('layersMap').set("tpkLayer", tpkLayer);
+    //this.get('layersMap').set("tpkLayer", tpkLayer);
   }
 
 });

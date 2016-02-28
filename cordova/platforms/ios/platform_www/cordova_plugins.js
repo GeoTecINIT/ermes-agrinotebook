@@ -237,6 +237,38 @@ module.exports = [
         "clobbers": [
             "window.FileTransfer"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+        "id": "cordova-plugin-geolocation.Coordinates",
+        "pluginId": "cordova-plugin-geolocation",
+        "clobbers": [
+            "Coordinates"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+        "id": "cordova-plugin-geolocation.PositionError",
+        "pluginId": "cordova-plugin-geolocation",
+        "clobbers": [
+            "PositionError"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+        "id": "cordova-plugin-geolocation.Position",
+        "pluginId": "cordova-plugin-geolocation",
+        "clobbers": [
+            "Position"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+        "id": "cordova-plugin-geolocation.geolocation",
+        "pluginId": "cordova-plugin-geolocation",
+        "clobbers": [
+            "navigator.geolocation"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -247,7 +279,8 @@ module.exports.metadata =
     "cordova-plugin-indexedDB": "0.1.2",
     "cordova-plugin-network-information": "1.2.0",
     "cordova-plugin-file-transfer": "1.5.0",
-    "cordova-plugin-whitelist": "1.2.1"
+    "cordova-plugin-whitelist": "1.2.1",
+    "cordova-plugin-geolocation": "2.1.0"
 }
 // BOTTOM OF METADATA
 });

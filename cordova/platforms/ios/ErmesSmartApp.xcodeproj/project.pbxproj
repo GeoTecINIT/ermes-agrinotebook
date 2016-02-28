@@ -53,6 +53,7 @@
 		027A314BED48498DA86D3E44 /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AD953787FC9C448AAA5D633B /* CDVConnection.m */; };
 		01532B5D388845349C69DE00 /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4A1FB98CC4F689DA6D5ED /* CDVReachability.m */; };
 		4AB82A07092B433B8AB7FF8B /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 840C7D95A46E4F078EED351F /* CDVFileTransfer.m */; };
+		01FC510E070C4617B430C886 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 702919D7D6CE473680408BE3 /* CDVLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,8 @@
 		04B9912968284B69A8E6A900 /* CDVReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVReachability.h"; path = "cordova-plugin-network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		840C7D95A46E4F078EED351F /* CDVFileTransfer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVFileTransfer.m"; path = "cordova-plugin-file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		8DB156C47D434BAC9B5EEDA2 /* CDVFileTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVFileTransfer.h"; path = "cordova-plugin-file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		702919D7D6CE473680408BE3 /* CDVLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		D86BB2B4B14D4D54A65C5D85 /* CDVLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 				04B9912968284B69A8E6A900 /* CDVReachability.h */,
 				840C7D95A46E4F078EED351F /* CDVFileTransfer.m */,
 				8DB156C47D434BAC9B5EEDA2 /* CDVFileTransfer.h */,
+				702919D7D6CE473680408BE3 /* CDVLocation.m */,
+				D86BB2B4B14D4D54A65C5D85 /* CDVLocation.h */,
 			);
 			name = Plugins;
 			path = "ErmesSmartApp/Plugins";
@@ -462,6 +467,7 @@
 				027A314BED48498DA86D3E44 /* CDVConnection.m in Sources */,
 				01532B5D388845349C69DE00 /* CDVReachability.m in Sources */,
 				4AB82A07092B433B8AB7FF8B /* CDVFileTransfer.m in Sources */,
+				01FC510E070C4617B430C886 /* CDVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
