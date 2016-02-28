@@ -209,7 +209,7 @@ export default {
       'email-mismatch': "Los emails no coinciden",
       'regional-error': "Esta es una cuenta regional",
       'unknown-owner': "Ese propietario no existe",
-      'region-mismatch': "El propietario no pertenece a esa región",
+      'region-mismatch': "El propietario no pertenece a esta región",
       'repeated-email': "Ese email ya está en el sistema",
       'user-exits': "Lo sentimos, ese usuario ya existe",
       'processing': "Procesando...",
@@ -223,9 +223,9 @@ export default {
       'dates-inconsistency': "La fecha de fin debe ser mayor que la fecha de inicio",
       'file-missing': "Por favor, selecciona una imagen",
       'offline-parcels': "Lo sentimos, tienes que estar conectado para añadir o eliminar parcelas",
-      'offline-profile-update': "Sorry, you cannot update your profile while offline",
-      'no-data-offline': "Parece que has perdido tu conexión y nosotros no tenemos ninguna información tuya en este dispositivo",
-      'parcel-offline': "Lo sentimos, parece que no hay información sobre esta parcela almacenada en este dispositivo y que has perdido la conexión, inténtalo de nuevo más tarde",
+      'offline-profile-update': "Lo sentimos, no puedes actualizar el perfil sin estar conectado",
+      'no-data-offline': "Parece que has perdido la conexión y no podemos mostrarte la información que buscas en estos momentos",
+      'parcel-offline': "Lo sentimos, has perdido la conexión y parece que no hay información sobre esta parcela almacenada en este dispositivo, inténtalo de nuevo más tarde",
       'try-again': "Puedes intentar",
       'reconnect': "Reconectar",
       'retrieving-info': "Estamos recuperando tu perfil de nuestros servidores. Por favor, espera...",
@@ -234,13 +234,13 @@ export default {
       'saved': "Guardado",
       'loading-map': "Cargando mapa...",
       'warning': "Advertencia",
-      'possible-outdated': "Estás offline, por lo tanto, esta información podría estar desactualizada"
+      'possible-outdated': "Estás desconectado, por lo tanto, esta información podría estar desactualizada"
     }
   },
   'download-assets':{
-    'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad offline?",
+    'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad en modo desconectado?",
     'connection-acceptable': "Actualmente estás empleando una tarifa de datos. En función de tu región podemos descargar hasta 50 MB. Pulsa \"De acuerdo\" para continuar",
-    'downloading-assets': "Actualmente estamos descargando ficheros esenciales para la funcionalidad offline, te redirigiremos cuando hayamos terminado. Sé paciente, por favor",
+    'downloading-assets': "Actualmente estamos descargando ficheros esenciales para la funcionalidad en modo desconectado, te redirigiremos cuando hayamos terminado. Sé paciente, por favor",
     'download-error': "Ha ocurrido un error mientras descargábamos",
     'proceed': "Proceder",
     'later': "Más tarde",
@@ -256,7 +256,7 @@ export default {
   'data': {
     'crop-info': {
       'crop-types': {
-        'alpha_alpha': "Alpha_alpha",
+        'alpha_alpha': "Alfa-alfa",
         'clover': "Trébol",
         'corn': "Maíz",
         'meadow': "Prado",
@@ -300,24 +300,24 @@ export default {
       },
       'sowing-types': {
         'null': "----",
-        'dry-soil-direct-seeding': "Dry soil direct seeding",
-        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
+        'dry-soil-direct-seeding': "Siembra directa",
+        'broadcast-scattered-seeding': "Siembra a voleo"
       }
     },
     'soil-type': {
       'soil-textures': {
         'clay': "Arcilloso",
-        'sandy-clay': "Sandy clay",
-        'silty-clay': "Silty clay",
-        'sandy-clay-loam': "Sandy clay loam",
-        'clay-loam': "Clay loam",
-        'silty-clay-loam': "Silty clay loam",
-        'sandy-loam': "Sandy loam",
-        'loam': "Loam",
-        'silt-loam': "Silt loam",
-        'silt': "Silt",
-        'loamy-sand': "Loamy sand",
-        'sand': "Sand"
+        'sandy-clay': "Arcillo-arenoso",
+        'silty-clay': "Arcillo-limoso",
+        'sandy-clay-loam': "Arenoso arcilloso franco",
+        'clay-loam': "Franco arcilloso",
+        'silty-clay-loam': "Arcillo-limoso-franco",
+        'sandy-loam': "Franco arenoso",
+        'loam': "Franco",
+        'silt-loam': "Franco limoso",
+        'silt': "Limo",
+        'loamy-sand': "Arenoso franco",
+        'sand': "Arenoso"
       }
     },
     'soil-condition': {
@@ -418,38 +418,38 @@ export default {
     },
     'insects': {
       'names': {
-        'aphids': "Aphids",
-        'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematodes': "Nematodes",
-        'pomacea': "Pomacea",
-        'sesamia': "Sesamia",
-        'chironomus': "Chironomus",
-        'chilo': "Chilo"
+        'aphids': "Áfidos",
+        'lissorhoptrus-oryzophilus': "Gorgojos",
+        'nematodes': "Nematodos",
+        'pomacea': "Pomacea (caracol)",
+        'sesamia': "Polilla del arroz",
+        'chironomus': "Quironómidos",
+        'chilo': "Barrenador del arroz"
       }
     },
     'diseases': {
       'names': {
-        'bipolaris': "Bipolaris",
-        'cercospora': "Cercospora",
+        'bipolaris': "Hongo de la mancha marrón",
+        'cercospora': "Mancha Foliar Estrecha",
         'fusarium': "Fusarium",
-        'pyricularia-(blast)': "Pyricularia (Rice blast)"
+        'pyricularia-(blast)': "Quemado del arroz"
       }
     },
     'weeds': {
       'names': {
-        'bidens-sp': "Bidens sp",
-        'cyperus-difformis': "Cyperus difformis",
-        'heteranthera-sp': "Heteranthera sp",
-        'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli or oryzoides",
-        'leersia-oryzoides': "Leersia oryzoides",
-        'red-rice-(oryza-sativa)': "Red rice (Oryza sativa)",
-        'scirpus-sp': "Scirpus sp",
-        'paspalum-distichum': "Paspalum distichum",
-        'ammania-spp': "Ammania spp",
-        'typha-spp': "Typha spp",
-        'phragmites-communis': "Phragmites communis",
-        'butomus-umbellatus': "Butomus umbellatus",
-        'polygonum-spp': "Polygonum spp"
+        'bidens-sp': "Saetilla",
+        'cyperus-difformis': "Juncia de agua",
+        'heteranthera-sp': "Ensalada de pato",
+        'echinochloa-crus-galli-or-oryzoides': "Cola",
+        'leersia-oryzoides': "Leersia",
+        'red-rice-(oryza-sativa)': "Arroz rojo o bastardeado",
+        'scirpus-sp': "Castañuela",
+        'paspalum-distichum': "Grama gruesa o de agua",
+        'ammania-spp': "Arbolito",
+        'typha-spp': "Anea / Enea",
+        'phragmites-communis': "Carrizos",
+        'butomus-umbellatus': "Junco florido",
+        'polygonum-spp': "Hierba ladina"
       }
     },
     'abiotic-stresses': {

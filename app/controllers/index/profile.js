@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Moment from 'moment';
 import * as dd from 'ermes-smart-app/models/static/regions';
 
 export default Ember.Controller.extend({
@@ -36,8 +37,10 @@ export default Ember.Controller.extend({
           model.set('email', this.get('newModel.email'));
         }
 
-        model.set('language', this.get('i18n.locale'));
-        localStorage.lang = this.get('i18n.locale');
+        var lang = this.get('i18n.locale');
+        model.set('language', lang);
+        localStorage.lang = lang;
+        Moment.locale(lang);
 
         this.set('info', this.get('i18n').t('panel.notification.processing'));
         model.save().then(() => {
@@ -49,6 +52,7 @@ export default Ember.Controller.extend({
           this.set('info', this.get('i18n').t('panel.notification.saved'));
           setTimeout(() => this.set('info', ''), 2000);
         }).catch((err) => {
+          model.rollbackAttributes();
           this.set('info', '');
           var message = err.message;
           if (message) {
