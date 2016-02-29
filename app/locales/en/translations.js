@@ -76,7 +76,7 @@ export default {
   },
   'panel': {
     'about': {
-      'content': "Developed by GEOTEC group"
+      'content': "Developed by the GEOTEC group"
     },
     'agrochemicals': {
       'date': "Date of usage",
@@ -90,7 +90,7 @@ export default {
       'puddling': 'Puddling',
       'sowing-type': "Sowing type",
       'amount': "Amount",
-      'seeds-per-ha': "Seeds/Ha",
+      'seeds-per-ha': "Seeds/hectare",
       'date': 'Sowing date'
     },
     'crop-phenology': {
@@ -168,7 +168,7 @@ export default {
     'yield':{
       'date': "Harvest date",
       'yield': "Yield (dry weight)",
-      'yield-unit': "Ton/ha",
+      'yield-unit': "Ton/hectare",
       'comments': "Comments",
       'grain-moisture': "Grain moisture",
       'percent-grain-moisture': "Humidity (%)"

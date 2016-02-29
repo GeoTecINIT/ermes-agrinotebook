@@ -38,7 +38,7 @@ export default {
     },
     'signup-p': {
       'username-f': "Εισάγεται το όνομα χρήστη που επιθυμείτε",
-      'collaborating-with': "Owner (optional)",
+      'collaborating-with': "Ιδιοκτήτης (προαιρετικό)",
       'password-f': "Κωδικός πρόσβασης",
       'repeat-password-f': "Εισάγετε ξανά τον κωδικό πρόσβασης",
       'email-f': "Εισαγωγή email",
@@ -53,10 +53,10 @@ export default {
       'soil-type': "Τύπος εδάφους",
       'soil-condition': "Κατάσταση εδάφους",
       'crop-phenology': "Στάδιο ανάπτυξης της καλλιέργειας",
-      'insects': "Insects",
+      'insects': "Έντομα",
       'diseases': "Ασθένειες",
       'weeds': "Ζιζάνια",
-      'abiotic-stresses': "Abiotic stresses",
+      'abiotic-stresses': "Αβιοτικές καταπονήσεις",
       'fertilizers': "Λιπάσματα",
       'agrochemicals': "Αγροχημικά",
       'irrigation': "Άρδευση",
@@ -64,9 +64,9 @@ export default {
       'observation': "Παρατηρήσεις",
       'parcel-info': "Πληροφορίες Αγροτεμαχίου",
       'add-new': "Προσθέστε πληροφορίες",
-      'default': 'Default',
-      'custom': 'Custom',
-      'other': 'Other (specify)'
+      'default': 'Προεπιλογή',
+      'custom': 'Εξατομίκευση',
+      'other': 'Άλλο (προσδιορίστε)'
     },
     'ui-special': {
       'agrochemicals': "Αγροχημικά"
@@ -103,10 +103,10 @@ export default {
     'crop-info': {
       'crop-type': "Τύπος καλλιέργειας",
       'rice-variety': "Ποικιλία ρυζιού",
-      'puddling': 'Puddling',
+      'puddling': 'Ψιλοχωμάτισμα',
       'sowing-type': "Τρόπος σποράς",
-      'amount': "Amount",
-      'seeds-per-ha': "Seeds/hectare",
+      'amount': "Ποσότητα",
+      'seeds-per-ha': "Ποσότητα σπόρου ανά εκτάριο",
       'date': 'Ημερομηνία σποράς'
     },
     'crop-phenology': {
@@ -142,7 +142,7 @@ export default {
       'quantity-unit-m3': "Κυβικά μέτρα",
       'hours': "Ώρες",
       'hours-unit': "Ώρες",
-      'height': "Water height"
+      'height': "Ύψος νερούt"
     },
     'observation': {
       'comment': "Προσθέστε σχόλιο",
@@ -158,7 +158,7 @@ export default {
     },
     'abiotic-stresses': {
       'date': "Ημερομηνία παρατήρησης",
-      'cause': "Cause",
+      'cause': "Αίτιο",
       'comment': "Προσθέστε σχόλιο",
       'picture': "Προσθέστε εικόνα",
       'damage': "Μέγεθος ζημίας από 1 (ελάχιστο) έως 10 (μέγιστο)"
@@ -186,8 +186,8 @@ export default {
       'yield': "Απόδοση (βάρος ξηρής ουσίας)",
       'yield-unit': "τόνοι/εκτάριο (1000στρ)",
       'comments': "Σχόλια",
-      'grain-moisture': "Grain moisture",
-      'percent-grain-moisture': "Humidity (%)"
+      'grain-moisture': "Υγρασία σπόρων",
+      'percent-grain-moisture': "Ποσοστό % της υγρασίας σπόρων"
     },
     'parcel-info': {
       'none-selected': "Παρακαλώ επιλέξτε ένα αγροτεμάχιο",
@@ -216,24 +216,23 @@ export default {
       'online': "Σύνδεση",
       'product-upload': "Αποστολή πληροφοριών αγροτεμαχίου",
       'product-upload-later': "Εκτός σύνδεσης. Το προϊόν θα αποσταλεί αργότερα",
-      //'login-error': "Λάθος όνομα χρήστη ή κωδικός πρόσβασης",
-      'user-not-found': "User not found",
-      'login-error': "Wrong password",
-      'wrong-old-password': "Wrong old password",
-      'inactive-account': "Your account has to be activated",
+      'user-not-found': "Δε βρέθηκε χρήστης",
+      'login-error': "Λάθος κωδικός πρόσβασης",
+      'wrong-old-password': "Λάθος. Χρήση παλιού κωδικού πρόσβασης",
+      'inactive-account': "Ο λογαριασμός σας χρειάζεται ενεργοποίηση",
       'password-mismatch': "Οι κωδικοί πρόσβασης δεν ταιριάζουν",
-      'old-password-needed': "You have to provide your old password",
+      'old-password-needed': "Θα πρέπει να εισάγεται τον παλιό σας κωδικό πρόσβασης",
       'email-mismatch': "Τα email δεν ταιριάζουν",
       'regional-error': "Λογαριασμός χρήστη περιφεριακού επιπέδου",
-      'unknown-owner': "Owner does not exist",
-      'region-mismatch': "Owner isn't in that region",
-      'repeated-email': "Email address is already in the system",
+      'unknown-owner': "Δεν υπάρχει χρήστης",
+      'region-mismatch': "Ο χρήστης δεν ανήκει στη συγκεκριμένη περιοχή",
+      'repeated-email': "Ο λογαριασμός email υπάρχει ήδη στο σύστημα",
       'user-exits': "Username already exits",
       'processing': "Επεργασία δεδομένων...",
       'welcome': "Καλώς ήρθατε, {{username}}",
       'login-allowed': "Τώρα μπορείτε να,",
-      'activation-needed': "Your account will be activated",
-      'email-sent': "You will receive an email",
+      'activation-needed': "Ο λογαριασμός σας θα ενεργοποιηθεί",
+      'email-sent': "Θα λάβετε email",
       'missing-date': "Παρακαλώ συμπληρώστε την ημερομηνία",
       'missing-parcel': "Παρακαλώ επιλέξτε ένα αγροτεμάχιο",
       'missing-start-date': "Παρακαλώ επιλέξτε την αρχική ημερομηνία",
@@ -242,28 +241,28 @@ export default {
       'offline-parcels': "Συγγνώμη, πρέπει να συνδεθείτε στο διαδίκτυο για να προσθέστε ή να αφαιρέσετε αγροτεμάχια",
       'offline-profile-update': "Συγγνώμη, δεν μπορείτε να ενημερώσετε το προφίλ σας, ενώ είστε εκτός σύνδεσης",
       'no-data-offline': "Φαίνετε να έχει χαθεί η σύνδεση σας και δεν έχουμε αποθηκεύσει πληροφορίες για εσάς σε αυτήν την συσκευή",
-      'parcel-offline': "Sorry, there is no info stored about this parcel on this device, and you don't have connection. Please, try again later",
+      'parcel-offline': "Λυπούμαστε, αλλά δεν υπάρχουν αποθηκευμένες πληροφορίες για το συγκεκριμένο αγρό και δεν υπάρχει σύνδεση. Παρακαλώ ξαναδοκιμάστε αργότερα",
       'try-again': "Τώρα μπορείτε να προσπαθήσετε να",
       'reconnect': "Επανασύνδεση",
       'retrieving-info': "Κάνουμε ανάκτηση του προφίλ σας απο τους διακομιστές μας. Παρακαλώ περιμένετε...",
       'first-login': "Παρακαλώ επιλέξτε τα αγροτεμάχια σας πατώντας πάνω τους, και πατήστε το πλήκτρο αποδοχής στην κάτω δεξιά γωνία όταν τελειώσετε",
       'got-it': "Το κατάλαβα",
       'saved': "Αποθηκεύτηκε",
-      'loading-map': "Loading map...",
-      'warning': "Warning",
-      'possible-outdated': "You're offline - this info could be outdated"
+      'loading-map': "Φόρτωση χάρτη...",
+      'warning': "Προειδοποίηση",
+      'possible-outdated': "Βρίσκεστε εκτός σύνδεσης και οι πληροφορίες ενδεχομένως να μην είναι ενημερωμένες"
     }
   },
   'download-assets':{
-    'download-basemap': "Download resources for enabling offline capabilities?",
-    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 50 MB. Press OK to continue.",
-    'downloading-assets': "We're currently downloading maps to enable offline mode, we'll redirect you when finished. Please be patient",
-    'download-error': "An error occurred while downloading",
-    'proceed': "Proceed",
-    'later': "Not now",
-    'it-is-ok': "OK",
-    'no-way': "Later",
-    'retry': "Retry"
+    'download-basemap': "Μεταφορτώστε της πληροφορίες για την ενεργοποίηση των δυνατοτήτων εργασίας χωρίς σύνδεση",
+    'connection-acceptable': "Ειδοποίηση. Χρησιμοποιείται πακέτο δεδομένων. Ανάλογα με την περιοχή σας είναι δυνατό να κατεβάσετε ως και 50 MB. Συμφωνείται για να προχωρήσουμε;",
+    'downloading-assets': "Μεταφορτώνονται πληροφορίες για την ενεργοποίηση της λειτουργίας χωρίς σύνδεση. Παρακαλώ περιμένετε",
+    'download-error': "Εμφανίστηκε λάθος κατά τη μεταφόρτωση",
+    'proceed': "Συνεχίστε",
+    'later': "¨Όχι τώρα",
+    'it-is-ok': "Είναι εντάξει!",
+    'no-way': "Όχι!",
+    'retry': "Ξαναπροσπάθησε"
   },
   'region': {
     'greece': "Ελλάδα",
@@ -317,24 +316,24 @@ export default {
       },
       'sowing-types': {
         'null': "----",
-        'dry-soil-direct-seeding': "Dry soil direct seeding",
-        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
+        'dry-soil-direct-seeding': "Απ’ ευθείας σπορά σε ξηρό έδαφος",
+        'broadcast-scattered-seeding': "Διάσπαρτη σπορά"
       }
     },
     'soil-type': {
       'soil-textures': {
         'clay': "Αργιλώδη",
-        'sandy-clay': "Sandy clay",
-        'silty-clay': "Silty clay",
-        'sandy-clay-loam': "Sandy clay loam",
-        'clay-loam': "Clay loam",
-        'silty-clay-loam': "Silty clay loam",
-        'sandy-loam': "Sandy loam",
-        'loam': "Loam",
-        'silt-loam': "Silt loam",
-        'silt': "Silt",
-        'loamy-sand': "Loamy sand",
-        'sand': "Sand"
+        'sandy-clay': "Αμμοπηλώδη",
+        'silty-clay': "Ιλυοαργιλοπηλώδη",
+        'sandy-clay-loam': "Αμμοαργιλοπηλώδη",
+        'clay-loam': "Αργιλοπηλώδη",
+        'silty-clay-loam': "Ιλυοαργιλοπηλώδη ",
+        'sandy-loam': "Αμμοπηλώδη ",
+        'loam': "Πηλώδη",
+        'silt-loam': "Ιλυοπηλώδη",
+        'silt': "Ιλυώδη",
+        'loamy-sand': "Πηλοαμμώδη",
+        'sand': "Αμμώδη"
       }
     },
     'soil-condition': {
@@ -438,11 +437,11 @@ export default {
 
     'insects': {
       'names': {
-        'aphids': "Aphids",
+        'aphids': "Αφίδες",
         'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematodes': "Nematodes",
+        'nematodes': "Νηματώδεις",
         'pomacea': "Pomacea",
-        'sesamia': "Sesamia",
+        'sesamia': "Σεσάμια",
         'chironomus': "Chironomus",
         'chilo': "Chilo"
       }
@@ -458,26 +457,26 @@ export default {
     'weeds': {
       'names': {
         'bidens-sp': "Bidens sp",
-        'cyperus-difformis': "Cyperus difformis",
-        'heteranthera-sp': "Heteranthera sp",
-        'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli or oryzoides",
+        'cyperus-difformis': "Μοσχοκύπερη",
+        'heteranthera-sp': "Heteranthera",
+        'echinochloa-crus-galli-or-oryzoides': "Μουχρίτσα",
         'leersia-oryzoides': "Leersia oryzoides",
-        'red-rice-(oryza-sativa)': "Red rice (Oryza sativa)",
-        'scirpus-sp': "Scirpus sp",
-        'paspalum-distichum': "Paspalum distichum",
+        'red-rice-(oryza-sativa)': "Κόκκινο ρύζι (Oryza sativa)",
+        'scirpus-sp': "Σκίρπο",
+        'paspalum-distichum': "Νεραγριάδα",
         'ammania-spp': "Ammania spp",
-        'typha-spp': "Typha spp",
-        'phragmites-communis': "Phragmites communis",
-        'butomus-umbellatus': "Butomus umbellatus",
-        'polygonum-spp': "Polygonum spp"
+        'typha-spp': "Typha - Ψαθί",
+        'phragmites-communis': "Νεροκάλαμο",
+        'butomus-umbellatus': "Βουτόμο",
+        'polygonum-spp': "Νεροπιπεριά"
       }
     },
     'abiotic-stresses': {
       'causes': {
-        'cold': "Cold",
-        'salinity': "Salinity",
-        'drought': "Drought",
-        'heat-wave': "Heat wave"
+        'cold': "Κρύο",
+        'salinity': "Αλατότητα",
+        'drought': "Ξηρασία",
+        'heat-wave': "Καύσωνας"
       }
     },
     'fertilizers': {
@@ -495,32 +494,32 @@ export default {
     },
     'agrochemicals': {
       'products': {
-        'herbicides': "Herbicides",
-        'fungicides': "Fungicides",
-        'insecticides': "Insecticides"
+        'herbicides': "Ζιζανιοκτόνα",
+        'fungicides': "Μυκητοκτόνα",
+        'insecticides': "Εντομοκτόνα"
       },
       'herbicides': {
-        'azimsulfuron': "Azimsulfuron",
-        'cyhalofop-butyl': "Cyhalofop Butyl",
-        'imazamox-(clear-field)': "Imazamox (Clear field)",
-        'penoxulam': "Penoxulam",
-        'profixydim': "Profixydim",
-        'quinclorac': "Quinclorac",
+        'azimsulfuron': "Azimsulfuron, Gulliver",
+        'cyhalofop-butyl': "Cyhalofop butyl, Clincher",
+        'imazamox-(clear-field)': "Imazamox (Clear field), Pulsar",
+        'penoxulam': "Penoxulam, Viper",
+        'profixydim': "Profixydim, Aura",
+        'quinclorac': "Quinclorac, Facet",
         'bentazon': "Bentazon",
         'fludioxonil': "Fludioxonil",
         'oxodiazon': "Oxodiazon",
         'propanil': "Propanil",
         'mcpa': "MCPA",
-        'glyphosate-(only-for-paddy-mounds)': "Glyphosate (Only for paddy mounds)"
+        'glyphosate-(only-for-paddy-mounds)': "Glyphosate (χρήση μόνο για τα αναχώματα), Round-up"
       },
       'fungicides': {
-        'azoxistrobin': "Azoxistrobin",
-        'propiconazole-prochloraz': "Propiconazole + Prochloraz",
-        'trebuconazole': "Trebuconazole",
-        'tricyclazone': "Tricyclazone"
+        'azoxistrobin': "Azoxistrobin, Ortiva ή Amistar",
+        'propiconazole-prochloraz': "Propiconazole + Prochloraz, Bumper",
+        'trebuconazole': "Trebuconazole, TEBU-MAX",
+        'tricyclazone': "Tricyclazone, Beam"
       },
       'insecticides': {
-        'pyrethroids': "Pyrethroids"
+        'pyrethroids': "Πυρεθρινοειδή"
       }
     },
     'irrigation': {

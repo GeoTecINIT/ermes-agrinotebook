@@ -37,7 +37,7 @@ export default {
     },
     'signup-p': {
       'username-f': "Scegli Nome Utente",
-      'collaborating-with': "Owner (optional)",
+      'collaborating-with': "Proprietario (opzionale)",
       'password-f': "Scegli password",
       'repeat-password-f': "Ripeti password",
       'email-f': "Indirizzo email",
@@ -52,10 +52,10 @@ export default {
       'soil-type': "Tipo di suolo",
       'soil-condition': "Condizioni Suolo",
       'crop-phenology': "Fenologia",
-      'insects': "Insects",
+      'insects': "Insetti",
       'diseases': "Malattie",
       'weeds': "Infestanti",
-      'abiotic-stresses': "Abiotic stresses",
+      'abiotic-stresses': "Stress Abiotici",
       'fertilizers': "Fertilizzazioni",
       'agrochemicals': "Trattamenti",
       'irrigation': "Irrigazione",
@@ -64,8 +64,8 @@ export default {
       'parcel-info': "Informazioni sulla parcella",
       'add-new': "IAggiungi Dati",
       'default': 'Default',
-      'custom': 'Custom',
-      'other': 'Other (specify)'
+      'custom': 'Personalizzato',
+      'other': 'Altro (Specifica)'
     },
     'ui-special': {
       'agrochemicals': "Trattamenti"
@@ -102,10 +102,10 @@ export default {
     'crop-info': {
       'crop-type': "Tipo Coltura",
       'rice-variety': "Varietà Riso",
-      'puddling': 'Puddling',
+      'puddling': 'Intasamento',
       'sowing-types': "Metodo di semina",
-      'amount': "Amount",
-      'seeds-per-ha': "Seeds/hectare",
+      'amount': "Quantità",
+      'seeds-per-ha': "Semi/hectare",
       'date': 'Data di semina'
     },
     'crop-phenology': {
@@ -141,7 +141,7 @@ export default {
       'quantity-unit-m3': "Metri Cubi",
       'hours': "Ore",
       'hours-unit': "Ore",
-      'height': "Water height"
+      'height': "Altezza Acqua"
     },
     'observation': {
       'comment': "Aggiungi Commento",
@@ -185,8 +185,8 @@ export default {
       'yield': "Resa (peso secco)",
       'yield-unit': "Ton/hectare",
       'comments': "Commenti",
-      'grain-moisture': "Grain moisture",
-      'percent-grain-moisture': "Humidity (%)"
+      'grain-moisture': "Umidità Granella",
+      'percent-grain-moisture': "Umidità (%)"
     },
     'parcel-info': {
       'none-selected': "Seleziona una parcella",
@@ -215,24 +215,23 @@ export default {
       'online': "Connessione stabilita",
       'product-upload': "Caricamento info parcelle",
       'product-upload-later': "Sei Offline. I dati verranno caricati più tardi",
-      //'login-error': "Nome Utente o Password errata",
-      'user-not-found': "User not found",
-      'login-error': "Wrong password",
-      'wrong-old-password': "Wrong old password",
-      'inactive-account': "Your account has to be activated",
+      'user-not-found': "Utente non trovato",
+      'login-error': "Password Errata",
+      'wrong-old-password': "Vecchia password errata",
+      'inactive-account': "Il tuo account deve essere attivato",
       'password-mismatch': "Le password non coincidono",
-      'old-password-needed': "You have to provide your old password",
+      'old-password-needed': "Devi inserire la vecchia password",
       'email-mismatch': "Le email non coincidono",
       'regional-error': "Questo é un account ERMES regionale",
-      'unknown-owner': "Owner does not exist",
-      'region-mismatch': "Owner isn't in that region",
-      'repeated-email': "Email address is already on the system",
+      'unknown-owner': "Questo proprietario non esiste",
+      'region-mismatch': "Questo proprietario é di un'altra regione",
+      'repeated-email': "Questa mail é già nel sistema",
       'user-exits': "Utente già esistente",
       'processing': "Elaborazione...",
       'welcome': "Benvenuto, {{username}}",
       'login-allowed': "Ora puoi,",
-      'activation-needed': "Your account will be activated",
-      'email-sent': "You will receive an email",
+      'activation-needed': "Il tuo account verrà attivato",
+      'email-sent': "Ricevereai un' email",
       'missing-date': "Inserisci una data",
       'missing-parcel': "Selezionare almeno una parcella",
       'missing-start-date': "Inserire la data di inizio",
@@ -241,28 +240,28 @@ export default {
       'offline-parcels': "Spiacenti, devi essere on-line per aggiungere o cancellare parcelle",
       'offline-profile-update': "Spiacenti, devi essere on-line per modificare il tuo profilo",
       'no-data-offline': "Sembra che tu abbia perso la connessione e non ci sono dati salvati su questo device",
-      'parcel-offline': "Sorry, there is no info stored about this parcel on this device, and you don't have connection, try again later",
+      'parcel-offline': "Spiacenti, non ci sono informazioni su questa parcella su questo dispositivo e non sei connesso. Riprova più tardi",
       'try-again': "Ora puoi provare a ",
       'reconnect': "Riconnetterti",
       'retrieving-info': "Stiamo recuperando il tuo profilo dal server. Attendi...",
       'first-login': "Seleziona le tue parcelle cliccandoci sopra,.Premi il pulsante nell'angolo in basso a destra quando hai finito. ",
       'got-it': "Fatto",
       'saved': "Salvato",
-      'loading-map': "Loading map...",
-      'warning': "Warning",
-      'possible-outdated': "You're offline - this info could be outdated"
+      'loading-map': "Carico mappa...",
+      'warning': "Attenzione",
+      'possible-outdated': "Sei offline - Questa informazione può non essere aggiornata"
     }
   },
   'download-assets':{
-    'download-basemap': "Download resources for enabling offline capabilities?",
-    'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 50 MB. Press OK to continue.",
-    'downloading-assets': "We're currently downloading maps to enable offline mode, we'll redirect you when finished. Please be patient",
-    'download-error': "An error occurred while downloading",
-    'proceed': "Proceed",
-    'later': "Not now",
-    'it-is-ok': "OK",
-    'no-way': "Later",
-    'retry': "Retry"
+    'download-basemap': "Vuoi scaricare dati per abilitare le funzionalità offline ?",
+    'connection-acceptable': "Attenzione ! Stai utilizzando un piano dati tariffario. A seconda della regione, verranno scaricati fino a 50 MB. Sei d'accordo ?",
+    'downloading-assets': "Stiamo scaricando i dati per abilitare la modalità offline. Verrai ridirezionato alla fine dell'operazione. Per favore attendi",
+    'download-error': "Errore durante il download !",
+    'proceed': "Continua",
+    'later': "Non ora",
+    'it-is-ok': "OK !",
+    'no-way': "No !",
+    'retry': "Riprova"
   },
   'region': {
     'greece': "Grecia",
@@ -316,24 +315,24 @@ export default {
       },
       'sowing-types': {
         'null': "----",
-        'dry-soil-direct-seeding': "Dry soil direct seeding",
-        'broadcast-scattered-seeding': "Broadcast - Scattered seeding"
+        'dry-soil-direct-seeding': "Semina in Asciutta",
+        'broadcast-scattered-seeding': "Semina in Acqua"
       }
     },
     'soil-type': {
       'soil-textures': {
         'clay': "Argilloso",
-        'sandy-clay': "Sandy clay",
-        'silty-clay': "Silty clay",
-        'sandy-clay-loam': "Sandy clay loam",
-        'clay-loam': "Clay loam",
-        'silty-clay-loam': "Silty clay loam",
-        'sandy-loam': "Sandy loam",
-        'loam': "Loam",
-        'silt-loam': "Silt loam",
-        'silt': "Silt",
-        'loamy-sand': "Loamy sand",
-        'sand': "Sand"
+        'sandy-clay': "Sabbioso Argilloso",
+        'silty-clay': "Franco Argilloso",
+        'sandy-clay-loam': "Sabbioso Argilloso Limoso",
+        'clay-loam': "Limoso Argilloso",
+        'silty-clay-loam': "Franco Argilloso Limoso",
+        'sandy-loam': "Sabbioso Limoso",
+        'loam': "Limoso",
+        'silt-loam': "Franco Limoso",
+        'silt': "Franco",
+        'loamy-sand': "Limoso Sabbioso",
+        'sand': "Sabbioso"
       }
     },
     'soil-condition': {
@@ -437,9 +436,9 @@ export default {
 
     'insects': {
       'names': {
-        'aphids': "Aphids",
-        'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus",
-        'nematodes': "Nematodes",
+        'aphids': "Afidi",
+        'lissorhoptrus-oryzophilus': "Lissorhoptrus oryzophilus (Punteruolo)",
+        'nematodes': "Nematodi",
         'pomacea': "Pomacea",
         'sesamia': "Sesamia",
         'chironomus': "Chironomus",
@@ -457,12 +456,12 @@ export default {
     'weeds': {
       'names': {
         'bidens-sp': "Bidens sp",
-        'cyperus-difformis': "Cyperus difformis",
+        'cyperus-difformis': "Cyperus difformis (Zigolo)",
         'heteranthera-sp': "Heteranthera sp",
-        'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli or oryzoides",
+        'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli o oryzoides (Giavone)",
         'leersia-oryzoides': "Leersia oryzoides",
-        'red-rice-(oryza-sativa)': "Red rice (Oryza sativa)",
-        'scirpus-sp': "Scirpus sp",
+        'red-rice-(oryza-sativa)': "Oryza sativa (Riso Crodo)",
+        'scirpus-sp': "Scirpus sp (Cipollino, Lisca marittima)",
         'paspalum-distichum': "Paspalum distichum",
         'ammania-spp': "Ammania spp",
         'typha-spp': "Typha spp",
@@ -473,10 +472,10 @@ export default {
     },
     'abiotic-stresses': {
       'causes': {
-        'cold': "Cold",
-        'salinity': "Salinity",
-        'drought': "Drought",
-        'heat-wave': "Heat wave"
+        'cold': "Freddo",
+        'salinity': "Salinità",
+        'drought': "Siccità",
+        'heat-wave': "Onda di calore"
       }
     },
     'fertilizers': {
@@ -494,38 +493,38 @@ export default {
     },
     'agrochemicals': {
       'products': {
-        'herbicides': "Herbicides",
-        'fungicides': "Fungicides",
-        'insecticides': "Insecticides"
+        'herbicides': "Erbicidi",
+        'fungicides': "Fungicidi",
+        'insecticides': "Insetticidi"
       },
       'herbicides': {
-        'azimsulfuron': "Azimsulfuron",
+        'azimsulfuron': "Azimsulfurone",
         'cyhalofop-butyl': "Cyhalofop Butyl",
         'imazamox-(clear-field)': "Imazamox (Clear field)",
         'penoxulam': "Penoxulam",
         'profixydim': "Profixydim",
         'quinclorac': "Quinclorac",
-        'bentazon': "Bentazon",
+        'bentazon': "Bentazone",
         'fludioxonil': "Fludioxonil",
-        'oxodiazon': "Oxodiazon",
-        'propanil': "Propanil",
+        'oxodiazon': "Oxodiazone",
+        'propanil': "Propanile",
         'mcpa': "MCPA",
-        'glyphosate-(only-for-paddy-mounds)': "Glyphosate (Only for paddy mounds)"
+        'glyphosate-(only-for-paddy-mounds)': "Glifosato"
       },
       'fungicides': {
         'azoxistrobin': "Azoxistrobin",
-        'propiconazole-prochloraz': "Propiconazole + Prochloraz",
-        'trebuconazole': "Trebuconazole",
-        'tricyclazone': "Tricyclazone"
+        'propiconazole-prochloraz': "Propiconazolo + Prochloraz",
+        'trebuconazole': "Trebuconazolo",
+        'tricyclazone': "Tricyclazono"
       },
       'insecticides': {
-        'pyrethroids': "Pyrethroids"
+        'pyrethroids': "Piretroidi"
       }
     },
     'irrigation': {
       'measures': {
         'mm': "mm/giorno",
-        'm3': "m3/hour"
+        'm3': "m3/ora"
       }
     }
   }
