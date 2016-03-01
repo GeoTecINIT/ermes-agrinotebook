@@ -165,23 +165,18 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     //var baseLayer = this.getBaseMapLayer();
 
     for(let layerObject of layersMap.values()) {
-      //if (layerObject.id !== baseLayer.id) {
-        this.get('map').removeLayer(layerObject);
-      //}
+      this.get('map').removeLayer(layerObject);
     }
+
+    // Clear parcels
+    this.set('parcelsGraphics', []);
+
+    // Remove draw event
+    this.get('drawEvent').remove();
 
     // Add layers
     this.get('layersMap').clear();
-    var _this = this;
-   /* var loadBaseMapEvent = this.get("map").on("layer-add-result",(evt)=>{
-      _this.loadUserParcelsLayer();
-      loadBaseMapEvent.remove();
-    });*/
-
-    _this.loadUserParcelsLayer();
-
-    //this.loadBasemap();
-
+    this.loadUserParcelsLayer();
   },
 
   /**

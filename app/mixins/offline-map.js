@@ -104,19 +104,35 @@ export default Ember.Mixin.create({
     // Common online and offline FeatureLayer creator and injector
     function createAndAddFL(layerReference, event) {
       var featureLayer = new FeatureLayer(layerReference, {
-        model: FeatureLayer.MODE_ONDEMAND,
+        model: FeatureLayer.MODE_SNAPSHOT,
         outFields: ['PARCEL_ID'],
         definitionExpression: querySentence
       });
 
       featureLayer.setSelectionSymbol(symbol);
 
-      var storeEvent = featureLayer.on(event, () => {
+      var readyEvent = featureLayer.on(event, () => {
+
+        // Draw parcels, and if online, store layer
         drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
         if (navigator.onLine) {
           _this.storeUserParcelsLayer();
-          storeEvent.remove();
         }
+
+        // Each time map is being panned, draw parcels
+        var drawEvent = _this.get('map').on('pan-end', () => {
+          Ember.run.once(_this, () => {
+            drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
+
+            // And if online, store layer
+            if (navigator.onLine) {
+              _this.storeUserParcelsLayer();
+            }
+          });
+        });
+        _this.set('drawEvent', drawEvent);
+
+        readyEvent.remove();
       });
 
       _this.get('layersMap').set('userParcelsLayer', featureLayer);
@@ -287,8 +303,10 @@ function drawOwnerParcels(layer, symbol, graphics) {
   layer.graphics.forEach(function (item) {
     let parcelId = item.attributes.PARCEL_ID;
     let geometry = item.geometry;
-    graphics[parcelId] = new Graphic(geometry, symbol, item.attributes);
-    layer.add(graphics[parcelId]);
+    if (!graphics[parcelId]) {
+      graphics[parcelId] = new Graphic(geometry, symbol, item.attributes);
+      layer.add(graphics[parcelId]);
+    }
   });
-  layer.refresh();
+  //layer.refresh();
 }
