@@ -300,13 +300,18 @@ export default Ember.Mixin.create({
 // Paint actual user parcels over the FeatureLayer
 function drawOwnerParcels(layer, symbol, graphics) {
   Ember.debug('Drawing user parcels');
+  var changed = false;
+
   layer.graphics.forEach(function (item) {
     let parcelId = item.attributes.PARCEL_ID;
     let geometry = item.geometry;
     if (!graphics[parcelId]) {
       graphics[parcelId] = new Graphic(geometry, symbol, item.attributes);
       layer.add(graphics[parcelId]);
+      changed = true;
     }
   });
-  //layer.refresh();
+  if (changed) {
+    layer.refresh();
+  }
 }
