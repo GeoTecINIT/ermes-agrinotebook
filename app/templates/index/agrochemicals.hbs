@@ -2,16 +2,19 @@
   <form {{action "submit" on="submit"}}>
     <label>
       <span>{{t "panel.agrochemicals.date"}}</span>
-      {{ermes-datepicker value=model.observationDate}}
+      {{ermes-datepicker value=model.product.observationDate}}
     </label>
     {{ermes-message text=dateError color="red" animation="fadeInDown"}}
     <label>
       <span>{{t "panel.agrochemicals.product"}}</span>
-      {{jqm-select value=model.name theme="d" options=products}}
+      {{jqm-select value=model.product.name theme="d" options=products}}
     </label>
+    {{#if isOther}}
+      {{jqm-textinput value=model.newOption placeholder=(t "fields.text.other") required=true}}
+    {{/if}}
     <label>
       <span>{{t "panel.agrochemicals.quantity"}}</span>
-      {{jqm-textinput value=model.amount type="number" min=0 step=0.01 placeholder=(t "panel.agrochemicals.quantity-unit") required=true}}
+      {{jqm-textinput value=model.product.amount type="number" min=0 step=0.01 placeholder=(t "panel.agrochemicals.quantity-unit") required=true}}
     </label>
     {{jqm-button text=(t "fields.text.add-new") theme="b"}}
     {{ermes-message text=parcelError color="red" animation="fadeInDown"}}

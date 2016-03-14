@@ -4,6 +4,7 @@ export function getCustomOptionProducts() {
     'weeds': 'name',
     'diseases': 'name',
     'insects': 'name',
-    'fertilizers': 'name'
+    'fertilizers': 'name',
+    'agrochemicals': 'name'
   };
 }

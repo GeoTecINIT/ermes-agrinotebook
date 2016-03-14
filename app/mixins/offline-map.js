@@ -95,6 +95,7 @@ export default Ember.Mixin.create({
 
   // Adds and prepares for offline user parcels layer
   addUserParcelsLayer(layerURL) {
+    var user = this.get('parcels.user');
     var _this = this;
 
     // Symbol for painting parcels
@@ -114,7 +115,7 @@ export default Ember.Mixin.create({
       var readyEvent = featureLayer.on(event, () => {
 
         // Draw parcels, and if online, store layer
-        drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
+        drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'), user);
         if (navigator.onLine) {
           _this.storeUserParcelsLayer();
         }
@@ -122,7 +123,7 @@ export default Ember.Mixin.create({
         // Each time map is being panned, draw parcels
         var drawEvent = _this.get('map').on('pan-end', () => {
           Ember.run.once(_this, () => {
-            drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
+            drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'), user);
 
             // And if online, store layer
             if (navigator.onLine) {
@@ -136,13 +137,6 @@ export default Ember.Mixin.create({
       });
 
       _this.get('layersMap').set('userParcelsLayer', featureLayer);
-      /*_this.get('map').on('layer-add-result', (evt)=> {
-        drawOwnerParcels(featureLayer, symbol, _this.get('parcelsGraphics'));
-        if (navigator.onLine) {
-          _this.storeUserParcelsLayer();
-          //storeEvent.remove();
-        }
-      });*/
       _this.get('map').addLayer(featureLayer);
     }
 
@@ -298,20 +292,24 @@ export default Ember.Mixin.create({
 });
 
 // Paint actual user parcels over the FeatureLayer
-function drawOwnerParcels(layer, symbol, graphics) {
+function drawOwnerParcels(layer, symbol, graphics, user) {
   Ember.debug('Drawing user parcels');
   var changed = false;
 
-  layer.graphics.forEach(function (item) {
-    let parcelId = item.attributes.PARCEL_ID;
-    let geometry = item.geometry;
-    if (!graphics[parcelId]) {
-      graphics[parcelId] = new Graphic(geometry, symbol, item.attributes);
-      layer.add(graphics[parcelId]);
-      changed = true;
+  user.get('parcels').then((parcels) => {
+    var userParcels = parcels.map((parcel) => parcel.get('parcelId').toUpperCase());
+
+    layer.graphics.forEach(function (item) {
+      let parcelId = item.attributes.PARCEL_ID;
+      let geometry = item.geometry;
+      if (!graphics[parcelId] && userParcels.contains(parcelId)) {
+        graphics[parcelId] = new Graphic(geometry, symbol, item.attributes);
+        layer.add(graphics[parcelId]);
+        changed = true;
+      }
+    });
+    if (changed) {
+      layer.refresh();
     }
   });
-  if (changed) {
-    layer.refresh();
-  }
 }

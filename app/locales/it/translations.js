@@ -62,7 +62,7 @@ export default {
       'yield': "Resa",
       'observation': "Osservazioni",
       'parcel-info': "Informazioni sulla parcella",
-      'add-new': "IAggiungi Dati",
+      'add-new': "Aggiungi Dati",
       'default': 'Default',
       'custom': 'Personalizzato',
       'other': 'Altro (Specifica)'
@@ -78,6 +78,7 @@ export default {
     },
     'map-tools': {
       'confirm-selection': "Aggiungi campi",
+      'discard-changes': "Discard changes",
       'select-all': "Seleziona tutti i campi",
       'invert-selection': "Inverti la selezione",
       'parcel-info': "Info su campo selezionato"
@@ -103,7 +104,7 @@ export default {
       'crop-type': "Tipo Coltura",
       'rice-variety': "Varietà Riso",
       'puddling': 'Intasamento',
-      'sowing-types': "Metodo di semina",
+      'sowing-type': "Metodo di semina",
       'amount': "Quantità",
       'seeds-per-ha': "Semi/hectare",
       'date': 'Data di semina'

@@ -4,7 +4,6 @@ import ProductUploadCO from 'ermes-smart-app/mixins/product-upload-c-opt';
 import ProductRequiredDate from 'ermes-smart-app/mixins/product-required-date';
 import ProductParcelCheck from 'ermes-smart-app/mixins/product-parcel-check';
 
-
 export default Ember.Controller.extend(ProductUploadCO, ProductParcelCheck, ProductRequiredDate, {
   panelId: 'fertilizers',
   i18n: Ember.inject.service(),

@@ -79,6 +79,7 @@ export default {
     },
     'map-tools': {
       'confirm-selection': "Πρόσθεσε πεδίο",
+      'discard-changes': "Discard changes",
       'select-all': "Επέλεξε όλα τα πεδία",
       'invert-selection': "Αντιστροφή επιλεγμένων πεδίων",
       'parcel-info': "Επιλεγμένες πληροφορίες αγροτεμαχίου"
