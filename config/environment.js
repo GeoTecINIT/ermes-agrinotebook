@@ -58,7 +58,7 @@ module.exports = function(environment) {
         greece: {
           baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-GR/basemap/MapServer",
           mapName: "greeceBasemap",
-          parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-GR/GR_parcels/MapServer/0",
+          parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-GR/basemap/MapServer/0",
           maxZoom: 6,
           minZoom: 3
         }
