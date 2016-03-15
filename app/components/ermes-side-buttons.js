@@ -21,6 +21,7 @@ export default Ember.Component.extend({
   }),
   editButtons: Ember.computed('i18n.locale', function() {
     return [
+      {title: this.get('i18n').t('fields.map-tools.discard-changes'), icon: 'delete', class: 'ermes-btn-med', action: 'exitEditWithoutSaving'},
       {title: this.get('i18n').t('fields.map-tools.confirm-selection'), icon: 'check', class: 'ermes-btn-big', action: 'commitChanges'}
     ];
   }),
@@ -51,6 +52,11 @@ export default Ember.Component.extend({
         this.sendAction('cannotEdit');
       }
 
+    },
+    exitEditWithoutSaving() {
+      this.get('parcels.user').rollbackAttributes();
+      this.get('parcels.user.parcels').toArray().forEach(color => color.rollbackAttributes());
+      this.set('editMode', false);
     },
     selectAll() {
       this.get('parcels.user.parcels').then((userParcels) => {

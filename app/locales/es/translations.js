@@ -63,6 +63,7 @@ export default {
     },
     'map-tools': {
       'confirm-selection': "Añadir campos",
+      'discard-changes': "Descartar cambios",
       'select-all': "Seleccionar todos los campos",
       'invert-selection': "Invertir la selección de campos",
       'parcel-info': "Información de la parcela seleccionada"

@@ -18,6 +18,14 @@ export default Ember.Controller.extend({
         this.transitionToRoute(name);
       }
     },
+    openProductsMenu() {
+      var openedPanel = this.get('openedPanel');
+      if (openedPanel && openedPanel !== 'none') {
+        this.transitionToRoute('index');
+      }
+
+      this.send('openPopup', 'ermes-menu-fields');
+    },
     openPopup(popup) {
       $('#' + popup).popup('open');
     },

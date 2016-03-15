@@ -78,10 +78,11 @@ export default {
       'options-tooltip': "Επιλογές χρήστη"
     },
     'map-tools': {
-      'confirm-selection': "Add fields",
-      'select-all': "Select all fields",
-      'invert-selection': "Invert selected fields",
-      'parcel-info': "Selected parcel info"
+      'confirm-selection': "Πρόσθεσε πεδίο",
+      'discard-changes': "Discard changes",
+      'select-all': "Επέλεξε όλα τα πεδία",
+      'invert-selection': "Αντιστροφή επιλεγμένων πεδίων",
+      'parcel-info': "Επιλεγμένες πληροφορίες αγροτεμαχίου"
     },
     'options-m': {
       'title': "Γεια σας, {{username}}",
@@ -227,7 +228,7 @@ export default {
       'unknown-owner': "Δεν υπάρχει χρήστης",
       'region-mismatch': "Ο χρήστης δεν ανήκει στη συγκεκριμένη περιοχή",
       'repeated-email': "Ο λογαριασμός email υπάρχει ήδη στο σύστημα",
-      'user-exits': "Username already exits",
+      'user-exits': "Το όνομα χρήση (username) υπάρχει ήδη",
       'processing': "Επεργασία δεδομένων...",
       'welcome': "Καλώς ήρθατε, {{username}}",
       'login-allowed': "Τώρα μπορείτε να,",
@@ -524,8 +525,8 @@ export default {
     },
     'irrigation': {
       'measures': {
-        'mm': "mm/day",
-        'm3': "m3/hour"
+        'mm': "χιλιοστά ανά ημέρα",
+        'm3': "κυβικά μέτρα ανά ώρα"
       }
     }
   }
