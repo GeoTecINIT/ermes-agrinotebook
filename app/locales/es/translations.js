@@ -239,7 +239,8 @@ export default {
     }
   },
   'download-assets':{
-    'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad en modo desconectado?",
+    'download-basemap': "¿Descargar ficheros para habilitar la funcionalidad en modo desconectado (+/- 50MB)?",
+    'download-advantages': "Recomendamos realizar la descarga para habilitar la funcionalidad en modo desconectado.",
     'connection-acceptable': "Actualmente estás empleando una tarifa de datos. En función de tu región podemos descargar hasta 50 MB. Pulsa \"De acuerdo\" para continuar",
     'downloading-assets': "Actualmente estamos descargando ficheros esenciales para la funcionalidad en modo desconectado, te redirigiremos cuando hayamos terminado. Sé paciente, por favor",
     'download-error': "Ha ocurrido un error mientras descargábamos",

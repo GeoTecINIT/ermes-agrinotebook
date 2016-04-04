@@ -78,7 +78,7 @@ export default {
     },
     'map-tools': {
       'confirm-selection': "Aggiungi campi",
-      'discard-changes': "Discard changes",
+      'discard-changes': "Annulla Modifche",
       'select-all': "Seleziona tutti i campi",
       'invert-selection': "Inverti la selezione",
       'parcel-info': "Info su campo selezionato"
@@ -254,7 +254,8 @@ export default {
     }
   },
   'download-assets':{
-    'download-basemap': "Vuoi scaricare dati per abilitare le funzionalità offline ?",
+    'download-basemap': "Vuoi scaricare i dati necessari per il funzionamento offline (circa 50MB)?",
+    'download-advantages': "Ti suggeriamo di scaricare i dati per il funzionamento offline per migliorare le performance della app.",
     'connection-acceptable': "Attenzione ! Stai utilizzando un piano dati tariffario. A seconda della regione, verranno scaricati fino a 50 MB. Sei d'accordo ?",
     'downloading-assets': "Stiamo scaricando i dati per abilitare la modalità offline. Verrai ridirezionato alla fine dell'operazione. Per favore attendi",
     'download-error': "Errore durante il download !",

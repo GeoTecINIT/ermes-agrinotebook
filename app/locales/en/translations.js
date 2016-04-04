@@ -239,7 +239,8 @@ export default {
     }
   },
   'download-assets':{
-    'download-basemap': "Download resources for enabling offline capabilities?",
+    'download-basemap': "Download resources for offline browsing (+/- 50MB)?",
+    'download-advantages': "We recommend download to allow full offline map availability and to improve performance.",
     'connection-acceptable': "You're currently using a data plan. Depending on your region we can download up to 50 MB. Press OK to continue.",
     'downloading-assets': "We're currently downloading maps to enable offline mode, we'll redirect you when finished. Please be patient",
     'download-error': "An error occurred while downloading",
