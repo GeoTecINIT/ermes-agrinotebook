@@ -7,7 +7,7 @@ import FeatureLayer from "esri/layers/FeatureLayer";
 import Graphic from "esri/graphic";
 
 export default Ember.Mixin.create({
-  layersMap: new Map(),
+  layersMap: new Ember.Map(),
   parcelsGraphics: [],
   ermesCordova: Ember.inject.service(),
 
@@ -77,8 +77,7 @@ export default Ember.Mixin.create({
     if (proxy) {
       tiledLayer.offline.proxyPath = proxy;
     }
-
-    //this.get('layersMap').set(dbStore, tiledLayer);
+    
     this.get('map').addLayer(tiledLayer);
   },
 
@@ -286,7 +285,6 @@ export default Ember.Mixin.create({
 
     tpkLayer.map = map;
     var addedLayer =  map.addLayer(tpkLayer, 0);
-    //this.get('layersMap').set("tpkLayer", tpkLayer);
   }
 
 });

@@ -4,7 +4,6 @@ import webMercatorUtils from "esri/geometry/webMercatorUtils";
 
 export default Ember.Mixin.create({
   store: Ember.inject.service(),
-  selectedParcelsGraphics: new Map(),
 
   selectParcelEvent(evt) {
     if (evt.graphic) {

@@ -19,6 +19,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   editStore: null,
   parcels: Ember.inject.service(),
   ermesCordova: Ember.inject.service(),
+  selectedParcelsGraphics: new Ember.Map(),
   loading : true,
 
 
@@ -164,9 +165,9 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     var layersMap = this.get('layersMap');
     //var baseLayer = this.getBaseMapLayer();
 
-    for(let layerObject of layersMap.values()) {
+    layersMap.forEach((layerObject) => {
       this.get('map').removeLayer(layerObject);
-    }
+    });
 
     // Clear parcels
     this.set('parcelsGraphics', []);
@@ -266,12 +267,13 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       var selectedParcels = this.get('parcels.selectedParcels');
       var selectedParcelsGraphics = this.get('selectedParcelsGraphics');
 
-      for (var [parcelId, graphic] of selectedParcelsGraphics.entries()) {
+      var iterableGraphics = selectedParcelsGraphics.copy();
+      iterableGraphics.forEach((graphic, parcelId) => {
         if (!selectedParcels.contains(parcelId)) {
           userParcelsLayer.remove(graphic);
           selectedParcelsGraphics.delete(parcelId);
         }
-      }
+      });
     }
   })),
 
