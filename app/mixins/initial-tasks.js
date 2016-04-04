@@ -62,9 +62,22 @@ export default Ember.Mixin.create({
 
     return configStorage.getItem(basemapName).then((basemap) => {
 
-      // The same code, but using ES6 Promises.
-      //todo: check that navigator.onLine could be changed to consume  a  service to ask for more appropriate things
-      if (navigator.onLine) {
+      var platform = device.platform;
+      var osVersion = parseFloat(device.version);
+
+      if (platform === "Android" && osVersion < 4.4) {
+        var updateAdvised = offlineStorage.get('updateAdvised');
+        this.controllerFor('index').set('useOnlineBasemap', true);
+
+        return offlineStorage.get('configStorage').getItem('do-not-show-update-os').then((dontShow) => {
+          if (!updateAdvised && !dontShow) {
+            this.transitionTo('update-os');
+          } else if (!updateAdvised){
+            offlineStorage.set('updateAdvised', true);
+            this.refresh();
+          }
+        });
+      } else if (navigator.onLine) { //todo: check that navigator.onLine could be changed to consume  a  service to ask for more appropriate things
         return new Ember.RSVP.Promise((resolve, reject) => {
           getJSON(ASSETS_URL).done((descriptor) => {
             resolve(descriptor);

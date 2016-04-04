@@ -31,6 +31,7 @@ Router.map(function() {
   this.route('index-error', {});
   this.route('index-loading', {});
   this.route('download-asset');
+  this.route('update-os');
 });
 
 export default Router;

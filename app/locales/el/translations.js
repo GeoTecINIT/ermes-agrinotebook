@@ -266,6 +266,10 @@ export default {
     'no-way': "Όχι!",
     'retry': "Ξαναπροσπάθησε"
   },
+  'update-os': {
+    'should-update': "You're currently using an Android version below 4.4. You should update your phone's operating system or replace it with a more recent one to access to the full offline functionality. You can continue using the app with a reduced functionality. Sorry for the inconvenience.",
+    'do-not-show-again': "Do not show again"
+  },
   'region': {
     'greece': "Ελλάδα",
     'italy': "Ιταλία",

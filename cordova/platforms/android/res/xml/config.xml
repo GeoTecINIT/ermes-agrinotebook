@@ -25,6 +25,9 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
     <allow-intent href="market:*" />
     <preference name="AndroidPersistentFileLocation" value="Internal" />
     <name>ErmesSmartApp</name>

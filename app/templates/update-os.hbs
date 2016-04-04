@@ -1,0 +1,21 @@
+<!-- Update os page -->
+<div class="ermes-full-window ui-page-theme-a">
+  {{#jqm-content}}
+      <div class="ermes-center-content" align="center">
+            <div>
+                <img src="assets/ermes-images/logo.png">
+            </div>
+            <br>
+            <p>
+                <span>{{t 'update-os.should-update'}}</span>
+            </p>
+
+          {{jqm-anchor text=(t 'download-assets.proceed') action='proceed' mini='true' theme='b'}}
+          <br>
+          <p>
+            {{input type="checkbox" checked=doNotShowAgain}}{{t 'update-os.do-not-show-again'}}
+          </p>
+      </div>
+  {{/jqm-content}}
+</div>
+

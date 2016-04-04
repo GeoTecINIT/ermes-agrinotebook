@@ -250,6 +250,10 @@ export default {
     'no-way': "Ahora no",
     'retry': "Reintentar"
   },
+  'update-os': {
+    'should-update': "Actualmente estás empleando una versión de android inferior a la 4.4. Deberías actualizar tu teléfono o reemplazarlo por uno más actual para acceder completamente a la funcionalidad fuera de línea. Puedes continuar empleando la aplicación con una funcionalidad reducida. Disculpa las molestias.",
+    'do-not-show-again': "No mostrar de nuevo"
+  },
   'region': {
     'greece': "Grecia",
     'italy': "Italia",
