@@ -251,7 +251,7 @@ export default {
     'retry': "Retry"
   },
   'update-os': {
-    'should-update': "You're currently using an Android version below 4.4. You should update your phone's operating system or replace it with a more recent one to access to the full offline functionality. You can continue using the app with a reduced functionality. Sorry for the inconvenience.",
+    'should-update': "Android version {{version}} detected. This app requires Android 4.4 or higher. Please update your operating system. In case you continue with your current Android version, offline functionality will not be available, and we cannot guarantee full stability of the app.",
     'do-not-show-again': "Do not show again"
   },
   'region': {

@@ -251,7 +251,7 @@ export default {
     'retry': "Reintentar"
   },
   'update-os': {
-    'should-update': "Actualmente estás empleando una versión de android inferior a la 4.4. Deberías actualizar tu teléfono o reemplazarlo por uno más actual para acceder completamente a la funcionalidad fuera de línea. Puedes continuar empleando la aplicación con una funcionalidad reducida. Disculpa las molestias.",
+    'should-update': "Android {{version}} detectado. Esta aplicación requiere Android 4.4 o superior. Por favor, actualiza tu sistema operativo. En caso de que continúes con tu actual versión de Android, la funcionalidad fuera de línea no estará disponible y no podemos garantizar la estabilidad de la aplicación",
     'do-not-show-again': "No mostrar de nuevo"
   },
   'region': {
