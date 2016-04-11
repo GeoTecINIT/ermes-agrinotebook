@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['ermes-side-buttons'],
+  networkChecker: Ember.inject.service(),
   tagName: 'table',
   parcels: Ember.inject.service(),
   i18n: Ember.inject.service(),
@@ -12,12 +13,20 @@ export default Ember.Component.extend({
       return this.get('selectButtons');
     }
   }),
-  selectButtons: Ember.computed('i18n.locale', function() {
-    return [
+  selectButtons: Ember.computed('i18n.locale', 'networkChecker.online', function() {
+    var options = [
       {title: this.get('i18n').t('fields.map-tools.parcel-info'), icon: 'info', class: 'ermes-btn-med', action: 'openInfoPanel'},
       {title: this.get('i18n').t('fields.map-tools.invert-selection'), icon: 'action', class: 'ermes-btn-med', action: 'invertSelection'},
       {title: this.get('i18n').t('fields.map-tools.select-all'), icon: 'grid', class: 'ermes-btn-big', action: 'selectAll'}
     ];
+
+    var region = this.get('parcels.user.region');
+    if (region === 'spain' && this.get('networkChecker.online')) {
+      var search = [{title: this.get('i18n').t('fields.options-m.search'), icon: 'search', class: 'ermes-btn-med', action: 'openSearchPanel'}];
+      options = search.concat(options);
+    }
+
+    return options;
   }),
   editButtons: Ember.computed('i18n.locale', function() {
     return [
@@ -28,6 +37,9 @@ export default Ember.Component.extend({
   actions: {
     openInfoPanel() {
       this.sendAction('openPanel', 'index.parcel-info');
+    },
+    openSearchPanel() {
+      this.sendAction('openPanel', 'index.search');
     },
     commitChanges() {
       if (navigator.onLine){

@@ -87,7 +87,8 @@ export default {
       'title': "Ciao, {{username}}",
       'profile': "Il mio profilo",
       'fields': "I miei campi",
-      'about': "Info"
+      'about': "Info",
+      'search': "Search parcel"
     }
   },
   'panel': {
@@ -250,7 +251,15 @@ export default {
       'saved': "Salvato",
       'loading-map': "Carico mappa...",
       'warning': "Attenzione",
-      'possible-outdated': "Sei offline - Questa informazione può non essere aggiornata"
+      'possible-outdated': "Sei offline - Questa informazione può non essere aggiornata",
+      'wrong-data': "Wrong data"
+    },
+    'search': {
+      'town': "Town",
+      'polygon': "Polygon",
+      'parcel': "Parcel",
+      'search': "Search",
+      'wrong-data': "Wrong data"
     }
   },
   'download-assets':{

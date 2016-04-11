@@ -72,7 +72,8 @@ export default {
       'title': "Hello, {{username}}",
       'profile': "My profile",
       'fields': "My fields",
-      'about': "About"
+      'about': "About",
+      'search': "Search parcel"
     }
   },
   'panel': {
@@ -235,7 +236,14 @@ export default {
       'saved': "Saved",
       'loading-map': "Loading map...",
       'warning': "Warning",
-      'possible-outdated': "You're offline - this info could be outdated"
+      'possible-outdated': "You're offline - this info could be outdated",
+      'wrong-data': "Wrong data"
+    },
+    'search': {
+      'town': "Town",
+      'polygon': "Polygon",
+      'parcel': "Parcel",
+      'search': "Search"
     }
   },
   'download-assets':{

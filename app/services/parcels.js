@@ -4,6 +4,7 @@ import config from '../config/environment';
 export default Ember.Service.extend({
   user: null,
   selectedParcels: null,
+  searchedParcel: null,
 
   init() {
     this.set('selectedParcels', []);

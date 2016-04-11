@@ -12,6 +12,7 @@ import Color from "esri/Color";
 import Graphic from "esri/graphic";
 import PictureMarkerSymbol from 'esri/symbols/PictureMarkerSymbol';
 import Point from 'esri/geometry/Point';
+import SpatialReference from 'esri/SpatialReference';
 
 export default Ember.Component.extend(OfflineMap, MapEvents, {
   elementId: 'mapDiv',
@@ -77,8 +78,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    */
   getBaseMapLayer(){
     var map = this.get('map');
-    var layer = map.getLayer(map.layerIds[0]);
-    return layer;
+    return map.getLayer(map.layerIds[0]);
   },
 
   createMap() {
@@ -89,10 +89,9 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     var map = new Map(this.elementId, {
       "center": [user.get('lastLongitude'), user.get('lastLatitude')],
       "zoom": user.get('zoomLevel'),
-      "minZoom": 13/*mapInfo.minZoom*/,
-      "maxZoom": 17/*mapInfo.maxZoom Luis*/,
-      "logo": false//,
-      //"fitExtent":  true
+      "minZoom": 13,
+      "maxZoom": 17,
+      "logo": false
 
     });
 
@@ -188,8 +187,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     Ember.debug('Map was successfully loaded');
     this.notifyPropertyChange('editMode');
 
-    //this.get('map').on('update-end', () => this.setPositionMarker());
-
+    this.get('map').on('update-end', () => this.setPositionMarker());
   },
 
   /**
@@ -224,6 +222,34 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       });
     }
   },
+
+  updateSearch: Ember.on('mapLoad', Ember.observer('parcels.searchedParcel', function () {
+    var searchedParcel = this.get('parcels.searchedParcel');
+    if (searchedParcel) {
+      var map = this.get('map');
+      var searchMarker = this.get('searchMarker');
+      var parcelPos = new Point(searchedParcel.x, searchedParcel.y, new SpatialReference(searchedParcel.spatialReference));
+
+      if (!searchMarker) {
+        var searchMarkerSymbol = new PictureMarkerSymbol({
+          "yoffset": 8,
+          "url": "assets/ermes-images/parcelMarker.png",
+          "contentType": "image/png",
+          "width": 20,
+          "height": 24
+        });
+
+        searchMarker = new Graphic(parcelPos, searchMarkerSymbol);
+        map.graphics.add(searchMarker);
+        this.set('searchMarker', searchMarker);
+      }
+      else {
+        searchMarker.setGeometry(parcelPos);
+        map.graphics.add(searchMarker);
+      }
+      map.centerAt(parcelPos);
+    }
+  })),
 
   /**
    * Decides if it is needed to switch to the editMode or not

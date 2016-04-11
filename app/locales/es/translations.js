@@ -72,7 +72,8 @@ export default {
       'title': "Hola, {{username}}",
       'profile': "Mi perfil",
       'fields': "Mis parcelas",
-      'about': "Acerca de"
+      'about': "Acerca de",
+      'search': "Buscar parcela"
     }
   },
   'panel': {
@@ -235,7 +236,14 @@ export default {
       'saved': "Guardado",
       'loading-map': "Cargando mapa...",
       'warning': "Advertencia",
-      'possible-outdated': "Estás desconectado, por lo tanto, esta información podría estar desactualizada"
+      'possible-outdated': "Estás desconectado, por lo tanto, esta información podría estar desactualizada",
+      'wrong-data': "Datos erróneos"
+    },
+    'search': {
+      'town': "Municipio",
+      'polygon': "Polígono",
+      'parcel': "Parcela",
+      'search': "Buscar"
     }
   },
   'download-assets':{

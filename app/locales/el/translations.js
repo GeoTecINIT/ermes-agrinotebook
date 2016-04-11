@@ -88,7 +88,8 @@ export default {
       'title': "Γεια σας, {{username}}",
       'profile': "Το προφίλ μου",
       'fields': "Τα Αγροτεμάχια μου",
-      'about': "Σχετικά με"
+      'about': "Σχετικά με",
+      'search': "Search parcel"
     }
   },
   'panel': {
@@ -251,7 +252,14 @@ export default {
       'saved': "Αποθηκεύτηκε",
       'loading-map': "Φόρτωση χάρτη...",
       'warning': "Προειδοποίηση",
-      'possible-outdated': "Βρίσκεστε εκτός σύνδεσης και οι πληροφορίες ενδεχομένως να μην είναι ενημερωμένες"
+      'possible-outdated': "Βρίσκεστε εκτός σύνδεσης και οι πληροφορίες ενδεχομένως να μην είναι ενημερωμένες",
+      'wrong-data': "Wrong data"
+    },
+    'search': {
+      'town': "Town",
+      'polygon': "Polygon",
+      'parcel': "Parcel",
+      'search': "Search"
     }
   },
   'download-assets':{

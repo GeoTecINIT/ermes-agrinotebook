@@ -27,6 +27,7 @@ Router.map(function() {
     this.route('welcome', {});
     this.route('cannot-edit', {});
     this.route('abiotic-stresses');
+    this.route('search');
   });
   this.route('index-error', {});
   this.route('index-loading', {});

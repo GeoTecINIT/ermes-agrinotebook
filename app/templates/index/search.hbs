@@ -1,0 +1,19 @@
+{{#ermes-panel id=panelId title=(t "fields.options-m.search")}}
+    <form {{action "search" on="submit"}}>
+        <label>
+            <span>{{t "panel.search.town"}}</span>
+            {{jqm-textinput value=searchParams.town required=true}}
+        </label>
+        <label>
+            <span>{{t "panel.search.polygon"}}</span>
+            {{jqm-textinput type="number" min=0 step=1 value=searchParams.polygon required=true}}
+        </label>
+        <label>
+            <span>{{t "panel.search.parcel"}}</span>
+            {{jqm-textinput type="number" min=0 step=1 value=searchParams.parcel required=true}}
+        </label>
+      {{jqm-button text=(t "panel.search.search") theme="b"}}
+      {{ermes-message text=searchError color="red" animation="fadeInDown"}}
+      {{ermes-message text=info color="blue" animation="fadeInDown"}}
+    </form>
+{{/ermes-panel}}
