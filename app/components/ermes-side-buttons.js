@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   tagName: 'table',
   parcels: Ember.inject.service(),
   i18n: Ember.inject.service(),
-  buttons: Ember.computed('editMode', 'i18n.locale', function () {
+  buttons: Ember.computed('editMode', 'networkChecker.online', 'i18n.locale', function () {
     if (this.get('editMode')) {
       return this.get('editButtons');
     } else {
@@ -14,6 +14,7 @@ export default Ember.Component.extend({
     }
   }),
   selectButtons: Ember.computed('i18n.locale', 'networkChecker.online', function() {
+    console.debug('[INFO] Item list changed');
     var options = [
       {title: this.get('i18n').t('fields.map-tools.parcel-info'), icon: 'info', class: 'ermes-btn-med', action: 'openInfoPanel'},
       {title: this.get('i18n').t('fields.map-tools.invert-selection'), icon: 'action', class: 'ermes-btn-med', action: 'invertSelection'},

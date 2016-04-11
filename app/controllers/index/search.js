@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import $ from 'jquery';
+import {get} from 'ermes-smart-app/utils/ajax';
 
 export default Ember.Controller.extend({
   i18n: Ember.inject.service(),
@@ -8,16 +8,14 @@ export default Ember.Controller.extend({
   searchParams: {},
   actions: {
     search() {
-      var SERVER_API_URL = 'http://localhost:4500';
-      var uri = '/parcel-coords';
-
       var model = this.get('searchParams');
 
       this.set('searchError', '');
       this.set('info', this.get('i18n').t('panel.notification.processing'));
-      $.get(SERVER_API_URL + uri, {town: model.town, polygon: model.polygon, parcel: model.parcel}).done((data) => {
-        this.set('info', '');
+      get('/parcel-coords', {town: model.town, polygon: model.polygon, parcel: model.parcel}).done((data) => {
+        this.set('info', this.get('i18n').t('panel.search.map-centered'));
         this.set('parcels.searchedParcel', data.parcelCoords);
+        setTimeout(() => this.set('info', ''), 3000);
       }).fail((err) => {
         this.set('info', '');
         if (err.status && err.status === 404) {

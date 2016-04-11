@@ -6,15 +6,6 @@ export default Ember.Service.extend(ImageUpload, {
   networkChecker: Ember.inject.service(),
   store: Ember.inject.service(),
   init() {
-    /*// Polling about online status
-    this.set('online', navigator.onLine);
-    setInterval(() => {
-      if(this.get('online') !== String(navigator.onLine)) {
-        this.set('online', navigator.onLine);
-      }
-    }, 1000);*/
-
-    // Daemon stopped by default
     this.set('stopped', true);
   },
   start() {

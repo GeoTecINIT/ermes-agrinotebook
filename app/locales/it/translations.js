@@ -259,7 +259,8 @@ export default {
       'polygon': "Polygon",
       'parcel': "Parcel",
       'search': "Search",
-      'wrong-data': "Wrong data"
+      'wrong-data': "Wrong data",
+      'map-centered': "Map centered on parcel"
     }
   },
   'download-assets':{

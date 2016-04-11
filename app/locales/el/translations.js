@@ -259,7 +259,8 @@ export default {
       'town': "Town",
       'polygon': "Polygon",
       'parcel': "Parcel",
-      'search': "Search"
+      'search': "Search",
+      'map-centered': "Map centered on parcel"
     }
   },
   'download-assets':{

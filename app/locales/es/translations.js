@@ -243,7 +243,8 @@ export default {
       'town': "Municipio",
       'polygon': "Polígono",
       'parcel': "Parcela",
-      'search': "Buscar"
+      'search': "Buscar",
+      'map-centered': "Mapa centrado en la parcela"
     }
   },
   'download-assets':{
