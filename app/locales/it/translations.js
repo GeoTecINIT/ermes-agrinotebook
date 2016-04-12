@@ -209,7 +209,10 @@ export default {
       'new-password-tooltip': "Nuova password",
       'repeat-new-password-tooltip': "Ripeti Nuova password",
       'update': "Aggiorna profilo",
-      'logout': "Esci"
+      'logout': "Esci",
+      'services': "Services",
+      'enable-notifications': "Enable notifications",
+      'enable-alerts': "Enable alerts"
     },
     'notification': {
       'downloading-data': "Scaricamento dati...",

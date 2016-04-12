@@ -26,6 +26,11 @@
           <h4>{{t "panel.profile.language-section"}}</h4>
           {{jqm-select value=i18n.locale theme="c" options=languages}}
         {{/jqm-collapsible}}
+        {{#jqm-collapsible}}
+            <h4>{{t "panel.profile.services"}}</h4>
+            <label>{{jqm-checkbox checked=model.enableNotifications mini="true"}} {{t 'panel.profile.enable-notifications'}}</label>
+            <label>{{jqm-checkbox checked=model.enableAlerts mini="true"}} {{t 'panel.profile.enable-alerts'}}</label>
+        {{/jqm-collapsible}}
       {{/jqm-collapsibleset}}
       {{jqm-button text=(t "panel.profile.update") theme="b"}}
       {{ermes-message text=info color="blue" animation="fadeInDown"}}

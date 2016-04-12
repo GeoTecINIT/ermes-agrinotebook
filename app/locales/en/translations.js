@@ -194,7 +194,10 @@ export default {
       'new-password-tooltip': "New password",
       'repeat-new-password-tooltip': "Repeat new password",
       'update': "Update profile",
-      'logout': "Logout"
+      'logout': "Logout",
+      'services': "Services",
+      'enable-notifications': "Enable notifications",
+      'enable-alerts': "Enable alerts"
     },
     'notification': {
       'downloading-data': "Downloading data... {{count}} / {{total}}",

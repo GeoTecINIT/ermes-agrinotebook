@@ -194,7 +194,10 @@ export default {
       'new-password-tooltip': "Contraseña nueva",
       'repeat-new-password-tooltip': "Repite la contraseña",
       'update': "Actualizar perfil",
-      'logout': "Desconectar"
+      'logout': "Desconectar",
+      'services': "Servicios",
+      'enable-notifications': "Activar notificationes",
+      'enable-alerts': "Activar alertas"
     },
     'notification': {
       'downloading-data': "Descargando datos...",

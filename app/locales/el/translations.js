@@ -210,7 +210,10 @@ export default {
       'new-password-tooltip': "Νέος κωδικός πρόσβασης",
       'repeat-new-password-tooltip': "Επαναλάβετε το νέο κωδικό πρόσβασης",
       'update': "Ενημέρωση προφίλ",
-      'logout': "Αποσύνδεση"
+      'logout': "Αποσύνδεση",
+      'services': "Services",
+      'enable-notifications': "Enable notifications",
+      'enable-alerts': "Enable alerts"
     },
     'notification': {
       'downloading-data': "Λήψη δεδομένων...",
