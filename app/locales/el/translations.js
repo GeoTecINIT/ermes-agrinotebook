@@ -260,7 +260,8 @@ export default {
       'polygon': "Polygon",
       'parcel': "Parcel",
       'search': "Search",
-      'map-centered': "Map centered on parcel"
+      'map-centered': "Map centered on parcel",
+      'service-down': "Search service temporally unavailable"
     }
   },
   'download-assets':{

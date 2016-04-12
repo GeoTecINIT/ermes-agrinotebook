@@ -14,7 +14,6 @@ export default Ember.Component.extend({
     }
   }),
   selectButtons: Ember.computed('i18n.locale', 'networkChecker.online', function() {
-    console.debug('[INFO] Item list changed');
     var options = [
       {title: this.get('i18n').t('fields.map-tools.parcel-info'), icon: 'info', class: 'ermes-btn-med', action: 'openInfoPanel'},
       {title: this.get('i18n').t('fields.map-tools.invert-selection'), icon: 'action', class: 'ermes-btn-med', action: 'invertSelection'},
@@ -29,11 +28,19 @@ export default Ember.Component.extend({
 
     return options;
   }),
-  editButtons: Ember.computed('i18n.locale', function() {
-    return [
+  editButtons: Ember.computed('i18n.locale', 'networkChecker.online', function() {
+    var options = [
       {title: this.get('i18n').t('fields.map-tools.discard-changes'), icon: 'delete', class: 'ermes-btn-med', action: 'exitEditWithoutSaving'},
       {title: this.get('i18n').t('fields.map-tools.confirm-selection'), icon: 'check', class: 'ermes-btn-big', action: 'commitChanges'}
     ];
+
+    var region = this.get('parcels.user.region');
+    if (region === 'spain' && this.get('networkChecker.online')) {
+      var search = [{title: this.get('i18n').t('fields.options-m.search'), icon: 'search', class: 'ermes-btn-med', action: 'openSearchPanel'}];
+      options = search.concat(options);
+    }
+
+    return options;
   }),
   actions: {
     openInfoPanel() {

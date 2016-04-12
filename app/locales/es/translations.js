@@ -244,7 +244,8 @@ export default {
       'polygon': "Polígono",
       'parcel': "Parcela",
       'search': "Buscar",
-      'map-centered': "Mapa centrado en la parcela"
+      'map-centered': "Mapa centrado en la parcela",
+      'service-down': "Servicio de búsqueda no disponible temporalmente"
     }
   },
   'download-assets':{

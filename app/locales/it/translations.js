@@ -260,7 +260,8 @@ export default {
       'parcel': "Parcel",
       'search': "Search",
       'wrong-data': "Wrong data",
-      'map-centered': "Map centered on parcel"
+      'map-centered': "Map centered on parcel",
+      'service-down': "Search service temporally unavailable"
     }
   },
   'download-assets':{

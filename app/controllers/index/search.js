@@ -19,11 +19,14 @@ export default Ember.Controller.extend({
       }).fail((err) => {
         this.set('info', '');
         if (err.status && err.status === 404) {
-          this.set('searchError', this.get('i18n').t('panel.notification.wrong-data'));
+          if (err.responseJSON && err.responseJSON.error === "SERVICE_DOWN") {
+            this.set('searchError', this.get('i18n').t('panel.search.service-down'));
+          } else {
+            this.set('searchError', this.get('i18n').t('panel.notification.wrong-data'));
+          }
         } else {
           this.set('searchError', this.get('i18n').t('panel.notification.offline'));
         }
-        console.debug("[ERROR]: " + err);
       });
     }
   }
