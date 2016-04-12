@@ -13,6 +13,7 @@ import Graphic from "esri/graphic";
 import PictureMarkerSymbol from 'esri/symbols/PictureMarkerSymbol';
 import Point from 'esri/geometry/Point';
 import SpatialReference from 'esri/SpatialReference';
+import webMercatorUtils from "esri/geometry/webMercatorUtils";
 
 export default Ember.Component.extend(OfflineMap, MapEvents, {
   elementId: 'mapDiv',
@@ -187,7 +188,9 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     Ember.debug('Map was successfully loaded');
     this.notifyPropertyChange('editMode');
 
-    this.get('map').on('update-end', () => this.setPositionMarker());
+    var map = this.get('map');
+    map.on('update-end', () => this.setPositionMarker());
+    map.on('pan-end', () => this.updateLastPosition());
   },
 
   /**
@@ -223,6 +226,9 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     }
   },
 
+  /**
+   * If the user has looked for a parcel, then print a marker on the map
+   */
   updateSearch: Ember.on('mapLoad', Ember.observer('parcels.searchedParcel', function () {
     var searchedParcel = this.get('parcels.searchedParcel');
     if (searchedParcel) {
@@ -322,7 +328,23 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
       }
     });
     userParcelsLayer.refresh();
-  }
+  },
 
+  /**
+   * Updates user last position on owned parcels change
+   */
+  updateLastPosition() {
+    var map = this.get('map');
+    var user = this.get('parcels.user');
+
+    var actualPosition = webMercatorUtils.webMercatorToGeographic(map.extent.getCenter());
+    user.setProperties({
+      lastLongitude: actualPosition.x,
+      lastLatitude: actualPosition.y,
+      zoomLevel: map.getLevel(),
+      spatialReference: (actualPosition.spatialReference.wkid).toString()
+    });
+    user.save();
+  }
 });
 
