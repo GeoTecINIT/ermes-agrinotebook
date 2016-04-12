@@ -50,7 +50,8 @@ export default {
       'add-new': "Añadir información",
       'default': 'Por defecto',
       'custom': 'Personalizados',
-      'other': 'Otro (indica)'
+      'other': 'Otro (indica)',
+      'share': "Compartir con otros usuarios de Ermes"
     },
     'ui-special': {
       'agrochemicals': "Pesticidas"

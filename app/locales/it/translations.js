@@ -65,7 +65,8 @@ export default {
       'add-new': "Aggiungi Dati",
       'default': 'Default',
       'custom': 'Personalizzato',
-      'other': 'Altro (Specifica)'
+      'other': 'Altro (Specifica)',
+      'share': "Share with other Ermes users"
     },
     'ui-special': {
       'agrochemicals': "Trattamenti"

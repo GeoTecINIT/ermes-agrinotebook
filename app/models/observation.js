@@ -8,5 +8,6 @@ export default ProductModel.extend({
   longitude: DS.attr('number'),
   latitude: DS.attr('number'),
   file: DS.attr('string'),
+  shared: DS.attr('boolean', {defaultValue: false}),
   parcels: MF.array('string')
 });

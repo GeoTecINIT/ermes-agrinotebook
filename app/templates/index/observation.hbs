@@ -9,6 +9,7 @@
       {{jqm-fileinput files=files accept="image/*;capture=camera"}}
     </label>
     {{ermes-message text=fileError color="red" animation="fadeInDown"}}
+    <label>{{jqm-checkbox checked=model.shared mini="true"}} {{t 'fields.text.share'}}</label>
     {{jqm-button text=(t "panel.observation.send-btn") theme="b" icon="camera" iconPos="left"}}
     {{ermes-message text=parcelError color="red" animation="fadeInDown"}}
     {{ermes-message text=info color="blue" animation="fadeInDown"}}

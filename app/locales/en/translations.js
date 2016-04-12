@@ -50,7 +50,8 @@ export default {
       'add-new': "Add info",
       'default': 'Default',
       'custom': 'Custom',
-      'other': 'Other (specify)'
+      'other': 'Other (specify)',
+      'share': "Share with other Ermes users"
     },
     'ui-special': {
       'agrochemicals': "Agro chemicals"

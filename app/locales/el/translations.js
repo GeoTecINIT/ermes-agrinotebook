@@ -66,7 +66,8 @@ export default {
       'add-new': "Προσθέστε πληροφορίες",
       'default': 'Προεπιλογή',
       'custom': 'Εξατομίκευση',
-      'other': 'Άλλο (προσδιορίστε)'
+      'other': 'Άλλο (προσδιορίστε)',
+      'share': "Share with other Ermes users"
     },
     'ui-special': {
       'agrochemicals': "Αγροχημικά"
