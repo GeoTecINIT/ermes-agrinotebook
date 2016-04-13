@@ -42,7 +42,7 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
     "ember-i18n": "4.1.4",
-    "ember-jquery-mobile": "^1.1.2"
+    "ember-jquery-mobile": "^1.1.4"
   },
   "dependencies": {}
 }
