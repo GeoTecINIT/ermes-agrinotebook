@@ -49,7 +49,12 @@ export function getRiceVarieties(context) {
         {text: context.get('i18n').t('data.crop-info.rice-varieties.selenio'), value: 'selenio'},
         {text: context.get('i18n').t('data.crop-info.rice-varieties.sirio-cl'), value: 'sirio-cl'},
         {text: context.get('i18n').t('data.crop-info.rice-varieties.sole-cl'), value: 'sole-cl'},
-        {text: context.get('i18n').t('data.crop-info.rice-varieties.terra-cl'), value: 'terra-cl'}
+        {text: context.get('i18n').t('data.crop-info.rice-varieties.terra-cl'), value: 'terra-cl'},
+        {text: context.get('i18n').t('data.crop-info.rice-varieties.argila'), value: 'argila'},
+        {text: context.get('i18n').t('data.crop-info.rice-varieties.jsendra'), value: 'jsendra'},
+        {text: context.get('i18n').t('data.crop-info.rice-varieties.fonsa'), value: 'fonsa'},
+        {text: context.get('i18n').t('data.crop-info.rice-varieties.montsianell'), value: 'montsianell'},
+        {text: context.get('i18n').t('data.crop-info.rice-varieties.pinyana'), value: 'pinyana'}
       ]
     }
   ];

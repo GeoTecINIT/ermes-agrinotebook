@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 import TPKLayer from "oesri/offline-tpk-src";
 import OfflineTilesEnablerLayer from 'oesri/offline-tiles-advanced-src';
-import TiledMapServiceLayer from "esri/layers/TiledMapServiceLayer";
 import FeatureLayer from "esri/layers/FeatureLayer";
 import Graphic from "esri/graphic";
 
@@ -14,8 +13,9 @@ export default Ember.Mixin.create({
   // For basemaps (Tiled maps in general)
   addOfflineTileLayer(layerURL, dbStore, proxy, /*Luis*/mapInfo/*luis*/) {
     var tiledLayer = new OfflineTilesEnablerLayer(layerURL, (success) => {
+      // FIXME Uncomment this section to re-enable the partial offline functionality on browsers (non-hybrid)
       if (success) {
-        var maxExtent = this.get('map').extent;
+        /*var maxExtent = this.get('map').extent;
         var map = this.get('map');
 
         //Manage offline mode
@@ -23,8 +23,7 @@ export default Ember.Mixin.create({
         var reloadEvent;
         var tilesLoaded = false;//Luis E
 
-        // FIXME Uncomment this section to re-enable the partial offline functionality on browsers (non-hybrid)
-        /*if (navigator.onLine) {
+        if (navigator.onLine) {
           downloadEvent = this.get('map').on('update-end', () => {
             if (navigator.onLine) {
               /!**Luis only load  the tiles of not already loaded for the levels of the map
@@ -77,7 +76,7 @@ export default Ember.Mixin.create({
     if (proxy) {
       tiledLayer.offline.proxyPath = proxy;
     }
-    
+
     this.get('map').addLayer(tiledLayer);
   },
 
@@ -264,8 +263,7 @@ export default Ember.Mixin.create({
           console.debug("the file was opened successfuly");
           resolve(file);
         });
-      }
-      ,()=> { resolve(null)});
+      },()=> { resolve(null);});
     });
   },
 
@@ -284,7 +282,7 @@ export default Ember.Mixin.create({
     tpkLayer.extend(entries);
 
     tpkLayer.map = map;
-    var addedLayer =  map.addLayer(tpkLayer, 0);
+    map.addLayer(tpkLayer, 0);
   }
 
 });

@@ -316,7 +316,12 @@ export default {
         'selenio': "Selenio",
         'sirio-cl': "Sirio cl",
         'sole-cl': "Sole cl",
-        'terra-cl': "Terra cl"
+        'terra-cl': "Terra cl",
+        'argila': "Argila",
+        'jsendra': "JSendra",
+        'fonsa': "Fonsa",
+        'montsianell': "Montsianell",
+        'pinyana': "Piñana"
       },
       'sowing-types': {
         'null': "----",
