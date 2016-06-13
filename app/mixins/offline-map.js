@@ -83,7 +83,7 @@ export default Ember.Mixin.create({
   // Creates and adds a complete region parcels layer
   addParcelsLayer(layerURL) {
     var featureLayer = new FeatureLayer(layerURL, {
-      model: FeatureLayer.MODE_ONDEMAND,
+      model: /*FeatureLayer.MODE_ONDEMAND,//*/FeatureLayer.MODE_SELECTION,
       outFields: ['PARCEL_ID']
     });
 

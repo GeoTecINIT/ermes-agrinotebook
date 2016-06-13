@@ -19,7 +19,7 @@ module.exports = function(environment) {
 
       //resourcesServer: "http://altairi.lan:4200/",
       resourcesServer: "http://geo4.dlsi.uji.es:8080/",
-      assetDescriptor: "assetdescriptor.json",
+      assetDescriptor: "assetdescriptor_test.json",
 
       /* sample descriptor file entry
       regionsBaseMaps: {
@@ -56,11 +56,11 @@ module.exports = function(environment) {
           minZoom: 13
         },
         greece: {
-          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-GR/basemap/MapServer",
+          baseMap: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/testing/basemap_greece_clean/MapServer",
           mapName: "greeceBasemap",
-          parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-GR/basemap/MapServer/0",
-          maxZoom: 6,
-          minZoom: 3
+          parcelsLayer: "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/testing/basemap_greece/MapServer/0",
+          maxZoom: 17,
+          minZoom: 1
         }
       },
       defaultDateFormat: 'DD/MM/YYYY'
@@ -105,9 +105,9 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' :49152 http://ermes.dlsi.uji.es:6080/arcgis/rest/services/ http://js.arcgis.com/ https://js.arcgis.com/",
+    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' :49152 http://ermes.dlsi.uji.es:6080/ArcGIS/rest/services/ http://js.arcgis.com/ https://js.arcgis.com/",
     'font-src': "'self'",
-    'connect-src': "'self' http://geo4.dlsi.uji.es:8080/ http://ermes.dlsi.uji.es:6080/arcgis/rest/ http://ermes.dlsi.uji.es:6787/ http://server.arcgisonline.com/arcgis/rest/services/ http://services.arcgisonline.com/ http://www.arcgis.com/ http://static.arcgis.com/",
+    'connect-src': "'self' http://geo4.dlsi.uji.es:8080/ http://ermes.dlsi.uji.es:6080/ArcGIS/rest/ http://ermes.dlsi.uji.es:6787/ http://server.arcgisonline.com/arcgis/rest/services/ http://services.arcgisonline.com/ http://www.arcgis.com/ http://static.arcgis.com/",
     'img-src': "'self' http://ermes.dlsi.uji.es http://ermes.dlsi.uji.es:6787/ http://ermes.dlsi.uji.es:6080/arcgis/rest/services/ void: data: http://js.arcgis.com/ http://services.arcgisonline.com/ http://server.arcgisonline.com/",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"
