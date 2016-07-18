@@ -19,7 +19,7 @@ module.exports = function(environment) {
 
       //resourcesServer: "http://altairi.lan:4200/",
       resourcesServer: "http://geo4.dlsi.uji.es:8080/",
-      assetDescriptor: "assetdescriptor_test.json",
+      assetDescriptor: "assetdescriptor.json",
 
       /* sample descriptor file entry
       regionsBaseMaps: {
