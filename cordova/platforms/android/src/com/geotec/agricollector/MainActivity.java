@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.ermesfp7.esa;
+package com.geotec.agricollector;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
