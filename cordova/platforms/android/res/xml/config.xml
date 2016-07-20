@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.geotec.agricollector" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.geotec.agrinotebook" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
@@ -30,9 +30,9 @@
     </feature>
     <allow-intent href="market:*" />
     <preference name="AndroidPersistentFileLocation" value="Internal" />
-    <name>ErmesSmartApp</name>
+    <name>Agri Notebook</name>
     <description>
-        ErmesSmartApp for on field data report
+        ERMES AgriNotebook for on field data report
     </description>
     <author email="ubikgs@gmail.com" href="ermes.dlsi.uji.es">
         GEOTEC Research Group

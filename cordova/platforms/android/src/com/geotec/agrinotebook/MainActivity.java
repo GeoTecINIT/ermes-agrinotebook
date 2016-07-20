@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.geotec.agricollector;
+package com.geotec.agrinotebook;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
