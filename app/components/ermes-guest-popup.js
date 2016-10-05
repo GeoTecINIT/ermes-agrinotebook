@@ -1,51 +1,49 @@
 import Ember from 'ember';
 import { post } from 'ermes-smart-app/utils/ajax';
+import * as dd from 'ermes-smart-app/models/static/regions';
+import * as gd from 'ermes-smart-app/models/static/guests';
 
 export default Ember.Component.extend({
-  auth: Ember.inject.service(),
   i18n: Ember.inject.service(),
-  model: Ember.RSVP.hash({
-    username: "",
-    password: ""
+  auth: Ember.inject.service(),
+
+  regions: Ember.computed('i18n.locale', function() {
+    return dd.getRegions(this);
   }),
+  guests: Ember.computed(function () {
+    return gd.getGuests();
+  }),
+  model: Ember.RSVP.hash({
+    region: "greece"
+  }),
+
   actions: {
     submit() {
       let model = this.get('model');
+      let guests = this.get('guests');
+      Ember.debug(JSON.stringify(guests));
+
       var auth = this.get('auth');
 
       this.set('error', '');
 
       this.set('info', this.get('i18n').t('panel.notification.processing'));
-      var token = btoa(model.username.toLowerCase().trim()+':'+model.password);
+      var token = guests.findBy('region', model.region).token;
       post('/login', {headers: {'X-Authorization': 'Bearer ' + token}})
-      .done((data) => {
-        this.set('info', '');
-        var user = data.user;
-        if (!user) {
-          this.set('error', this.get('i18n').t('panel.notification.login-error'));
-        } else if (user.profile !== 'local') {
-          this.set('error', this.get('i18n').t('panel.notification.regional-error'));
-        } else if (user.type === 'guest') {
-          this.set('error', this.get('i18n').t('panel.notification.user-not-found'));
-        } else {
+        .done((data) => {
+          this.set('info', '');
+          var user = data.user;
 
           auth.logIn(user.username.toLowerCase().trim(), token, user.language);
 
-          // Reset form
-          this.set('model.username', '');
-          this.set('model.password', '');
           this.sendAction('logIn');
-        }
-      }).fail((err) => {
+
+        }).fail((err) => {
         this.set('info', '');
         var message = err.responseText;
         if (message) {
           if (message.match(/USER_NOT_FOUND/)){
             this.set('error', this.get('i18n').t('panel.notification.user-not-found'));
-          } else if (message.match(/WRONG_PASSWORD/)) {
-            this.set('error', this.get('i18n').t('panel.notification.login-error'));
-          } else if (message.match(/INACTIVE_ACCOUNT/)) {
-            this.set('error', this.get('i18n').t('panel.notification.inactive-account'));
           } else {
             this.set('error', this.get('i18n').t('panel.notification.offline'));
           }

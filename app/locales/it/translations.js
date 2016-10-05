@@ -28,7 +28,8 @@ export default {
   'login': {
     'text': {
       'login': "Entra",
-      'signup': "Registrati"
+      'signup': "Registrati",
+      'enter-as-guest': "Enter as guest"
     },
     'login-p': {
       'username-f': "Nome Utente",

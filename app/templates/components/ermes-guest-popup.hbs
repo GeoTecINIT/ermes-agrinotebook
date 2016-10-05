@@ -1,0 +1,10 @@
+{{#jqm-popup id=pId title=(t 'login.text.enter-as-guest') theme="a" closeButton=true dismissible="false"}}
+    <form {{action "submit" on="submit"}}>
+      <div style="width: 180px">
+        {{jqm-select value=model.region theme="d" options=regions}}
+        {{jqm-button text=(t 'login.login-p.login-btn') icon="check" theme="b"}}
+      </div>
+    </form>
+    {{ermes-message text=error color="red" animation="fadeInDown"}}
+    {{ermes-message text=info color="blue" animation="fadeIn"}}
+{{/jqm-popup}}

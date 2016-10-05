@@ -13,7 +13,8 @@ export default {
   'login': {
     'text': {
       'login': "Log in",
-      'signup': "Sign up"
+      'signup': "Sign up",
+      'enter-as-guest': "Enter as guest"
     },
     'login-p': {
       'username-f': "Enter username",

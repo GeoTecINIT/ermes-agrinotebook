@@ -29,7 +29,8 @@ export default {
   'login': {
     'text': {
       'login': "Σύνδεση",
-      'signup': "Εγγραφή"
+      'signup': "Εγγραφή",
+      'enter-as-guest': "Enter as guest"
     },
     'login-p': {
       'username-f': "Εισάγεται όνομα χρήστη",

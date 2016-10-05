@@ -13,7 +13,8 @@ export default {
   'login': {
     'text': {
       'login': "Iniciar sesión",
-      'signup': "Registrarse"
+      'signup': "Registrarse",
+      'enter-as-guest': "Acceso invitado"
     },
     'login-p': {
       'username-f': "Usuario",
