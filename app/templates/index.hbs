@@ -22,7 +22,7 @@
       {{ermes-side-buttons editMode=editMode openPanel='showPanel' cannotEdit='cannotEdit'}}
     </div>
     {{ermes-menu-fields showPanel="showPanel" positionTo="#add-info-btn" id="ermes-menu-fields"}}
-    {{ermes-menu-options showPanel="showPanel" cannotEdit='cannotEdit' positionTo="#options-btn" username=model.username type=model.type id="ermes-menu-options" editMode=editMode}}
+    {{ermes-menu-options showPanel="showPanel" cannotEdit='cannotEdit' positionTo="#options-btn" username=model.username type=model.type id="ermes-menu-options" editMode=editMode logOut="logOut"}}
   {{/jqm-content}}
   {{outlet}}
 {{/jqm-page}}

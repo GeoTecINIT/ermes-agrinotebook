@@ -75,7 +75,8 @@ export default {
       'profile': "Mi perfil",
       'fields': "Mis parcelas",
       'about': "Acerca de",
-      'search': "Buscar parcela"
+      'search': "Buscar parcela",
+      'logout': "Desconectar"
     }
   },
   'panel': {

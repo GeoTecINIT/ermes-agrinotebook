@@ -90,7 +90,8 @@ export default {
       'profile': "Il mio profilo",
       'fields': "I miei campi",
       'about': "Info",
-      'search': "Search parcel"
+      'search': "Search parcel",
+      'logout': "Esci"
     }
   },
   'panel': {

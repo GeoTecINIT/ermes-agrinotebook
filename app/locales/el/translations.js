@@ -91,7 +91,8 @@ export default {
       'profile': "Το προφίλ μου",
       'fields': "Τα Αγροτεμάχια μου",
       'about': "Σχετικά με",
-      'search': "Search parcel"
+      'search': "Search parcel",
+      'logout': "Αποσύνδεση"
     }
   },
   'panel': {

@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   i18n: Ember.inject.service(),
-
+  auth: Ember.inject.service(),
   pageTitle: Ember.computed('i18n.locale', function() {
     return this.get('i18n').t('fields.header.title');
   }),
@@ -36,6 +36,10 @@ export default Ember.Controller.extend({
     },
     cannotEdit() {
       this.transitionToRoute('index.cannot-edit');
+    },
+    logOut() {
+      this.get('auth').logOut();
+      this.transitionToRoute('login');
     }
   },
   init() {

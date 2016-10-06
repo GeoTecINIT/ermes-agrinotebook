@@ -75,7 +75,8 @@ export default {
       'profile': "My profile",
       'fields': "My fields",
       'about': "About",
-      'search': "Search parcel"
+      'search': "Search parcel",
+      'logout': "Logout"
     }
   },
   'panel': {
