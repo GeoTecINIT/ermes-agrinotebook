@@ -106,10 +106,10 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://ermes.dlsi.uji.es:6080/ArcGIS/rest/services/ http://js.arcgis.com/ https://js.arcgis.com/",
+    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://ermes.dlsi.uji.es:6080/ http://js.arcgis.com/ https://js.arcgis.com/",
     'font-src': "'self'",
-    'connect-src': "'self' http://geo4.dlsi.uji.es:8080/ http://ermes.dlsi.uji.es:6080/ArcGIS/rest/ http://ermes.dlsi.uji.es:6787/ http://server.arcgisonline.com/arcgis/rest/services/ http://services.arcgisonline.com/ http://www.arcgis.com/ http://static.arcgis.com/",
-    'img-src': "'self' http://ermes.dlsi.uji.es http://ermes.dlsi.uji.es:6787/ http://ermes.dlsi.uji.es:6080/arcgis/rest/services/ void: data: http://js.arcgis.com/ http://services.arcgisonline.com/ http://server.arcgisonline.com/",
+    'connect-src': "'self' http://localhost:4500 http://geo4.dlsi.uji.es:8080/ http://ermes.dlsi.uji.es:6080/ http://ermes.dlsi.uji.es:6787/ http://server.arcgisonline.com/arcgis/rest/services/ http://services.arcgisonline.com/ http://www.arcgis.com/ http://static.arcgis.com/",
+    'img-src': "'self' http://ermes.dlsi.uji.es http://ermes.dlsi.uji.es:6787/ http://ermes.dlsi.uji.es:6080/ void: data: http://js.arcgis.com/ http://services.arcgisonline.com/ http://server.arcgisonline.com/",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"
   };

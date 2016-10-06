@@ -83,18 +83,22 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
   },
 
   createMap() {
-    //var pos = this.get('parcels.user.lastPosition');
     var user = this.get('parcels.user');
     var mapInfo = this.get('parcels').getUserMapInfo();
 
-    var map = new Map(this.elementId, {
-      "center": [user.get('lastLongitude'), user.get('lastLatitude')],
-      "zoom": user.get('zoomLevel'),
+    var mapProperties = {
+      "zoom": 15,
       "minZoom": 13,
       "maxZoom": 17,
       "logo": false
+    };
 
-    });
+    if (user.get('type') !== 'guest') {
+      mapProperties.center = [user.get('lastLongitude'), user.get('lastLatitude')];
+      mapProperties.zoom = user.get('zoomLevel');
+    }
+
+    var map = new Map(this.elementId, mapProperties);
 
 
     var maxExtent;
