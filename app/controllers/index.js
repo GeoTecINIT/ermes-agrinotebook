@@ -3,9 +3,14 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   i18n: Ember.inject.service(),
+
   pageTitle: Ember.computed('i18n.locale', function() {
     return this.get('i18n').t('fields.header.title');
   }),
+  productsMenuDisabled: Ember.computed('editMode', 'model', function () {
+    return  this.get('model.type') === 'guest' || this.get('editMode')
+  }),
+  freeObservationDisabled: Ember.computed.alias('editMode'),
   actions: {
     showPanel(name) {
 
