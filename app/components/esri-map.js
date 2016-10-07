@@ -145,8 +145,11 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    */
   loadUserParcelsLayer() {
     var mapInfo = this.get('parcels').getUserMapInfo();
+    var userType = this.get('parcels.user.type');
 
-    this.addUserParcelsLayer(mapInfo.parcelsLayer);
+    if (userType !== 'guest') {
+      this.addUserParcelsLayer(mapInfo.parcelsLayer);
+    }
   },
 
   /**
@@ -177,7 +180,11 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     this.set('parcelsGraphics', []);
 
     // Remove draw event
-    this.get('drawEvent').remove();
+
+    var drawEvent = this.get('drawEvent');
+    if (drawEvent) {
+      drawEvent.remove();
+    }
 
     // Add layers
     this.get('layersMap').clear();
@@ -193,8 +200,12 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     this.notifyPropertyChange('editMode');
 
     var map = this.get('map');
+    var userType = this.get('parcels.user.type');
+
     map.on('update-end', () => this.setPositionMarker());
-    map.on('pan-end', () => this.updateLastPosition());
+    if (userType !== 'guest') {
+      map.on('pan-end', () => this.updateLastPosition());
+    }
   },
 
   /**
@@ -267,25 +278,36 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
    */
   onMapLoad: Ember.on('mapLoaded', Ember.observer('editMode', function () {
     var clickEvent = this.get('clickEvent');
+    var userType = this.get('parcels.user.type');
+
     // If an event already exists, remove it
     if (clickEvent) {
       clickEvent.remove();
     }
 
-    // Enter edit mode
-    if (this.get('editMode')) {
-      this.get('parcels.selectedParcels').clear();
-      this.loadFullParcelsLayer();
-      this.set('clickEvent', this.get('map').on('click', (evt) => this.editParcelEvent(evt) ));
-      return;
-      // Exit edit mode, remove full layer
-    } else if (this.get('layersMap').get('parcelsLayer')) {
-      this.get('map').removeLayer(this.get('layersMap').get('parcelsLayer'));
-      this.get('layersMap').delete('parcelsLayer');
-      this.liveReload();
+    if (userType !== 'guest') { // Behavior for normal users
+
+      // Enter edit mode
+      if (this.get('editMode')) {
+        this.get('parcels.selectedParcels').clear();
+        this.loadFullParcelsLayer();
+        this.set('clickEvent', this.get('map').on('click', (evt) => this.editParcelEvent(evt) ));
+        return;
+        // Exit edit mode, remove full layer
+      } else if (this.get('layersMap').get('parcelsLayer')) {
+        this.get('map').removeLayer(this.get('layersMap').get('parcelsLayer'));
+        this.get('layersMap').delete('parcelsLayer');
+        this.liveReload();
+      }
+      // Default behavior while not editing
+      this.set('clickEvent', this.get('map').on('click', (evt) => this.selectParcelEvent(evt) ));
+
+    } else { // Behavior for guest users
+
+      this.set('clickEvent', this.get('map').on('click', (evt) => this.putOrDisplaceAMarker(evt) ));
+
     }
-    // Default behavior while not editing
-    this.set('clickEvent', this.get('map').on('click', (evt) => this.selectParcelEvent(evt) ));
+
   })),
 
   /**

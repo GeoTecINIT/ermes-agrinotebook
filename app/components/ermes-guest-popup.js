@@ -21,7 +21,6 @@ export default Ember.Component.extend({
     submit() {
       let model = this.get('model');
       let guests = this.get('guests');
-      Ember.debug(JSON.stringify(guests));
 
       var auth = this.get('auth');
 
