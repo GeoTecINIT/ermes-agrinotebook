@@ -5,9 +5,6 @@ export default Ember.Mixin.create({
   productService: Ember.inject.service('products'),
   actions: {
     submit() {
-      // Put parcels inside the model
-      this.set('model.parcels', this.get('parcels.selectedParcels'));
-
       // Set the uploading date
       this.set('model.uploadDate', new Moment().format('lll'));
 

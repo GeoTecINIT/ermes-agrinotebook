@@ -91,6 +91,5 @@ export default Ember.Mixin.create({
     }
     map.graphics.add(alertMarker);
     this.set('parcels.alertPosition', alertPos);
-    Ember.debug('Map clicked');
   }
 });

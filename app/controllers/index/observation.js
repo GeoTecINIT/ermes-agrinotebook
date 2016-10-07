@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import ProductUpload from 'ermes-smart-app/mixins/product-upload';
 import ImageUpload from 'ermes-smart-app/mixins/image-upload';
-import ProductParcelCheck from 'ermes-smart-app/mixins/product-parcel-check';
+import ProductGuestCheck from 'ermes-smart-app/mixins/product-guest-check';
 
-export default Ember.Controller.extend(ProductUpload, ImageUpload, ProductParcelCheck, {
+export default Ember.Controller.extend(ProductUpload, ImageUpload, ProductGuestCheck, {
   panelId: 'observation',
   i18n: Ember.inject.service(),
   actions: {
@@ -12,7 +12,7 @@ export default Ember.Controller.extend(ProductUpload, ImageUpload, ProductParcel
         this.set('fileError', this.get('i18n').t('panel.notification.file-missing'));
       } else {
         this.set('fileError', '');
-        // Manage file upload
+        // Check geometry selection requirements & manage file upload
         this._super(this);
       }
     }

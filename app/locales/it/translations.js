@@ -242,6 +242,7 @@ export default {
       'email-sent': "Ricevereai un' email",
       'missing-date': "Inserisci una data",
       'missing-parcel': "Selezionare almeno una parcella",
+      'missing-marker': "Please place the location of the observation on the map",
       'missing-start-date': "Inserire la data di inizio",
       'dates-inconsistency': "La data finale deve essere successiva alla data di inizio",
       'file-missing': "Allega un'immagine, per favore",

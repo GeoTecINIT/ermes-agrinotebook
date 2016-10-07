@@ -243,6 +243,7 @@ export default {
       'email-sent': "Θα λάβετε email",
       'missing-date': "Παρακαλώ συμπληρώστε την ημερομηνία",
       'missing-parcel': "Παρακαλώ επιλέξτε ένα αγροτεμάχιο",
+      'missing-marker': "Please place the location of the observation on the map",
       'missing-start-date': "Παρακαλώ επιλέξτε την αρχική ημερομηνία",
       'dates-inconsistency': "Η τελευταία ημερομηνία πρέπει να είναι πιό μετά απο την πρώτη ημερομηνία",
       'file-missing': "Παρακαλώ επιλέξτε μία εικόνα",

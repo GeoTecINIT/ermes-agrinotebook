@@ -227,6 +227,7 @@ export default {
       'email-sent': "You will receive an email",
       'missing-date': "Please fill date",
       'missing-parcel': "Please select at least one parcel",
+      'missing-marker': "Please place the location of the observation on the map",
       'missing-start-date': "Please fill in the start date",
       'dates-inconsistency': "End date must be later than start date",
       'file-missing': "Please upload an image",
