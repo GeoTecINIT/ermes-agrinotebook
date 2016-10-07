@@ -87,7 +87,7 @@ export default Ember.Component.extend(OfflineMap, MapEvents, {
     var mapInfo = this.get('parcels').getUserMapInfo();
 
     var mapProperties = {
-      "zoom": 15,
+      "zoom": 14,
       "minZoom": 13,
       "maxZoom": 17,
       "logo": false
