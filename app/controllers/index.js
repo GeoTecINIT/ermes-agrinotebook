@@ -8,9 +8,12 @@ export default Ember.Controller.extend({
     return this.get('i18n').t('fields.header.title');
   }),
   productsMenuDisabled: Ember.computed('editMode', 'model', function () {
-    return  this.get('model.type') === 'guest' || this.get('editMode')
+    return  this.get('model.type') === 'guest' || this.get('editMode');
   }),
   freeObservationDisabled: Ember.computed.alias('editMode'),
+  isGuest: Ember.computed('model', function () {
+    return this.get('model.type') === 'guest';
+  }),
   actions: {
     showPanel(name) {
 

@@ -19,7 +19,9 @@
   {{#jqm-content class="esri-map"}}
     <div class="map-container">
       {{esri-map editMode=editMode useOnlineBasemap=useOnlineBasemap}}
-      {{ermes-side-buttons editMode=editMode openPanel='showPanel' cannotEdit='cannotEdit'}}
+        {{# unless isGuest}}
+          {{ermes-side-buttons editMode=editMode openPanel='showPanel' cannotEdit='cannotEdit'}}
+        {{/unless}}
     </div>
     {{ermes-menu-fields showPanel="showPanel" positionTo="#add-info-btn" id="ermes-menu-fields"}}
     {{ermes-menu-options showPanel="showPanel" cannotEdit='cannotEdit' positionTo="#options-btn" username=model.username type=model.type id="ermes-menu-options" editMode=editMode logOut="logOut"}}
