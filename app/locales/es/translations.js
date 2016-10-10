@@ -22,6 +22,8 @@ export default {
       'login-btn': "Entrar"
     },
     'signup-p': {
+      'name-f': "Nombre",
+      'surname-f': "Apellido",
       'username-f': "Nombre de usuario",
       'collaborating-with': "Propietario (optional)",
       'password-f': "Tu contraseña",

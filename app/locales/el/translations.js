@@ -38,6 +38,8 @@ export default {
       'login-btn': "Σύνδεση"
     },
     'signup-p': {
+      'name-f': "Name",
+      'surname-f': "Surname",
       'username-f': "Εισάγεται το όνομα χρήστη που επιθυμείτε",
       'collaborating-with': "Ιδιοκτήτης (προαιρετικό)",
       'password-f': "Κωδικός πρόσβασης",

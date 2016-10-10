@@ -14,8 +14,8 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // apiServer: "http://ermes.dlsi.uji.es:6787",
-      apiServer: "http://localhost:4500",
+      apiServer: "http://ermes.dlsi.uji.es:6787",
+      // apiServer: "http://localhost:4500",
       layerProxy: "http://ermes.dlsi.uji.es:6787/proxy",
 
       //resourcesServer: "http://altairi.lan:4200/",

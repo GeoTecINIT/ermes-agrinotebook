@@ -1,5 +1,7 @@
 {{#jqm-popup id=pId title=(t 'login.text.signup') theme="a" closeButton=true dismissible="false"}}
   <form {{action "submit" on="submit"}}>
+    {{jqm-textinput value=model.name placeholder=(t 'login.signup-p.name-f') required=true}}
+    {{jqm-textinput value=model.surname placeholder=(t 'login.signup-p.surname-f') required=true}}
     {{jqm-textinput value=model.username placeholder=(t 'login.signup-p.username-f') required=true pattern='[A-Za-z0-9]+'}}
     {{jqm-textinput value=model.collaboratesWith placeholder=(t 'login.signup-p.collaborating-with')}}
     {{jqm-textinput value=model.password type="password" placeholder=(t 'login.signup-p.password-f') required=true}}
