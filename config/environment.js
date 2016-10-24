@@ -101,7 +101,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/smartappv6';
+    ENV.baseURL = '/smartapp';
   }
 
   ENV.contentSecurityPolicy = {
