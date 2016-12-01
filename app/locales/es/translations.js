@@ -13,7 +13,8 @@ export default {
   'login': {
     'text': {
       'login': "Iniciar sesión",
-      'signup': "Registrarse"
+      'signup': "Registrarse",
+      'enter-as-guest': "Acceso invitado"
     },
     'login-p': {
       'username-f': "Usuario",
@@ -21,6 +22,8 @@ export default {
       'login-btn': "Entrar"
     },
     'signup-p': {
+      'name-f': "Nombre",
+      'surname-f': "Apellido",
       'username-f': "Nombre de usuario",
       'collaborating-with': "Propietario (optional)",
       'password-f': "Tu contraseña",
@@ -74,7 +77,8 @@ export default {
       'profile': "Mi perfil",
       'fields': "Mis parcelas",
       'about': "Acerca de",
-      'search': "Buscar parcela"
+      'search': "Buscar parcela",
+      'logout': "Desconectar"
     }
   },
   'panel': {
@@ -225,6 +229,7 @@ export default {
       'login-allowed': "Ahora puedes,",
       'missing-date': "Por favor, introduce una fecha",
       'missing-parcel': "Por favor, selecciona al menos una parcela",
+      'missing-marker': "Por favor, indica en el mapa la ubicación de la observación",
       'missing-start-date': "Por favor, introduce la fecha inicial",
       'dates-inconsistency': "La fecha de fin debe ser mayor que la fecha de inicio",
       'file-missing': "Por favor, selecciona una imagen",

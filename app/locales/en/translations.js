@@ -13,7 +13,8 @@ export default {
   'login': {
     'text': {
       'login': "Log in",
-      'signup': "Sign up"
+      'signup': "Sign up",
+      'enter-as-guest': "Enter as guest"
     },
     'login-p': {
       'username-f': "Enter username",
@@ -21,6 +22,8 @@ export default {
       'login-btn': "Log in"
     },
     'signup-p': {
+      'name-f': "Name",
+      'surname-f': "Surname",
       'username-f': "Enter desired username",
       'collaborating-with': "Owner (optional)",
       'password-f': "Your password",
@@ -74,7 +77,8 @@ export default {
       'profile': "My profile",
       'fields': "My fields",
       'about': "About",
-      'search': "Search parcel"
+      'search': "Search parcel",
+      'logout': "Logout"
     }
   },
   'panel': {
@@ -225,6 +229,7 @@ export default {
       'email-sent': "You will receive an email",
       'missing-date': "Please fill date",
       'missing-parcel': "Please select at least one parcel",
+      'missing-marker': "Please place the location of the observation on the map",
       'missing-start-date': "Please fill in the start date",
       'dates-inconsistency': "End date must be later than start date",
       'file-missing': "Please upload an image",

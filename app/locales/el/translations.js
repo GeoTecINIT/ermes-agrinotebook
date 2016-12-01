@@ -29,7 +29,8 @@ export default {
   'login': {
     'text': {
       'login': "Σύνδεση",
-      'signup': "Εγγραφή"
+      'signup': "Εγγραφή",
+      'enter-as-guest': "Enter as guest"
     },
     'login-p': {
       'username-f': "Εισάγεται όνομα χρήστη",
@@ -37,6 +38,8 @@ export default {
       'login-btn': "Σύνδεση"
     },
     'signup-p': {
+      'name-f': "Name",
+      'surname-f': "Surname",
       'username-f': "Εισάγεται το όνομα χρήστη που επιθυμείτε",
       'collaborating-with': "Ιδιοκτήτης (προαιρετικό)",
       'password-f': "Κωδικός πρόσβασης",
@@ -90,7 +93,8 @@ export default {
       'profile': "Το προφίλ μου",
       'fields': "Τα Αγροτεμάχια μου",
       'about': "Σχετικά με",
-      'search': "Search parcel"
+      'search': "Search parcel",
+      'logout': "Αποσύνδεση"
     }
   },
   'panel': {
@@ -241,6 +245,7 @@ export default {
       'email-sent': "Θα λάβετε email",
       'missing-date': "Παρακαλώ συμπληρώστε την ημερομηνία",
       'missing-parcel': "Παρακαλώ επιλέξτε ένα αγροτεμάχιο",
+      'missing-marker': "Please place the location of the observation on the map",
       'missing-start-date': "Παρακαλώ επιλέξτε την αρχική ημερομηνία",
       'dates-inconsistency': "Η τελευταία ημερομηνία πρέπει να είναι πιό μετά απο την πρώτη ημερομηνία",
       'file-missing': "Παρακαλώ επιλέξτε μία εικόνα",

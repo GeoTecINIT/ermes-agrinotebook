@@ -4,8 +4,8 @@
       <div class="ermes-bar">
           <div class="ui-grid-b">
               <div class="ui-block-a">
-                  {{jqm-anchor id="add-info-btn" action=(action "openProductsMenu") title=(t 'fields.header.add-info-tooltip') inline="true" allCorners="true" icon="plus" iconPos="notext" theme="b" isDisabled=editMode}}
-                  {{jqm-anchor action=(action "showPanel" "index.observation") title=(t 'fields.header.observation-tooltip') inline="true" allCorners="true" icon="eye" iconPos="notext" theme="b" isDisabled=editMode}}
+                  {{jqm-anchor id="add-info-btn" action=(action "openProductsMenu") title=(t 'fields.header.add-info-tooltip') inline="true" allCorners="true" icon="plus" iconPos="notext" theme="b" isDisabled=productsMenuDisabled}}
+                  {{jqm-anchor action=(action "showPanel" "index.observation") title=(t 'fields.header.observation-tooltip') inline="true" allCorners="true" icon="eye" iconPos="notext" theme="b" isDisabled=freeObservationDisabled}}
               </div>
               <div class="ui-block-b" align="center">
                   <h1><img src="assets/ermes-images/logo.png" class="ermes-header-logo"> {{t 'fields.header.title'}}</h1>
@@ -19,10 +19,12 @@
   {{#jqm-content class="esri-map"}}
     <div class="map-container">
       {{esri-map editMode=editMode useOnlineBasemap=useOnlineBasemap}}
-      {{ermes-side-buttons editMode=editMode openPanel='showPanel' cannotEdit='cannotEdit'}}
+        {{# unless isGuest}}
+          {{ermes-side-buttons editMode=editMode openPanel='showPanel' cannotEdit='cannotEdit'}}
+        {{/unless}}
     </div>
     {{ermes-menu-fields showPanel="showPanel" positionTo="#add-info-btn" id="ermes-menu-fields"}}
-    {{ermes-menu-options showPanel="showPanel" cannotEdit='cannotEdit' positionTo="#options-btn" username=model.username type=model.type id="ermes-menu-options" editMode=editMode}}
+    {{ermes-menu-options showPanel="showPanel" cannotEdit='cannotEdit' positionTo="#options-btn" username=model.username type=model.type id="ermes-menu-options" editMode=editMode logOut="logOut"}}
   {{/jqm-content}}
   {{outlet}}
 {{/jqm-page}}

@@ -5,6 +5,7 @@ export default Ember.Service.extend({
   user: null,
   selectedParcels: null,
   searchedParcel: null,
+  alertPosition: null,
 
   init() {
     this.set('selectedParcels', []);

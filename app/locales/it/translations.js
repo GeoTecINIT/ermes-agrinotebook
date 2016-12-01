@@ -28,7 +28,8 @@ export default {
   'login': {
     'text': {
       'login': "Entra",
-      'signup': "Registrati"
+      'signup': "Registrati",
+      'enter-as-guest': "Enter as guest"
     },
     'login-p': {
       'username-f': "Nome Utente",
@@ -36,6 +37,8 @@ export default {
       'login-btn': "Entra"
     },
     'signup-p': {
+      'name-f': "Name",
+      'surname-f': "Surname",
       'username-f': "Scegli Nome Utente",
       'collaborating-with': "Proprietario (opzionale)",
       'password-f': "Scegli password",
@@ -89,7 +92,8 @@ export default {
       'profile': "Il mio profilo",
       'fields': "I miei campi",
       'about': "Info",
-      'search': "Search parcel"
+      'search': "Search parcel",
+      'logout': "Esci"
     }
   },
   'panel': {
@@ -240,6 +244,7 @@ export default {
       'email-sent': "Ricevereai un' email",
       'missing-date': "Inserisci una data",
       'missing-parcel': "Selezionare almeno una parcella",
+      'missing-marker': "Please place the location of the observation on the map",
       'missing-start-date': "Inserire la data di inizio",
       'dates-inconsistency': "La data finale deve essere successiva alla data di inizio",
       'file-missing': "Allega un'immagine, per favore",

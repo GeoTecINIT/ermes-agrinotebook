@@ -1,6 +1,6 @@
 {
   "name": "ermes-smart-app",
-  "version": "0.0.0",
+  "version": "4.0.0",
   "description": "ErmesSmartApp for onfield data input",
   "private": true,
   "directories": {

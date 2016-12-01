@@ -1,7 +1,6 @@
 import Ember from 'ember';
 import $ from 'jquery';
 import * as dd from 'ermes-smart-app/models/static/regions';
-//import { post } from 'ermes-smart-app/utils/ajax';
 
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
@@ -66,7 +65,6 @@ export default Ember.Component.extend({
       let loginPopup = $('#ermes-login-popup');
       let signupPopup = $('#ermes-signup-popup');
       loginPopup.find('form').trigger('reset'); // Clear login
-      //$(loginPopup.find('form').find('input')[0]).val(this.get('model.username')); // Set login username
       this.set('username', this.get('model.username'));
       signupPopup.one('popupafterclose', function () {
         loginPopup.popup('open');

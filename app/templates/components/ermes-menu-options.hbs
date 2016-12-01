@@ -1,6 +1,6 @@
 {{#jqm-ulistview inset="true"}}
   {{#jqm-listdivider}}{{t 'fields.options-m.title' username=username}}{{/jqm-listdivider}}
   {{#each options as |option|}}
-      <li>{{jqm-anchor action=(action option.action option.actionParam) corners="false" text=option.text icon=option.icon iconPos="left" isShown=option.isShown}}</li>
+      <li>{{jqm-anchor action=(action option.action option.actionParam) corners="false" text=option.text icon=option.icon iconPos="left" isShown=option.isShown theme=option.theme}}</li>
   {{/each}}
 {{/jqm-ulistview}}

@@ -1,5 +1,7 @@
 import Ember from 'ember';
 import Graphic from "esri/graphic";
+import PictureMarkerSymbol from 'esri/symbols/PictureMarkerSymbol';
+
 
 export default Ember.Mixin.create({
   store: Ember.inject.service(),
@@ -63,5 +65,31 @@ export default Ember.Mixin.create({
         }
       });
     }
+  },
+  putOrDisplaceAMarker(evt) {
+    var map = this.get('map');
+    var alertMarker = this.get('alertMarker');
+    var alertPos = evt.mapPoint;
+
+    if (!alertMarker) {
+
+      var alertMarkerSymbol = new PictureMarkerSymbol({
+        "yoffset": 8,
+        "url": "assets/ermes-images/alertMarker.png",
+        "contentType": "image/png",
+        "width": 20,
+        "height": 24
+      });
+
+      alertMarker = new Graphic(alertPos, alertMarkerSymbol);
+      this.set('alertMarker', alertMarker);
+
+    } else {
+
+      alertMarker.setGeometry(alertPos);
+
+    }
+    map.graphics.add(alertMarker);
+    this.set('parcels.alertPosition', alertPos);
   }
 });
